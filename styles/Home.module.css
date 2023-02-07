@@ -170,8 +170,7 @@
 .itemsWidget > ul > li > a > img {
   width: auto;
   height: auto;
-  max-width: 270px;
-  max-height: 200px;
+  max-width: 130px;
 }
 
 .widgetVertical {
@@ -207,7 +206,8 @@
 .itemsWidgetVertical > ul > li > a > img {
   width: auto;
   height: auto;
-  max-width: 130px;
+  max-width: 270px;
+  max-height: 200px;
 }
 
 .loginContainer {
