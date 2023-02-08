@@ -8,7 +8,7 @@ const client = new MongoClient(url)
 
 let state: any
 let conn: any
-export async function connect() {
+async function connect(dbName: string) {
 	if (conn && state === 'connected') {
 		return conn
 	}
@@ -17,11 +17,11 @@ export async function connect() {
 	console.log('Connected successfully to database')
 
 	state = connection.topology.s.state
-	conn = connection.db('users')
+	conn = connection.db(dbName)
 	return conn
 }
 
-export async function getCollection() {
-	const db = await connect()
-	return await db.collection('members')
+export async function getCollection(dbName: string, collectionName: string) {
+	const db = await connect(dbName)
+	return await db.collection(collectionName)
 }
