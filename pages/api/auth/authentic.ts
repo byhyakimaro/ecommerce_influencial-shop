@@ -19,9 +19,11 @@ export default async function handler(
       token: dataCollection["_id"],
       user: {
         name: dataCollection.name,
+        login: dataCollection.login,
         email: email,
         telephone: dataCollection.telephone,
-        avatarUrl: dataCollection.avatarUrl
+        avatarUrl: dataCollection.avatarUrl,
+        itemsViewed: dataCollection.itemsViewed
       }
     })
   }

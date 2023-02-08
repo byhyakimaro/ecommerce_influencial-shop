@@ -138,16 +138,18 @@ export default function Home({ data }:any) {
           <div className={[styles.titleHistoryView, styles.titleWidget].join(" ")}>HISTORICO DE NAVEGACAO</div>
             <div className={[styles.itemsHistoryView, styles.itemsWidget].join(" ")}>
               <ul>
-                <li>
+              {user?.itemsViewed.map((itemViewedId : any, index: any) => {
+                  return (
+                    <li key={index}>
+                      { itemViewedId }
+                    </li>
+                  )
+                })}
+                {/* <li>
                   <a>
                     <img src='https://ae01.alicdn.com/kf/H1c37dff49df149999104a78c4d4d58e9O/Venda-quente-luz-t-nis-de-corrida-homem-t-nis-casuais-homens-moda-antiderrapante-sapatos-esportivos.jpg_Q90.jpg_.webp' ></img>
                   </a>
-                </li>
-                <li>
-                  <a>
-                    <img src='https://ae01.alicdn.com/kf/H1c37dff49df149999104a78c4d4d58e9O/Venda-quente-luz-t-nis-de-corrida-homem-t-nis-casuais-homens-moda-antiderrapante-sapatos-esportivos.jpg_Q90.jpg_.webp' ></img>
-                  </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

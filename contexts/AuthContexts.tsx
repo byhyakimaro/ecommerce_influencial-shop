@@ -4,7 +4,11 @@ import { setCookie, parseCookies } from 'nookies'
 
 type User = {
   name: string
+  login: string
   email: string
+  telephone: Number
+  avatarUrl: string
+  itemsViewed: Array<Object>
 }
 
 type SignInData = {
@@ -55,13 +59,13 @@ export function AuthProvider({ children } : any) {
         body: JSON.stringify({ email: email, password: password })
     })
 
-    const { user, token } = await apiToken.json()
+    const { user: userResponse, token } = await apiToken.json()
 
     setCookie(undefined, 'infshop.token', token, {
       maxAge: 60 * 60 * 4, // 4 hours
     })
 
-    setUser(user)
+    setUser(userResponse)
 
     Router.push('/shopping')
   }
