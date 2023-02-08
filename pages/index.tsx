@@ -25,7 +25,7 @@ export default function Home({ data }:any) {
         </div>
         <div className={styles.account}>
           <a href={"/login"}>
-            <div className={styles.accountname}>Ola, <b>{ isAuthenticated? user?.name :'Login' }</b></div>
+            <div className={styles.accountname}>Ola, <b>{ isAuthenticated? (user?.name)?.split(' ')[0] : 'Login' }</b></div>
           </a>
           <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M12 15.05 6.35 9.375l1.05-1.05 4.6 4.6 4.6-4.6 1.05 1.05Z"/></svg>
         </div>
