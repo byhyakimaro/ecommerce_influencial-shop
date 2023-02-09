@@ -32,19 +32,21 @@ export function AuthProvider({ children } : any) {
   useEffect(() => {
     const { 'infshop.token': token } = parseCookies()
 
-    fetch('http://localhost:3000/api/auth/recovery/token',
-    {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify({ token: token })
-    })
-    .then(response => response.json())
-    .then(response => {
-      response ? setUser(response.user) : null
-    })
+    if (token) {
+      fetch('http://localhost:3000/api/auth/recovery/token',
+      {
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          method: "POST",
+          body: JSON.stringify({ token: token })
+      })
+      .then(response => response.json())
+      .then(response => {
+        response ? setUser(response.user) : null
+      })
+    }
   },[])
 
   async function signIn({ email, password }: SignInData) {

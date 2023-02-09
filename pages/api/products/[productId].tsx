@@ -11,26 +11,20 @@ export default async function handler(
   const collection = await getCollection('products', 'items')
   const { productId } : any = req.query
 
-  try {
-    const { 
-      Title,
-      Image,
-      Evaluation,
-      CountEvaluation,
-      productStock,
-      Price,
-    } = await collection.findOne({ _id: new ObjectId( productId )})
+  const product = await collection.findOne({ _id: new ObjectId( productId )})
 
+  if (product) {
     res.status(200).json({
-      Title,
-      Image,
-      Evaluation,
-      CountEvaluation,
-      productStock,
-      Price,
+      Title: product.Title,
+      Image: product.Image,
+      Evaluation: product.Evaluation,
+      CountEvaluation: product.CountEvaluation,
+      productStock: product.productStock,
+      Price: product.Price
     })
-  } catch(err) {
-    res.status(404).json({ "notFound": true })
+  } else {
+    res.status(404).json({
+      status: 'Not Found'
+    })
   }
-
 }

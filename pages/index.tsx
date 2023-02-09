@@ -2,8 +2,9 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { useContext } from 'react'
 import { AuthContext } from '@/contexts/AuthContexts'
+import { parseCookies } from 'nookies'
 
-export default function Home({ data }:any) {
+export default function Home({ data, User }:any) {
 
   const { user, isAuthenticated } = useContext(AuthContext)
 
@@ -25,7 +26,7 @@ export default function Home({ data }:any) {
         </div>
         <div className={styles.account}>
           <a href={"/login"}>
-            <div className={styles.accountname}>Ola, <b>{ isAuthenticated? (user?.name)?.split(' ')[0] : 'Login' }</b></div>
+            <div className={styles.accountname}>Ola, <b>{ isAuthenticated ? (user?.name)?.split(' ')[0] : 'Login' }</b></div>
           </a>
           <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M12 15.05 6.35 9.375l1.05-1.05 4.6 4.6 4.6-4.6 1.05 1.05Z"/></svg>
         </div>
@@ -134,18 +135,29 @@ export default function Home({ data }:any) {
               </ul>
             </div>
           </div>
-          <div className={[styles.historyView, styles.widget].join(" ")}>
-          <div className={[styles.titleHistoryView, styles.titleWidget].join(" ")}>HISTORICO DE NAVEGACAO</div>
-            <div className={[styles.itemsHistoryView, styles.itemsWidget].join(" ")}>
-              <ul>
-                <li>
-                  <a>
-                    <img src='https://ae01.alicdn.com/kf/H1c37dff49df149999104a78c4d4d58e9O/Venda-quente-luz-t-nis-de-corrida-homem-t-nis-casuais-homens-moda-antiderrapante-sapatos-esportivos.jpg_Q90.jpg_.webp' ></img>
-                  </a>
-                </li>
-              </ul>
+          {
+          User?.user?.itemsViewed ?
+            <div className={[styles.historyView, styles.widget].join(" ")}>
+              <div className={[styles.titleHistoryView, styles.titleWidget].join(" ")}>HISTORICO DE NAVEGACAO</div>
+              <div className={[styles.itemsHistoryView, styles.itemsWidget].join(" ")}>
+                <ul>
+                {User.user.itemsViewed.map((itemViewed : any, index: any) => {
+                  return (
+                    <li key={index}>
+                      <a>
+                        <img src={itemViewed.Image} ></img>
+                        <div> <strong>{itemViewed.Title}</strong> </div>
+                        <div> {itemViewed.Evaluation }/5 - {itemViewed.CountEvaluation}</div>
+                        <div> <strong>R$ {itemViewed.Price}</strong> </div>
+                      </a>
+                    </li>
+                  )
+                })}
+                </ul>
+              </div>
             </div>
-          </div>
+          : ''
+          }
         </div>
         <footer>
           dev knownetworks inc.
@@ -155,7 +167,7 @@ export default function Home({ data }:any) {
   )
 }
 
-export async function getStaticProps() {
+Home.getInitialProps = async (ctx: any) => {
   const data: any = {}
 
   const categories = await fetch('http://localhost:3000/api/categories')
@@ -170,10 +182,28 @@ export async function getStaticProps() {
   const bestsells = await fetch('http://localhost:3000/api/bestsells')
   data["bestsells"] = await bestsells.json()
 
-  return {
-    props: {
+  const { 'infshop.token': token } = parseCookies(ctx)
+
+  if (token) {
+    const User = await fetch('http://localhost:3000/api/auth/recovery/token',
+    {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({ token: token })
+    })
+    const dataUser = await User.json()
+
+    return {
       data,
-      revalidate: 10, // In seconds
-    },
+      User: dataUser
+    }
+  } else {
+    return {
+      data,
+      User: null
+    }
   }
 }

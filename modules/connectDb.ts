@@ -8,16 +8,20 @@ const client = new MongoClient(url)
 
 let state: any
 let conn: any
+let dbNameString: any
+
 async function connect(dbName: string) {
-	if (conn && state === 'connected') {
+	if (conn && dbNameString === dbName && state === 'connected') {
 		return conn
 	}
 	
 	const connection: any = await client.connect()
-	console.log('Connected successfully to database')
+	console.log('Connected successfully to database', dbName)
 
+	dbNameString = dbName
 	state = connection.topology.s.state
 	conn = connection.db(dbName)
+
 	return conn
 }
 
