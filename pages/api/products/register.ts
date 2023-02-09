@@ -15,7 +15,8 @@ export default async function handler(
     productStock,
     Price,
     loginCreateItem,
-    category
+    category,
+    active
   } = req.body
 
   collection.insertOne({
@@ -29,7 +30,8 @@ export default async function handler(
     "Evaluation": 0,
     "dateProduct": new Date(),
     "loginCreateItem": loginCreateItem,
-    "category": category
+    "category": category,
+    "active" : active
   })
 
   res.status(200).json({
