@@ -138,7 +138,7 @@ export default function Home({ data, User }:any) {
             </div>
           </div>
           {
-          User?.user?.itemsViewed ?
+          User?.user?.itemsViewed.length > 0 ?
             <div className={[styles.historyView, styles.widget].join(" ")}>
               <div className={[styles.titleHistoryView, styles.titleWidget].join(" ")}>HISTORICO DE NAVEGACAO</div>
               <div className={[styles.itemsHistoryView, styles.itemsWidget].join(" ")}>
