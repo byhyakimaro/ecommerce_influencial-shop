@@ -19,9 +19,7 @@ export default async function handler(
   } = req.body
 
   collection.insertOne({
-    "_id": {
-      "$oid": uuid()
-    },
+    "_id": new ObjectId(),
     "Title": Title,
     "Image": Image,
     "CountEvaluation": 0,
