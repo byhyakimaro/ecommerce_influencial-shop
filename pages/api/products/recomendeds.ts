@@ -12,13 +12,15 @@ export default async function handler(
   products.sort(() => Math.random() - 0.5)
 
   const productFormat = products.map((product: any) => {
-    return {
-      Title: product.Title,
-      Code: product["_id"].toString(),
-      Image: product.Image,
-      Price: product.Price,
-      Evaluation: product.Evaluation,
-      CountEvaluation: product.CountEvaluation
+    if (product.active) {
+      return {
+        Title: product.Title,
+        Code: product["_id"].toString(),
+        Image: product.Image,
+        Price: product.Price,
+        Evaluation: product.Evaluation,
+        CountEvaluation: product.CountEvaluation
+      }
     }
   })
 
