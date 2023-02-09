@@ -85,7 +85,7 @@ export default function Home({ data, User }:any) {
                 {data.recomendeds.map((recomended: any, index: any) => {
                   return (
                     <li key={index}>
-                      <a href={`products/${recomended.Code}`}>
+                      <a href={`provider/${recomended.Code}`}>
                         <img src={recomended.Image} ></img>
                         <div> <strong>{recomended.Title}</strong> </div>
                         <div> {recomended.Evaluation }/5 - {recomended.CountEvaluation}</div>
@@ -104,7 +104,7 @@ export default function Home({ data, User }:any) {
                 {data.bestsells.map((bestsell: any, index: any) => {
                   return (
                     <li key={index}>
-                      <a href={`products/${bestsell.Code}`}>
+                      <a href={`provider/${bestsell.Code}`}>
                         <img src={bestsell.Image} ></img>
                         <div> <strong>{bestsell.Title}</strong> </div>
                         <div> {bestsell.Evaluation }/5 - {bestsell.CountEvaluation}</div>
@@ -123,7 +123,7 @@ export default function Home({ data, User }:any) {
                 {data.recents.map((recent : any, index: any) => {
                   return (
                     <li key={index}>
-                      <a href={`products/${recent.Code}`}>
+                      <a href={`provider/${recent.Code}`}>
                         <img src={recent.Image} ></img>
                         <div> <strong>{recent.Title}</strong> </div>
                         <div> {recent.Evaluation }/5 - {recent.CountEvaluation}</div>
@@ -144,7 +144,7 @@ export default function Home({ data, User }:any) {
                 {User.user.itemsViewed.map((itemViewed : any, index: any) => {
                   return (
                     <li key={index}>
-                      <a href={`products/${itemViewed.Code}`}>
+                      <a href={`provider/${itemViewed.Code}`}>
                         <img src={itemViewed.Image} ></img>
                         <div> <strong>{itemViewed.Title}</strong> </div>
                         <div> {itemViewed.Evaluation }/5 - {itemViewed.CountEvaluation}</div>
