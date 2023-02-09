@@ -71,10 +71,12 @@ export default function Home({ data, User }:any) {
             <div className={styles.titlecategories}>CATEGORIAS</div>
               {data.categories.map((categorie: any, index: any) => {
                 return (
-                  <div key={index} className={styles.itemcategorie}>
-                    <img src={categorie.img}></img>
-                    <div className={styles.nameitem}>{categorie.name}</div>
-                  </div>
+                  <a key={index} href={`categories/${categorie.name}`}>
+                    <div className={styles.itemcategorie}>
+                      <img src={categorie.img}></img>
+                      <div className={styles.nameitem}>{categorie.name}</div>
+                    </div>
+                  </a>
                   )
               })}
           </div>
