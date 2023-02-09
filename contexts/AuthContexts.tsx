@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from 'react'
-import Router from 'next/router'
 import { setCookie, parseCookies } from 'nookies'
 
 type User = {
@@ -68,8 +67,6 @@ export function AuthProvider({ children } : any) {
     })
 
     setUser(userResponse)
-
-    Router.push('/shopping')
   }
 
   return (
