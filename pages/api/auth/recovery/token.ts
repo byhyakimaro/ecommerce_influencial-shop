@@ -14,8 +14,11 @@ export default async function handler(
 
   const dataCollection = await collection.findOne({ _id: new ObjectId(token)})
 
+  const itemsViewedFormatted: any[] = dataCollection.itemsViewed.filter((item: any, 
+  index: any) => dataCollection.itemsViewed.indexOf(item) === index)
+
   if (dataCollection) {
-    const productsViewed = await Promise.all(dataCollection.itemsViewed.map(async (productId:any) =>{
+    const productsViewed = await Promise.all(itemsViewedFormatted.map(async (productId:any) =>{
       const product = await fetch(`http://localhost:3000/api/products/${productId}`)
 
       return await product.json()
