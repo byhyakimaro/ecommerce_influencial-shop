@@ -144,7 +144,7 @@ export default function Home({ data, User }:any) {
                 {User.user.itemsViewed.map((itemViewed : any, index: any) => {
                   return (
                     <li key={index}>
-                      <a>
+                      <a href={`products/${itemViewed.Code}`}>
                         <img src={itemViewed.Image} ></img>
                         <div> <strong>{itemViewed.Title}</strong> </div>
                         <div> {itemViewed.Evaluation }/5 - {itemViewed.CountEvaluation}</div>
