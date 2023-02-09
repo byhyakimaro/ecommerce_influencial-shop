@@ -27,11 +27,7 @@ export default async function handler(
     "productStock": productStock,
     "Price": Price,
     "Evaluation": 0,
-    "dateProduct": {
-      "$date": {
-        "$numberLong": new Date()
-      }
-    },
+    "dateProduct": new Date(),
     "loginCreateItem": loginCreateItem,
     "category": category
   })
