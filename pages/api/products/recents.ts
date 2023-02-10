@@ -6,7 +6,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
 
-  const collection = await getCollection('products', 'items')
+  const collection = await getCollection('products')
 
   const products = await collection.find().toArray()
 

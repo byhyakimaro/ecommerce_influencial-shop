@@ -10,7 +10,7 @@ export default async function handler(
 
   console.log(itemCode, token)
 
-  const collection = await getCollection('users', 'members')
+  const collection = await getCollection('users')
 
   collection.updateOne(
     { _id: new ObjectId(token) },

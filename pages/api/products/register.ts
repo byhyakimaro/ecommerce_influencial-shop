@@ -6,7 +6,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const collection = await getCollection('products', 'items')
+  const collection = await getCollection('products')
 
   const {
     Title,
