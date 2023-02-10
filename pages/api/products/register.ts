@@ -1,7 +1,6 @@
 import { ObjectId } from 'mongodb'
 import { getCollection } from '@/modules/connectDb'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { v4 as uuid } from 'uuid'
 
 export default async function handler(
   req: NextApiRequest,
@@ -16,7 +15,8 @@ export default async function handler(
     Price,
     loginCreateItem,
     category,
-    active
+    active,
+    urlProvider
   } = req.body
 
   collection.insertOne({
@@ -31,7 +31,8 @@ export default async function handler(
     "dateProduct": new Date(),
     "loginCreateItem": loginCreateItem,
     "category": category,
-    "active" : active
+    "active" : active,
+    "urlProvider" : urlProvider
   })
 
   res.status(200).json({
