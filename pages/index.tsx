@@ -84,7 +84,7 @@ export default function Home({ data, User }:any) {
             <div className={[styles.titleRecommended, styles.titleWidget].join(" ")}>RECOMENDADO PARA VOCE</div>
             <div className={[styles.itemsRecommended, styles.itemsWidget].join(" ")}>
               <ul>
-                {data.recomendeds.map((recomended: any, index: any) => {
+                {data.recommended.map((recomended: any, index: any) => {
                   return (
                     <li key={index}>
                       <a href={`provider/${recomended.Code}`}>
@@ -103,7 +103,7 @@ export default function Home({ data, User }:any) {
             <div className={[styles.titleBestSell, styles.titleWidget].join(" ")}>MELHORES VENDIDOS</div>
             <div className={[styles.itemsBestSell, styles.itemsWidget].join(" ")}>
               <ul>
-                {data.bestsells.map((bestsell: any, index: any) => {
+                {data.bestSell.map((bestsell: any, index: any) => {
                   return (
                     <li key={index}>
                       <a href={`provider/${bestsell.Code}`}>
@@ -122,7 +122,7 @@ export default function Home({ data, User }:any) {
           <div className={[styles.titleDiscoveryDay, styles.titleWidget].join(" ")}>DESCOBERTAS DO DIA</div>
             <div className={[styles.itemsDiscoveryDay, styles.itemsWidget].join(" ")}>
               <ul>
-                {data.recents.map((recent : any, index: any) => {
+                {data.recentProducts.map((recent : any, index: any) => {
                   return (
                     <li key={index}>
                       <a href={`provider/${recent.Code}`}>
@@ -170,21 +170,16 @@ export default function Home({ data, User }:any) {
 }
 
 Home.getInitialProps = async (ctx: any) => {
-  const data: any = {}
+  
+  const listProducts = await fetch('http://localhost:3000/api/products/listproducts')
+  const data: any = await listProducts.json()
 
   const categories = await fetch('http://localhost:3000/api/products/categories')
   data["categories"] = await categories.json()
 
-  const recomendeds = await fetch('http://localhost:3000/api/products/recomendeds')
-  data["recomendeds"] = await recomendeds.json()
-
-  const recents = await fetch('http://localhost:3000/api/products/recents')
-  data["recents"] = await recents.json()
-
-  const bestsells = await fetch('http://localhost:3000/api/products/bestsells')
-  data["bestsells"] = await bestsells.json()
-
   const { 'infshop.token': token } = parseCookies(ctx)
+
+  console.log(token)
 
   if (token) {
     const User = await fetch('http://localhost:3000/api/auth/recovery/token',
@@ -194,7 +189,7 @@ Home.getInitialProps = async (ctx: any) => {
           'Content-Type': 'application/json'
         },
         method: "POST",
-        body: JSON.stringify({ token: token })
+        body: JSON.stringify(token)
     })
     const dataUser = await User.json()
 

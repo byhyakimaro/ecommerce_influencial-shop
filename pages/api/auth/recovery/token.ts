@@ -10,14 +10,15 @@ export default async function handler(
 
   const { token } = req.body
 
-  const collection = await getCollection('users', 'members')
+  const collection = await getCollection('users')
 
   const dataCollection = await collection.findOne({ _id: new ObjectId(token)})
 
-  const itemsViewedFormatted: any[] = dataCollection.itemsViewed.filter((item: any, 
-  index: any) => dataCollection.itemsViewed.indexOf(item) === index)
-
   if (dataCollection) {
+
+    const itemsViewedFormatted: any[] = dataCollection.itemsViewed.filter((item: any, 
+    index: any) => dataCollection.itemsViewed.indexOf(item) === index)
+
     const productsViewed = await Promise.all(itemsViewedFormatted.map(async (productId:any) =>{
       const product = await fetch(`http://localhost:3000/api/products/${productId}`)
 
