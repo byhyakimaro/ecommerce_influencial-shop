@@ -1,5 +1,3 @@
-import { getCollection } from '@/modules/connectDb'
-import { ObjectId } from 'mongodb'
 import Head from 'next/head'
 import { parseCookies } from 'nookies'
 
@@ -23,12 +21,18 @@ Home.getInitialProps = async (ctx: any) => {
   const { 'infshop.token': token } = parseCookies(ctx)
   const { product: productId } = ctx.query
 
-  const collection = await getCollection('users')
-
-  collection.updateOne(
-    { _id: new ObjectId(token) },
-    { $push: { itemsViewed: productId } }
-  )
+  fetch('http://localhost:3000/api/products/countproduct',
+    {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({
+          token,
+          itemCode: productId
+        })
+    })
 
   const product = await fetch(`http://localhost:3000/api/products/${productId}`)
 
