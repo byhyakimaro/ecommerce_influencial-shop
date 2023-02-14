@@ -14,6 +14,7 @@ export default function Home({ category }: any) {
         {category.map((categoryItem : any, index: any) => {
           return (
             <>
+              <img src={  categoryItem.Image }></img>
               <div>{ categoryItem.Title }</div>
             </>
           )
