@@ -8,9 +8,11 @@ export default async function handler(
   res: NextApiResponse
 ) {
 
-  const {token} = req.body
+  const { token } = req.body
 
   const collection = await getCollection('users')
+
+  console.log(req.body)
 
   const dataCollection = await collection.findOne({ _id: new ObjectId(token)})
 

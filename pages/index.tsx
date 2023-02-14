@@ -179,15 +179,17 @@ Home.getInitialProps = async (ctx: any) => {
 
   const { 'infshop.token': token } = parseCookies(ctx)
 
+  
   if (token) {
+    
     const User = await fetch('http://localhost:3000/api/auth/recovery/token',
     {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify(token)
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({ token: token })
     })
     const dataUser = await User.json()
 
