@@ -8,7 +8,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
 
-  const token = req.body
+  const {token} = req.body
 
   const collection = await getCollection('users')
 

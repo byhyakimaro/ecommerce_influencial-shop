@@ -8,8 +8,6 @@ export default async function handler(
 ) {
   const { itemCode, token } = req.body
 
-  console.log(itemCode, token)
-
   const collection = await getCollection('users')
 
   collection.updateOne(
