@@ -19,6 +19,8 @@ export default function Home({ product }: any) {
           <div> { product.Evaluation } / 5 - { product.CountEvaluation } Avaliacoes de Cliente </div>
           <div className={ styles.Price } > R$ { product.Price } </div>
         </div>
+        <div>Quantidades</div>
+        <div>Comprar</div>
       </div>
     </>
   )
