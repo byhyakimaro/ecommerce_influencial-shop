@@ -247,3 +247,31 @@
 .loginForm > div > button:hover {
   cursor: pointer;
 }
+
+.containerProduct {
+  margin: 40px;
+  display: flex;
+  width: 100%;
+}
+
+.containerProduct img {
+  image-rendering: pixelated;
+  max-width: 30rem;
+}
+
+.containerProduct .containerDescription {
+  max-width: 20rem;
+  border-radius: 4px;
+  margin: 3px;
+  border: solid 1px rgb(126, 126, 126);
+  padding: 10px;
+}
+
+.containerProduct .containerDescription .Title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.containerProduct .containerDescription .Price {
+  font-size: 26px;
+}

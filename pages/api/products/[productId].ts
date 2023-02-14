@@ -8,7 +8,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
 
-  const collection = await getCollection('products', 'items')
+  const collection = await getCollection('products')
   const { productId } : any = req.query
 
   const product = await collection.findOne({ _id: new ObjectId( productId )})

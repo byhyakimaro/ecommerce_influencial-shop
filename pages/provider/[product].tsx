@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import styles from '@/styles/Home.module.css'
 import { parseCookies } from 'nookies'
 
 export default function Home({ product }: any) {
@@ -11,7 +12,14 @@ export default function Home({ product }: any) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div> { product.Title } </div>
+      <div className={ styles.containerProduct }>
+        <img src={ product.Image }></img>
+        <div className={ styles.containerDescription }>
+          <div className={ styles.Title } > { product.Title } </div>
+          <div> { product.Evaluation } / 5 - { product.CountEvaluation } Avaliacoes de Cliente </div>
+          <div className={ styles.Price } > R$ { product.Price } </div>
+        </div>
+      </div>
     </>
   )
 }
