@@ -30,7 +30,7 @@ export default function Home() {
           </div>
         </div>
         <div className={ styles.containerProduct }>
-          <h2>Produtos e Frete</h2>
+          <h2>Produto e Frete</h2>
         </div>
       </div>
       <Footer></Footer>
