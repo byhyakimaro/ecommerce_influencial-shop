@@ -29,6 +29,19 @@ Home.getInitialProps = async (ctx: any) => {
   const { 'infshop.token': token } = parseCookies(ctx)
   const { product: productId } = ctx.query
 
+  fetch('http://localhost:3000/api/products/cartproduct',
+  {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({
+        token,
+        itemCode: productId
+      })
+  })
+
   const product = await fetch(`http://localhost:3000/api/products/${productId}`)
 
   if (product.status === 200) {

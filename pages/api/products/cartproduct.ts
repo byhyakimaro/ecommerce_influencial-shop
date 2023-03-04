@@ -11,13 +11,15 @@ export default async function handler(
   const collectionUsers = await getCollection('users')
   const collectionProducts = await getCollection('products')
   
+  console.log(itemCode)
+
   const product = await collectionProducts.findOne({ _id: new ObjectId( itemCode )})
 
   if (product) {
 
     collectionUsers.updateOne(
       { _id: new ObjectId(token) },
-      { $push: { itemsViewed: itemCode } }
+      { $push: { productsInCart: itemCode } }
     )
     res.status(200).json({})
   } else {
