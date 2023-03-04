@@ -34,8 +34,14 @@ export default function Home({ productsInCart }: any) {
         <div className={ styles.containerProduct }>
           <h2>Produto e Frete</h2>
           <div className="break"></div>
-          <div className={ styles.product }>
-            <div> { productsInCart[0].Title } </div>
+          <div className={ styles.products }>
+            {productsInCart.map((product: any) => {
+              return (
+              <>
+                <div> { product.Title } </div>
+              </>
+              )
+            })}
           </div>
         </div>
       </div>

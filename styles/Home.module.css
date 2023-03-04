@@ -389,7 +389,7 @@
   align-items: flex-end;
 }
 
-.containerCart .containerProduct {
+.containerCart .containerProducts {
   width: 60rem;
   display: flex;
   padding: 20px;
