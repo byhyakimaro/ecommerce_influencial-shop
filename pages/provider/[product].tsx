@@ -26,6 +26,7 @@ export default function Home({ product }: any) {
             <div> Vendido e Entregue Por { "Amazon" } | { "Em Estoque" } </div>
             <div className={ styles.Price } > R$ { product.Price } </div>
             <div>À vista no PIX com até 10% OFF</div>
+            <button>Ver mais Opcoes de Pagamento</button>
             <div className={ styles.buyBottom }>Comprar</div>
           </div>
         </div>

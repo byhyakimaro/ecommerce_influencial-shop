@@ -293,9 +293,10 @@
 
 .containerProduct .containerDescription {
   width: 50%;
+  padding: 2rem;
 }
 
-.containerProduct .containerDescription div {
+.containerProduct .containerDescription * {
   margin: 4px;
 }
 
