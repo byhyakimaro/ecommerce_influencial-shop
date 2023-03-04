@@ -1,5 +1,6 @@
 import Footer from '@/contexts/footer'
 import Header from '@/contexts/header'
+import styles from '@/styles/Home.module.css'
 import Head from 'next/head'
 
 export default function Home() {
@@ -12,7 +13,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
-      <div>Cart</div>
+      <div className={ styles.containerCart }>
+        <div className={ styles.adress }>
+          <h2>Selecione o Endereco</h2>
+          <div className={ styles.NameAccount }>Paulo</div>
+          <div className={ styles.adressText }>{ "adress" }</div>
+        </div>
+        <div className={ styles.buttonsEdit }>
+          <button>Novo Endereco</button>
+        </div>
+      </div>
       <Footer></Footer>
     </>
   )

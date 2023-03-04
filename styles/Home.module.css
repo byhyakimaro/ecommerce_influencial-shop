@@ -354,3 +354,25 @@
   padding: 10px;
   margin: 20px;
 }
+
+.containerCart {
+  margin: 3rem;
+  border-radius: 4px;
+  width: 60rem;
+  background: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.containerCart * {
+  margin: 4px;
+}
+
+.containerCart .adress {
+  width: 60%;
+}
+
+.containerCart .buttonsEdit {
+  display: flex;
+  align-items: flex-end;
+}
