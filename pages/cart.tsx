@@ -37,9 +37,9 @@ export default function Home({ productsInCart }: any) {
           <div className={ styles.products }>
             {productsInCart.map((product: any) => {
               return (
-              <>
-                <div> { product.Title } </div>
-              </>
+                <>
+                  <div> { product.Title } </div>
+                </>
               )
             })}
           </div>
