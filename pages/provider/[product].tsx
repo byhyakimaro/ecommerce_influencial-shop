@@ -23,7 +23,7 @@ export default function Home({ product }: any) {
             <img src={ product.Image }></img>
           </div>
           <div className={ styles.containerDescription }>
-            <div> Vendido e Entregue Por { "Amazon" } | { "Em Estoque" } </div>
+            <div> Vendido e Entregue Por<strong>{ "Amazon" }</strong> | { "Em Estoque" } </div>
             <div className={ styles.Price } > R$ { product.Price } </div>
             <div>À vista no PIX com até 10% OFF</div>
             <button>Ver mais Opcoes de Pagamento</button>
