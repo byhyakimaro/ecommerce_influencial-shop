@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { parseCookies } from 'nookies'
+import { GetStaticPaths } from 'next'
+import Header from '@/contexts/header'
 
 export default function Home({ product }: any) {
 
@@ -12,6 +14,7 @@ export default function Home({ product }: any) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header></Header>
       <div className={ styles.containerProduct }>
         <img src={ product.Image }></img>
         <div className={ styles.containerDescription }>
@@ -50,5 +53,14 @@ Home.getInitialProps = async (ctx: any) => {
     return {
       product: await product.json()
     }
+  }
+}
+
+const getStaticPaths: GetStaticPaths = async () => {
+  
+
+  return {
+    paths: [],
+    fallback: false
   }
 }
