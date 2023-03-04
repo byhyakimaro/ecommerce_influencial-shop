@@ -8,12 +8,20 @@ export default async function handler(
 ) {
   const { itemCode, token } = req.body
 
-  const collection = await getCollection('users')
+  const collectionUsers = await getCollection('users')
+  const collectionProducts = await getCollection('products')
+  
+  const product = await collectionUsers.findOne({ _id: new ObjectId( itemCode )})
 
-  collection.updateOne(
-    { _id: new ObjectId(token) },
-    { $push: { itemsViewed: itemCode } }
-  )
+  if (product) {
 
-  res.status(200).json({})
+    collectionProducts.updateOne(
+      { _id: new ObjectId(token) },
+      { $push: { itemsViewed: itemCode } }
+    )
+    res.status(200).json({})
+  } else {
+
+    res.status(404).json("Item Not Found")
+  }
 }
