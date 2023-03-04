@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <>
      <header className={styles.header}>
-        <div className={styles.logotype}></div>
+        <a href=".."><div className={styles.logotype}></div></a>
         <div className={styles.navbar}>
           <input type="text" className={styles.bartext} placeholder={'Pesquisar Fornecedor, item etc...'}></input>
           <div className={styles.searchbar}>
