@@ -9,9 +9,9 @@ export default async function handler(
 ) {
 
   const { token } = req.body
-
+  
   const collection = await getCollection('users')
-
+  
   const dataCollection = await collection.findOne({ _id: new ObjectId(token)})
 
   if (dataCollection) {
