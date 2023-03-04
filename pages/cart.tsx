@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <Header></Header>
       <div className={ styles.containerCart }>
-        <div className={ styles.adress }>
+        <div className={ styles.adress }> 
           <h2>Selecione o Endereco</h2>
           <div className={ styles.NameAccount }>Paulo</div>
           <div className={ styles.adressText }>{ "adress" }</div>
