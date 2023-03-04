@@ -3,6 +3,7 @@ import styles from '@/styles/Home.module.css'
 import { parseCookies } from 'nookies'
 import { GetStaticPaths } from 'next'
 import Header from '@/contexts/header'
+import Footer from '@/contexts/footer'
 
 export default function Home({ product }: any) {
 
@@ -22,6 +23,7 @@ export default function Home({ product }: any) {
         <button>Continuar Comprado</button>
         <button>Ir Para o Carrinho</button>
       </div>
+      <Footer></Footer>
     </>
   )
 }

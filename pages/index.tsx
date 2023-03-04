@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import Header from '@/contexts/header'
 import { parseCookies } from 'nookies'
+import Footer from '@/contexts/footer'
 
 export default function Home({ data, User }:any) {
 
@@ -138,9 +139,7 @@ export default function Home({ data, User }:any) {
           : ''
           }
         </div>
-        <footer>
-          dev knownetworks inc.
-        </footer>
+        <Footer></Footer>
       </div>
     </>
   )
