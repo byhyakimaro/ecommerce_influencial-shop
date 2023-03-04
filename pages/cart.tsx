@@ -2,8 +2,10 @@ import Footer from '@/contexts/footer'
 import Header from '@/contexts/header'
 import styles from '@/styles/Home.module.css'
 import Head from 'next/head'
+import { parseCookies } from 'nookies'
 
-export default function Home() {
+export default function Home({ productsInCart }: any) {
+
   return (
     <>
       <Head>
@@ -31,9 +33,40 @@ export default function Home() {
         </div>
         <div className={ styles.containerProduct }>
           <h2>Produto e Frete</h2>
+          <div className="break"></div>
+          <div className={ styles.product }>
+            <div> { productsInCart[0].Title } </div>
+          </div>
         </div>
       </div>
       <Footer></Footer>
     </>
   )
+}
+
+Home.getInitialProps = async (ctx: any) => {
+
+  const { 'infshop.token': token } = parseCookies(ctx)
+  
+  if (token) {
+    
+    const User = await fetch('http://localhost:3000/api/auth/recovery/token',
+    {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({ token: token })
+    })
+    const { user } = await User.json()
+
+    return {
+      productsInCart: user.productsInCart
+    }
+  } else {
+    return {
+      productsInCart: null
+    }
+  }
 }

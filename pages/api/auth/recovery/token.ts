@@ -25,6 +25,15 @@ export default async function handler(
       return await product.json()
     }))
 
+    const productsInCartFormatted: any[] = dataCollection.productsInCart.filter((item: any, 
+    index: any) => dataCollection.productsInCart.indexOf(item) === index)
+    
+    const productsInCart = await Promise.all(productsInCartFormatted.map(async (productId:any) =>{
+      const product = await fetch(`http://localhost:3000/api/products/${productId}`)
+
+      return await product.json()
+    }))
+
     res.status(200).json({
       token: dataCollection["_id"],
       user: {
@@ -33,7 +42,8 @@ export default async function handler(
         email: dataCollection.email,
         telephone: dataCollection.telephone,
         avatarUrl: dataCollection.avatarUrl,
-        itemsViewed: productsViewed
+        itemsViewed: productsViewed,
+        productsInCart: productsInCart
       }
     })
   } else {
