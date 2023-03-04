@@ -19,7 +19,7 @@ export default async function handler(
 
     collectionUsers.updateOne(
       { _id: new ObjectId(token) },
-      { $push: { productsInCart: itemCode } }
+      { $addToSet: { productsInCart: itemCode } }
     )
     res.status(200).json({})
   } else {

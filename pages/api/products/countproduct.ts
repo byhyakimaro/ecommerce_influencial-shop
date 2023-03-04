@@ -17,7 +17,7 @@ export default async function handler(
 
     collectionUsers.updateOne(
       { _id: new ObjectId(token) },
-      { $push: { itemsViewed: itemCode } }
+      { $addToSet: { itemsViewed: itemCode } }
     )
     res.status(200).json({})
   } else {

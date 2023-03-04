@@ -1,3 +1,4 @@
+import Footer from '@/contexts/footer'
 import Header from '@/contexts/header'
 import Head from 'next/head'
 
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <Header></Header>
       <div>Cart</div>
+      <Footer></Footer>
     </>
   )
 }
