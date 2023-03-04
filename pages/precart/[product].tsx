@@ -24,8 +24,8 @@ export default function Home({ product }: any) {
         <div className={ styles.buttonsInfo }>
           <h3>Produto Adicionado ao Carrinho</h3>
           <div className="break"></div>
-          <a href=".."><button>Continuar Comprando</button></a>
-          <a href="../cart"><button>Ir Para o Carrinho</button></a>
+          <a href="..">Continuar Comprando</a>
+          <a href="../cart">Ir Para o Carrinho</a>
         </div>
       </div>
       <Footer></Footer>

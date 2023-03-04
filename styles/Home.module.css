@@ -343,3 +343,14 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.precart .buttonsInfo h3 {
+  margin-bottom: 10px;
+}
+
+.precart .buttonsInfo a {
+  background: #d6922b;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 20px;
+}
