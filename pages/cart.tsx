@@ -14,15 +14,20 @@ export default function Home() {
       </Head>
       <Header></Header>
       <div className={ styles.containerCart }>
-        <div className={ styles.adress }> 
+        <div className={ styles.containerAdress }>
           <h2>Selecione o Endereco</h2>
-          <div className={ styles.NameAccount }>Paulo</div>
-          <div className={ styles.adressText }>{ "adress" }</div>
-        </div>
-        <div className={ styles.buttonsEdit }>
-          <button>Editar</button>
-          <button>Selecionar Outro</button>
-          <button>Novo Endereco</button>
+          <div className="break"></div>
+          <div className={ styles.adress }> 
+            <div className={ styles.infos }>
+              <div className={ styles.NameAccount }>Paulo</div>
+              <div className={ styles.adressText }>{ "Sem Endereco" }</div>
+            </div>
+            <div className={ styles.buttonsEdit }>
+              <button>Editar</button>
+              <button>Selecionar Outro</button>
+              <button>Novo Endereco</button>
+            </div>
+          </div>
         </div>
       </div>
       <Footer></Footer>

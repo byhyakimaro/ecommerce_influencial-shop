@@ -355,25 +355,36 @@
   margin: 20px;
 }
 
-.containerCart {
-  margin: 3rem;
-  border-radius: 4px;
-  width: 60rem;
+.containerCart > * {
   background: #ffffff;
+  border-radius: 4px;
+  margin: 3rem;
+}
+
+.containerCart .containerAdress {
+  width: 60rem;
   display: flex;
   padding: 20px;
   flex-wrap: wrap;
 }
 
-.containerCart * {
+.containerCart .containerAdress * {
   margin: 4px;
 }
 
-.containerCart .adress {
+.containerCart .containerAdress .adress {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.containerCart .containerAdress .adress .infos {
   width: 60%;
 }
 
-.containerCart .buttonsEdit {
+.containerCart .containerAdress .adress .buttonsEdit {
   display: flex;
   align-items: flex-end;
 }
