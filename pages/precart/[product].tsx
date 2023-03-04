@@ -20,6 +20,7 @@ export default function Home({ product }: any) {
         <div className={ styles.productInfo } >
           <img src={ product.Image }></img>
           <div>{ product.Title }</div>
+          <h2>R${ product.Price }</h2>
         </div>
         <div className={ styles.buttonsInfo }>
           <h3>Produto Adicionado ao Carrinho</h3>
