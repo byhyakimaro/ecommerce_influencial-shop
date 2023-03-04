@@ -28,8 +28,9 @@ export default function Home({ product }: any) {
             <div>À vista no PIX com até 10% OFF</div>
             <button>Ver mais Opcoes de Pagamento</button>
             <div className={ styles.buyBottom }>
-              <button name="buy">Comprar</button>
+              <button name="buy">Compre Agora</button>
             </div>
+            <div>Fabricante: Apple</div>
           </div>
         </div>
       </div>
