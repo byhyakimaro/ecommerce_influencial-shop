@@ -21,7 +21,19 @@ export async function middleware(req: any, res: any, next: any) {
       return NextResponse.redirect(new URL('/', req.url))
     }
   } catch (err) {
-    if (req.nextUrl.pathname.startsWith('/shopping')) {
+    if (req.nextUrl.pathname.startsWith('/cart')) {
+      return NextResponse.rewrite(new URL('/login', req.url))
+    }
+    if (req.nextUrl.pathname.startsWith('/precart')) {
+      return NextResponse.rewrite(new URL('/login', req.url))
+    }
+    if (req.nextUrl.pathname.startsWith('/provider')) {
+      return NextResponse.rewrite(new URL('/login', req.url))
+    }
+    if (req.nextUrl.pathname.startsWith('/categories')) {
+      return NextResponse.rewrite(new URL('/login', req.url))
+    }
+    if (req.nextUrl.pathname.startsWith('/admin')) {
       return NextResponse.rewrite(new URL('/login', req.url))
     }
   }
