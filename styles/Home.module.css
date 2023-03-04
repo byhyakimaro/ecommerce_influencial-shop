@@ -361,6 +361,7 @@
   width: 60rem;
   background: #ffffff;
   display: flex;
+  padding: 20px;
   flex-wrap: wrap;
 }
 

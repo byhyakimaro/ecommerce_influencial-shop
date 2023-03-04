@@ -20,6 +20,8 @@ export default function Home() {
           <div className={ styles.adressText }>{ "adress" }</div>
         </div>
         <div className={ styles.buttonsEdit }>
+          <button>Editar</button>
+          <button>Selecionar Outro</button>
           <button>Novo Endereco</button>
         </div>
       </div>
