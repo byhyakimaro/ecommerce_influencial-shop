@@ -28,6 +28,9 @@ export default function Home({ product }: any) {
           <a href="../cart">Ir Para o Carrinho</a>
         </div>
       </div>
+      <div className={ styles.productsRelated }>
+        <div>Produtos Relacionados</div>
+      </div>
       <Footer></Footer>
     </>
   )
