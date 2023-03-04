@@ -316,3 +316,30 @@
   background: #d6922b;
   cursor: pointer;
 }
+
+.precart {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.precart .productInfo {
+  width: 100%;
+  margin: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.precart .productInfo * {
+  padding: 10px;
+}
+
+.precart .productInfo img{
+  max-width: 10rem;
+}
+
+.precart .buttonsInfo {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

@@ -16,12 +16,17 @@ export default function Home({ product }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
-      <div>
-        <img src={ product.Image }></img>
-        <div>{ product.Title }</div>
-        <div>Produto Adicionado ao Carrinho</div>
-        <a href=".."><button>Continuar Comprando</button></a>
-        <a href="../cart"><button>Ir Para o Carrinho</button></a>
+      <div className={ styles.precart }>
+        <div className={ styles.productInfo } >
+          <img src={ product.Image }></img>
+          <div>{ product.Title }</div>
+        </div>
+        <div className={ styles.buttonsInfo }>
+          <h3>Produto Adicionado ao Carrinho</h3>
+          <div className="break"></div>
+          <a href=".."><button>Continuar Comprando</button></a>
+          <a href="../cart"><button>Ir Para o Carrinho</button></a>
+        </div>
       </div>
       <Footer></Footer>
     </>
