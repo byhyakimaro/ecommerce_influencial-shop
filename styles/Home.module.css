@@ -306,11 +306,12 @@
   color: #181818;
 }
 
-.containerProduct .containerDescription .buyBottom {
+.containerProduct .containerDescription .buyBottom button{
   margin: 1.2rem;
+  text-decoration: none;
   width: max-content;
   border-radius: 4px;
-  padding: 10px 40px;
+  padding: 12px 40px;
   background: #d6922b;
   cursor: pointer;
 }

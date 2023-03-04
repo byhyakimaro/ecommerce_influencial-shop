@@ -27,7 +27,9 @@ export default function Home({ product }: any) {
             <div className={ styles.Price } > R$ { product.Price } </div>
             <div>À vista no PIX com até 10% OFF</div>
             <button>Ver mais Opcoes de Pagamento</button>
-            <div className={ styles.buyBottom }>Comprar</div>
+            <div className={ styles.buyBottom }>
+              <button>Comprar</button>
+            </div>
           </div>
         </div>
       </div>

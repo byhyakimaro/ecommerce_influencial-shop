@@ -101,6 +101,10 @@ li {
 }
 
 button {
+  text-decoration: underline;
+  color: rgb(59, 58, 58);
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
