@@ -16,14 +16,19 @@ export default function Home({ product }: any) {
       </Head>
       <Header></Header>
       <div className={ styles.containerProduct }>
-        <img src={ product.Image }></img>
-        <div className={ styles.containerDescription }>
-          <div className={ styles.Title } > { product.Title } </div>
-          <div> { product.Evaluation } / 5 - { product.CountEvaluation } Avaliacoes de Cliente </div>
-          <div className={ styles.Price } > R$ { product.Price } </div>
+        <h1 className={ styles.Title } > { product.Title } </h1>
+        <div className={styles.containerItem}>
+          <div className={ styles.containerImage }>
+            <div className={ styles.Evaluation }> { product.Evaluation } / 5 - ({ product.CountEvaluation })</div>
+            <img src={ product.Image }></img>
+          </div>
+          <div className={ styles.containerDescription }>
+            <div> Vendido e Entregue Por { "Amazon" } | { "Em Estoque" } </div>
+            <div className={ styles.Price } > R$ { product.Price } </div>
+            <div>À vista no PIX com até 10% OFF</div>
+            <div className={ styles.buyBottom }>Comprar</div>
+          </div>
         </div>
-        <div>Quantidades</div>
-        <div>Comprar</div>
       </div>
     </>
   )

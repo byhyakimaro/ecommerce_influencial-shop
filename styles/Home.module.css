@@ -251,27 +251,59 @@
 .containerProduct {
   margin: 40px;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
 }
 
-.containerProduct img {
-  image-rendering: pixelated;
-  max-width: 30rem;
+.containerProduct .Title {
+  width: 100%;
+  padding: 1rem 1rem 1rem 5rem;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.containerProduct .containerItem {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.containerProduct .containerItem .containerImage {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.containerProduct .containerItem .containerImage .Evaluation {
+  width: 100%;
+  border-left: solid 1px rgb(90, 90, 90);
+  border-right: solid 1px rgb(90, 90, 90);
+  text-align: center;
+  margin: 0 16.2rem 1.5rem 16.2rem;
+}
+
+.containerProduct .containerItem .containerImage img {
+  max-width: 20rem;
+  padding-left: 2rem;
 }
 
 .containerProduct .containerDescription {
-  max-width: 20rem;
-  border-radius: 4px;
-  margin: 3px;
-  border: solid 1px rgb(126, 126, 126);
-  padding: 10px;
-}
-
-.containerProduct .containerDescription .Title {
-  font-weight: bold;
-  font-size: 20px;
+  width: 50%;
 }
 
 .containerProduct .containerDescription .Price {
-  font-size: 26px;
+  width: max-content;
+  font-size: 32px;
+  color: rgb(100, 47, 47);
+}
+
+.containerProduct .containerDescription .buyBottom {
+  margin: 1.2rem;
+  width: max-content;
+  border-radius: 4px;
+  padding: 10px 40px;
+  background: #d6922b;
+  cursor: pointer;
 }
