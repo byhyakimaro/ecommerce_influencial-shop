@@ -16,7 +16,9 @@ export default function Home({ product }: any) {
       </Head>
       <Header></Header>
       <div>
-        <div>Produto Adicionado ao Carrino</div>
+        <img src={ product.Image }></img>
+        <div>{ product.Title }</div>
+        <div>Produto Adicionado ao Carrinho</div>
         <button>Continuar Comprado</button>
         <button>Ir Para o Carrinho</button>
       </div>
