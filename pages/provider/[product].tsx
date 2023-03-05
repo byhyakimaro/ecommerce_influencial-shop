@@ -23,7 +23,7 @@ export default function Home({ product }: any) {
         <div className={styles.containerItem}>
           <div className={ styles.containerImage }>
             <div className={ styles.Evaluation }> { product.Evaluation } / 5 - ({ product.CountEvaluation })</div>
-            <Image src={ product.Image } alt={''} width={200} height={200}></Image>
+            <Image src={ product.Image } alt={''} width={250} height={330}></Image>
           </div>
           <div className={ styles.containerDescription }>
             <div> Vendido e Entregue Por<strong>{ "Amazon" }</strong> | { "Em Estoque" } </div>

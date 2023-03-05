@@ -448,7 +448,33 @@
 .containerTypePayments .typesPayments {
   padding: 1rem;
   display: flex;
+  flex-wrap: wrap;;
 }
-.containerTypePayments .typesPayments > button {
+
+.containerTypePayments .typesPayments .typesTab {
+  width: 100%;
+  padding-bottom: 1em;
+}
+
+.containerTypePayments .typesPayments .typesTab > button {
+  color: #b6bbc2;
+  text-decoration: none;
   margin: 10px;
+}
+
+
+.containerTypePayments .typesPayments .typesTab > button > svg[value="show"] > path {
+  fill: #ffce52;
+}
+
+.containerTypePayments .typesPayments .typesTab > button > svg[value="hidden"] > path {
+  fill: #b6bbc2;
+}
+
+.containerTypePayments .typesPayments .containerTypes {
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  padding-top: .9em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
