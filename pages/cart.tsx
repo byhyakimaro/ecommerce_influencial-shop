@@ -60,8 +60,7 @@ export default function Home({ productsInCart }: any) {
           <h2>Resumo</h2>
           <div className="break"></div>
           <div className={ styles.paymentTab }>
-            <div>Valor dos Produtos</div>
-            <div> R$ { (productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) } </div>
+            <div>Valor dos Produtos R$ { (productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) }</div>
             <div>Frete: { "Gratis" }</div>
           </div>
           <div className="break"></div>
