@@ -8,6 +8,10 @@ import { useEffect, useState } from 'react'
 export default function Home({ productsInCart }: any) {
   const [productsCart, setProducts] = useState(productsInCart)
 
+  useEffect(() => {
+    console.log(productsCart)
+  }, [productsCart])
+
   const { 'infshop.token': token } = parseCookies()
   
   function removeItemCart({ target }: any) {
@@ -23,11 +27,9 @@ export default function Home({ productsInCart }: any) {
           itemCode: target.value
         })
     })
-    target.parentElement.parentElement.parentElement.remove()
-
-    const getProduct = productsCart.find(({ Code }:any) => Code === target.value)
-
-    productsCart.splice(productsCart.indexOf(getProduct))
+    
+    setProducts(productsCart.filter(({ Code }:any) => Code !== target.value))
+    target.parentElement.parentElement.parentElement
   }
   
   return (
@@ -60,7 +62,7 @@ export default function Home({ productsInCart }: any) {
           <div className="break"></div>
           <div className={ styles.paymentTab }>
             <div>Valor dos Produtos</div>
-            <div> R$ { (productsInCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) } </div>
+            <div> R$ { (productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) } </div>
             <div>Frete: </div>
             <div>Frete Gratis</div>
             <a href="../payment">Pagamento</a>
@@ -71,7 +73,7 @@ export default function Home({ productsInCart }: any) {
           <h2>Produto e Frete</h2>
           <div className="break"></div>
           <div className={ styles.products }>
-            {productsInCart.map((product: any) => {
+            {productsCart.map((product: any) => {
               return (
                 <>
                   <div>
