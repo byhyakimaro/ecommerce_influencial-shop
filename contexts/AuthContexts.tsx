@@ -33,7 +33,7 @@ export function AuthProvider({ children } : any) {
     const { 'infshop.token': token } = parseCookies()
 
     if (token) {
-      fetch('http://localhost:3000/api/auth/recovery/token',
+      fetch('/api/auth/recovery/token',
       {
           headers: {
             'Accept': 'application/json',
@@ -51,7 +51,7 @@ export function AuthProvider({ children } : any) {
 
   async function signIn({ email, password }: SignInData) {
 
-    const apiToken: any = await fetch('http://localhost:3000/api/auth/authentic',
+    const apiToken: any = await fetch('/api/auth/authentic',
     {
         headers: {
           'Accept': 'application/json',

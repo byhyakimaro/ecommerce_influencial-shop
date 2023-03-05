@@ -147,18 +147,17 @@ export default function Home({ data, User }:any) {
 
 Home.getInitialProps = async (ctx: any) => {
   
-  const listProducts = await fetch('http://localhost:3000/api/products/listproducts')
+  const listProducts = await fetch(`http://${ctx.req?.headers.host}/api/products/listproducts`)
   const data: any = await listProducts.json()
 
-  const categories = await fetch('http://localhost:3000/api/products/categories')
+  const categories = await fetch(`http://${ctx.req?.headers.host}/api/products/categories`)
   data["categories"] = await categories.json()
 
   const { 'infshop.token': token } = parseCookies(ctx)
 
-  
   if (token) {
     
-    const User = await fetch('http://localhost:3000/api/auth/recovery/token',
+    const User = await fetch(`http://${ctx.req?.headers.host}/api/auth/recovery/token`,
     {
       headers: {
         'Accept': 'application/json',

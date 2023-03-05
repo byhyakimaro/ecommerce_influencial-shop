@@ -20,7 +20,7 @@ export default async function handler(
     index: any) => dataCollection.itemsViewed.indexOf(item) === index)
 
     const productsViewed = await Promise.all(itemsViewedFormatted.map(async (productId:any) =>{
-      const product = await fetch(`http://localhost:3000/api/products/${productId}`)
+      const product = await fetch(`http://${req?.headers.host}/api/products/${productId}`)
 
       return await product.json()
     }))
@@ -29,7 +29,7 @@ export default async function handler(
     index: any) => dataCollection.productsInCart.indexOf(item) === index)
     
     const productsInCart = await Promise.all(productsInCartFormatted.map(async (productId:any) =>{
-      const product = await fetch(`http://localhost:3000/api/products/${productId}`)
+      const product = await fetch(`http://${req?.headers.host}/api/products/${productId}`)
 
       return await product.json()
     }))

@@ -28,7 +28,7 @@ Home.getInitialProps = async (ctx: any) => {
 
   const { category } = ctx.query
 
-  const categoryProducts = await fetch(`http://localhost:3000/api/products/categories/${category}`)
+  const categoryProducts = await fetch(`http://${ctx.req?.headers.host}/api/products/categories/${category}`)
 
   if (categoryProducts.status === 200) {
     return {

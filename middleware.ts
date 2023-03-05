@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server'
 
 export async function middleware(req: any, res: any, next: any) {
-  try {
+  if (req.cookies.get("infshop.token")) {
 
     const { value } = req.cookies.get("infshop.token")
 
-    const apiToken: any = await fetch('http://localhost:3000/api/auth/recovery/token',
+    const apiToken: any = await fetch(`${req.nextUrl.origin}/api/auth/recovery/token`,
     {
         headers: {
           'Accept': 'application/json',
@@ -20,20 +20,20 @@ export async function middleware(req: any, res: any, next: any) {
     if (req.nextUrl.pathname.startsWith('/login')) {
       return NextResponse.redirect(new URL('/', req.url))
     }
-  } catch (err) {
+  } else {
     if (req.nextUrl.pathname.startsWith('/cart')) {
       return NextResponse.rewrite(new URL('/login', req.url))
     }
-    if (req.nextUrl.pathname.startsWith('/precart')) {
+    else if (req.nextUrl.pathname.startsWith('/precart')) {
       return NextResponse.rewrite(new URL('/login', req.url))
     }
-    if (req.nextUrl.pathname.startsWith('/provider')) {
+    else if (req.nextUrl.pathname.startsWith('/provider')) {
       return NextResponse.rewrite(new URL('/login', req.url))
     }
-    if (req.nextUrl.pathname.startsWith('/categories')) {
+    else if (req.nextUrl.pathname.startsWith('/categories')) {
       return NextResponse.rewrite(new URL('/login', req.url))
     }
-    if (req.nextUrl.pathname.startsWith('/admin')) {
+    else if (req.nextUrl.pathname.startsWith('/admin')) {
       return NextResponse.rewrite(new URL('/login', req.url))
     }
   }
@@ -41,5 +41,5 @@ export async function middleware(req: any, res: any, next: any) {
 
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: ['/login', '/shopping'],
+  matcher: ['/login', '/cart', '/precart', '/provider', '/categories', '/admin'],
 }
