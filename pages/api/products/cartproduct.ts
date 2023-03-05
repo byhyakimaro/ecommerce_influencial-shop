@@ -19,7 +19,7 @@ export default async function handler(
       { _id: new ObjectId(token) },
       { $addToSet: { productsInCart: itemCode } }
     )
-    res.status(200).json({})
+    res.status(200).json("Item updated successfully")
   } else {
 
     res.status(404).json("Item Not Found")
