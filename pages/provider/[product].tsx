@@ -29,7 +29,7 @@ export default function Home({ product }: any) {
             <div>À vista no PIX com até 10% OFF</div>
             <button>Ver mais Opcoes de Pagamento</button>
             <div className={ styles.buyBottom }>
-              <a href={ `../precart/${ product.Code }` }>
+              <a href={ `../checkout/${ product.Code }` }>
                 <button name="buy">Compre Agora</button>
               </a>
             </div>
