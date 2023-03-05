@@ -62,8 +62,7 @@ export default function Home({ productsInCart }: any) {
           <div className={ styles.paymentTab }>
             <div>Valor dos Produtos</div>
             <div> R$ { (productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) } </div>
-            <div>Frete: </div>
-            <div>Frete Gratis</div>
+            <div>Frete: { "Gratis" }</div>
             <a href="../payment">Pagamento</a>
             <a href="../">Continuar Comprando</a>
           </div>
@@ -77,8 +76,8 @@ export default function Home({ productsInCart }: any) {
                 <>
                   <div>
                     <img width="64" src={ product.Image }></img>
-                    <div> { product.Title } </div>
-                    <div> Preco a vista no PIX R$ { product.Price } <div><button value={product.Code} onClick={removeItemCart}>Remover</button></div></div>
+                      <a href={ `../provider/${ product.Code }` }> { product.Title } </a>
+                      <div> Preco a vista no PIX R$ { product.Price } <div><button value={product.Code} onClick={removeItemCart}>Remover</button></div></div>
                   </div>
                 </>
               )
@@ -86,7 +85,7 @@ export default function Home({ productsInCart }: any) {
           </div>
           <h4>Opcoes de Envios</h4>
           <div className="break"></div>
-          <div>Entrega Padrao: R$ { "9,16" }</div>
+          <div>Entrega Padrao: { "Gratis" }</div>
         </div>
       </div>
       <Footer></Footer>
