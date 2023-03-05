@@ -410,10 +410,16 @@
   flex-wrap: wrap;
 }
 
+.containerCart .containerProducts .products {
+  width: 100%;
+  margin: 1em;
+  background: rgba(0, 0, 0, 0.05);
+}
+
 .containerCart .containerProducts .products > * {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 3em;
+  padding: 2rem;
 }

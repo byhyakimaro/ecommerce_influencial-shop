@@ -54,6 +54,7 @@ export default function Home({ productsInCart }: any) {
               )
             })}
           </div>
+          <div><input type="checkbox"></input>Frete em seu endereco, R$ { "20" }</div>
         </div>
       </div>
       <Footer></Footer>
