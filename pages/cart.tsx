@@ -3,8 +3,11 @@ import Header from '@/contexts/header'
 import styles from '@/styles/Home.module.css'
 import Head from 'next/head'
 import { parseCookies } from 'nookies'
+import { useEffect, useState } from 'react'
 
 export default function Home({ productsInCart }: any) {
+  const [productsCart, setProducts] = useState(productsInCart)
+
   const { 'infshop.token': token } = parseCookies()
   
   function removeItemCart({ target }: any) {
@@ -21,6 +24,10 @@ export default function Home({ productsInCart }: any) {
         })
     })
     target.parentElement.parentElement.parentElement.remove()
+
+    const getProduct = productsCart.find(({ Code }:any) => Code === target.value)
+
+    productsCart.splice(productsCart.indexOf(getProduct))
   }
   
   return (
