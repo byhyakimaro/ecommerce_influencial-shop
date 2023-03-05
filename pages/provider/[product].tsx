@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { parseCookies } from 'nookies'
 import { GetStaticPaths } from 'next'
+import Image from 'next/image'
 import Header from '@/contexts/header'
 import Footer from '@/contexts/footer'
 import TypePayments from '@/contexts/typePayments'
@@ -22,7 +23,7 @@ export default function Home({ product }: any) {
         <div className={styles.containerItem}>
           <div className={ styles.containerImage }>
             <div className={ styles.Evaluation }> { product.Evaluation } / 5 - ({ product.CountEvaluation })</div>
-            <img src={ product.Image }></img>
+            <Image src={ product.Image } alt={''} width={200} height={200}></Image>
           </div>
           <div className={ styles.containerDescription }>
             <div> Vendido e Entregue Por<strong>{ "Amazon" }</strong> | { "Em Estoque" } </div>

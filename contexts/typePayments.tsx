@@ -8,7 +8,8 @@ export default function TypePayments() {
         <h2>Formas de Pagamento</h2>
         <div className={ styles.typesPayments }>
           <button>Cartao de Credito</button>
-          <IconPix></IconPix><button>PIX</button>
+          <IconPix></IconPix>
+          <button>PIX</button>
           <button>Boleto</button>
         </div>
       </div>
