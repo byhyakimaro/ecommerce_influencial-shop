@@ -9,7 +9,6 @@ export default function Home({ productsInCart }: any) {
   const [productsCart, setProducts] = useState(productsInCart)
 
   useEffect(() => {
-    console.log(productsCart)
   }, [productsCart])
 
   const { 'infshop.token': token } = parseCookies()
