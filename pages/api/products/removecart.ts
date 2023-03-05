@@ -17,9 +17,9 @@ export default async function handler(
 
     collectionUsers.updateOne(
       { _id: new ObjectId(token) },
-      { $addToSet: { productsInCart: itemCode } }
+      { $pull: { productsInCart: itemCode } }
     )
-    res.status(200).json({})
+    res.status(200).json("Item Removed successfully")
   } else {
 
     res.status(404).json("Item Not Found")
