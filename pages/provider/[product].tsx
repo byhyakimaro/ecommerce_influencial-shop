@@ -4,6 +4,7 @@ import { parseCookies } from 'nookies'
 import { GetStaticPaths } from 'next'
 import Header from '@/contexts/header'
 import Footer from '@/contexts/footer'
+import TypePayments from '@/contexts/typePayments'
 
 export default function Home({ product }: any) {
 
@@ -38,6 +39,7 @@ export default function Home({ product }: any) {
         </div>
       </div>
       <Footer></Footer>
+      <TypePayments></TypePayments>
     </>
   )
 }
