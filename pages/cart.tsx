@@ -31,7 +31,13 @@ export default function Home({ productsInCart }: any) {
             </div>
           </div>
         </div>
-        <div className={ styles.containerProduct }>
+        <div className={ styles.containerPayment }>
+          <h2>Resumo</h2>
+          <div className={ styles.paymentDiv }>
+            
+          </div>
+        </div>
+        <div className={ styles.containerProducts }>
           <h2>Produto e Frete</h2>
           <div className="break"></div>
           <div className={ styles.products }>

@@ -355,10 +355,16 @@
   margin: 20px;
 }
 
+.containerCart {
+  margin: 3em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .containerCart > * {
   background: #ffffff;
   border-radius: 4px;
-  margin: 3rem;
+  margin: 1em;
 }
 
 .containerCart .containerAdress {
@@ -374,19 +380,24 @@
 
 .containerCart .containerAdress .adress {
   background: rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  width: 100%;
+  border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  padding: 10px;
 }
 
 .containerCart .containerAdress .adress .infos {
-  width: 60%;
+  flex-grow: 1;
 }
 
 .containerCart .containerAdress .adress .buttonsEdit {
   display: flex;
   align-items: flex-end;
+}
+
+.containerCart .containerPayment {
+  flex-grow: 1;
 }
 
 .containerCart .containerProducts {
