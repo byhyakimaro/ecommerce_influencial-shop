@@ -5,6 +5,24 @@ import Head from 'next/head'
 import { parseCookies } from 'nookies'
 
 export default function Home({ productsInCart }: any) {
+  const { 'infshop.token': token } = parseCookies()
+  
+  function removeItemCart({ target }: any) {
+    fetch(`/api/products/removecart`,
+    {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({
+          token,
+          itemCode: target.value
+        })
+    })
+    target.parentElement.parentElement.parentElement.remove()
+  }
+  
   return (
     <>
       <Head>
@@ -52,7 +70,7 @@ export default function Home({ productsInCart }: any) {
                   <div>
                     <img width="64" src={ product.Image }></img>
                     <div> { product.Title } </div>
-                    <div> Preco a vista no PIX R$ { product.Price } <div><button>Remover</button></div></div>
+                    <div> Preco a vista no PIX R$ { product.Price } <div><button value={product.Code} onClick={removeItemCart}>Remover</button></div></div>
                   </div>
                 </>
               )
