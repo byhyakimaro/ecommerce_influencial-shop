@@ -416,7 +416,7 @@
   background: rgba(0, 0, 0, 0.05);
 }
 
-.containerCart .containerProducts .products > * {
+.containerCart .containerProducts .products > div {
   display: flex;
   align-items: center;
   justify-content: space-between;

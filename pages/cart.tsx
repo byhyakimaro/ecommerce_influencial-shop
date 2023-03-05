@@ -36,6 +36,8 @@ export default function Home({ productsInCart }: any) {
           <div className={ styles.paymentTab }>
             <div>Valor dos Produtos</div>
             <div> R$ { (productsInCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) } </div>
+            <div>Frete: </div>
+            <div>Frete Gratis</div>
           </div>
         </div>
         <div className={ styles.containerProducts }>
@@ -48,13 +50,15 @@ export default function Home({ productsInCart }: any) {
                   <div>
                     <img width="64" src={ product.Image }></img>
                     <div> { product.Title } </div>
-                    <div> Preco a vista no PIX R$ { product.Price } </div>
+                    <div> Preco a vista no PIX R$ { product.Price } <div><button>Remover</button></div></div>
                   </div>
                 </>
               )
             })}
           </div>
-          <div><input type="checkbox"></input>Frete em seu endereco, R$ { "20" }</div>
+          <h4>Opcoes de Envios</h4>
+          <div className="break"></div>
+          <div>Entrega Padrao: R$ { "9,16" }</div>
         </div>
       </div>
       <Footer></Footer>
