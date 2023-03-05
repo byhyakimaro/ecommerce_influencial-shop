@@ -5,6 +5,10 @@ import BarCodeSVG from '@/public/bar-code.svg'
 
 export default function TypePayments() {
   
+  function switchCase(event:any) {
+    event.currentTarget.parentElement.parentElement?.setAttribute("style", "display: none;")
+  }
+
   function changeButton(event:any){
 
     const value = event.currentTarget.value
@@ -12,7 +16,6 @@ export default function TypePayments() {
     event.currentTarget.parentElement.childNodes.forEach((element:any) =>{
       element.firstChild.setAttribute("value", "hidden")
     })
-
     event.currentTarget.firstChild.setAttribute("value", "show")
 
     const ArrayFather: any = document.querySelector(`div[data-type="${value}"]`)?.parentElement?.childNodes
@@ -26,7 +29,7 @@ export default function TypePayments() {
   return (
     <>
       <div className={ styles.containerTypePayments }>
-        <h2>Formas de Pagamento</h2>
+        <h2>Formas de Pagamento <button onClick={switchCase}>X</button></h2>
         <div className={ styles.typesPayments }>
           <div className={ styles.typesTab }>
             <button value="credit" onClick={changeButton}><CreditCardSVG width={24} height={24} value="show"></CreditCardSVG><div>Cartao de Credito</div></button>

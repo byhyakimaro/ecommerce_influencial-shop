@@ -6,8 +6,10 @@ import Image from 'next/image'
 import Header from '@/contexts/header'
 import Footer from '@/contexts/footer'
 import TypePayments from '@/contexts/typePayments'
+import { useState } from 'react'
 
 export default function Home({ product }: any) {
+  const [showComponent, setShowComponent] = useState(false)
 
   return (
     <>
@@ -23,13 +25,13 @@ export default function Home({ product }: any) {
         <div className={styles.containerItem}>
           <div className={ styles.containerImage }>
             <div className={ styles.Evaluation }> { product.Evaluation } / 5 - ({ product.CountEvaluation })</div>
-            <Image src={ product.Image } alt={''} width={250} height={330}></Image>
+            <Image src={ product.Image } alt={''} width={300} height={350}></Image>
           </div>
           <div className={ styles.containerDescription }>
             <div> Vendido e Entregue Por<strong>{ "Amazon" }</strong> | { "Em Estoque" } </div>
             <div className={ styles.Price } > R$ { product.Price } </div>
             <div>À vista no PIX com até 10% OFF</div>
-            <button>Ver mais Opcoes de Pagamento</button>
+            <button onClick={() => setShowComponent(true)}>Ver mais Opcoes de Pagamento</button>
             <div className={ styles.buyBottom }>
               <a href={ `../checkout/${ product.Code }` }>
                 <button name="buy">Compre Agora</button>
@@ -40,7 +42,7 @@ export default function Home({ product }: any) {
         </div>
       </div>
       <Footer></Footer>
-      <TypePayments></TypePayments>
+      {showComponent && <TypePayments ></TypePayments>}
     </>
   )
 }
