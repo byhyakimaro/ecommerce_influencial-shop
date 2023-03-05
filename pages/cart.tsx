@@ -63,9 +63,10 @@ export default function Home({ productsInCart }: any) {
             <div>Valor dos Produtos</div>
             <div> R$ { (productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) } </div>
             <div>Frete: { "Gratis" }</div>
-            <a href="../payment">Pagamento</a>
-            <a href="../">Continuar Comprando</a>
           </div>
+          <div className="break"></div>
+          <a href="../payment">Pagamento</a>
+          <a href="../">Continuar Comprando</a>
         </div>
         <div className={ styles.containerProducts }>
           <h2>Produto e Frete</h2>

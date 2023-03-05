@@ -368,7 +368,7 @@
 }
 
 .containerCart .containerAdress {
-  width: 60rem;
+  flex: 2.5 1;
   display: flex;
   padding: 20px;
   flex-wrap: wrap;
@@ -397,14 +397,24 @@
 }
 
 .containerCart .containerPayment {
+  flex: 1 2;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  flex-grow: 1;
+  justify-content: center; 
+}
+
+.containerCart .containerPayment .paymentTab {
+  margin: 10px;
+}
+
+.containerCart .containerPayment > a {
+  background: orange;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 20px;
 }
 
 .containerCart .containerProducts {
-  width: 60rem;
   display: flex;
   padding: 20px;
   flex-wrap: wrap;
