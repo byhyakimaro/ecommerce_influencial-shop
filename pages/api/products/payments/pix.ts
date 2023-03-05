@@ -5,7 +5,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { amount, productId } = req.body
+  const { amount, productsId } = req.body
 
-  res.status(200).json({amount, productId})
+  res.status(200).json({ amount, productsId })
 }
