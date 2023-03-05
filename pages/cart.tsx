@@ -5,7 +5,6 @@ import Head from 'next/head'
 import { parseCookies } from 'nookies'
 
 export default function Home({ productsInCart }: any) {
-
   return (
     <>
       <Head>
@@ -33,8 +32,10 @@ export default function Home({ productsInCart }: any) {
         </div>
         <div className={ styles.containerPayment }>
           <h2>Resumo</h2>
-          <div className={ styles.paymentDiv }>
-            
+          <div className="break"></div>
+          <div className={ styles.paymentTab }>
+            <div>Valor dos Produtos</div>
+            <div> R$ { (productsInCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) } </div>
           </div>
         </div>
         <div className={ styles.containerProducts }>
@@ -44,7 +45,11 @@ export default function Home({ productsInCart }: any) {
             {productsInCart.map((product: any) => {
               return (
                 <>
-                  <div> { product.Title } </div>
+                  <div>
+                    <img width="64" src={ product.Image }></img>
+                    <div> { product.Title } </div>
+                    <div> Preco a vista no PIX R$ { product.Price } </div>
+                  </div>
                 </>
               )
             })}
