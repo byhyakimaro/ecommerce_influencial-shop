@@ -486,3 +486,38 @@
   display: flex;
   justify-content: center;
 }
+
+.containerPayments {
+  margin: 3rem;
+  border-radius: 4px;
+  padding: 1rem;
+  background: #ffffff;
+}
+
+.containerPayments .payment {
+  display: flex;
+}
+
+.containerPayments .payment .paymentMethods {
+  margin: .4rem;
+  flex: 1 2;
+}
+
+.containerPayments .payment .paymentMethods > button {
+  display: flex;
+  align-items: center;;
+  border-radius: 8px;
+  border: 1px solid black;
+  margin: 1rem;
+  padding: .7rem;
+  width: 20rem;
+  text-decoration: none;
+}
+
+.containerPayments .payment .paymentMethods > button > * {
+  margin: 10px;
+}
+
+.containerPayments .payment .paymentDescription {
+  flex: 2 1;
+}

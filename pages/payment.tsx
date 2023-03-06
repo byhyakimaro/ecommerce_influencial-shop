@@ -3,8 +3,15 @@ import Header from '@/contexts/header'
 import styles from '@/styles/Home.module.css'
 import Head from 'next/head'
 import { parseCookies } from 'nookies'
+import { useState } from 'react'
+
+import PixSVG from '@/public/icon_pix.svg'
+import CreditCardSVG from '@/public/credit-card.svg'
+import BarCodeSVG from '@/public/bar-code.svg'
 
 export default function Home({ productsInCart }: any) {
+  const [method, setMethod] = useState(null)
+  
   return (
     <>
       <Head>
@@ -14,7 +21,19 @@ export default function Home({ productsInCart }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
-      <div>Payment</div>
+      <div className={ styles.containerPayments }>
+        <h2>Como deseja Pagar ?</h2>
+        <div className={ styles.payment }>
+          <div className={ styles.paymentMethods }>
+            <button value="pix"><PixSVG width={24} height={24}></PixSVG>PIX</button>
+            <button value="creditCard"><CreditCardSVG width={24} height={24}></CreditCardSVG>Cartao de Credito</button>
+            <button value="barcode"><BarCodeSVG width={24} height={24}></BarCodeSVG>Boleto</button>
+          </div>
+          <div className={ styles.paymentDescription }>
+            <h2>PIX</h2>
+          </div>
+        </div>
+      </div>
       <Footer></Footer>
     </>
   )
