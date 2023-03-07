@@ -34,7 +34,7 @@ export default function Home({ productsInCart }: any) {
 
   function fireMethod(event:any) {
     console.log(method)
-    fetch(`/api/products/payments/${method}`,
+    fetch(`/api/products/payments/`,
     {
         headers: {
           'Accept': 'application/json',
@@ -42,12 +42,20 @@ export default function Home({ productsInCart }: any) {
         },
         method: "POST",
         body: JSON.stringify({
-          amount: productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)
+          amount: method === "pix" ? ((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)))-((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)) : productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0),
+          description: "Product description",
+          method: method
         })
     })
     .then(response => response.json())
     .then(response => {
-      console.log(response)
+      console.log(response.point_of_interaction.transaction_data)
+
+      var image = new Image()
+      image.setAttribute('width','250px;')
+      image.src = `data:image/png;base64,${response.point_of_interaction.transaction_data.qr_code_base64}`
+      
+      document.getElementById("pixcode")?.appendChild(image)
     })
   }
 
@@ -80,6 +88,7 @@ export default function Home({ productsInCart }: any) {
               <h2>Pagamento Via Pix</h2>
               <h3>R$ { ((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)))-((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)) }</h3>
               <h4>Economize: $ {(productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)}</h4>
+              <div id="pixcode"></div>
             </div>
           </div>
         </div>
