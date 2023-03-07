@@ -9,7 +9,7 @@ import PixSVG from '@/public/icon_pix.svg'
 import CreditCardSVG from '@/public/credit-card.svg'
 import BarCodeSVG from '@/public/bar-code.svg'
 
-export default function Home({ productsInCart }: any) {
+export default function Home({ productsInCart, token }: any) {
   const [productsCart, setProducts] = useState(productsInCart)
   const [method, setMethod] = useState("pix")
   
@@ -33,7 +33,18 @@ export default function Home({ productsInCart }: any) {
   }
 
   function fireMethod(event:any) {
-    console.log(method)
+    fetch('http://localhost:3000/api/products/method', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({
+        token: token,
+        method: method
+      })
+    })
+
     fetch(`/api/products/payments/`,
     {
         headers: {
@@ -134,11 +145,13 @@ Home.getInitialProps = async (ctx: any) => {
     const { user } = await User.json()
 
     return {
-      productsInCart: user.productsInCart
+      productsInCart: user.productsInCart,
+      token: token
     }
   } else {
     return {
-      productsInCart: null
+      productsInCart: null,
+      token: token
     }
   }
 }

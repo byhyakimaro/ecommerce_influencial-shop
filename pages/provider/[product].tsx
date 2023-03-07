@@ -33,7 +33,7 @@ export default function Home({ product }: any) {
             <div>À vista no PIX com até 10% OFF</div>
             <button onClick={() => setShowComponent(true)}>Ver mais Opcoes de Pagamento</button>
             <div className={ styles.buyBottom }>
-              <a href={ `../checkout/${ product.Code }` }>
+              <a href={ `../precart/${ product.Code }` }>
                 <button name="buy">Compre Agora</button>
               </a>
             </div>

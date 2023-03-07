@@ -4,7 +4,6 @@ import * as dotenv from "dotenv"
 
 dotenv.config({ path: __dirname+'/.env' })
 
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
