@@ -49,13 +49,23 @@ export default function Home({ productsInCart }: any) {
     })
     .then(response => response.json())
     .then(response => {
-      console.log(response.point_of_interaction.transaction_data)
+      if( response.payment_method_id === "pix" ) {
+        
+        const image = new Image()
+        image.setAttribute('width','250px;')
+        image.src = `data:image/png;base64,${response.point_of_interaction.transaction_data.qr_code_base64}`
+        
+        document.getElementById("pixcode")?.appendChild(image)
 
-      var image = new Image()
-      image.setAttribute('width','250px;')
-      image.src = `data:image/png;base64,${response.point_of_interaction.transaction_data.qr_code_base64}`
-      
-      document.getElementById("pixcode")?.appendChild(image)
+      } else if( response.payment_method_id === "bolbradesco" ) {
+
+        const a = document.createElement("a")
+        a.href = response.transaction_details.external_resource_url
+        a.innerHTML = "Visualizar Boletos"
+        a.setAttribute('target', '_blank')
+        document.getElementById("barcode")?.appendChild(a)
+      }
+
     })
   }
 
@@ -74,7 +84,7 @@ export default function Home({ productsInCart }: any) {
           <div className={ styles.paymentMethods }>
             <button onClick={changeMethod} value="pix"><PixSVG width={24} height={24}></PixSVG>PIX</button>
             <button onClick={changeMethod} value="creditCard"><CreditCardSVG width={24} height={24}></CreditCardSVG>Cartao de Credito</button>
-            <button onClick={changeMethod} value="barcode"><BarCodeSVG width={24} height={24}></BarCodeSVG>Boleto</button>
+            <button onClick={changeMethod} value="bolbradesco"><BarCodeSVG width={24} height={24}></BarCodeSVG>Boleto</button>
           </div>
           <div className={ styles.paymentDescription } id="nodePayment">
             <div id="pix">
@@ -89,6 +99,12 @@ export default function Home({ productsInCart }: any) {
               <h3>R$ { ((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)))-((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)) }</h3>
               <h4>Economize: $ {(productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)}</h4>
               <div id="pixcode"></div>
+            </div>
+            <div id="bolbradesco">
+              <h2>BOLETO</h2>
+              <h2>Total da sua Compra</h2>
+              <h3>R$ { (productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) }</h3>
+              <div id="barcode"></div>
             </div>
           </div>
         </div>
