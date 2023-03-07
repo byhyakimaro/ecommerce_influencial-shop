@@ -64,7 +64,7 @@ export default function Home({ productsInCart }: any) {
             <div>Frete: { "Gratis" }</div>
           </div>
           <div className="break"></div>
-          <a href="../payment">Pagamento</a>
+          <a href="../method">Pagamento</a>
           <a href="../">Continuar Comprando</a>
         </div>
         <div className={ styles.containerProducts }>
