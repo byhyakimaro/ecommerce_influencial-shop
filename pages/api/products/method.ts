@@ -6,7 +6,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { method, token, products } = req.body
+  const { method, token } = req.body
 
   const collectionUsers = await getCollection('users')
 
