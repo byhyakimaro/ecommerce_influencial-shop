@@ -14,10 +14,10 @@ export default function Home({ token }: any) {
         'Content-Type': 'application/json'
       },
       method: "POST",
-      body: JSON.stringify({ token:token })
+      body: JSON.stringify({ token: token, checkout: "success" })
     })
 
-    window.location.href = '/checkout'
+    window.location.href = '/payment'
   }
 
   return (
