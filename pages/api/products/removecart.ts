@@ -11,13 +11,18 @@ export default async function handler(
   const collectionUsers = await getCollection('users')
   const collectionProducts = await getCollection('products')
 
-  const product = await collectionProducts.findOne({ _id: new ObjectId( itemCode )})
+  const productFind = await collectionProducts.findOne({ _id: new ObjectId(itemCode)})
+  const dataCollection = await collectionUsers.findOne({ _id: new ObjectId(token)})
 
-  if (product) {
+  if (productFind && dataCollection) {
 
     collectionUsers.updateOne(
       { _id: new ObjectId(token) },
-      { $pull: { productsInCart: { products: itemCode } } }
+      { $set: { productsInCart: {
+        methodPayment: dataCollection.productsInCart.methodPayment,
+        products: dataCollection.productsInCart.products.filter((product:any) => product !== itemCode),
+        checkout: dataCollection.productsInCart.checkout
+      } } }
     )
     res.status(200).json("Item Removed successfully")
   } else {

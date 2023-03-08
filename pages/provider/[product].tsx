@@ -65,7 +65,7 @@ Home.getInitialProps = async (ctx: any) => {
       })
   })
 
-  const product = await fetch(`http://localhost:3000/api/products/${productId}`)
+  const product = await fetch(`http://localhost:3000/api/product/${productId}`)
 
   if (product.status === 200) {
     return {
