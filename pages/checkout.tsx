@@ -16,6 +16,7 @@ export default function Home() {
       </Head>
       <Header></Header>
       <h2>checkout</h2>
+      <a href='payment'>Finalizar</a>
       <Footer></Footer>
     </>
   )

@@ -32,8 +32,8 @@ export default function Home({ productsInCart, token }: any) {
     setMethod(event.target.value)
   }
 
-  function fireMethod(event:any) {
-    fetch('http://localhost:3000/api/products/method', {
+  async function fireMethod(event:any) {
+    await fetch('http://localhost:3000/api/products/method', {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -41,43 +41,12 @@ export default function Home({ productsInCart, token }: any) {
       method: "POST",
       body: JSON.stringify({
         token: token,
+        products: productsCart.map((product:any) => { return product.Code }),
         method: method
       })
     })
 
-    fetch(`/api/products/payments/`,
-    {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify({
-          amount: method === "pix" ? ((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)))-((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)) : productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0),
-          description: "Product description",
-          method: method
-        })
-    })
-    .then(response => response.json())
-    .then(response => {
-      if( response.payment_method_id === "pix" ) {
-        
-        const image = new Image()
-        image.setAttribute('width','250px;')
-        image.src = `data:image/png;base64,${response.point_of_interaction.transaction_data.qr_code_base64}`
-        
-        document.getElementById("pixcode")?.appendChild(image)
-
-      } else if( response.payment_method_id === "bolbradesco" ) {
-
-        const a = document.createElement("a")
-        a.href = response.transaction_details.external_resource_url
-        a.innerHTML = "Visualizar Boletos"
-        a.setAttribute('target', '_blank')
-        document.getElementById("barcode")?.appendChild(a)
-      }
-
-    })
+    window.location.href = '/checkout';
   }
 
   return (

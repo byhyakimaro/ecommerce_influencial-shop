@@ -3,8 +3,48 @@ import Header from '@/contexts/header'
 import Footer from '@/contexts/footer'
 
 import styles from '@/styles/Home.module.css'
+import { useState } from 'react'
+import { parseCookies } from 'nookies'
 
-export default function Home() {
+export default function Home({ user, token }: any) {
+  const [productsCart, setProducts] = useState(user.productsInCart)
+  const [method, setMethod] = useState("pix")
+
+  function firePayment(event:any) {
+    fetch(`/api/products/payments/`,
+    {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({
+          amount: method === "pix" ? ((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)))-((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)) : productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0),
+          description: "Product description",
+          method: method
+        })
+    })
+    .then(response => response.json())
+    .then(response => {
+      if( response.payment_method_id === "pix" ) {
+        
+        // const image = new Image()
+        // image.setAttribute('width','250px;')
+        // image.src = `data:image/png;base64,${response.point_of_interaction.transaction_data.qr_code_base64}`
+        
+        // document.getElementById("pixcode")?.appendChild(image)
+
+      } else if( response.payment_method_id === "bolbradesco" ) {
+
+        // const a = document.createElement("a")
+        // a.href = response.transaction_details.external_resource_url
+        // a.innerHTML = "Visualizar Boletos"
+        // a.setAttribute('target', '_blank')
+        // document.getElementById("barcode")?.appendChild(a)
+      }
+
+    })
+  }
 
   return (
     <>
@@ -19,4 +59,31 @@ export default function Home() {
       <Footer></Footer>
     </>
   )
+}
+
+Home.getInitialProps = async (ctx: any) => {
+
+  const { 'infshop.token': token } = parseCookies(ctx)
+  
+  if (token) {
+    
+    const User = await fetch(`http://${ctx.req?.headers.host}/api/auth/recovery/token`,
+    {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({ token: token })
+    })
+    const { user } = await User.json()
+
+    return {
+      user,
+    }
+  } else {
+    return {
+      user: null
+    }
+  }
 }
