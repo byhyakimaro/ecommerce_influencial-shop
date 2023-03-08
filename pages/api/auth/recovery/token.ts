@@ -25,8 +25,8 @@ export default async function handler(
       return await product.json()
     }))
 
-    const productsInCartFormatted: any[] = dataCollection.productsInCart.filter((item: any, 
-    index: any) => dataCollection.productsInCart.indexOf(item) === index)
+    const productsInCartFormatted: any[] = dataCollection.productsInCart.products.filter((item: any, 
+    index: any) => dataCollection.productsInCart.products.indexOf(item) === index)
     
     const productsInCart = await Promise.all(productsInCartFormatted.map(async (productId:any) =>{
       const product = await fetch(`http://${req?.headers.host}/api/products/${productId}`)

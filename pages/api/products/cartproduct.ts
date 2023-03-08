@@ -12,12 +12,25 @@ export default async function handler(
   const collectionProducts = await getCollection('products')
 
   const product = await collectionProducts.findOne({ _id: new ObjectId( itemCode )})
+  const user = await collectionUsers.findOne({ _id: new ObjectId(token) })
 
   if (product) {
 
+    const products = user.productsInCart.products
+    products.push(itemCode)
+
+    const productsFormatted: any[] = products.filter((item: any, 
+      index: any) => products.indexOf(item) === index)
+
     collectionUsers.updateOne(
       { _id: new ObjectId(token) },
-      { $addToSet: { productsInCart: itemCode } }
+      { $set: { productsInCart: {
+        id: Math.floor(Math.random() * 1000000000),
+        methodPayment: "pending",
+        products: productsFormatted,
+        checkout: "pending"
+      } }
+      }
     )
     res.status(200).json("Item updated successfully")
   } else {

@@ -12,7 +12,7 @@ export default async function handler(
 
   collectionUsers.updateOne(
     { _id: new ObjectId(token) },
-    { $push: { itemsRequest: {
+    { $addToSet: { productsInCart: {
         id: Math.floor(Math.random() * 1000000000),
         methodPayment: method,
         products: products,

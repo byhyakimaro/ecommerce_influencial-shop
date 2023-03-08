@@ -114,7 +114,7 @@ Home.getInitialProps = async (ctx: any) => {
     const { user } = await User.json()
 
     return {
-      productsInCart: user.productsInCart,
+      productsInCart: user.productsInCart.products,
       token: token
     }
   } else {
