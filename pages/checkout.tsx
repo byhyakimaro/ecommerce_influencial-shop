@@ -3,8 +3,22 @@ import Header from '@/contexts/header'
 import Footer from '@/contexts/footer'
 
 import styles from '@/styles/Home.module.css'
+import { parseCookies } from 'nookies'
 
-export default function Home() {
+export default function Home({ token }: any) {
+
+  async function fireCheckout(event:any) {
+    await fetch('/api/products/checkout', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({ token:token })
+    })
+
+    window.location.href = '/checkout'
+  }
 
   return (
     <>
@@ -16,8 +30,17 @@ export default function Home() {
       </Head>
       <Header></Header>
       <h2>checkout</h2>
-      <a href='payment'>Finalizar</a>
+      <button onClick={fireCheckout}>Finalizar</button>
       <Footer></Footer>
     </>
   )
+}
+
+Home.getInitialProps = async (ctx: any) => {
+
+  const { 'infshop.token': token } = parseCookies(ctx)
+  
+  return {
+    token: token
+  }
 }

@@ -41,7 +41,6 @@ export default function Home({ productsInCart, token }: any) {
       method: "POST",
       body: JSON.stringify({
         token: token,
-        products: productsCart.map((product:any) => { return product.Code }),
         method: method
       })
     })
