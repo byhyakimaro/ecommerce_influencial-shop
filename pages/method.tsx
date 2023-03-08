@@ -12,7 +12,7 @@ import BarCodeSVG from '@/public/bar-code.svg'
 export default function Home({ productsInCart, token }: any) {
   const [productsCart, setProducts] = useState(productsInCart)
   const [method, setMethod] = useState("pix")
-  
+
   useEffect(() => {
   }, [productsCart])
 
@@ -33,7 +33,7 @@ export default function Home({ productsInCart, token }: any) {
   }
 
   async function fireMethod(event:any) {
-    await fetch('http://localhost:3000/api/products/method', {
+    await fetch('/api/products/method', {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -74,16 +74,16 @@ export default function Home({ productsInCart, token }: any) {
               <br></br>
               <p>Pague com PIX e aproveite até <strong>20% OFF</strong>. Nessa modalidade, seu pedido é aprovado instantaneamente, o que torna a expedição do seu pedido ainda mais rápida.</p>
               <h2>Total da sua Compra</h2>
-              <h3>R$ { (productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) }</h3>
+              <h3>R$ { (productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)) }</h3>
               <h2>Pagamento Via Pix</h2>
-              <h3>R$ { ((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)))-((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)) }</h3>
-              <h4>Economize: $ {(productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)}</h4>
+              <h3>R$ { ((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)))-((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)) }</h3>
+              <h4>Economize: $ {(productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)}</h4>
               <div id="pixcode"></div>
             </div>
             <div id="bolbradesco">
               <h2>BOLETO</h2>
               <h2>Total da sua Compra</h2>
-              <h3>R$ { (productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) }</h3>
+              <h3>R$ { (productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)) }</h3>
               <div id="barcode"></div>
             </div>
           </div>
@@ -102,7 +102,7 @@ Home.getInitialProps = async (ctx: any) => {
   
   if (token) {
     
-    const User = await fetch(`http://${ctx.req?.headers.host}/api/auth/recovery/token`,
+    const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
     {
       headers: {
         'Accept': 'application/json',
@@ -114,7 +114,7 @@ Home.getInitialProps = async (ctx: any) => {
     const { user } = await User.json()
 
     return {
-      productsInCart: user.productsInCart.products,
+      productsInCart: user.productsInCart,
       token: token
     }
   } else {

@@ -52,7 +52,7 @@ Home.getInitialProps = async (ctx: any) => {
   const { 'infshop.token': token } = parseCookies(ctx)
   const { product: productId } = ctx.query
 
-  fetch(`http://${ctx.req?.headers.host}/api/products/countproduct`,
+  fetch(`http://localhost:3000/api/products/countproduct`,
   {
       headers: {
         'Accept': 'application/json',
@@ -65,7 +65,7 @@ Home.getInitialProps = async (ctx: any) => {
       })
   })
 
-  const product = await fetch(`http://${ctx.req?.headers.host}/api/products/${productId}`)
+  const product = await fetch(`http://localhost:3000/api/products/${productId}`)
 
   if (product.status === 200) {
     return {

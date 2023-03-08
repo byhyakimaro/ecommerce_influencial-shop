@@ -25,10 +25,9 @@ export default async function handler(
     collectionUsers.updateOne(
       { _id: new ObjectId(token) },
       { $set: { productsInCart: {
-        id: Math.floor(Math.random() * 1000000000),
-        methodPayment: "pending",
+        methodPayment: user.productsInCart.methodPayment,
         products: productsFormatted,
-        checkout: "pending"
+        checkout: user.productsInCart.checkout
       } }
       }
     )

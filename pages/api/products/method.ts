@@ -10,13 +10,14 @@ export default async function handler(
 
   const collectionUsers = await getCollection('users')
 
+  const dataCollection = await collectionUsers.findOne({ _id: new ObjectId(token)})
+
   collectionUsers.updateOne(
     { _id: new ObjectId(token) },
-    { $addToSet: { productsInCart: {
-        id: Math.floor(Math.random() * 1000000000),
+    { $set: { productsInCart: {
         methodPayment: method,
-        products: products,
-        checkout: "pending"
+        products: dataCollection.productsInCart.products,
+        checkout: dataCollection.productsInCart.checkout
       } }
     }
   )
