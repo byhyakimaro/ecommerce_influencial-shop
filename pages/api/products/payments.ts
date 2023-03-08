@@ -4,13 +4,8 @@ import * as dotenv from "dotenv"
 
 dotenv.config({ path: __dirname+'/.env' })
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const { amount, description, method } = req.body
-
-  fetch('https://api.mercadopago.com/v1/payments',{
+async function getPayment(amount:any, description:any, method:any) {
+  const response = await fetch('https://api.mercadopago.com/v1/payments',{
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -33,8 +28,15 @@ export default async function handler(
       "notification_url": "https://eo4egxx7g9fr7u7.m.pipedream.net"
     })
   })
-  .then(response => response.json())
-  .then(response => {
-    res.status(200).json(response)
-  })
+  
+  return response
+}
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { amount, description, method } = req.body
+
+  res.status(200).json({})
 }
