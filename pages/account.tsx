@@ -24,6 +24,8 @@ export default function Home({ purchased }: any) {
             <li>
               <div>{ purchasedItem.id }</div>
               <div>{ purchasedItem.status }</div>
+              <div>{ purchasedItem.data }</div>
+              <a href={ purchasedItem.url } target="_black">{ purchasedItem.methodPayment }</a>
             </li>
           </>
         )
