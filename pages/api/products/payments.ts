@@ -5,11 +5,6 @@ import { ObjectId } from 'mongodb'
 
 dotenv.config({ path: __dirname+'/.env' })
 
-const methodFilter:any = {
-  pix: 'transaction_data',
-  bolbradesco: 'transaction_details'
-}
-
 function getPayment(amount:any, description:any, method:any) {
   return fetch('https://api.mercadopago.com/v1/payments',{
   headers: {
@@ -51,24 +46,26 @@ export default async function handler(
 
   const cartUser = dataCollection.productsInCart
 
-  if (cartUser.checkout === "success") {
-    const productsInCartFormatted: any[] = dataCollection.productsInCart.products.filter((item: any, 
-      index: any) => dataCollection.productsInCart.products.indexOf(item) === index)
-    
-    const productsInCart = await Promise.all(productsInCartFormatted.map(async (productId:any) =>{
-      const product = await fetch(`http://${req?.headers.host}/api/product/${productId}`)
+  const productsInCartFormatted: any[] = dataCollection.productsInCart.products.filter((item: any, 
+    index: any) => dataCollection.productsInCart.products.indexOf(item) === index)
+  
+  const productsInCart = await Promise.all(productsInCartFormatted.map(async (productId:any) =>{
+    const product = await fetch(`http://${req?.headers.host}/api/product/${productId}`)
 
-      if (product.status === 200) {
-        return await product.json()
-      }
-    }))
+    if (product.status === 200) {
+      return await product.json()
+    }
+  }))
 
-    const productsInCartFormat = productsInCart?.filter(function( element ) { return element !== undefined })
+  const productsInCartFormat = productsInCart?.filter(function( element ) { return element !== undefined })
 
-    const amount = (productsInCartFormat?.reduce((a: any,v: any) =>  a = a + v.Price , 0))
+  const amount = (productsInCartFormat?.reduce((a: any,v: any) =>  a = a + v.Price , 0))
 
-    const payment = await getPayment(amount, "teste", cartUser.methodPayment)
+  const payment = await getPayment(amount, "test", cartUser.methodPayment)
 
-    res.status(200).json(payment[methodFilter[cartUser.methodPayment]])
+  if (cartUser.methodPayment === "pix") {
+    res.status(200).json({url: payment.point_of_interaction.transaction_data.ticket_url})
+  } else if (cartUser.methodPayment === "bolbradesco") {
+    res.status(200).json({url: payment.transaction_details.external_resource_url})
   }
 }

@@ -8,16 +8,21 @@ import { parseCookies } from 'nookies'
 export default function Home({ token }: any) {
 
   async function fireCheckout(event:any) {
-    await fetch('/api/products/checkout', {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: "POST",
-      body: JSON.stringify({ token: token, checkout: "success" })
+    
+    await fetch(`/api/products/payments`,
+    {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({ token: token })
+    })
+    .then(response => response.json())
+    .then(response => {
+      window.location.href = response.url
     })
 
-    window.location.href = '/payment'
   }
 
   return (
