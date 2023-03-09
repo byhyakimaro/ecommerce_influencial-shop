@@ -7,8 +7,6 @@ import { parseCookies } from 'nookies'
 
 export default function Home({ purchased }: any) {
 
-  console.log(purchased)
-
   return (
     <>
       <Head>
@@ -19,6 +17,15 @@ export default function Home({ purchased }: any) {
       </Head>
       <Header></Header>
       <h2>account</h2>
+      <ul>
+      { purchased.map((purchasedItem:any)=>{
+        return (
+          <>
+            <li>{ purchasedItem.id }</li>
+          </>
+        )
+      })}
+      </ul>
       <Footer></Footer>
     </>
   )
