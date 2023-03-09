@@ -73,16 +73,16 @@ export default function Home({ productsInCart, token }: any) {
               <br></br>
               <p>Pague com PIX e aproveite até <strong>20% OFF</strong>. Nessa modalidade, seu pedido é aprovado instantaneamente, o que torna a expedição do seu pedido ainda mais rápida.</p>
               <h2>Total da sua Compra</h2>
-              <h3>R$ { (productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)) }</h3>
+              <h3>R$ { (productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)).toFixed(2) }</h3>
               <h2>Pagamento Via Pix</h2>
-              <h3>R$ { ((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)))-((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)) }</h3>
+              <h3>R$ { (((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)))-((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100))).toFixed(2) }</h3>
               <h4>Economize: $ {(productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)}</h4>
               <div id="pixcode"></div>
             </div>
             <div id="bolbradesco">
               <h2>BOLETO</h2>
               <h2>Total da sua Compra</h2>
-              <h3>R$ { (productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)) }</h3>
+              <h3>R$ { (productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)).toFixed(2) }</h3>
               <div id="barcode"></div>
             </div>
           </div>
