@@ -11,7 +11,7 @@ export default async function handler(
   const collectionUsers = await getCollection('users')
   const dataCollection = await collectionUsers.findOne({ _id: new ObjectId(token)})
 
-  dataCollection.itemsPurchased.map(async (itemPurchased:any) => {
+  const itemPurchasedClean = await Promise.all(dataCollection.itemsPurchased.map(async (itemPurchased:any) => {
 
     const products = await Promise.all(itemPurchased.products.map(async (productId:any) =>{
       const product = await fetch(`http://${req?.headers.host}/api/product/${productId}`)
@@ -29,7 +29,7 @@ export default async function handler(
       methodPayment: itemPurchased.methodPayment,
       products: products
     }
-  })
+  }))
 
-  res.status(200).json(dataCollection.itemsPurchased)
+  res.status(200).json(itemPurchasedClean)
 }

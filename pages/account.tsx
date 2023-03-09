@@ -5,7 +5,9 @@ import Footer from '@/contexts/footer'
 import styles from '@/styles/Home.module.css'
 import { parseCookies } from 'nookies'
 
-export default function Home({ token }: any) {
+export default function Home({ purchased }: any) {
+
+  console.log(purchased)
 
   return (
     <>
@@ -26,7 +28,18 @@ Home.getInitialProps = async (ctx: any) => {
 
   const { 'infshop.token': token } = parseCookies(ctx)
   
+  const purchased = await fetch(`http://localhost:3000/api/products/listpurchased`,
+  {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({ token: token })
+  })
+  const itemsPurchased = await purchased.json()
+
   return {
-    token: token
+    purchased: itemsPurchased
   }
 }
