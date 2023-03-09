@@ -21,7 +21,10 @@ export default function Home({ purchased }: any) {
       { purchased.map((purchasedItem:any)=>{
         return (
           <>
-            <li>{ purchasedItem.id }</li>
+            <li>
+              <div>{ purchasedItem.id }</div>
+              <div>{ purchasedItem.status }</div>
+            </li>
           </>
         )
       })}
