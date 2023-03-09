@@ -74,6 +74,7 @@ export default async function handler(
         { _id: new ObjectId(token) },
         { $addToSet: { itemsPurchased: {
           id: payment.id,
+          status: payment.status,
           url: payment.point_of_interaction.transaction_data.ticket_url,
           methodPayment: dataCollection.productsInCart.methodPayment,
           products: dataCollection.productsInCart.products
@@ -87,6 +88,7 @@ export default async function handler(
         { _id: new ObjectId(token) },
         { $addToSet: { itemsPurchased: {
           id: payment.id,
+          status: payment.status,
           url: payment.transaction_details.external_resource_url,
           methodPayment: dataCollection.productsInCart.methodPayment,
           products: dataCollection.productsInCart.products
