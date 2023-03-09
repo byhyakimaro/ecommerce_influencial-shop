@@ -64,8 +64,10 @@ export default async function handler(
   const payment = await getPayment(amount, "test", cartUser.methodPayment)
 
   if (cartUser.methodPayment === "pix") {
+
     res.status(200).json({url: payment.point_of_interaction.transaction_data.ticket_url})
   } else if (cartUser.methodPayment === "bolbradesco") {
+    
     res.status(200).json({url: payment.transaction_details.external_resource_url})
   }
 }

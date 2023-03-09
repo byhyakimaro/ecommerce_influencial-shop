@@ -35,6 +35,7 @@ export default function Home({ token }: any) {
       </Head>
       <Header></Header>
       <h2>checkout</h2>
+      <a href="../method">Voltar</a>
       <button onClick={fireCheckout}>Finalizar</button>
       <Footer></Footer>
     </>

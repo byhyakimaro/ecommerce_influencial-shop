@@ -17,7 +17,6 @@ export default async function handler(
     { $set: { productsInCart: {
         methodPayment: method,
         products: dataCollection.productsInCart.products,
-        checkout: dataCollection.productsInCart.checkout
       } }
     }
   )

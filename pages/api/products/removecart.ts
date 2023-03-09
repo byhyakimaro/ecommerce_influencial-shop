@@ -20,8 +20,7 @@ export default async function handler(
       { _id: new ObjectId(token) },
       { $set: { productsInCart: {
         methodPayment: dataCollection.productsInCart.methodPayment,
-        products: dataCollection.productsInCart.products.filter((product:any) => product !== itemCode),
-        checkout: dataCollection.productsInCart.checkout
+        products: dataCollection.productsInCart.products.filter((product:any) => product !== itemCode)
       } } }
     )
     res.status(200).json("Item Removed successfully")
