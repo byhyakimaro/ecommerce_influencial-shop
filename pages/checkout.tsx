@@ -32,10 +32,11 @@ export default function Home({ token }: any) {
     .then(response => {
 
       if(validURL(response.url)) {
-        window.location.href = response.url
+        window.open(response.url, '_blank')?.focus()
+
+        window.location.href = '/account'
       }
     })
-
   }
 
   return (
