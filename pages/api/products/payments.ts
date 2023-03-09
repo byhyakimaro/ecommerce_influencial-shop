@@ -75,6 +75,7 @@ export default async function handler(
         { $addToSet: { itemsPurchased: {
           id: payment.id,
           status: payment.status,
+          data: payment.date_created,
           url: payment.point_of_interaction.transaction_data.ticket_url,
           methodPayment: dataCollection.productsInCart.methodPayment,
           products: dataCollection.productsInCart.products
@@ -89,6 +90,7 @@ export default async function handler(
         { $addToSet: { itemsPurchased: {
           id: payment.id,
           status: payment.status,
+          data: payment.date_created,
           url: payment.transaction_details.external_resource_url,
           methodPayment: dataCollection.productsInCart.methodPayment,
           products: dataCollection.productsInCart.products
