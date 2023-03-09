@@ -40,6 +40,10 @@ export default function Home({ productsInCart }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
+      { (productsCart.length === 0) && 
+        <h1>Carrinho Vazio</h1>
+      }
+      { (productsCart.length > 0) && 
       <div className={ styles.containerCart }>
         <div className={ styles.containerAdress }>
           <h2>Selecione o Endereco</h2>
@@ -87,7 +91,7 @@ export default function Home({ productsInCart }: any) {
           <div className="break"></div>
           <div>Entrega Padrao: { "Gratis" }</div>
         </div>
-      </div>
+      </div> }
       <Footer></Footer>
     </>
   )

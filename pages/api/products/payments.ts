@@ -46,28 +46,62 @@ export default async function handler(
 
   const cartUser = dataCollection.productsInCart
 
-  const productsInCartFormatted: any[] = dataCollection.productsInCart.products.filter((item: any, 
-    index: any) => dataCollection.productsInCart.products.indexOf(item) === index)
-  
-  const productsInCart = await Promise.all(productsInCartFormatted.map(async (productId:any) =>{
-    const product = await fetch(`http://${req?.headers.host}/api/product/${productId}`)
+  if (Object.keys(cartUser).length === 0) {
 
-    if (product.status === 200) {
-      return await product.json()
-    }
-  }))
+    res.status(404).json("Cart Empty")
+  } else {
 
-  const productsInCartFormat = productsInCart?.filter(function( element ) { return element !== undefined })
-
-  const amount = (productsInCartFormat?.reduce((a: any,v: any) =>  a = a + v.Price , 0))
-
-  const payment = await getPayment(amount, "test", cartUser.methodPayment)
-
-  if (cartUser.methodPayment === "pix") {
-
-    res.status(200).json({url: payment.point_of_interaction.transaction_data.ticket_url})
-  } else if (cartUser.methodPayment === "bolbradesco") {
+    const productsInCartFormatted: any[] = dataCollection.productsInCart.products.filter((item: any, 
+      index: any) => dataCollection.productsInCart.products.indexOf(item) === index)
     
-    res.status(200).json({url: payment.transaction_details.external_resource_url})
+    const productsInCart = await Promise.all(productsInCartFormatted.map(async (productId:any) =>{
+      const product = await fetch(`http://${req?.headers.host}/api/product/${productId}`)
+
+      if (product.status === 200) {
+        return await product.json()
+      }
+    }))
+
+    const productsInCartFormat = productsInCart?.filter(function( element ) { return element !== undefined })
+
+    const amount = (productsInCartFormat?.reduce((a: any,v: any) =>  a = a + v.Price , 0))
+
+    const payment = await getPayment(amount, "test", cartUser.methodPayment)
+
+    if (cartUser.methodPayment === "pix") {
+
+      collectionUsers.updateOne(
+        { _id: new ObjectId(token) },
+        { $addToSet: { itemsPurchased: {
+          id: payment.id,
+          url: payment.point_of_interaction.transaction_data.ticket_url,
+          methodPayment: dataCollection.productsInCart.methodPayment,
+          products: dataCollection.productsInCart.products
+        } } }
+      )
+
+      res.status(200).json({url: payment.point_of_interaction.transaction_data.ticket_url})
+    } else if (cartUser.methodPayment === "bolbradesco") {
+
+      collectionUsers.updateOne(
+        { _id: new ObjectId(token) },
+        { $addToSet: { itemsPurchased: {
+          id: payment.id,
+          url: payment.transaction_details.external_resource_url,
+          methodPayment: dataCollection.productsInCart.methodPayment,
+          products: dataCollection.productsInCart.products
+        } } }
+      )
+
+      res.status(200).json({url: payment.transaction_details.external_resource_url})
+    }
+
+    collectionUsers.updateOne(
+      { _id: new ObjectId(token) },
+      { $set: { productsInCart: {
+        methodPayment: "pending",
+        products: []
+      } } }
+    )
   }
 }
