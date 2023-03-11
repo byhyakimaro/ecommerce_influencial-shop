@@ -154,10 +154,12 @@
 .itemsWidget > ul {
   margin: 10px 20px;
   display: flex;
-  flex-wrap: wrap;
 }
 
 .itemsRecommended > ul {
+  display: flex;
+  overflow: hidden;
+  max-height: 14.5em;
   transform: translateX(130px);
 }
 
