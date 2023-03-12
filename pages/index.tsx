@@ -8,15 +8,17 @@ export default function Home({ data, User }:any) {
 
   function passarItensDir(event: any) {
     const ul = event.currentTarget.parentElement.querySelector('ul')
-    const value = parseInt(ul.dataset.transform) + (-130)
+    let value = parseInt(ul.dataset.transform) + (-130)
 
-    ul.setAttribute('style',`transform: translateX(${ value}px)`)
+    if(value < -190) value = -190
+
+    ul.setAttribute('style',`transform: translateX(${ value }px)`)
     ul.setAttribute('data-transform', value)
   }
 
   function passarItensEsq(event: any) {
     const ul = event.currentTarget.parentElement.querySelector('ul')
-    const value = parseInt(ul.dataset.transform) + 130
+    let value = parseInt(ul.dataset.transform) + 130
 
     ul.setAttribute('style',`transform: translateX(${ value }px)`)
     ul.setAttribute('data-transform', value)
