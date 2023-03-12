@@ -24,7 +24,7 @@ export default function Home() {
         ></input>
 
         <div>Url Imagem</div>
-        <p>Width Image 330px</p>
+        <p>Width Image 330px sem fundo</p>
         <input
         {...register('Image')}
         ></input>

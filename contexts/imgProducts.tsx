@@ -9,7 +9,7 @@ export const Canvas = (props: any) => {
       
       const canvas: any = canvasRef.current
       const context = canvas.getContext('2d')
-      context.fillStyle = "#ffffff"
+      context.fillStyle = "rgba(159, 159, 159, 0.1)"
       context.fillRect(0, 0, context.canvas.width, context.canvas.height)
      
       image.onload = () => {
