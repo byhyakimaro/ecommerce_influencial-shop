@@ -65,6 +65,7 @@ export default function Home({ productsInCart }: any) {
           <div className="break"></div>
           <div className={ styles.paymentTab }>
             <div>Valor dos Produtos R$ { (productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) }</div>
+            <h5><br></br>À vista no PIX com até 10% OFF</h5>
             <div>Frete: { "Gratis" }</div>
           </div>
           <div className="break"></div>
@@ -81,7 +82,7 @@ export default function Home({ productsInCart }: any) {
                   <div>
                     <img width="64" src={ product.Image }></img>
                       <a href={ `../provider/${ product.Code }` }> { product.Title } </a>
-                      <div> Preco a vista no PIX R$ { product.Price } <div><button value={product.Code} onClick={removeItemCart}>Remover</button></div></div>
+                      <div> Preco a vista no PIX R$ { (product.Price-(product.Price*(8/100))).toFixed(2) } <div><button value={product.Code} onClick={removeItemCart}>Remover</button></div></div>
                   </div>
                 </>
               )
