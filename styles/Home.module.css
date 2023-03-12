@@ -564,3 +564,16 @@
   background: rgba(31, 144, 80, 0.27);
   color: #1f9050;
 }
+
+.buttonsPayments {
+  flex-direction: row-reverse;
+  display: flex;
+}
+
+.buttonsPayments > button {
+  text-decoration: none;
+  background: rgba(255, 206, 82, 1);
+  border-radius: 6px;
+  padding: 1em 3em;
+  margin: 0 2em;
+}

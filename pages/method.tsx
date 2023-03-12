@@ -93,8 +93,10 @@ export default function Home({ productsInCart, token }: any) {
             </div>
           </div>
         </div>
-        <button>Voltar</button>
-        <button onClick={fireMethod}>Pagar com { method.charAt(0).toUpperCase() + method.slice(1) }</button>
+        <div className={styles.buttonsPayments}>
+          <button><a href="../cart">Voltar</a></button>
+          <button onClick={fireMethod}>Pagar com { method.charAt(0).toUpperCase() + method.slice(1) }</button>
+        </div>
       </div>
       <Footer></Footer>
     </>
