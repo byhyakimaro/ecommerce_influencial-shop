@@ -8,9 +8,9 @@ export default function Home({ data, User }:any) {
 
   function passarItensDir(event: any) {
     const ul = event.currentTarget.parentElement.querySelector('ul')
-    let value = parseInt(ul.dataset.transform) + (-130)
+    let value = parseInt(ul.dataset.transform) + 130
 
-    // if (value < 0) value = 0
+    if (value >= 0) value = 0
 
     ul.setAttribute('style',`transform: translateX(${ value }px)`)
     ul.setAttribute('data-transform', value)
@@ -18,9 +18,9 @@ export default function Home({ data, User }:any) {
 
   function passarItensEsq(event: any) {
     const ul = event.currentTarget.parentElement.querySelector('ul')
-    let value = parseInt(ul.dataset.transform) + 130
+    let value = parseInt(ul.dataset.transform) + (-130)
 
-    if (value > 1740) value = 1740
+    if (value <= -1180) value = -1180
 
     ul.setAttribute('style',`transform: translateX(${ value }px)`)
     ul.setAttribute('data-transform', value)
@@ -81,7 +81,7 @@ export default function Home({ data, User }:any) {
           <div className={[styles.recommended, styles.widget].join(" ")}>
             <div className={[styles.titleRecommended, styles.titleWidget].join(" ")}>RECOMENDADO PARA VOCE</div>
             <div className={[styles.itemsRecommended, styles.itemsWidget].join(" ")}>
-              <svg className={styles.esq} width="50" height="50" onClick={passarItensDir}>
+              <svg className={styles.esq} width="50" height="50" onClick={passarItensEsq}>
                 <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
                 <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
               </svg>
@@ -99,7 +99,7 @@ export default function Home({ data, User }:any) {
                   )
                 })}
               </ul>
-              <svg className={styles.dir} width="50" height="50" onClick={passarItensEsq}>
+              <svg className={styles.dir} width="50" height="50" onClick={passarItensDir}>
                 <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
                 <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
               </svg>
