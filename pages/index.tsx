@@ -10,7 +10,7 @@ export default function Home({ data, User }:any) {
     const ul = event.currentTarget.parentElement.querySelector('ul')
     let value = parseInt(ul.dataset.transform) + (-130)
 
-    if(value < -190) value = -190
+    if(value < -380) value = -380
 
     ul.setAttribute('style',`transform: translateX(${ value }px)`)
     ul.setAttribute('data-transform', value)
