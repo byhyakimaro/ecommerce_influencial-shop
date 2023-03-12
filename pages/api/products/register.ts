@@ -19,7 +19,7 @@ export default async function handler(
     urlProvider
   } = req.body
 
-  const profitOnPrice = 56
+  const profitOnPrice = 53
   const priceSell = parseFloat(Price)*(profitOnPrice/100)+parseFloat(Price)
 
   const Item = {
