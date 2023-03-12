@@ -44,7 +44,7 @@ export default async function handler(
         email: dataCollection.email,
         telephone: dataCollection.telephone,
         avatarUrl: dataCollection.avatarUrl,
-        itemsViewed: productsViewed,
+        itemsViewed: productsViewed.filter(function( element ) { return element !== undefined }),
         productsInCart: productsInCart.filter(function( element ) { return element !== undefined })
       }
     })

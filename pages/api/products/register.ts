@@ -29,7 +29,7 @@ export default async function handler(
     "CountEvaluation": 0,
     "quantitySold": 0,
     "productStock": productStock,
-    "Price": priceSell,
+    "Price": parseFloat(priceSell.toFixed(2)),
     "Evaluation": 0,
     "dateProduct": new Date(),
     "loginCreateItem": loginCreateItem,
