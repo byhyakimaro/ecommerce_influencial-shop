@@ -9,13 +9,19 @@ export const Canvas = (props: any) => {
       
       const canvas: any = canvasRef.current
       const context = canvas.getContext('2d')
-      context.fillStyle = "#000000"
+      context.fillStyle = "#ffffff"
       context.fillRect(0, 0, context.canvas.width, context.canvas.height)
      
       image.onload = () => {
-          context.drawImage(image, 0, 0)
+        context.drawImage(
+          image, 
+          canvas.width / 2 - image.width / 3,
+          canvas.height / 2 - image.height / 3,
+          image.width / 1.5,
+          image.height / 1.5
+        )
       }
   }, [])
 
-  return <canvas ref={canvasRef} {...props} width={288} height={480} />
+  return <canvas ref={canvasRef} {...props} width={620} height={420} />
 }
