@@ -33,8 +33,15 @@ export default function Home({ purchased }: any) {
                   : <a href="#">{ (purchasedItem.methodPayment).toUpperCase() }</a>
                   }
                 </div>
-                <div>Detalhes do pedido</div>
+                <button>Detalhes do pedido</button>
               </div>
+              {purchasedItem.products.map((product:any)=>{
+                return (
+                  <>
+                    <div>{product?.Title}</div>
+                  </>
+                )
+              })}
             </li>
           </>
         )
