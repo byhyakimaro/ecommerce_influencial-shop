@@ -22,7 +22,7 @@ export default function Home({ purchased }: any) {
         return (
           <>
             <li>
-              <div>Numero do pedido: { purchasedItem.id }</div>
+              <div>Numero do pedido: #{ purchasedItem.id }</div>
               <div>Status: { purchasedItem.status }</div>
               <div>{ purchasedItem.data }</div>
               {purchasedItem.status === "pending" ? 
