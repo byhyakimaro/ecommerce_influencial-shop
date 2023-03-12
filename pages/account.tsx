@@ -55,6 +55,7 @@ export default function Home({ purchased }: any) {
                       </>
                     )
                   })}
+                  <h4>Total Pedido: {((purchasedItem.products.reduce((a: any,v: any) =>  a = a + v.Price , 0))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
                 </div>
               </div>
             </li>
