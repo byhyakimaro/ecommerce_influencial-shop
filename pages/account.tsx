@@ -34,9 +34,17 @@ export default function Home({ purchased }: any) {
                     : <a href="#">{ (purchasedItem.methodPayment).toUpperCase() }</a>
                     }
                   </div>
-                  <button>Detalhes do pedido</button>
+                  <button onClick={((event:any)=>{
+                    const description = event.currentTarget.parentElement.parentElement.querySelector('#descriptionPurchased')
+                    
+                    if(description.style.display === 'none') {
+                      description?.setAttribute('style','display: block;')
+                    } else {
+                      description?.setAttribute('style','display: none;')
+                    }
+                    })}>Detalhes do pedido</button>
                 </div>
-                <div className={styles.descriptionPurchased}>
+                <div id="descriptionPurchased" className={styles.descriptionPurchased}>
                   <h4>PRODUTO(S)<br></br><br></br></h4>
                   {purchasedItem.products.map((product:any)=>{
                     return (
