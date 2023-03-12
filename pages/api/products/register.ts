@@ -22,7 +22,7 @@ export default async function handler(
   const profitOnPrice = 56
   const priceSell = parseFloat(Price)*(profitOnPrice/100)+parseFloat(Price)
 
-  collection.insertOne({
+  const Item = {
     "_id": new ObjectId(),
     "Title": Title,
     "Image": Image,
@@ -36,9 +36,12 @@ export default async function handler(
     "category": category,
     "active" : active,
     "urlProvider" : urlProvider
-  })
+  }
+
+  collection.insertOne(Item)
 
   res.status(200).json({
-    status: 'itemCreate'
+    status: 'itemCreate',
+    item: Item
   })
 }
