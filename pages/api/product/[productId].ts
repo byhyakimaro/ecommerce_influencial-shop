@@ -17,6 +17,7 @@ export default async function handler(
     res.status(200).json({
       Title: product.Title,
       Code: productId,
+      Category: product.category,
       Image: product.Image,
       Evaluation: product.Evaluation,
       CountEvaluation: product.CountEvaluation,

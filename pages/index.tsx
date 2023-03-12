@@ -37,33 +37,26 @@ export default function Home({ data, User }:any) {
       <Header></Header>
       <div className={styles.banner}>
         <div className={styles.content}>
-          <div className={[styles.keepShopping, styles.widgetVertical].join(" ")}>
+          { User?.user?.itemsViewed.length > 0 ?
+            <div className={[styles.keepShopping, styles.widgetVertical].join(" ")}>
             <div className={[styles.titleKeepShopping, styles.titleWidgetVertical].join(" ")}>CONTINUE COMPRANDO</div>
             <div className={[styles.itemsKeepShopping, styles.itemsWidgetVertical].join(" ")}>
               <ul>
-                <li>
-                  <a>
-                    <img src='https://ae01.alicdn.com/kf/H1c37dff49df149999104a78c4d4d58e9O/Venda-quente-luz-t-nis-de-corrida-homem-t-nis-casuais-homens-moda-antiderrapante-sapatos-esportivos.jpg_Q90.jpg_.webp' ></img>
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <img src='https://ae01.alicdn.com/kf/H1c37dff49df149999104a78c4d4d58e9O/Venda-quente-luz-t-nis-de-corrida-homem-t-nis-casuais-homens-moda-antiderrapante-sapatos-esportivos.jpg_Q90.jpg_.webp' ></img>
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <img src='https://ae01.alicdn.com/kf/H1c37dff49df149999104a78c4d4d58e9O/Venda-quente-luz-t-nis-de-corrida-homem-t-nis-casuais-homens-moda-antiderrapante-sapatos-esportivos.jpg_Q90.jpg_.webp' ></img>
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <img src='https://ae01.alicdn.com/kf/H1c37dff49df149999104a78c4d4d58e9O/Venda-quente-luz-t-nis-de-corrida-homem-t-nis-casuais-homens-moda-antiderrapante-sapatos-esportivos.jpg_Q90.jpg_.webp' ></img>
-                  </a>
-                </li>
+                {User.user.itemsViewed.slice(0, 4).map((itemViewed : any, index: any) => {
+                  return (
+                    <li key={index}>
+                      <a href={`categories/${itemViewed.Category}`}>
+                        <img src={itemViewed.Image} ></img>
+                        <h5>{itemViewed.Category}</h5>
+                      </a>
+                    </li>
+                  )
+                })}
               </ul>
             </div>
           </div>
+          :''
+          }
           <div className={styles.bannerNews}></div>
           <div className={styles.categories}>
             <div className={styles.titlecategories}>CATEGORIAS</div>
