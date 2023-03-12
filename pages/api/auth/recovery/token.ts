@@ -22,7 +22,9 @@ export default async function handler(
     const productsViewed = await Promise.all(itemsViewedFormatted.map(async (productId:any) =>{
       const product = await fetch(`http://${req?.headers.host}/api/product/${productId}`)
       
-      return await product.json()
+      if (product.status === 200) {
+        return await product.json()
+      }
     }))
     
     const productsInCartFormatted: any[] = dataCollection.productsInCart.products.filter((item: any, 
