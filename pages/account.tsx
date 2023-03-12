@@ -63,11 +63,12 @@ export default function Home({ user, purchased }: any) {
                         <>
                           <img src={ product.Image }></img>
                           <div>{product?.Title}</div>
-                          <div>Total: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
+                          <div>Preco: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
                         </>
                       )
                     })}
                   </div>
+                  <h4>Desconto : -{((purchasedItem.products?.reduce((a: any,v: any) =>  a = a + v.Price , 0))-purchasedItem?.totalOrder).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
                   <h4>Total do Pedido: {(purchasedItem.totalOrder).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
                 </div>
               </div>
