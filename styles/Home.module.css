@@ -158,17 +158,27 @@
 
 .itemsRecommended {
   width: 100%;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
 }
 
-.itemsRecommended > svg {
+.itemsRecommended .esq {
   z-index: 1;
+  position: absolute;
+  left: 0;
+}
+
+.itemsRecommended .dir {
+  z-index: 1;
+  position: absolute;
+  right: 0;
 }
 
 .itemsRecommended > ul {
+  padding: 0 20px;
   z-index: 0;
   display: flex;
   max-height: 14.5em;
