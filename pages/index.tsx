@@ -108,7 +108,11 @@ export default function Home({ data, User }:any) {
           <div className={[styles.bestSell, styles.widget].join(" ")}>
             <div className={[styles.titleBestSell, styles.titleWidget].join(" ")}>MELHORES VENDIDOS</div>
             <div className={[styles.itemsBestSell, styles.itemsWidget].join(" ")}>
-              <ul>
+              <svg className={styles.esq} width="50" height="50" onClick={passarItensEsq}>
+                <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
+                <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
+              </svg>
+              <ul data-transform={0}>
                 {data.bestSell.map((bestsell: any, index: any) => {
                   return (
                     <li key={index}>
@@ -122,12 +126,20 @@ export default function Home({ data, User }:any) {
                   )
                 })}
               </ul>
+              <svg className={styles.dir} width="50" height="50" onClick={passarItensDir}>
+                <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
+                <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
+              </svg>
             </div>
           </div>
           <div className={[styles.discoveryDay, styles.widget].join(" ")}>
           <div className={[styles.titleDiscoveryDay, styles.titleWidget].join(" ")}>DESCOBERTAS DO DIA</div>
             <div className={[styles.itemsDiscoveryDay, styles.itemsWidget].join(" ")}>
-              <ul>
+              <svg className={styles.esq} width="50" height="50" onClick={passarItensEsq}>
+                <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
+                <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
+              </svg>
+              <ul data-transform={0}>
                 {data.recentProducts.map((recent : any, index: any) => {
                   return (
                     <li key={index}>
@@ -141,6 +153,10 @@ export default function Home({ data, User }:any) {
                   )
                 })}
               </ul>
+              <svg className={styles.dir} width="50" height="50" onClick={passarItensDir}>
+                <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
+                <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
+              </svg>
             </div>
           </div>
           {
@@ -148,7 +164,11 @@ export default function Home({ data, User }:any) {
             <div className={[styles.historyView, styles.widget].join(" ")}>
               <div className={[styles.titleHistoryView, styles.titleWidget].join(" ")}>HISTORICO DE NAVEGACAO</div>
               <div className={[styles.itemsHistoryView, styles.itemsWidget].join(" ")}>
-                <ul>
+                <svg className={styles.esq} width="50" height="50" onClick={passarItensEsq}>
+                  <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
+                  <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
+                </svg>
+                <ul data-transform={0}>
                 {User.user.itemsViewed.map((itemViewed : any, index: any) => {
                   return (
                     <li key={index}>
@@ -162,6 +182,10 @@ export default function Home({ data, User }:any) {
                   )
                 })}
                 </ul>
+                <svg className={styles.dir} width="50" height="50" onClick={passarItensDir}>
+                  <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
+                  <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
+                </svg>
               </div>
             </div>
           : ''

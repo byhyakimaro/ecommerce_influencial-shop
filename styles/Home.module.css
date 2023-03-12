@@ -156,7 +156,7 @@
   display: flex;
 }
 
-.itemsRecommended {
+.itemsWidget {
   width: 100%;
   position: relative;
   display: flex;
@@ -165,20 +165,25 @@
   overflow: hidden;
 }
 
-.itemsRecommended .esq {
+.itemsWidget .esq {
   z-index: 1;
   position: absolute;
   left: 0;
 }
 
-.itemsRecommended .dir {
+.itemsWidget .dir {
   z-index: 1;
   position: absolute;
   right: 0;
 }
 
-.itemsRecommended > ul {
+.itemsWidget > svg:hover {
+  cursor: pointer;
+}
+
+.itemsWidget > ul {
   padding: 0 20px;
+  transition: .1s;
   z-index: 0;
   display: flex;
   max-height: 14.5em;
