@@ -15,13 +15,13 @@ export const Canvas = (props: any) => {
       image.onload = () => {
         context.drawImage(
           image, 
-          canvas.width / 2 - image.width / 3,
-          canvas.height / 2 - image.height / 3,
-          image.width / 1.5,
-          image.height / 1.5
+          canvas.width / 2 - image.width / 2.5,
+          canvas.height / 2 - image.height / 2.5,
+          image.width / 1.2,
+          image.height / 1.2
         )
       }
   }, [])
 
-  return <canvas ref={canvasRef} {...props} width={620} height={420} />
+  return <canvas ref={canvasRef} {...props} width={520} height={420} />
 }
