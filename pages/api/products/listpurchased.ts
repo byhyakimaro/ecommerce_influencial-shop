@@ -1,5 +1,6 @@
 import { getCollection } from '@/modules/connectDb'
 import { ObjectId } from 'mongodb'
+import * as dotenv from "dotenv"
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function handler(
@@ -21,9 +22,21 @@ export default async function handler(
       }
     }))
 
+    const orderPurchased = await fetch(`https://api.mercadopago.com/v1/payments/${itemPurchased.id}`,{
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + process.env.TOKEN_PDC_MERCADO_PAGO
+      },
+      method: "GET"
+    })
+    const orderPurchasedAsync = await orderPurchased.json()
+
+    console.log(orderPurchasedAsync)
+
     return {
       id: itemPurchased.id,
-      status: itemPurchased.status,
+      status: orderPurchasedAsync.status_detail,
       data: itemPurchased.data,
       url: itemPurchased.url,
       methodPayment: itemPurchased.methodPayment,
