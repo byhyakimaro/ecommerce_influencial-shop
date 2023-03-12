@@ -14,7 +14,7 @@ export default function Home({ user, productsInCart }: any) {
   const TotalPrice = ((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
   const address = JSON.parse(user.savedAddresses[0])
-  const addressFormatted = `${user.name} ${address.road} ${address.number} ${address.complement} ${address.neighborhood} ${address.city} ${address.state} ${address.zipCode}`
+  const addressFormatted = `${address.road} ${address.number} ${address.complement} ${address.neighborhood} ${address.city} ${address.state} ${address.zipCode}`
 
   const { 'infshop.token': token } = parseCookies()
   
@@ -55,7 +55,7 @@ export default function Home({ user, productsInCart }: any) {
           <div className="break"></div>
           <div className={ styles.adress }> 
             <div className={ styles.infos }>
-              <div className={ styles.NameAccount }>Paulo</div>
+              <div className={ styles.NameAccount }> {user.name} </div>
               <div className={ styles.adressText }>{ addressFormatted }</div>
             </div>
             <div className={ styles.buttonsEdit }>
