@@ -35,13 +35,16 @@ export default function Home({ purchased }: any) {
                 </div>
                 <button>Detalhes do pedido</button>
               </div>
-              {purchasedItem.products.map((product:any)=>{
-                return (
-                  <>
-                    <div>{product?.Title}</div>
-                  </>
-                )
-              })}
+              <div>
+                <h4>PRODUTO(S)<br></br><br></br></h4>
+                {purchasedItem.products.map((product:any)=>{
+                  return (
+                    <>
+                      <div>{product?.Title}</div>
+                    </>
+                  )
+                })}
+              </div>
             </li>
           </>
         )
