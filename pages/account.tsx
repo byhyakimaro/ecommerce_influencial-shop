@@ -48,20 +48,25 @@ export default function Home({ user, purchased }: any) {
                     })}>Detalhes do pedido</button>
                 </div>
                 <div id="descriptionPurchased" className={styles.descriptionPurchased}>
-                  <h4>ENDERECO<br></br><br></br></h4>
                   <div>
+                    <h4>ENDERECO<br></br></h4>
                     <div>{addressFormatted}</div>
                   </div>
-                  <h4>PRODUTO(S)<br></br><br></br></h4>
-                  {purchasedItem.products.map((product:any)=>{
-                    return (
-                      <>
-                        <img src={ product.Image }></img>
-                        <div>{product?.Title}</div>
-                        <div>Total: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
-                      </>
-                    )
-                  })}
+                  <div>
+                    <h4>STATUS DO PEDIDO</h4>
+                  </div>
+                  <div>
+                    <h4>PRODUTO(S)<br></br><br></br></h4>
+                    {purchasedItem.products.map((product:any)=>{
+                      return (
+                        <>
+                          <img src={ product.Image }></img>
+                          <div>{product?.Title}</div>
+                          <div>Total: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
+                        </>
+                      )
+                    })}
+                  </div>
                   <h4>Total Pedido: {((purchasedItem.products.reduce((a: any,v: any) =>  a = a + v.Price , 0))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
                 </div>
               </div>
