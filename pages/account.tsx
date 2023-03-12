@@ -54,6 +54,7 @@ export default function Home({ user, purchased }: any) {
                   </div>
                   <div>
                     <h4>STATUS DO PEDIDO</h4>
+                    <div>{ "Aguardando Pagamento" }</div>
                   </div>
                   <div>
                     <h4>PRODUTO(S)<br></br><br></br></h4>
@@ -67,7 +68,7 @@ export default function Home({ user, purchased }: any) {
                       )
                     })}
                   </div>
-                  <h4>Total Pedido: {((purchasedItem.products.reduce((a: any,v: any) =>  a = a + v.Price , 0))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
+                  <h4>Total do Pedido: {((purchasedItem.products.reduce((a: any,v: any) =>  a = a + v.Price , 0))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
                 </div>
               </div>
             </li>
