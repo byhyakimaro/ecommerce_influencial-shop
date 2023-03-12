@@ -44,6 +44,7 @@ export default async function handler(
         name: dataCollection.name,
         login: dataCollection.login,
         email: dataCollection.email,
+        savedAddresses: dataCollection.savedAddresses,
         telephone: dataCollection.telephone,
         avatarUrl: dataCollection.avatarUrl,
         itemsViewed: productsViewed.filter(function( element ) { return element !== undefined }),
