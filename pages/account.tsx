@@ -49,6 +49,7 @@ export default function Home({ purchased }: any) {
                   {purchasedItem.products.map((product:any)=>{
                     return (
                       <>
+                        <img src={ product.Image }></img>
                         <div>{product?.Title}</div>
                       </>
                     )
