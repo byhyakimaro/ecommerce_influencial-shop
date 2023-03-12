@@ -577,3 +577,15 @@
   padding: 1em 3em;
   margin: 0 2em;
 }
+
+.paymentsPurchased {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  margin: 1rem;
+}
+
+.paymentsPurchased > div {
+  padding: 1rem;
+}

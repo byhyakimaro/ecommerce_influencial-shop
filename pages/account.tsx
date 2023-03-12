@@ -22,13 +22,16 @@ export default function Home({ purchased }: any) {
         return (
           <>
             <li>
-              <div>Numero do pedido: #{ purchasedItem.id }</div>
-              <div>Status: { purchasedItem.status }</div>
-              <div>{ purchasedItem.data }</div>
-              {purchasedItem.status === "pending" ? 
-                <a href={ purchasedItem.url } target="_black">{ purchasedItem.methodPayment }</a>
-              : <a href="#">{ purchasedItem.methodPayment }</a>
-              }
+              <div className={styles.paymentsPurchased}>
+                <div>Numero do pedido: <br></br><br></br>#{ purchasedItem.id }</div>
+                <div>Status: <br></br><br></br>{ purchasedItem.status }</div>
+                <div>{ new Date(purchasedItem.data).toLocaleDateString() }</div>
+                {purchasedItem.status === "pending" ?
+                  <a href={ purchasedItem.url } target="_black">Pagamento<br></br><br></br> { purchasedItem.methodPayment }</a>
+                : <a href="#">Pagamento<br></br><br></br> { purchasedItem.methodPayment }</a>
+                }
+                <div>Detalhes do pedido</div>
+              </div>
             </li>
           </>
         )
