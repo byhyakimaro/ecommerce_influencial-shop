@@ -19,6 +19,9 @@ export default async function handler(
     urlProvider
   } = req.body
 
+  const profitOnPrice = 56
+  const priceSell = parseFloat(Price)*(profitOnPrice/100)+parseFloat(Price)
+
   collection.insertOne({
     "_id": new ObjectId(),
     "Title": Title,
@@ -26,7 +29,7 @@ export default async function handler(
     "CountEvaluation": 0,
     "quantitySold": 0,
     "productStock": productStock,
-    "Price": Price,
+    "Price": priceSell,
     "Evaluation": 0,
     "dateProduct": new Date(),
     "loginCreateItem": loginCreateItem,

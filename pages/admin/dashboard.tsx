@@ -7,7 +7,6 @@ export default function Home() {
   async function handleRegister(data: any) {
     
     console.log(data)
-
   }
 
   return (
@@ -19,42 +18,37 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <form onSubmit={handleSubmit(handleRegister)}>
-        <div>Title</div>
+        <div>Title do Item</div>
         <input
-        {...register('Title')} 
+        {...register('Title')}
         ></input>
 
-        <div>Image</div>
+        <div>Url Imagem</div>
         <input
-        {...register('Image')} 
+        {...register('Image')}
         ></input>
 
-        <div>productStock</div>
+        <div>quantidade em estoque</div>
         <input
         {...register('productStock')} 
         ></input>
 
-        <div>Price</div>
+        <div>Preco no anuncio base</div>
         <input 
         {...register('Price')}
         ></input>
 
-        <div>loginCreateItem</div>
-        <input
-        {...register('loginCreateItem')} 
-        ></input>
-
-        <div>category</div>
+        <div>Categoria do Item</div>
         <input
         {...register('category')} 
         ></input>
 
-        <div>active</div>
+        <div>Estara Ativo</div>
         <input
         {...register('active')} 
         ></input>
         
-        <div>urlProvider</div>
+        <div>Url do Anuncio</div>
         <input
         {...register('urlProvider')} 
         ></input>
