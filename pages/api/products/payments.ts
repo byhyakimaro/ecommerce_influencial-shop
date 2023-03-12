@@ -75,6 +75,7 @@ export default async function handler(
           id: payment.id,
           status: payment.status,
           data: payment.date_created,
+          totalOrder: parseFloat((amount-(amount*(8/100))).toFixed(2)),
           url: payment.point_of_interaction.transaction_data.ticket_url,
           methodPayment: dataCollection.productsInCart.methodPayment,
           products: dataCollection.productsInCart.products
@@ -92,6 +93,7 @@ export default async function handler(
           id: payment.id,
           status: payment.status,
           data: payment.date_created,
+          totalOrder: amount,
           url: payment.transaction_details.external_resource_url,
           methodPayment: dataCollection.productsInCart.methodPayment,
           products: dataCollection.productsInCart.products
