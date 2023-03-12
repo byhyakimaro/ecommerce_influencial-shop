@@ -19,7 +19,7 @@ export default async function handler(
     const itemsViewedFormatted: any[] = dataCollection.itemsViewed.filter((item: any, 
     index: any) => dataCollection.itemsViewed.indexOf(item) === index)
     
-    const productsViewed = await Promise.all(itemsViewedFormatted.map(async (productId:any) =>{
+    const productsViewed = await Promise.all(itemsViewedFormatted.slice(0, 20).map(async (productId:any) =>{
       const product = await fetch(`http://${req?.headers.host}/api/product/${productId}`)
       
       return await product.json()
@@ -28,7 +28,7 @@ export default async function handler(
     const productsInCartFormatted: any[] = dataCollection.productsInCart.products.filter((item: any, 
       index: any) => dataCollection.productsInCart.products.indexOf(item) === index)
     
-    const productsInCart = await Promise.all(productsInCartFormatted.map(async (productId:any) =>{
+    const productsInCart = await Promise.all(productsInCartFormatted.slice(0, 20).map(async (productId:any) =>{
       const product = await fetch(`http://${req?.headers.host}/api/product/${productId}`)
 
       if (product.status === 200) {
