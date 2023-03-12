@@ -7,6 +7,7 @@ import Header from '@/contexts/header'
 import Footer from '@/contexts/footer'
 import TypePayments from '@/contexts/typePayments'
 import { useState } from 'react'
+import { Canvas } from '@/contexts/imgProducts'
 
 export default function Home({ product }: any) {
   const [showComponent, setShowComponent] = useState(false)
@@ -25,7 +26,8 @@ export default function Home({ product }: any) {
         <div className={styles.containerItem}>
           <div className={ styles.containerImage }>
             <div className={ styles.Evaluation }> { product.Evaluation } / 5 - ({ product.CountEvaluation })</div>
-            <Image src={ product.Image } alt={''} width={300} height={350}></Image>
+            {/* <Image src={ product.Image } alt={''} width={300} height={350}></Image> */}
+            <Canvas url={ product.Image }></Canvas>
           </div>
           <div className={ styles.containerDescription }>
             <div> Vendido e Entregue Por<strong>{ "Amazon" }</strong> | { "Em Estoque" } </div>
