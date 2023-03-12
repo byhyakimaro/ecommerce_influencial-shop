@@ -51,6 +51,7 @@ export default function Home({ purchased }: any) {
                       <>
                         <img src={ product.Image }></img>
                         <div>{product?.Title}</div>
+                        <div>{((purchasedItem.products.reduce((a: any,v: any) =>  a = a + v.Price , 0))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
                       </>
                     )
                   })}
