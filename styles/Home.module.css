@@ -599,6 +599,20 @@
   text-decoration: underline;
 }
 
-.tabPurchased .descriptionPurchased > div{
+.tabPurchased .descriptionPurchased > div {
   margin: 1rem;
+}
+
+.tabPurchased .descriptionPurchased .listProducts .listDescription {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tabPurchased .descriptionPurchased .listProducts .listDescription > * {
+  margin: 1em;
+}
+
+.tabPurchased .descriptionPurchased .listProducts .listDescription > img {
+  width: 64px;
 }

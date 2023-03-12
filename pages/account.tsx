@@ -56,17 +56,19 @@ export default function Home({ user, purchased }: any) {
                     <h4>STATUS DO PEDIDO</h4>
                     <div>{ "Aguardando Pagamento" }</div>
                   </div>
-                  <div>
-                    <h4>PRODUTO(S)<br></br><br></br></h4>
-                    {purchasedItem.products.map((product:any)=>{
-                      return (
-                        <>
-                          <img src={ product.Image }></img>
-                          <div>{product?.Title}</div>
-                          <div>Preco: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
-                        </>
-                      )
-                    })}
+                  <div className={styles.listProducts}>
+                    <h4>PRODUTO(S)</h4>
+                    <div className={styles.listDescription}>
+                      {purchasedItem.products.map((product:any)=>{
+                        return (
+                          <>
+                            <img src={ product.Image }></img>
+                            <div>{product?.Title}</div>
+                            <div>Preco: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
+                          </>
+                        )
+                      })}
+                    </div>
                   </div>
                   <h4>Desconto : -{((purchasedItem.products?.reduce((a: any,v: any) =>  a = a + v.Price , 0))-purchasedItem?.totalOrder).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
                   <h4>Total do Pedido: {(purchasedItem.totalOrder).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
