@@ -76,7 +76,7 @@ export default function Home({ productsInCart, token }: any) {
               <h3>R$ { (productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)).toFixed(2) }</h3>
               <h2>Pagamento Via Pix</h2>
               <h3>R$ { (((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)))-((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100))).toFixed(2) }</h3>
-              <h4>Economize: $ {(productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)}</h4>
+              <h4>Economize: $ {((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)).toFixed(2)}</h4>
               <div id="pixcode"></div>
             </div>
             <div id="bolbradesco">
