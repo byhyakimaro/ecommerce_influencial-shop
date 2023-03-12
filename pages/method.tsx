@@ -28,7 +28,7 @@ export default function Home({ productsInCart, token }: any) {
     event.currentTarget.parentElement.childNodes.forEach((element:any) =>{
       element.setAttribute('style','background: #ffffff;')
     })
-    event.target.setAttribute('style','background: red;')
+    event.target.setAttribute('style','background: rgba(40, 42, 54, 0.4);')
     setMethod(event.target.value)
   }
 
@@ -61,7 +61,7 @@ export default function Home({ productsInCart, token }: any) {
         <h2>Como deseja Pagar ?</h2>
         <div className={ styles.payment }>
           <div className={ styles.paymentMethods }>
-            <button onClick={changeMethod} value="pix"><PixSVG width={24} height={24}></PixSVG>PIX</button>
+            <button style={{background: "rgba(40, 42, 54, 0.4);"}}onClick={changeMethod} value="pix"><PixSVG width={24} height={24}></PixSVG>PIX</button>
             <button onClick={changeMethod} value="creditCard"><CreditCardSVG width={24} height={24}></CreditCardSVG>Cartao de Credito</button>
             <button onClick={changeMethod} value="bolbradesco"><BarCodeSVG width={24} height={24}></BarCodeSVG>Boleto</button>
           </div>
