@@ -10,7 +10,7 @@ export default function Home({ data, User }:any) {
     const ul = event.currentTarget.parentElement.querySelector('ul')
     let value = parseInt(ul.dataset.transform) + (-130)
 
-    if(value < 0) value = 0
+    // if (value < 0) value = 0
 
     ul.setAttribute('style',`transform: translateX(${ value }px)`)
     ul.setAttribute('data-transform', value)
@@ -19,6 +19,8 @@ export default function Home({ data, User }:any) {
   function passarItensEsq(event: any) {
     const ul = event.currentTarget.parentElement.querySelector('ul')
     let value = parseInt(ul.dataset.transform) + 130
+
+    if (value > 1740) value = 1740
 
     ul.setAttribute('style',`transform: translateX(${ value }px)`)
     ul.setAttribute('data-transform', value)
