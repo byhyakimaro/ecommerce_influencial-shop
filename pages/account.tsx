@@ -62,8 +62,8 @@ export default function Home({ user, purchased }: any) {
                       {purchasedItem.products.map((product:any)=>{
                         return (
                           <>
-                            <a><img src={ product.Image }></img></a>
-                            <a><div>{product?.Title}</div></a>
+                            <img src={ product.Image }></img>
+                            <div>{product?.Title}</div>
                             <div>Preco: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
                           </>
                         )
