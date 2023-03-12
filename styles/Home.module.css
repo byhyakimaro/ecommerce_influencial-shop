@@ -549,3 +549,18 @@
 .containerPayments .payment .paymentDescription {
   flex: 2 1;
 }
+
+.containerPayments .payment .paymentMethodDisc {
+  display: flex;
+}
+
+.containerPayments .payment .paymentMethodDisc > div {
+  padding: 1em;
+  margin: 1em;
+  border-radius: 8px;
+}
+
+.containerPayments .payment .paymentMethodDisc .discountMethod {
+  background: rgba(31, 144, 80, 0.27);
+  color: #1f9050;
+}
