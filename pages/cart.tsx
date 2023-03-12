@@ -82,7 +82,7 @@ export default function Home({ productsInCart }: any) {
               return (
                 <>
                   <div>
-                    <img width="64" src={ product.Image }></img>
+                  <a href={ `../provider/${ product.Code }` }><img width="64" src={ product.Image }></img></a>
                       <a href={ `../provider/${ product.Code }` }> { product.Title } </a>
                       <h5><br></br>{(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h5>
                       <div> Preco a vista no PIX <h4>{ (product.Price-(product.Price*(8/100))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }</h4> <div><button value={product.Code} onClick={removeItemCart}>Remover</button></div></div>
