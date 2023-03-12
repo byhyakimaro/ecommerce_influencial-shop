@@ -156,9 +156,21 @@
   display: flex;
 }
 
-.itemsRecommended > ul {
+.itemsRecommended {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   overflow: hidden;
+}
+
+.itemsRecommended > svg {
+  z-index: 1;
+}
+
+.itemsRecommended > ul {
+  z-index: 0;
+  display: flex;
   max-height: 14.5em;
   transform: translateX(130px);
 }
@@ -166,7 +178,6 @@
 .itemsWidget > ul > li {
   margin: 0 10px;
   max-width: 130px;
-  overflow: hidden;
 }
 
 .itemsWidget > ul > li > a > img {

@@ -6,6 +6,22 @@ import Footer from '@/contexts/footer'
 
 export default function Home({ data, User }:any) {
 
+  function passarItensDir(event: any) {
+    const ul = event.currentTarget.parentElement.querySelector('ul')
+    const value = parseInt(ul.dataset.transform) + (-130)
+
+    ul.setAttribute('style',`transform: translateX(${ value}px)`)
+    ul.setAttribute('data-transform', value)
+  }
+
+  function passarItensEsq(event: any) {
+    const ul = event.currentTarget.parentElement.querySelector('ul')
+    const value = parseInt(ul.dataset.transform) + 130
+
+    ul.setAttribute('style',`transform: translateX(${ value }px)`)
+    ul.setAttribute('data-transform', value)
+  }
+
   return (
     <>
       <Head>
@@ -61,7 +77,11 @@ export default function Home({ data, User }:any) {
           <div className={[styles.recommended, styles.widget].join(" ")}>
             <div className={[styles.titleRecommended, styles.titleWidget].join(" ")}>RECOMENDADO PARA VOCE</div>
             <div className={[styles.itemsRecommended, styles.itemsWidget].join(" ")}>
-              <ul>
+              <svg width="50" height="50" onClick={passarItensDir}>
+                <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
+                <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
+              </svg>
+              <ul data-transform={0}>
                 {data.recommended.map((recomended: any, index: any) => {
                   return (
                     <li key={index}>
@@ -75,6 +95,10 @@ export default function Home({ data, User }:any) {
                   )
                 })}
               </ul>
+              <svg width="50" height="50" onClick={passarItensEsq}>
+                <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
+                <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
+              </svg>
             </div>
           </div>
           <div className={[styles.bestSell, styles.widget].join(" ")}>
