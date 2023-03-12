@@ -16,8 +16,8 @@ export default function Home({ purchased }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
-      <h2>account</h2>
       <ul>
+      <h3>Meus Pedidos</h3>
       { purchased.map((purchasedItem:any)=>{
         return (
           <>
