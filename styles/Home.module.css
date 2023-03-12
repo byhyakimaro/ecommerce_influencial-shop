@@ -589,3 +589,8 @@
 .paymentsPurchased > div {
   padding: 1rem;
 }
+
+.paymentsPurchased .methodPayment {
+  color: rgba(184, 133, 6, 1);
+  text-decoration: underline;
+}

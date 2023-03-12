@@ -26,10 +26,13 @@ export default function Home({ purchased }: any) {
                 <div>Numero do pedido: <br></br><br></br>#{ purchasedItem.id }</div>
                 <div>Status: <br></br><br></br>{ purchasedItem.status }</div>
                 <div>{ new Date(purchasedItem.data).toLocaleDateString() }</div>
-                {purchasedItem.status === "pending" ?
-                  <a href={ purchasedItem.url } target="_black">Pagamento<br></br><br></br> { (purchasedItem.methodPayment).toUpperCase() }</a>
-                : <a href="#">Pagamento<br></br><br></br> { (purchasedItem.methodPayment).toUpperCase() }</a>
-                }
+                <div>
+                  <p>Pagamento<br></br><br></br></p>
+                  {purchasedItem.status === "pending" ?
+                    <a className={styles.methodPayment} href={ purchasedItem.url } target="_black">{ (purchasedItem.methodPayment).toUpperCase() }</a>
+                  : <a href="#">{ (purchasedItem.methodPayment).toUpperCase() }</a>
+                  }
+                </div>
                 <div>Detalhes do pedido</div>
               </div>
             </li>
