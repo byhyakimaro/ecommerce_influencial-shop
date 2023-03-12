@@ -25,7 +25,10 @@ export default function Home({ purchased }: any) {
               <div>Numero do pedido: { purchasedItem.id }</div>
               <div>Status: { purchasedItem.status }</div>
               <div>{ purchasedItem.data }</div>
-              <a href={ purchasedItem.url } target="_black">{ purchasedItem.methodPayment }</a>
+              {purchasedItem.status === "pending" ? 
+                <a href={ purchasedItem.url } target="_black">{ purchasedItem.methodPayment }</a>
+              : <a href="#">{ purchasedItem.methodPayment }</a>
+              }
             </li>
           </>
         )
