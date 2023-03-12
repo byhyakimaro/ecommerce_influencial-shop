@@ -603,6 +603,13 @@
   margin: 1rem;
 }
 
+.tabPurchased .descriptionPurchased > p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  padding:  0 1em 1em 1em;
+}
+
 .tabPurchased .descriptionPurchased .listProducts .listDescription {
   display: flex;
   flex-wrap: wrap;
