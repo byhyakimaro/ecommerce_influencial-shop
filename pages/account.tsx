@@ -5,7 +5,10 @@ import Footer from '@/contexts/footer'
 import styles from '@/styles/Home.module.css'
 import { parseCookies } from 'nookies'
 
-export default function Home({ purchased }: any) {
+export default function Home({ user, purchased }: any) {
+
+  const address = JSON.parse(user?.savedAddresses[0])
+  const addressFormatted = `${address.road} ${address.number} ${address.complement} ${address.neighborhood} ${address.city} ${address.state} ${address.zipCode}`
 
   return (
     <>
@@ -45,6 +48,10 @@ export default function Home({ purchased }: any) {
                     })}>Detalhes do pedido</button>
                 </div>
                 <div id="descriptionPurchased" className={styles.descriptionPurchased}>
+                  <h4>ENDERECO<br></br><br></br></h4>
+                  <div>
+                    <div>{addressFormatted}</div>
+                  </div>
                   <h4>PRODUTO(S)<br></br><br></br></h4>
                   {purchasedItem.products.map((product:any)=>{
                     return (
@@ -83,7 +90,19 @@ Home.getInitialProps = async (ctx: any) => {
   })
   const itemsPurchased = await purchased.json()
 
+  const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
+  {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: "POST",
+    body: JSON.stringify({ token: token })
+  })
+  const { user } = await User.json()
+
   return {
+    user: user,
     purchased: itemsPurchased
   }
 }
