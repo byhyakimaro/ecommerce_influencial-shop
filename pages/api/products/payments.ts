@@ -65,10 +65,9 @@ export default async function handler(
     const productsInCartFormat = productsInCart?.filter(function( element ) { return element !== undefined })
 
     const amount = (productsInCartFormat?.reduce((a: any,v: any) =>  a = a + v.Price , 0))
-
-    const payment = await getPayment(amount, "test", cartUser.methodPayment)
-
+    
     if (cartUser.methodPayment === "pix") {
+      const payment = await getPayment(parseFloat((amount-(amount*(8/100))).toFixed(2)), "test", cartUser.methodPayment)
 
       collectionUsers.updateOne(
         { _id: new ObjectId(token) },
@@ -84,6 +83,8 @@ export default async function handler(
 
       res.status(200).json({url: payment.point_of_interaction.transaction_data.ticket_url})
     } else if (cartUser.methodPayment === "bolbradesco") {
+
+      const payment = await getPayment(amount, "test", cartUser.methodPayment)
 
       collectionUsers.updateOne(
         { _id: new ObjectId(token) },

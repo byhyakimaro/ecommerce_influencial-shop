@@ -47,7 +47,7 @@ export default function Home({ user, purchased }: any) {
                     }
                     })}>Detalhes do pedido</button>
                 </div>
-                <div id="descriptionPurchased" className={styles.descriptionPurchased}>
+                <div style={{display:"none;"}} id="descriptionPurchased" className={styles.descriptionPurchased}>
                   <div>
                     <h4>ENDERECO<br></br></h4>
                     <div>{addressFormatted}</div>
