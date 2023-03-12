@@ -11,6 +11,8 @@ export default function Home({ productsInCart }: any) {
   useEffect(() => {
   }, [productsCart])
 
+  const TotalPrice = ((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+
   const { 'infshop.token': token } = parseCookies()
   
   function removeItemCart({ target }: any) {
@@ -64,7 +66,7 @@ export default function Home({ productsInCart }: any) {
           <h2>Resumo</h2>
           <div className="break"></div>
           <div className={ styles.paymentTab }>
-            <div>Valor dos Produtos R$ { (productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0)) }</div>
+            <div>Valor dos Produtos <h3>{ TotalPrice }</h3></div>
             <h5><br></br>À vista no PIX com até 10% OFF</h5>
             <div>Frete: { "Gratis" }</div>
           </div>
@@ -82,7 +84,8 @@ export default function Home({ productsInCart }: any) {
                   <div>
                     <img width="64" src={ product.Image }></img>
                       <a href={ `../provider/${ product.Code }` }> { product.Title } </a>
-                      <div> Preco a vista no PIX R$ { (product.Price-(product.Price*(8/100))).toFixed(2) } <div><button value={product.Code} onClick={removeItemCart}>Remover</button></div></div>
+                      <h5><br></br>{(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h5>
+                      <div> Preco a vista no PIX <h4>{ (product.Price-(product.Price*(8/100))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }</h4> <div><button value={product.Code} onClick={removeItemCart}>Remover</button></div></div>
                   </div>
                 </>
               )
