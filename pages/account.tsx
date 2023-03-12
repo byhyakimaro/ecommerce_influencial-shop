@@ -22,28 +22,30 @@ export default function Home({ purchased }: any) {
         return (
           <>
             <li>
-              <div className={styles.paymentsPurchased}>
-                <div>Numero do pedido: <br></br><br></br>#{ purchasedItem.id }</div>
-                <div>Status: <br></br><br></br>{ purchasedItem.status }</div>
-                <div>{ new Date(purchasedItem.data).toLocaleDateString() }</div>
-                <div>
-                  <p>Pagamento<br></br><br></br></p>
-                  {purchasedItem.status === "pending" ?
-                    <a className={styles.methodPayment} href={ purchasedItem.url } target="_black">{ (purchasedItem.methodPayment).toUpperCase() }</a>
-                  : <a href="#">{ (purchasedItem.methodPayment).toUpperCase() }</a>
-                  }
+              <div className={styles.tabPurchased}>
+                <div className={styles.paymentsPurchased}>
+                  <div>Numero do pedido: <br></br><br></br>#{ purchasedItem.id }</div>
+                  <div>Status: <br></br><br></br>{ purchasedItem.status }</div>
+                  <div>{ new Date(purchasedItem.data).toLocaleDateString() }</div>
+                  <div>
+                    <p>Pagamento<br></br><br></br></p>
+                    {purchasedItem.status === "pending" ?
+                      <a className={styles.methodPayment} href={ purchasedItem.url } target="_black">{ (purchasedItem.methodPayment).toUpperCase() }</a>
+                    : <a href="#">{ (purchasedItem.methodPayment).toUpperCase() }</a>
+                    }
+                  </div>
+                  <button>Detalhes do pedido</button>
                 </div>
-                <button>Detalhes do pedido</button>
-              </div>
-              <div>
-                <h4>PRODUTO(S)<br></br><br></br></h4>
-                {purchasedItem.products.map((product:any)=>{
-                  return (
-                    <>
-                      <div>{product?.Title}</div>
-                    </>
-                  )
-                })}
+                <div className={styles.descriptionPurchased}>
+                  <h4>PRODUTO(S)<br></br><br></br></h4>
+                  {purchasedItem.products.map((product:any)=>{
+                    return (
+                      <>
+                        <div>{product?.Title}</div>
+                      </>
+                    )
+                  })}
+                </div>
               </div>
             </li>
           </>

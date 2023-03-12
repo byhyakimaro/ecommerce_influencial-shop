@@ -578,20 +578,23 @@
   margin: 0 2em;
 }
 
-.paymentsPurchased {
-  display: flex;
+.tabPurchased {
   background: rgba(255, 255, 255, 0.4);
-  justify-content: space-around;
   border-radius: 4px;
-  align-items: center;
   margin: 1rem;
 }
 
-.paymentsPurchased > div {
+.tabPurchased .paymentsPurchased {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tabPurchased .paymentsPurchased > div {
   padding: 1rem;
 }
 
-.paymentsPurchased .methodPayment {
+.tabPurchased .paymentsPurchased .methodPayment {
   color: rgba(184, 133, 6, 1);
   text-decoration: underline;
 }
