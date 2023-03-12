@@ -437,7 +437,7 @@
 }
 
 .containerCart .containerPayment > a {
-  background: orange;
+  background: rgba(255, 206, 82, 1);
   padding: 10px;
   border-radius: 4px;
   margin: 15px;
