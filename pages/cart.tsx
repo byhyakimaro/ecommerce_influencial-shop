@@ -14,7 +14,6 @@ export default function Home({ user, productsInCart }: any) {
   const TotalPrice = ((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
   const address = JSON.parse(user.savedAddresses[0])
-  console.log(address)
   const addressFormatted = `${user.name} ${address.road} ${address.number} ${address.complement} ${address.neighborhood} ${address.city} ${address.state} ${address.zipCode}`
 
   const { 'infshop.token': token } = parseCookies()
