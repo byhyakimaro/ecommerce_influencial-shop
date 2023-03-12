@@ -32,8 +32,6 @@ export default async function handler(
     })
     const orderPurchasedAsync = await orderPurchased.json()
 
-    console.log(orderPurchasedAsync)
-
     return {
       id: itemPurchased.id,
       status: orderPurchasedAsync.status,
