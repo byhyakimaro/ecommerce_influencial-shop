@@ -8,13 +8,15 @@ export default async function handler(
   const collection = await getCollection('products')
   const products = await collection.find().toArray()
 
+  const MaxItemsReturned = 20
+
   products.sort((a: any, b: any) => b.dateProduct.getTime() - a.dateProduct.getTime())
   const productRecentFormat = products.filter((product :any) =>{
     if (!product.active) {
       return false
     }
     return true
-  }).map((product: any) => {
+  }).slice(0, MaxItemsReturned).map((product: any) => {
     return {
       Title: product.Title,
       Code: product["_id"].toString(),
@@ -31,7 +33,7 @@ export default async function handler(
       return false
     }
     return true
-  }).map((product: any) => {
+  }).slice(0, MaxItemsReturned).map((product: any) => {
     return {
       Title: product.Title,
       Code: product["_id"].toString(),
@@ -48,7 +50,7 @@ export default async function handler(
       return false
     }
     return true
-  }).map((product: any) => {
+  }).slice(0, MaxItemsReturned).map((product: any) => {
     return {
       Title: product.Title,
       Code: product["_id"].toString(),
