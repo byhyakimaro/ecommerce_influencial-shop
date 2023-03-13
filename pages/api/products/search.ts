@@ -9,7 +9,7 @@ export default async function handler(
 
   const collection = await getCollection('products')
 
-  const regex = new RegExp(`^.*${search}.*$`)
+  const regex = new RegExp(`^.*${search}.*$`, 'gi')
   const products = await collection.find({ Title: {$regex: regex } }).toArray()
 
   res.status(200).json(products)
