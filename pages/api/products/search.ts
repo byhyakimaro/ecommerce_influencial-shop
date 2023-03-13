@@ -8,8 +8,8 @@ export default async function handler(
   const { search } = req.body
 
   const collection = await getCollection('products')
-  
-  const products = await collection.find(search)
+
+  const products = await collection.find( { $text: { $search: `\"${search}\"` } } )
 
   res.status(200).json(products)
 }
