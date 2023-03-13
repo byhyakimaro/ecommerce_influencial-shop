@@ -20,6 +20,7 @@ export default function Home({ searchResults }: any) {
         return (
           <div key={index}>
             <div>{ product.Title }</div>
+            <img src={ product.Image }></img>
           </div>
         )
       })}
