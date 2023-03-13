@@ -8,10 +8,12 @@
 }
 
 .subHeader {
-  display: flex;;
+  background: rgba(35, 47, 62, 1);
+  color: #ffffff;
+  display: flex;
 }
 
-.subHeader > div {
+.subHeader > a {
   margin: .8em 1em;
 }
 

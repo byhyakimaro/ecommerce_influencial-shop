@@ -30,8 +30,8 @@ export default function Header() {
         </a>
       </header>
       <div className={styles.subHeader}>
-        <div>Mais Vendidos</div>
-        <div>Ofertas do dia</div>
+        <a>Mais Vendidos</a>
+        <a>Ofertas do dia</a>
       </div>
     </>
   )
