@@ -606,7 +606,7 @@
 .tabPurchased .descriptionPurchased > p {
   display: flex;
   flex-wrap: wrap;
-  justify-content: end;
+  justify-content: flex-end;
   padding:  0px 1em 1em 1em;
 }
 
