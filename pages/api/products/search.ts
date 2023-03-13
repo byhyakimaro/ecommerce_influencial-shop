@@ -8,8 +8,10 @@ export default async function handler(
   const { search } = req.body
 
   const collection = await getCollection('products')
-
-  const groupRegex = `(?=.*\\b${search}\\b)`
+  
+  const groupRegex = (search).split(' ').map((item:any)=>{
+    return `(?=.*\\b${item}\\b)`
+  }).join('')
 
   const regex = new RegExp(`^${groupRegex}.*$`, 'gi')
   const products = await collection.find({ Title: {$regex: regex } }).toArray()
