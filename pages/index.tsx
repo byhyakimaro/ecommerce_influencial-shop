@@ -151,6 +151,7 @@ export default function Home({ data, User }:any) {
                 <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
               </svg>
             </div>
+            <div>Mostrar Mais</div>
           </div>
           {
           User?.user?.itemsViewed.length > 0 ?
