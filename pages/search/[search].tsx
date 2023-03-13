@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { GetStaticPaths } from 'next/types'
 import { parseCookies } from 'nookies'
 
-export default function Home() {
+export default function Home({ searchResults }: any) {
   return (
     <>
       <Head>
@@ -16,6 +16,13 @@ export default function Home() {
       </Head>
       <Header></Header>
       <h2>Search</h2>
+      {searchResults.map((product:any, index:any)=>{
+        return (
+          <div key={index}>
+            <div>{ product.Title }</div>
+          </div>
+        )
+      })}
       <Footer></Footer>
     </>
   )
@@ -25,8 +32,22 @@ Home.getInitialProps = async (ctx: any) => {
 
   const { 'infshop.token': token } = parseCookies(ctx)
   const { search } = ctx.query
-  
-  return {}
+
+  const fetchA = await fetch('http://localhost:3000/api/products/search',
+  {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: "POST",
+    body: JSON.stringify({ search: search })
+  })
+
+  const searchResults = await fetchA.json()
+
+  return {
+    searchResults
+  }
 }
 
 const getStaticPaths: GetStaticPaths = async () => {
