@@ -58,19 +58,6 @@ export default function Home({ data, User }:any) {
           :''
           }
           <div className={styles.bannerNews}></div>
-          <div className={styles.categories}>
-            <div className={styles.titlecategories}>CATEGORIAS</div>
-              {data.categories.map((categorie: any, index: any) => {
-                return (
-                  <a key={index} href={`categories/${categorie.code}`}>
-                    <div className={styles.itemcategorie}>
-                      <img src={categorie.img}></img>
-                      <div className={styles.nameitem}>{categorie.name}</div>
-                    </div>
-                  </a>
-                  )
-              })}
-          </div>
           <div className={[styles.recommended, styles.widget].join(" ")}>
             <div className={[styles.titleRecommended, styles.titleWidget].join(" ")}>RECOMENDADO PARA VOCE</div>
             <div className={[styles.itemsRecommended, styles.itemsWidget].join(" ")}>
@@ -97,6 +84,19 @@ export default function Home({ data, User }:any) {
                 <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
               </svg>
             </div>
+          </div>
+          <div className={styles.categories}>
+            <div className={styles.titlecategories}>CATEGORIAS</div>
+              {data.categories.map((categorie: any, index: any) => {
+                return (
+                  <a key={index} href={`categories/${categorie.code}`}>
+                    <div className={styles.itemcategorie}>
+                      <img src={categorie.img}></img>
+                      <div className={styles.nameitem}>{categorie.name}</div>
+                    </div>
+                  </a>
+                  )
+              })}
           </div>
           <div className={[styles.bestSell, styles.widget].join(" ")}>
             <div className={[styles.titleBestSell, styles.titleWidget].join(" ")}>MELHORES VENDIDOS</div>

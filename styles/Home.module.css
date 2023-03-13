@@ -8,13 +8,18 @@
 }
 
 .subHeader {
-  background: rgba(35, 47, 62, 1);
-  color: #ffffff;
+  background: rgba(204, 204, 204, 1);
   display: flex;
 }
 
 .subHeader > a {
-  margin: .8em 1em;
+  padding: .8em 1em;
+}
+
+.subHeader > a:hover {
+  cursor: pointer;;
+  box-sizing: border-box;
+  border: 1px solid #000000;
 }
 
 .logotype {
