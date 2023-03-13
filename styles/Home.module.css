@@ -17,9 +17,8 @@
 }
 
 .subHeader > a:hover {
-  cursor: pointer;;
-  box-sizing: border-box;
-  border: 1px solid #000000;
+  cursor: pointer;
+  box-shadow:inset 0px 0px 0px 1px #000000;
 }
 
 .logotype {
