@@ -29,6 +29,10 @@ export default function Header() {
           </div>
         </a>
       </header>
+      <div className={styles.subHeader}>
+        <div>Mais Vendidos</div>
+        <div>Ofertas do dia</div>
+      </div>
     </>
   )
 }
