@@ -50,9 +50,13 @@
   width: 40rem;
 }
 
+.searchbar {
+  border-radius: inherit;
+  background: rgba(255, 225, 150, 1);
+}
+
 .searchbar:hover {
   background: #ffce52;
-  border-radius: inherit;
   transition: .2;
   cursor: pointer;
 }
