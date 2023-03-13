@@ -14,7 +14,7 @@ export default async function handler(
   const product = await collectionProducts.findOne({ _id: new ObjectId( itemCode )})
   const user = await collectionUsers.findOne({ _id: new ObjectId(token) })
 
-  if (product) {
+  if (product && token) {
 
     const products = user.productsInCart.products
     products.push(itemCode)
