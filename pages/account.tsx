@@ -69,11 +69,11 @@ export default function Home({ user, purchased }: any) {
                     })}
                   </div>
                 </div>
-                <p>
+                <div className={styles.Titles}>
                   <h4 style={{color:"#1f9050;"}}>Desconto : -{((purchasedItem.products?.reduce((a: any,v: any) =>  a = a + v.Price , 0))-purchasedItem?.totalOrder).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
                   <div className="break"></div>
                   <h4>Total do Pedido: {(purchasedItem.totalOrder).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
-                </p>
+                </div>
               </div>
             </div>
           </li>

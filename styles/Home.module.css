@@ -603,7 +603,7 @@
   margin: 1rem;
 }
 
-.tabPurchased .descriptionPurchased > p {
+.tabPurchased .descriptionPurchased .Titles {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
