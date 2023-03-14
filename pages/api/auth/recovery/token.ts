@@ -10,6 +10,9 @@ export default async function handler(
 
   const { token } = req.body
   
+  const collectionConfigs = await getCollection('configs')
+  const configs = await collectionConfigs.findOne()
+
   const collection = await getCollection('users')
   
   const dataCollection = await collection.findOne({ _id: new ObjectId(token)})
@@ -40,6 +43,7 @@ export default async function handler(
 
     res.status(200).json({
       token: dataCollection["_id"],
+      offers: { percentPixOff: configs.percentPixOff },
       user: {
         name: dataCollection.name,
         login: dataCollection.login,
