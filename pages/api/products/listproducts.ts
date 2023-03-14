@@ -17,12 +17,15 @@ export default async function handler(
     }
     return true
   }).slice(0, MaxItemsReturned).map((product: any) => {
+    const off = product.offersPercentage > 0 && product.offersPercentage
+
     return {
       Title: product.Title,
       Code: product["_id"].toString(),
       Image: product.Image,
       Price: (product.Price-(product.Price*(product.offersPercentage/100))),
       Evaluation: product.Evaluation,
+      Off: off && off,
       CountEvaluation: product.CountEvaluation
     }
   })
@@ -34,12 +37,15 @@ export default async function handler(
     }
     return true
   }).slice(0, MaxItemsReturned).map((product: any) => {
+    const off = product.offersPercentage > 0 && product.offersPercentage
+
     return {
       Title: product.Title,
       Code: product["_id"].toString(),
       Image: product.Image,
       Price: (product.Price-(product.Price*(product.offersPercentage/100))),
       Evaluation: product.Evaluation,
+      Off: off && off,
       CountEvaluation: product.CountEvaluation
     }
   })
@@ -51,12 +57,15 @@ export default async function handler(
     }
     return true
   }).slice(0, MaxItemsReturned).map((product: any) => {
+    const off = product.offersPercentage > 0 && product.offersPercentage
+
     return {
       Title: product.Title,
       Code: product["_id"].toString(),
       Image: product.Image,
       Price: (product.Price-(product.Price*(product.offersPercentage/100))),
       Evaluation: product.Evaluation,
+      Off: off && off,
       CountEvaluation: product.CountEvaluation
     }
   })

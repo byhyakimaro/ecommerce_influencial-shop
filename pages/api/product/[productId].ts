@@ -13,6 +13,8 @@ export default async function handler(
 
   const product = await collection.findOne({ _id: new ObjectId( productId )})
 
+  const off = product.offersPercentage > 0 && product.offersPercentage
+
   if (product) {
     res.status(200).json({
       Title: product.Title,
@@ -20,6 +22,7 @@ export default async function handler(
       Category: product.category,
       Image: product.Image,
       Evaluation: product.Evaluation,
+      Off: off && off,
       CountEvaluation: product.CountEvaluation,
       productStock: product.productStock,
       Price: (product.Price-(product.Price*(product.offersPercentage/100)))
