@@ -72,7 +72,7 @@ export default function Home({ offers, productsInCart, token }: any) {
                 <br></br>
                 <h4>A Melhor Opcao a vista para suas compras com desconto!!</h4>
                 <br></br>
-                <p>Pague com PIX e aproveite até <strong>10% OFF</strong>. Nessa modalidade, seu pedido é aprovado instantaneamente, o que torna a expedição do seu pedido ainda mais rápida.</p>
+                <p>Pague com PIX e aproveite até <strong>{offers.percentPixOff}% OFF</strong>. Nessa modalidade, seu pedido é aprovado instantaneamente, o que torna a expedição do seu pedido ainda mais rápida.</p>
               </div>
               <div className={ styles.paymentMethodDisc }>
                 <div>
