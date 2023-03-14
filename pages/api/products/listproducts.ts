@@ -21,7 +21,7 @@ export default async function handler(
       Title: product.Title,
       Code: product["_id"].toString(),
       Image: product.Image,
-      Price: product.Price,
+      Price: (product.Price-(product.Price*(product.offersPercentage/100))),
       Evaluation: product.Evaluation,
       CountEvaluation: product.CountEvaluation
     }
@@ -38,7 +38,7 @@ export default async function handler(
       Title: product.Title,
       Code: product["_id"].toString(),
       Image: product.Image,
-      Price: product.Price,
+      Price: (product.Price-(product.Price*(product.offersPercentage/100))),
       Evaluation: product.Evaluation,
       CountEvaluation: product.CountEvaluation
     }
@@ -55,7 +55,7 @@ export default async function handler(
       Title: product.Title,
       Code: product["_id"].toString(),
       Image: product.Image,
-      Price: product.Price,
+      Price: (product.Price-(product.Price*(product.offersPercentage/100))),
       Evaluation: product.Evaluation,
       CountEvaluation: product.CountEvaluation
     }
