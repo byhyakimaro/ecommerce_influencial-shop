@@ -77,6 +77,7 @@ export default function Home({ user, productsInCart }: any) {
           <a href="../method">Pagamento</a>
           <a href="../">Continuar Comprando</a>
         </div>
+        <div className="break"></div>
         <div className={ styles.containerProducts }>
           <h2>Produto e Frete</h2>
           <div className="break"></div>
