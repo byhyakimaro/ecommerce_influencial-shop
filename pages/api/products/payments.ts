@@ -41,6 +41,9 @@ export default async function handler(
 ) {
   const { token } = req.body
 
+  const collectionConfigs = await getCollection('configs')
+  const configs = await collectionConfigs.findOne()
+
   const collectionUsers = await getCollection('users')
   const dataCollection = await collectionUsers.findOne({ _id: new ObjectId(token)})
 
@@ -67,7 +70,7 @@ export default async function handler(
     const amount = (productsInCartFormat?.reduce((a: any,v: any) =>  a = a + v.Price , 0))
     
     if (cartUser.methodPayment === "pix") {
-      const payment = await getPayment(parseFloat((amount-(amount*(8/100))).toFixed(2)), "test", cartUser.methodPayment)
+      const payment = await getPayment(parseFloat((amount-(amount*(configs.percentPixOff/100))).toFixed(2)), "test", cartUser.methodPayment)
 
       collectionUsers.updateOne(
         { _id: new ObjectId(token) },
@@ -75,7 +78,7 @@ export default async function handler(
           id: payment.id,
           status: payment.status,
           data: payment.date_created,
-          totalOrder: parseFloat((amount-(amount*(8/100))).toFixed(2)),
+          totalOrder: parseFloat((amount-(amount*(configs.percentPixOff/100))).toFixed(2)),
           url: payment.point_of_interaction.transaction_data.ticket_url,
           methodPayment: dataCollection.productsInCart.methodPayment,
           products: dataCollection.productsInCart.products
