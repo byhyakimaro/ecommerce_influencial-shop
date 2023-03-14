@@ -9,7 +9,7 @@ import PixSVG from '@/public/icon_pix.svg'
 import CreditCardSVG from '@/public/credit-card.svg'
 import BarCodeSVG from '@/public/bar-code.svg'
 
-export default function Home({ productsInCart, token }: any) {
+export default function Home({ offers, productsInCart, token }: any) {
   const [productsCart, setProducts] = useState(productsInCart)
   const [method, setMethod] = useState("pix")
 
@@ -81,8 +81,8 @@ export default function Home({ productsInCart, token }: any) {
                 </div>
                 <div className={styles.discountMethod}>
                   <h2>Pagamento Via Pix</h2>
-                  <h3>R$ { (((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)))-((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100))).toFixed(2) }</h3>
-                  <h4>(Economize: $ {((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(8/100)).toFixed(2)})</h4>
+                  <h3>R$ { (((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)))-((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(offers.percentPixOff/100))).toFixed(2) }</h3>
+                  <h4>(Economize: $ {((productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0))*(offers.percentPixOff/100)).toFixed(2)})</h4>
                 </div>
               </div>
             </div>
@@ -118,15 +118,17 @@ Home.getInitialProps = async (ctx: any) => {
       method: "POST",
       body: JSON.stringify({ token: token })
     })
-    const { user } = await User.json()
+    const { user, offers } = await User.json()
 
     return {
       productsInCart: user.productsInCart,
+      offers: offers,
       token: token
     }
   } else {
     return {
       productsInCart: null,
+      offers: null,
       token: token
     }
   }
