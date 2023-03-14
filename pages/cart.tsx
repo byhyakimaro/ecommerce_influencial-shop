@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { parseCookies } from 'nookies'
 import { useEffect, useState } from 'react'
 
-export default function Home({ user, productsInCart }: any) {
+export default function Home({ offers, user, productsInCart }: any) {
   const [productsCart, setProducts] = useState(productsInCart)
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export default function Home({ user, productsInCart }: any) {
                   <a href={ `../provider/${ product.Code }` }><img width="64" src={ product.Image }></img></a>
                       <a href={ `../provider/${ product.Code }` }> { product.Title } </a>
                       <h5><br></br>{(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h5>
-                      <div> Preco a vista no PIX <h4>{ (product.Price-(product.Price*(8/100))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }</h4> <div><button value={product.Code} onClick={removeItemCart}>Remover</button></div></div>
+                      <div> Preco a vista no PIX <h4>{ (product.Price-(product.Price*(offers.percentPixOff/100))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }</h4> <div><button value={product.Code} onClick={removeItemCart}>Remover</button></div></div>
                   </div>
                 </>
               )
@@ -120,15 +120,17 @@ Home.getInitialProps = async (ctx: any) => {
       method: "POST",
       body: JSON.stringify({ token: token })
     })
-    const { user } = await User.json()
+    const { user, offers } = await User.json()
 
     return {
       user: user,
+      offers: offers,
       productsInCart: user.productsInCart
     }
   } else {
     return {
       user: null,
+      offers: null,
       productsInCart: null
     }
   }

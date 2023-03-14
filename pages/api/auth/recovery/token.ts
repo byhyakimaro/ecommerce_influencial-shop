@@ -43,7 +43,7 @@ export default async function handler(
 
     res.status(200).json({
       token: dataCollection["_id"],
-      offers: { percentPixOff: configs.percentPixOff },
+      offers: { percentPixOff: dataCollection.offers.percentPixOff },
       user: {
         name: dataCollection.name,
         login: dataCollection.login,
