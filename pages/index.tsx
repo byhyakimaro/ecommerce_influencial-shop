@@ -73,7 +73,7 @@ export default function Home({ data, User }:any) {
                         <img src={recomended.Image} ></img>
                         <div> <strong>{recomended.Title}</strong> </div>
                         <div> {recomended.Evaluation }/5 - {recomended.CountEvaluation}</div>
-                        <div> <strong>R$ {recomended.Price}</strong> </div>
+                        <div> <strong>{(recomended.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</strong> </div>
                       </a>
                     </li>
                   )
@@ -113,7 +113,7 @@ export default function Home({ data, User }:any) {
                         <img src={bestsell.Image} ></img>
                         <div> <strong>{bestsell.Title}</strong> </div>
                         <div> {bestsell.Evaluation }/5 - {bestsell.CountEvaluation}</div>
-                        <div> <strong>R$ {bestsell.Price}</strong> </div>
+                        <div> <strong>{(bestsell.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</strong> </div>
                       </a>
                     </li>
                   )
@@ -140,7 +140,7 @@ export default function Home({ data, User }:any) {
                         <img src={recent.Image} ></img>
                         <div> <strong>{recent.Title}</strong> </div>
                         <div> {recent.Evaluation }/5 - {recent.CountEvaluation}</div>
-                        <div> <strong>R$ {recent.Price}</strong> </div>
+                        <div> <strong>{(recent.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</strong> </div>
                       </a>
                     </li>
                   )
@@ -170,7 +170,7 @@ export default function Home({ data, User }:any) {
                         <img src={itemViewed.Image} ></img>
                         <div> <strong>{itemViewed.Title}</strong> </div>
                         <div> {itemViewed.Evaluation }/5 - {itemViewed.CountEvaluation}</div>
-                        <div> <strong>R$ {itemViewed.Price}</strong> </div>
+                        <div> <strong>{(itemViewed.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</strong> </div>
                       </a>
                     </li>
                   )
