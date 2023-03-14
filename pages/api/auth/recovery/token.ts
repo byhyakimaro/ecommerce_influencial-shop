@@ -48,6 +48,7 @@ export default async function handler(
         name: dataCollection.name,
         login: dataCollection.login,
         currency: dataCollection.currency,
+        language: dataCollection.languages,
         email: dataCollection.email,
         savedAddresses: dataCollection.savedAddresses,
         telephone: dataCollection.telephone,
