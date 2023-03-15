@@ -30,7 +30,7 @@ export default function Home({ product }: any) {
             </div>
           </div>
           <div className={ styles.containerDescription }>
-            <div style={{display: "flex", alignItems: "center"}}> Vendido e Entregue Por<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"green"}}>Em Estoque</p> : <p style={{color:"red"}}>Em Falta</p>  } </div>
+            <div style={{display: "flex", alignItems: "center"}}> Vendido e Entregue Por<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"green"}}>In Stock</p> : <p style={{color:"red"}}>Out of Stock</p>  } </div>
             <div>{ product.Evaluation } / 5 - ({ product.CountEvaluation })</div>
             <div className={ styles.Price } > { (product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) } </div>
             <div>À vista no PIX com até 10% OFF</div>
