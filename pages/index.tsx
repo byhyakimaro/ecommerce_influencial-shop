@@ -207,7 +207,6 @@ Home.getInitialProps = async (ctx: any) => {
   data["categories"] = await categories.json()
 
   const { 'infshop.token': token } = parseCookies(ctx)
-
     
     const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
     {
