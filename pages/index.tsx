@@ -6,6 +6,9 @@ import Footer from '@/contexts/footer'
 
 export default function Home({ data, User }:any) {
 
+  const language = User ? User.user.language : 'en-us'
+  const currency = User ? User.user.currency : 'USD'
+
   function passarItensDir(event: any) {
     const ul = event.currentTarget.parentElement.querySelector('ul')
     let value = parseInt(ul.dataset.transform) + 130
@@ -42,10 +45,11 @@ export default function Home({ data, User }:any) {
             <div className={[styles.titleKeepShopping, styles.titleWidgetVertical].join(" ")}>CONTINUE COMPRANDO</div>
             <div className={[styles.itemsKeepShopping, styles.itemsWidgetVertical].join(" ")}>
               <ul>
-                {User.user.itemsViewed.slice(0, 4).map((itemViewed : any, index: any) => {
+                {User?.user.itemsViewed.slice(0, 4).map((itemViewed : any, index: any) => {
                   return (
                     <li key={index}>
                       <a href={`categories/${itemViewed.Category}`}>
+                        {"<h2>aaa</h2>"}
                         <img src={itemViewed.Image} ></img>
                         <h5>{itemViewed.Category}</h5>
                       </a>
@@ -73,7 +77,7 @@ export default function Home({ data, User }:any) {
                         <img src={recomended.Image} ></img>
                         <div> <strong>{recomended.Title}</strong> </div>
                         <div> {recomended.Evaluation }/5 - {recomended.CountEvaluation}</div>
-                        <div> <strong>{(recomended.Price).toLocaleString(User.user.language, {style: 'currency', currency: User.user.currency})}</strong> </div>
+                        <div> <strong>{(recomended.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
                         {recomended.Off && <div>{recomended.Off}% off</div>}
                       </a>
                     </li>
@@ -114,7 +118,7 @@ export default function Home({ data, User }:any) {
                         <img src={bestsell.Image} ></img>
                         <div> <strong>{bestsell.Title}</strong> </div>
                         <div> {bestsell.Evaluation }/5 - {bestsell.CountEvaluation}</div>
-                        <div> <strong>{(bestsell.Price).toLocaleString(User.user.language, {style: 'currency', currency: User.user.currency})}</strong> </div>
+                        <div> <strong>{(bestsell.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
                         {bestsell.Off && <div>{bestsell.Off}% off</div>}
                       </a>
                     </li>
@@ -142,7 +146,7 @@ export default function Home({ data, User }:any) {
                         <img src={recent.Image} ></img>
                         <div> <strong>{recent.Title}</strong> </div>
                         <div> {recent.Evaluation }/5 - {recent.CountEvaluation}</div>
-                        <div> <strong>{(recent.Price).toLocaleString(User.user.language, {style: 'currency', currency: User.user.currency})}</strong> </div>
+                        <div> <strong>{(recent.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
                         {recent.Off && <div>{recent.Off}% off</div>}
                       </a>
                     </li>
@@ -166,14 +170,14 @@ export default function Home({ data, User }:any) {
                   <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
                 </svg>
                 <ul data-transform={0}>
-                {User.user.itemsViewed.map((itemViewed : any, index: any) => {
+                {User?.user.itemsViewed.map((itemViewed : any, index: any) => {
                   return (
                     <li key={index}>
                       <a href={`provider/${itemViewed.Code}`}>
                         <img src={itemViewed.Image} ></img>
                         <div> <strong>{itemViewed.Title}</strong> </div>
                         <div> {itemViewed.Evaluation }/5 - {itemViewed.CountEvaluation}</div>
-                        <div> <strong>{(itemViewed.Price).toLocaleString(User.user.language, {style: 'currency', currency: User.user.currency})}</strong> </div>
+                        <div> <strong>{(itemViewed.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
                         {itemViewed.Off && <div>{itemViewed.Off}% off</div>}
                       </a>
                     </li>
