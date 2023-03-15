@@ -4,5 +4,18 @@
   "recommended": "RECOMMENDED FOR YOU",
   "bestSell": "BEST SELLERS",
   "discoveryDay": "DISCOVERIES OF THE DAY",
-  "historyView": "BROWSING HISTORY"
+  "historyView": "BROWSING HISTORY",
+  "electronics-devices": "Electronic devices",
+  "food-drinks": "Food and drinks",
+  "offers-discounts": "Offers and Discounts",
+  "automotive": "Automotive",
+  "fashion-beauty": "Fashion and beauty",
+  "house-building": "Home and Construction",
+  "health-personal-care": "Health and Personal Care",
+  "home-office": "Office and Home Office",
+  "books-ebook": "Books and Ebook",
+  "toys-children-babies": "Toys and items for children and babies",
+  "video-music-games": "Video, Music and Games",
+  "sports-adventure-leisure": "Sports, Adventure and Leisure",
+  "miscellaneous-gifts": "Gifts"
 }

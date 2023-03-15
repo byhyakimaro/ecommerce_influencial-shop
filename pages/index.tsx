@@ -97,7 +97,7 @@ export default function Home({ data, User, i18n }:any) {
                   <a key={index} href={`categories/${categorie.code}`}>
                     <div className={styles.itemcategorie}>
                       <img src={categorie.img}></img>
-                      <div className={styles.nameitem}>{categorie.name}</div>
+                      <div className={styles.nameitem}>{i18n[categorie.code]}</div>
                     </div>
                   </a>
                   )
