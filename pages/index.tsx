@@ -63,7 +63,7 @@ export default function Home({ data, User, i18n }:any) {
           }
           <div className={styles.bannerNews}></div>
           <div className={[styles.recommended, styles.widget].join(" ")}>
-            <div className={[styles.titleRecommended, styles.titleWidget].join(" ")}>RECOMENDADO PARA VOCE</div>
+            <div className={[styles.titleRecommended, styles.titleWidget].join(" ")}>{i18n.recommended}</div>
             <div className={[styles.itemsRecommended, styles.itemsWidget].join(" ")}>
               <svg className={styles.esq} width="50" height="50" onClick={passarItensEsq}>
                 <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
