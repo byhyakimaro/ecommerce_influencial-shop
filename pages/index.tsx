@@ -4,7 +4,7 @@ import Header from '@/contexts/header'
 import { parseCookies } from 'nookies'
 import Footer from '@/contexts/footer'
 
-export default function Home({ data, User }:any) {
+export default function Home({ data, User, i18n }:any) {
 
   const language = User ? User.user.language : 'en-us'
   const currency = User ? User.user.currency : 'USD'
@@ -42,11 +42,12 @@ export default function Home({ data, User }:any) {
         <div className={styles.content}>
           { User?.user?.itemsViewed.length > 0 ?
             <div className={[styles.keepShopping, styles.widgetVertical].join(" ")}>
-            <div className={[styles.titleKeepShopping, styles.titleWidgetVertical].join(" ")}>CONTINUE COMPRANDO</div>
+            <div className={[styles.titleKeepShopping, styles.titleWidgetVertical].join(" ")}>{i18n.keepShopping}</div>
             <div className={[styles.itemsKeepShopping, styles.itemsWidgetVertical].join(" ")}>
               <ul>
                 {User?.user.itemsViewed.slice(0, 4).map((itemViewed : any, index: any) => {
                   return (
+                    
                     <li key={index}>
                       <a href={`categories/${itemViewed.Category}`}>
                         <img src={itemViewed.Image} ></img>
@@ -221,13 +222,20 @@ Home.getInitialProps = async (ctx: any) => {
     })
     const dataUser = await User.json()
 
+    const language = dataUser ? dataUser.user.language : 'en-us'
+
+    const localesFetch = await fetch(`http://localhost:3000/locales/${language}/index.json`)
+    const locales = await localesFetch.json()
+
     return {
       data,
+      i18n: locales,
       User: dataUser
     }
   } else {
     return {
       data,
+      i18n: null,
       User: null
     }
   }
