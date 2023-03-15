@@ -104,7 +104,7 @@ export default function Home({ data, User, i18n }:any) {
               })}
           </div>
           <div className={[styles.bestSell, styles.widget].join(" ")}>
-            <div className={[styles.titleBestSell, styles.titleWidget].join(" ")}>MELHORES VENDIDOS</div>
+            <div className={[styles.titleBestSell, styles.titleWidget].join(" ")}>{i18n.bestSell}</div>
             <div className={[styles.itemsBestSell, styles.itemsWidget].join(" ")}>
               <svg className={styles.esq} width="50" height="50" onClick={passarItensEsq}>
                 <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
