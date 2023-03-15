@@ -25,7 +25,9 @@ export default function Home({ product }: any) {
         <h1 className={ styles.Title } > { product.Title } </h1>
         <div className={styles.containerItem}>
           <div className={ styles.containerImage }>
-            <Canvas url={ product.Image }></Canvas>
+            <div>
+              <Canvas url={ product.Image }></Canvas>
+            </div>
           </div>
           <div className={ styles.containerDescription }>
             <div> Vendido e Entregue Por<strong>{ "Amazon" }</strong> | { "Em Estoque" } </div>
