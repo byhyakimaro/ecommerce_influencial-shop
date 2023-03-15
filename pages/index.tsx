@@ -132,7 +132,7 @@ export default function Home({ data, User, i18n }:any) {
             </div>
           </div>
           <div className={[styles.discoveryDay, styles.widget].join(" ")}>
-          <div className={[styles.titleDiscoveryDay, styles.titleWidget].join(" ")}>DESCOBERTAS DO DIA</div>
+          <div className={[styles.titleDiscoveryDay, styles.titleWidget].join(" ")}>{i18n.discoveryDay}</div>
             <div className={[styles.itemsDiscoveryDay, styles.itemsWidget].join(" ")}>
               <svg className={styles.esq} width="50" height="50" onClick={passarItensEsq}>
                 <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
@@ -163,7 +163,7 @@ export default function Home({ data, User, i18n }:any) {
           {
           User?.user?.itemsViewed.length > 0 ?
             <div className={[styles.historyView, styles.widget].join(" ")}>
-              <div className={[styles.titleHistoryView, styles.titleWidget].join(" ")}>HISTORICO DE NAVEGACAO</div>
+              <div className={[styles.titleHistoryView, styles.titleWidget].join(" ")}>{i18n.historyView}</div>
               <div className={[styles.itemsHistoryView, styles.itemsWidget].join(" ")}>
                 <svg className={styles.esq} width="50" height="50" onClick={passarItensEsq}>
                   <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
