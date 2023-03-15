@@ -26,7 +26,7 @@ export default async function handler(
       Off: off && off,
       CountEvaluation: product.CountEvaluation,
       productStock: product.productStock,
-      Price: (product.Price-(product.Price*(product.offersPercentage/100)))
+      Price: (product.Price+product.Price*(product.gainPercentage/100))-(product.Price*(product.offersPercentage/100))
     })
   } else {
     res.status(404).json({
