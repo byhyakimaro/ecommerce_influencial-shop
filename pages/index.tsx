@@ -49,7 +49,6 @@ export default function Home({ data, User }:any) {
                   return (
                     <li key={index}>
                       <a href={`categories/${itemViewed.Category}`}>
-                        {"<h2>aaa</h2>"}
                         <img src={itemViewed.Image} ></img>
                         <h5>{itemViewed.Category}</h5>
                       </a>
