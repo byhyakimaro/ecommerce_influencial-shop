@@ -34,10 +34,10 @@ export default function Home({ product }: any) {
             <div>{ product.Evaluation } / 5 - ({ product.CountEvaluation })</div>
             <div className={ styles.Price } > { (product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) } </div>
             <div>Up to 10% OFF for PIX payments in cash</div>
-            <button onClick={() => setShowComponent(true)}>Ver mais Opcoes de Pagamento</button>
+            <button onClick={() => setShowComponent(true)}>See More Payment Options</button>
             <div className={ styles.buyBottom }>
               <a href={ `../precart/${ product.Code }` }>
-                <button name="buy">Compre Agora</button>
+                <button name="buy">Buy Now</button>
               </a>
             </div>
             <h3>Description</h3>
