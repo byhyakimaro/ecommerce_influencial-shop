@@ -6,8 +6,8 @@ import Footer from '@/contexts/footer'
 
 export default function Home({ data, User, i18n }:any) {
 
-  const language = User ? User.user.language : 'en-us'
-  const currency = User ? User.user.currency : 'USD'
+  const language = User?.user?.language ? User?.user?.language : 'en-us'
+  const currency = User?.user?.currency ? User?.user?.currency : 'USD'
 
   function passarItensDir(event: any) {
     const ul = event.currentTarget.parentElement.querySelector('ul')
@@ -208,7 +208,6 @@ Home.getInitialProps = async (ctx: any) => {
 
   const { 'infshop.token': token } = parseCookies(ctx)
 
-  if (token) {
     
     const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
     {
@@ -221,21 +220,14 @@ Home.getInitialProps = async (ctx: any) => {
     })
     const dataUser = await User.json()
 
-    const language = dataUser ? dataUser.user.language : 'en-us'
+    const language = dataUser?.user?.language ? dataUser?.user?.language : 'en-us'
 
     const localesFetch = await fetch(`http://localhost:3000/locales/${language}/index.json`)
     const locales = await localesFetch.json()
 
-    return {
-      data,
-      i18n: locales,
-      User: dataUser
-    }
-  } else {
-    return {
-      data,
-      i18n: null,
-      User: null
-    }
+  return {
+    data,
+    i18n: locales,
+    User: dataUser
   }
 }
