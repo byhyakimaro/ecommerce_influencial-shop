@@ -13,7 +13,7 @@ export default async function handler(
 
   const product = await collection.findOne({ _id: new ObjectId( productId )})
 
-  const off = product.offersPercentage > 0 && product.offersPercentage
+  const off = product?.offersPercentage > 0 && product.offersPercentage
 
   if (product) {
     res.status(200).json({
