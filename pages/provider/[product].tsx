@@ -30,10 +30,10 @@ export default function Home({ product }: any) {
             </div>
           </div>
           <div className={ styles.containerDescription }>
-            <div style={{display: "flex", alignItems: "center"}}> Vendido e Entregue Por<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"green"}}>In Stock</p> : <p style={{color:"red"}}>Out of Stock</p>  } </div>
+            <div style={{display: "flex", alignItems: "center"}}>Sold and Delivered By<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"green"}}>In Stock</p> : <p style={{color:"red"}}>Out of Stock</p>  } </div>
             <div>{ product.Evaluation } / 5 - ({ product.CountEvaluation })</div>
             <div className={ styles.Price } > { (product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) } </div>
-            <div>À vista no PIX com até 10% OFF</div>
+            <div>Up to 10% OFF for PIX payments in cash</div>
             <button onClick={() => setShowComponent(true)}>Ver mais Opcoes de Pagamento</button>
             <div className={ styles.buyBottom }>
               <a href={ `../precart/${ product.Code }` }>
