@@ -91,7 +91,7 @@ export default function Home({ data, User, i18n }:any) {
             </div>
           </div>
           <div className={styles.categories}>
-            <div className={styles.titlecategories}>CATEGORIAS</div>
+            <div className={styles.titlecategories}>{i18n.categories}</div>
               {data.categories.map((categorie: any, index: any) => {
                 return (
                   <a key={index} href={`categories/${categorie.code}`}>
