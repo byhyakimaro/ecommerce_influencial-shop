@@ -39,7 +39,23 @@ export default function Home({ product }: any) {
                 <button name="buy">Compre Agora</button>
               </a>
             </div>
-            <div dangerouslySetInnerHTML={{__html: product.Description.technicalSpecificationsHTML}} />
+            <h3>Description</h3>
+            <br></br>
+            <div>{product.Description.InformationText}</div>
+            <br></br>
+            <table>
+              <tbody>
+              { product.Description.technicalSpecifications.map((information:any, index:any)=>{
+                return (
+
+                  <tr key={index}>
+                    <th>{information.Title}</th>
+                    <td>{information.Text}</td>
+                  </tr>
+                )}) 
+              }
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

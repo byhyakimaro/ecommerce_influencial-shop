@@ -317,7 +317,7 @@
 }
 
 .containerProduct .containerItem .containerImage {
-  width: 50%;
+  width: 40%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

@@ -91,6 +91,26 @@ body {
   background: #dbdbdb;
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  font-family: Arial,sans-serif;
+  text-align: justify;
+}
+
+tr {
+  padding: 0 20px;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  padding: 3px 3px 3px 20px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
