@@ -39,7 +39,7 @@ export default function Home({ product }: any) {
                 <button name="buy">Compre Agora</button>
               </a>
             </div>
-            <div>Fabricante: Apple</div>
+            <div dangerouslySetInnerHTML={{__html: product.Description.technicalSpecificationsHTML}} />
           </div>
         </div>
       </div>
