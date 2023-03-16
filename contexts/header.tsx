@@ -1,25 +1,30 @@
 import styles from '@/styles/Home.module.css'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '@/contexts/AuthContexts'
 
 export default function Header() {
 
   const { user, isAuthenticated } = useContext(AuthContext)
 
+  const [i18n, setI18n] = useState<any>()
   const language = isAuthenticated ? user?.language : 'en-us'
 
-  fetch(`http://localhost:3000/locales/${language}/header.json`)
-  .then(response => response.json())
-  .then(response => {
-    console.log(response)
-  })
+  useEffect(() => {
+
+    fetch(`http://localhost:3000/locales/${language}/header.json`)
+    .then(response => response.json())
+    .then(response => {
+      response ? setI18n(response) : null
+    })
+    
+  }, [])
 
   return (
     <>
      <header className={styles.header}>
         <a href=".."><div className={styles.logotype}></div></a>
         <div className={styles.navbar}>
-          <input type="text" className={styles.bartext} placeholder={'Pesquisar produtos, categorias...'}></input>
+          <input type="text" className={styles.bartext} placeholder={i18n?.bartext}></input>
           <div className={styles.searchbar} onClick={((event:any)=>{
             const searchText = event.currentTarget.parentElement.firstChild.value
             
@@ -33,20 +38,20 @@ export default function Header() {
         </div>
         <div className={styles.account}>
           <a href={"/login"}>
-            <div className={styles.accountname}><b>{ isAuthenticated ? `Ola, ${(user?.name)?.split(' ')[0]}` : 'Faca Login' }</b></div>
+            <div className={styles.accountname}><b>{ isAuthenticated ? `Ola, ${(user?.name)?.split(' ')[0]}` : i18n?.login }</b></div>
           </a>
           <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M12 15.05 6.35 9.375l1.05-1.05 4.6 4.6 4.6-4.6 1.05 1.05Z"/></svg>
         </div>
         <a href={"/cart"}>
           <div className={styles.cart}>
             <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M14.35 44.25q-1.5 0-2.55-1.05-1.05-1.05-1.05-2.55 0-1.5 1.05-2.55 1.05-1.05 2.55-1.05 1.5 0 2.55 1.075 1.05 1.075 1.05 2.525 0 1.5-1.05 2.55-1.05 1.05-2.55 1.05Zm20 0q-1.5 0-2.55-1.05-1.05-1.05-1.05-2.55 0-1.5 1.05-2.55 1.05-1.05 2.55-1.05 1.5 0 2.55 1.075 1.05 1.075 1.05 2.525 0 1.5-1.05 2.55-1.05 1.05-2.55 1.05Zm-22.05-33 5 10.45h14.3l5.7-10.45Zm-1.85-3.6H39.1q1.5 0 2.3 1.35.8 1.35 0 2.75L35.15 23.1q-.6 1-1.525 1.625-.925.625-2.125.625H16.55l-2.6 4.9h24.3v3.6h-24.4q-2.35 0-3.35-1.575t.05-3.425l3.15-5.75L6.25 7.3h-4V3.7H8.6ZM17.3 21.7h14.3Z"/></svg>
-            Carrinho
+            {i18n?.cart}
           </div>
         </a>
       </header>
       <div className={styles.subHeader}>
-        <a>Mais Vendidos</a>
-        <a>Ofertas do dia</a>
+        <a>{i18n?.subHeader_0}</a>
+        <a>{i18n?.subHeader_1}</a>
       </div>
     </>
   )
