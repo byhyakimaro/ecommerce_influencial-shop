@@ -1,1 +1,9 @@
-{}
+{
+  "typePayments": "Payment Methods",
+  "creditTitle": "Credit Card",
+  "creditText": "Up to 12x Interest-free! and 5% Discount on 1x payment",
+  "pixTitle": "PIX",
+  "pixText": "Pay with PIX and we prioritize shipment within 1 hour!",
+  "barcodeTitle": "Boleto",
+  "barcodeText": "The payment deadline via bank slip is 2 calendar days"
+}
