@@ -1,10 +1,18 @@
 import styles from '@/styles/Home.module.css'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { AuthContext } from '@/contexts/AuthContexts'
 
 export default function Header() {
 
   const { user, isAuthenticated } = useContext(AuthContext)
+
+  const language = isAuthenticated ? user?.language : 'en-us'
+
+  fetch(`http://localhost:3000/locales/${language}/header.json`)
+  .then(response => response.json())
+  .then(response => {
+    console.log(response)
+  })
 
   return (
     <>
