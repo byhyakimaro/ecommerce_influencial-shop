@@ -51,7 +51,7 @@ export default function Home({ data, User, i18n }:any) {
                     <li key={index}>
                       <a href={`categories/${itemViewed.Category}`}>
                         <img src={itemViewed.Image} ></img>
-                        <h5>{itemViewed.Category}</h5>
+                        <h5>{ i18n[itemViewed.Category] }</h5>
                       </a>
                     </li>
                   )
