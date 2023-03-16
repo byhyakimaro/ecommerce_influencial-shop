@@ -61,9 +61,9 @@ export function AuthProvider({ children } : any) {
         body: JSON.stringify({ email: email, password: password })
     })
 
-    const { user: userResponse, token } = await apiToken.json()
+    const userResponse = await apiToken.json()
 
-    setCookie(undefined, 'infshop.token', token, {
+    setCookie(undefined, 'infshop.token', userResponse.token, {
       maxAge: 60 * 60 * 4, // 4 hours
     })
 
