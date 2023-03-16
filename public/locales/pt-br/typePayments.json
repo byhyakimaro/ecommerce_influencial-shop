@@ -1,0 +1,9 @@
+{
+  "typePayments": "Formas de Pagamentos",
+  "creditTitle": "Cartao de Credito",
+  "creditText": "Ate 12x Sem Juros! e a 1x com 5% de Desconto",
+  "pixTitle": "PIX",
+  "pixText": "Pague com o PIX e priorizamos o despacho em 1 hora!",
+  "barcodeTitle": "Boleto",
+  "barcodeText": "O prazo de pagamento via boleto bancário é de 2 dias corridos"
+}

@@ -2,9 +2,28 @@ import styles from '@/styles/Home.module.css'
 import PixSVG from '@/public/icon_pix.svg'
 import CreditCardSVG from '@/public/credit-card.svg'
 import BarCodeSVG from '@/public/bar-code.svg'
+import { useContext, useEffect, useState } from 'react'
+import { AuthContext } from '@/contexts/AuthContexts'
 
 export default function TypePayments() {
   
+  const { user, isAuthenticated } = useContext(AuthContext)
+
+  const [i18n, setI18n] = useState<any>()
+  const language = isAuthenticated ? user?.language : 'en-us'
+  
+  console.log(i18n)
+
+  useEffect(() => {
+
+    fetch(`http://localhost:3000/locales/${language}/typePayments.json`)
+    .then(response => response.json())
+    .then(response => {
+      response ? setI18n(response) : null
+    })
+    
+  }, [user])
+
   function switchCase(event:any) {
     event.currentTarget.parentElement.parentElement?.setAttribute("style", "display: none;")
   }
@@ -29,22 +48,22 @@ export default function TypePayments() {
   return (
     <>
       <div className={ styles.containerTypePayments }>
-        <h2>Formas de Pagamento <button onClick={switchCase}>X</button></h2>
+        <h2>{i18n?.typePayments}<button onClick={switchCase}>X</button></h2>
         <div className={ styles.typesPayments }>
           <div className={ styles.typesTab }>
-            <button value="credit" onClick={changeButton}><CreditCardSVG width={24} height={24} value="show"></CreditCardSVG><div>Cartao de Credito</div></button>
-            <button value="pix" onClick={changeButton}><PixSVG width={24} height={24} value="hidden"></PixSVG><div>PIX</div></button>
-            <button value="barcode" onClick={changeButton}><BarCodeSVG width={24} height={24} value="hidden"></BarCodeSVG><div>Boleto</div></button>
+            <button value="credit" onClick={changeButton}><CreditCardSVG width={24} height={24} value="show"></CreditCardSVG><div>{i18n?.creditTitle}</div></button>
+            <button value="pix" onClick={changeButton}><PixSVG width={24} height={24} value="hidden"></PixSVG><div>{i18n?.pixTitle}</div></button>
+            <button value="barcode" onClick={changeButton}><BarCodeSVG width={24} height={24} value="hidden"></BarCodeSVG><div>{i18n?.barcodeTitle}</div></button>
           </div>
           <div className={ styles.containerTypes }>
             <div data-type="credit" style={{ display:"flex" }} className={ styles.tabCreditCard }>
-              <div>Ate 12x Sem Juros! e a 1x com 5% de Desconto</div>
+              <div>{i18n?.creditText}</div>
             </div>
             <div data-type="pix" style={{ display:"none" }} className={ styles.tabPix }>
-              <div>Pague com o PIX e priorizamos o despacho em 1 hora!</div>
+              <div>{i18n?.pixText}</div>
             </div>
             <div data-type="barcode" style={{ display:"none" }} className={ styles.tabBarCode }>
-              <div>O prazo de pagamento via boleto bancário é de 2 dias corridos.</div>
+              <div>{i18n?.barcodeText}</div>
             </div>
           </div>
         </div>
