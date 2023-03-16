@@ -9,8 +9,11 @@ import TypePayments from '@/contexts/typePayments'
 import { useState } from 'react'
 import { Canvas } from '@/contexts/imgProducts'
 
-export default function Home({ product }: any) {
+export default function Home({ product, i18n, User }: any) {
   const [showComponent, setShowComponent] = useState(false)
+
+  const language = User?.user?.language ? User?.user?.language : 'en-us'
+  const currency = User?.user?.currency ? User?.user?.currency : 'USD'
 
   return (
     <>
@@ -30,17 +33,17 @@ export default function Home({ product }: any) {
             </div>
           </div>
           <div className={ styles.containerDescription }>
-            <div style={{display: "flex", alignItems: "center"}}>Sold and Delivered By<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"green"}}>In Stock</p> : <p style={{color:"red"}}>Out of Stock</p>  } </div>
+            <div style={{display: "flex", alignItems: "center"}}>{i18n.delivery}<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"green"}}>{i18n.inStock}</p> : <p style={{color:"red"}}>{i18n.outStock}</p>  } </div>
             <div>{ product.Evaluation } / 5 - ({ product.CountEvaluation })</div>
-            <div className={ styles.Price } > { (product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) } </div>
-            <div>Up to 10% OFF for PIX payments in cash</div>
-            <button onClick={() => setShowComponent(true)}>See More Payment Options</button>
+            <div className={ styles.Price } > { (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) } </div>
+            <div>{i18n.offPix}</div>
+            <button onClick={() => setShowComponent(true)}>{i18n.payments}</button>
             <div className={ styles.buyBottom }>
               <a href={ `../precart/${ product.Code }` }>
-                <button name="buy">Buy Now</button>
+                <button name="buy">{i18n.buttonBuy}</button>
               </a>
             </div>
-            <h3>Description</h3>
+            <h3>{i18n.description}</h3>
             <br></br>
             <div>{product.Description.InformationText}</div>
             <br></br>
@@ -86,8 +89,26 @@ Home.getInitialProps = async (ctx: any) => {
 
   const product = await fetch(`http://localhost:3000/api/product/${productId}`)
 
+  const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
+  {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: "POST",
+    body: JSON.stringify({ token: token })
+  })
+  const dataUser = await User.json()
+
+  const language = dataUser?.user?.language ? dataUser?.user?.language : 'en-us'
+
+  const localesFetch = await fetch(`http://localhost:3000/locales/${language}/provider.json`)
+  const locales = await localesFetch.json()
+
   if (product.status === 200) {
     return {
+      i18n: locales,
+      User: dataUser,
       product: await product.json()
     }
   }
