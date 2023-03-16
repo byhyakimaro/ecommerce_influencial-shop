@@ -1,1 +1,7 @@
-{}
+{
+  "login": "Olá, por favor faça o login",
+  "bartext": "Buscar produtos, categorias...",
+  "cart": "Carrinho",
+  "subHeader_0": "Mais vendidos",
+  "subHeader_1": "Ofertas do dia"
+  }
