@@ -5,7 +5,10 @@ import { GetStaticPaths } from 'next'
 import Header from '@/contexts/header'
 import Footer from '@/contexts/footer'
 
-export default function Home({ product }: any) {
+export default function Home({ product, i18n, User }: any) {
+
+  const language = User?.user?.language ? User?.user?.language : 'en-us'
+  const currency = User?.user?.currency ? User?.user?.currency : 'USD'
 
   return (
     <>
@@ -20,17 +23,17 @@ export default function Home({ product }: any) {
         <div className={ styles.productInfo } >
           <img src={ product.Image }></img>
           <div>{ product.Title }</div>
-          <h2>{ (product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }</h2>
+          <h2>{ (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) }</h2>
         </div>
         <div className={ styles.buttonsInfo }>
-          <h3>Produto Adicionado ao Carrinho</h3>
+          <h3>{i18n.statusCart}</h3>
           <div className="break"></div>
-          <a href="..">Continuar Comprando</a>
-          <a href="../cart">Ir Para o Carrinho</a>
+          <a href="..">{i18n.keepBuying}</a>
+          <a href="../cart">{i18n.toCart}</a>
         </div>
       </div>
       <div className={ styles.productsRelated }>
-        <div>Produtos Relacionados</div>
+        <div>{i18n.productsRelated}</div>
       </div>
       <Footer></Footer>
     </>
@@ -57,8 +60,26 @@ Home.getInitialProps = async (ctx: any) => {
 
   const product = await fetch(`http://localhost:3000/api/product/${productId}`)
 
+  const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
+  {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: "POST",
+    body: JSON.stringify({ token: token })
+  })
+  const dataUser = await User.json()
+
+  const language = dataUser?.user?.language ? dataUser?.user?.language : 'en-us'
+
+  const localesFetch = await fetch(`http://localhost:3000/locales/${language}/precart.json`)
+  const locales = await localesFetch.json()
+
   if (product.status === 200) {
     return {
+      i18n: locales,
+      User: dataUser,
       product: await product.json()
     }
   }
