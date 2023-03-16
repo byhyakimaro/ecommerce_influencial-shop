@@ -57,7 +57,7 @@ export default function TypePayments() {
           </div>
           <div className={ styles.containerTypes }>
             <div data-type="credit" style={{ display:"flex" }} className={ styles.tabCreditCard }>
-              <div>{i18n?.creditTextsa}</div>
+              <div>{i18n?.creditText}</div>
             </div>
             <div data-type="pix" style={{ display:"none" }} className={ styles.tabPix }>
               <div>{i18n?.pixText}</div>
