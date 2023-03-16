@@ -17,7 +17,7 @@ export default function Header() {
       response ? setI18n(response) : null
     })
     
-  }, [])
+  }, [user])
 
   return (
     <>

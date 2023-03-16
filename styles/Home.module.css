@@ -248,7 +248,7 @@
 
 .itemsWidgetVertical > ul > li {
   margin: 2px 0;
-  width: 48%;
+  width: 100%;
 }
 
 .itemsWidgetVertical > ul > li > a > img {
