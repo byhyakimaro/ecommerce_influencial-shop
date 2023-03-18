@@ -370,6 +370,11 @@
   color:rgb(78, 146, 248);
 }
 
+.containerProduct .Evaluation {
+  display: flex;
+  align-items: center;
+}
+
 .containerProduct .containerItem {
   width: 100%;
   display: flex;

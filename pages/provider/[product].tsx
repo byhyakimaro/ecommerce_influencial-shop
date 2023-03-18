@@ -37,13 +37,13 @@ export default function Home({ product, i18n, User }: any) {
           </div>
           <div className={ styles.containerDescription }>
             <h2>{ product.Title }</h2>
-            {[...Array(5)].map((value, index) => {
-              return (
-                <label key={index}>
-                  <i className="bi bi-star" style={{fontSize:"14px",margin:"0"}}></i>
-                </label>
-              )
-            })}({ product.CountEvaluation })
+            <div className={ styles.Evaluation }>
+              {[...Array(5)].map((value, index) => {
+                return (
+                  <i key={index} className="bi bi-star-half" style={{fontSize:"14px",margin:"2px",padding:"0"}}></i>
+                )
+              })}({ product.CountEvaluation })
+            </div>
             <div className={ styles.Price } > { (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) } </div>
             <div>{i18n.offPix}</div>
             <button onClick={() => setShowComponent(true)}>{i18n.payments}</button>
