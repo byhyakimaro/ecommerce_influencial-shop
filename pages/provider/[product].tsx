@@ -46,6 +46,7 @@ export default function Home({ product, i18n, User }: any) {
                 )
               })}({ product.CountEvaluation })
             </div>
+            <div>Mais Vendido - <a>1º em Celulares e Smartphones</a> </div>
             <div className={ styles.Price } > { (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) } </div>
             <div>{i18n.offPix}</div>
             <button onClick={() => setShowComponent(true)}>{i18n.payments}</button>
