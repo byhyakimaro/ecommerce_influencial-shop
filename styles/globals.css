@@ -139,6 +139,11 @@ button {
   cursor: pointer;
 }
 
+button:disabled,
+button[disabled] {
+  cursor: not-allowed !important;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
