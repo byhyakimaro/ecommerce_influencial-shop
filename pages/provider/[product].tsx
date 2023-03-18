@@ -25,7 +25,7 @@ export default function Home({ product, i18n, User }: any) {
       </Head>
       <Header></Header>
       <div className={ styles.containerProduct }>
-        <h1 className={ styles.Title } > { product.Title } </h1>
+        <h1 className={ styles.Title }> Inicio {"> "+ product.Title } </h1>
         <div className={styles.containerItem}>
           <div className={ styles.containerImage }>
             <div>
@@ -36,6 +36,7 @@ export default function Home({ product, i18n, User }: any) {
             </div>
           </div>
           <div className={ styles.containerDescription }>
+            <h2>{ product.Title }</h2>
             <div style={{display: "flex", alignItems: "center"}}>{i18n.delivery}<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"green"}}>{i18n.inStock}</p> : <p style={{color:"red"}}>{i18n.outStock}</p>  } </div>
             <div>{ product.Evaluation } / 5 - ({ product.CountEvaluation })</div>
             <div className={ styles.Price } > { (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) } </div>
