@@ -21,8 +21,6 @@ export default function Home() {
       <div className={styles.loginContainer}>
         <a href=".."><div className={styles.login_logotype}></div></a>
         <form className={styles.loginForm} onSubmit={handleSubmit(handleSignIn)}>
-          <h2>Sign in to your account</h2>
-          <br></br>
           <div className={styles.divInputs} >
             <p>Login, Email or Telephone</p>
             <input type="hidden" name="remember" defaultValue="true" />
