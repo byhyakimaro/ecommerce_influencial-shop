@@ -23,5 +23,5 @@ export const Canvas = (props: any) => {
       }
   }, [])
 
-  return <canvas ref={canvasRef} {...props} width={520} height={420} />
+  return <canvas ref={canvasRef} {...props} width={props.width} height={props.height} />
 }
