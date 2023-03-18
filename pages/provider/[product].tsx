@@ -25,7 +25,7 @@ export default function Home({ product, i18n, User }: any) {
       </Head>
       <Header></Header>
       <div className={ styles.containerProduct }>
-        <h4 className={ styles.Title }> Inicio / { product.Category } / { product.Title } </h4>
+        <p className={ styles.Title }> Inicio | <a>acessorios e celulares</a> {">"} <a>celulares</a></p>
         <div className={styles.containerItem}>
           <div className={ styles.containerImage }>
             <div>
@@ -37,16 +37,17 @@ export default function Home({ product, i18n, User }: any) {
           </div>
           <div className={ styles.containerDescription }>
             <h2>{ product.Title }</h2>
-            <div style={{display: "flex", alignItems: "center"}}>{i18n.delivery}<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"green"}}>{i18n.inStock}</p> : <p style={{color:"red"}}>{i18n.outStock}</p>  } </div>
             <div>{ product.Evaluation } / 5 - ({ product.CountEvaluation })</div>
             <div className={ styles.Price } > { (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) } </div>
             <div>{i18n.offPix}</div>
             <button onClick={() => setShowComponent(true)}>{i18n.payments}</button>
             <div className={ styles.buyBottom }>
               <a href={ `../precart/${ product.Code }` }>
-                <button name="buy">{i18n.buttonBuy}</button>
+              { product.productStock > 0 && <button name="buy">{i18n.buttonBuy}</button> }
               </a>
             </div>
+            <div style={{display: "flex", alignItems: "center"}}>{i18n.delivery}<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"green"}}>{i18n.inStock}</p> : <p style={{color:"red"}}>{i18n.outStock}</p>  } </div>
+            <br></br>
             <h3>{i18n.description}</h3>
             <br></br>
             <div>{product.Description.InformationText}</div>
