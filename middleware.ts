@@ -36,10 +36,13 @@ export async function middleware(req: any, res: any, next: any) {
     else if (req.nextUrl.pathname.startsWith('/admin')) {
       return NextResponse.rewrite(new URL('/login', req.url))
     }
+    else if (req.nextUrl.pathname.startsWith('/account')) {
+      return NextResponse.rewrite(new URL('/login', req.url))
+    }
   }
 }
 
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: ['/login', '/cart', '/precart', '/provider', '/categories', '/admin'],
+  matcher: ['/login', '/cart', '/precart', '/provider', '/categories', '/admin', '/account'],
 }
