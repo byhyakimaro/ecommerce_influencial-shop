@@ -25,7 +25,7 @@ export default function Home({ product, i18n, User }: any) {
       </Head>
       <Header></Header>
       <div className={ styles.containerProduct }>
-        <h1 className={ styles.Title }> Inicio {"> "+ product.Title } </h1>
+        <h4 className={ styles.Title }> Inicio / { product.Title } </h4>
         <div className={styles.containerItem}>
           <div className={ styles.containerImage }>
             <div>
