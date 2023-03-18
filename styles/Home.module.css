@@ -260,11 +260,24 @@
 
 .loginContainer {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
+}
+
+.login_logotype {
+  background: url('../public/logotipoflat-removebg.png') rgba(178, 178, 178, 0.707);
+  border-radius: 50%;
+  padding: 3em 8em;
+  width: 12rem;
+  height: 3rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 0rem 2rem;
+  border-radius: 2px;
 }
 
 .loginForm {
@@ -273,6 +286,7 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
+  margin: 2em;
   /*styles*/
   color: black;
   border-radius: 6px;

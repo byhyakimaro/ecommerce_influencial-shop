@@ -19,6 +19,7 @@ export default function Home() {
       </Head>
 
       <div className={styles.loginContainer}>
+        <a href=".."><div className={styles.login_logotype}></div></a>
         <form className={styles.loginForm} onSubmit={handleSubmit(handleSignIn)}>
           <h2>Sign in to your account</h2>
           <br></br>
