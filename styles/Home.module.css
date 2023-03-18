@@ -277,7 +277,7 @@
   color: black;
   border-radius: 6px;
   background: rgba(255, 255, 255, .6);
-  box-shadow: 0px 0px 15px 1px #0000006c;
+  box-shadow: 0px 0px 12px 1px #0000006c;
 }
 
 .inputs {
