@@ -20,56 +20,39 @@ export default function Home() {
 
       <div className={styles.loginContainer}>
         <form className={styles.loginForm} onSubmit={handleSubmit(handleSignIn)}>
-          <div className={styles.loginTitle} >
-            <h2 >Sign in to your account</h2>
-          </div>
-          <input type="hidden" name="remember" defaultValue="true" />
-          <div >
-            <div>
-              <label htmlFor="email-address">
-                Email address
-              </label>
-              <input
+          <p>Sign in to your account</p>
+          <br></br>
+          <div className={styles.divInputs} >
+            <p>Login, Email or Telephone</p>
+            <input type="hidden" name="remember" defaultValue="true" />
+            <input
                 {...register('email')}
                 id="email-address"
+                className={styles.inputs}
                 name="email"
                 type="email"
                 autoComplete="email"
                 required
                 placeholder="Email address"
               />
-            </div>
-            <div>
-              <label htmlFor="password" >
-                Password
-              </label>
+          </div>
+          <div className={styles.divInputs} >
+            <p>Password</p>
+            <input type="hidden" name="remember" defaultValue="true" />
               <input
                 {...register('password')}
                 id="password"
+                className={[styles.inputs, styles.inputPassword].join(" ")}
                 name="password"
                 type="password"
                 autoComplete="current-password"
                 required
                 placeholder="Password"
               />
-            </div>
+              <a href="#">Forgot your password?</a>
           </div>
-
-          <div >
-            <div className="text-sm">
-              <a href="#">
-                Forgot your password?
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <button
-              type="submit"
-            >
-              Sign in
-            </button>
-          </div>
+          <br></br>
+          <button type='submit'>Sign in</button>
         </form>
       </div>
     </div>

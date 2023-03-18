@@ -267,32 +267,65 @@
   width: 100%;
 }
 
-.loginTitle {
-  width: 100%;
+.loginForm {
+  /*positions*/
+  width: 400px;
   display: flex;
-  justify-content: center;
-  margin: 10px;
+  flex-direction: column;
+  padding: 20px;
+  /*styles*/
+  color: black;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, .6);
+  font-family: 'Exo 2', sans-serif;
+  box-shadow: 0px 0px 15px 1px #0000006c;
 }
 
-.loginForm > div > div > label {
-  margin: 5px 0;
-  display: flex;
+.inputs {
+  outline: none;
+  /*positions*/
   width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  /*styles*/
+  color: #ffffff;
+  border: none;
+  background: rgb(85, 85, 85);
+  border-radius: 4px;
 }
 
-.loginForm > div > div > input {
-  margin-bottom: .7rem;
-  width: 255px;
-  padding: 4px;
+.divInputs {
+  /*positions*/
+  margin: 10px 0;
+  /*styles*/
 }
 
-.loginForm > div > button {
+.inputPassword p {
+  /*positions*/
+  align-self: flex-end;
+  /*styles*/
+}
+
+.loginForm button {
+  /*positions*/
   width: 100%;
-  margin: .9rem 0;
-  padding: 4px;
+  padding: 10px;
+  align-self: center;
+  /*styles*/
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: inherit;
+  font-family: inherit;
+  color: white;
+  background: rgba(250, 191, 27, 1);
+  box-shadow: inset 0px 0px 0px 2px rgba(250, 191, 27, 1);
 }
-.loginForm > div > button:hover {
-  cursor: pointer;
+
+.loginForm button:hover {
+  transition: .3s;
+  background: rgb(240, 208, 122);
+  transform: scale(1.02);
 }
 
 .containerProduct {

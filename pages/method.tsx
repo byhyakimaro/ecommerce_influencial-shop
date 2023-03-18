@@ -91,6 +91,31 @@ export default function Home({ offers, productsInCart, token }: any) {
               <h2>Total da sua Compra</h2>
               <h3>R$ { (productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)).toFixed(2) }</h3>
             </div>
+            <div id="creditcard">
+              <h2>Cartao de Credito</h2>
+              <form className="form">
+                <div className="credit-card-info--form">
+                  <div className="input_container">
+                    <label className="input_label">Card holder full name</label>
+                    <input id="password_field" className="input_field" type="text" name="input-name" title="Inpit title" placeholder="Enter your full name">
+                  </div>
+                  <div className="input_container">
+                    <label  className="input_label">Card Number</label>
+                    <input id="password_field" className="input_field" type="number" name="input-name" title="Inpit title" placeholder="0000 0000 0000 0000">
+                  </div>
+                  <div className="input_container">
+                    <label for="password_field" className="input_label">Expiry Date / CVV</label>
+                    <div className="split">
+                    <input id="password_field" className="input_field" type="text" name="input-name" title="Expiry Date" placeholder="01/23">
+                    <input id="password_field" className="input_field" type="number" name="cvv" title="CVV" placeholder="CVV">
+                  </div>
+                  </div>
+                </div>
+                <button className="purchase--btn">Checkout</button>
+              </form>
+              <h2>Total da sua Compra</h2>
+              <h3>R$ { (productsCart?.reduce((a: any,v: any) =>  a = a + v.Price , 0)).toFixed(2) }</h3>
+            </div>
           </div>
         </div>
         <div className={styles.buttonsPayments}>
