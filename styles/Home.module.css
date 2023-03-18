@@ -302,9 +302,19 @@
   margin: 10px 0;
   /*styles*/
   color: #ffffff;
-  border: none;
+  border: 2px solid transparent;
   background: rgb(85, 85, 85);
   border-radius: 4px;
+}
+
+
+.inputs:hover, .inputs:focus, .divInputs:hover .inputs {
+  outline: none;
+  border-color: #05060f;
+}
+
+.divInputs p:hover, .inputs:focus {
+  color: white;
 }
 
 .divInputs {

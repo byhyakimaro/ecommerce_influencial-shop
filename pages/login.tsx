@@ -22,7 +22,7 @@ export default function Home() {
         <a href=".."><div className={styles.login_logotype}></div></a>
         <form className={styles.loginForm} onSubmit={handleSubmit(handleSignIn)}>
           <div className={styles.divInputs} >
-            <p>Login, Email or Telephone</p>
+            <label>Login, Email or Telephone</label>
             <input type="hidden" name="remember" defaultValue="true" />
             <input
                 {...register('email')}
@@ -36,7 +36,7 @@ export default function Home() {
               />
           </div>
           <div className={styles.divInputs} >
-            <p>Password</p>
+            <label>Password</label>
             <input type="hidden" name="remember" defaultValue="true" />
               <input
                 {...register('password')}
