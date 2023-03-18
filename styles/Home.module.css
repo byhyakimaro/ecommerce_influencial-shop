@@ -317,7 +317,8 @@
   font-weight: 500;
   border-radius: inherit;
   font-family: inherit;
-  color: white;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
   background: rgba(250, 191, 27, 1);
   box-shadow: inset 0px 0px 0px 2px rgba(250, 191, 27, 1);
 }
