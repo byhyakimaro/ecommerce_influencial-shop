@@ -53,6 +53,7 @@ export default function Home() {
           <br></br>
           <button type='submit'>Sign in</button>
         </form>
+          <a href="#"><h3>New User? Create an account.</h3></a>
       </div>
     </div>
   )
