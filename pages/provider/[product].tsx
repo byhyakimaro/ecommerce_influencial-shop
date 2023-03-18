@@ -30,6 +30,9 @@ export default function Home({ product, i18n, User }: any) {
           <div className={ styles.containerImage }>
             <div>
               <Canvas url={ product.Image }></Canvas>
+              <Canvas url={ product.Image }></Canvas>
+              <Canvas url={ product.Image }></Canvas>
+              <Canvas url={ product.Image }></Canvas>
             </div>
           </div>
           <div className={ styles.containerDescription }>
