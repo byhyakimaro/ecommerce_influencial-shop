@@ -20,7 +20,7 @@ export default function Home() {
 
       <div className={styles.loginContainer}>
         <form className={styles.loginForm} onSubmit={handleSubmit(handleSignIn)}>
-          <p>Sign in to your account</p>
+          <h2>Sign in to your account</h2>
           <br></br>
           <div className={styles.divInputs} >
             <p>Login, Email or Telephone</p>
