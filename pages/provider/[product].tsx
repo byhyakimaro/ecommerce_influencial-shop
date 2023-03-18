@@ -37,7 +37,13 @@ export default function Home({ product, i18n, User }: any) {
           </div>
           <div className={ styles.containerDescription }>
             <h2>{ product.Title }</h2>
-            <div>{ product.Evaluation } / 5 - ({ product.CountEvaluation })</div>
+            {[...Array(5)].map((value, index) => {
+              return (
+                <label key={index}>
+                  <i className="bi bi-star" style={{fontSize:"14px",margin:"0"}}></i>
+                </label>
+              )
+            })}({ product.CountEvaluation })
             <div className={ styles.Price } > { (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) } </div>
             <div>{i18n.offPix}</div>
             <button onClick={() => setShowComponent(true)}>{i18n.payments}</button>
