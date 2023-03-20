@@ -43,10 +43,15 @@ export default function Home({ product, i18n, User }: any) {
             <h2>{ product.Title }</h2>
             <div className={ styles.Evaluation }>
               {[...Array(5)].map((value, index) => {
-                const full = "bi-star-half"
+                
+                const full = "bi-star-fill"
+                const half = "bi-star-half"
+                const empty = "bi-star"
+
+                const condition = product.Evaluation >= index+1 ? full : empty
 
                 return (
-                  <i key={index} className={`bi ${full}`} style={{fontSize:"14px",margin:"2px",padding:"0"}}></i>
+                  <i key={index} className={`bi ${condition}`} style={{fontSize:"14px",margin:"2px",padding:"0"}}></i>
                 )
               })}({ product.CountEvaluation })
             </div>
