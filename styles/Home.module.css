@@ -365,7 +365,7 @@
   /* font-size: 22px; */
 }
 
-.containerProduct .Title a {
+.containerProduct .Title a, .containerDescription div a {
   cursor: pointer;
   color:rgb(78, 146, 248);
 }
