@@ -417,7 +417,8 @@
 }
 
 .containerDescription .moreSell label {
-  background: rgba(127, 239, 14, 0.904);
+  color: white;
+  background: rgb(204, 12, 12);
   padding: 2px 5px;
   border-radius: 4px;
 }
