@@ -58,7 +58,7 @@ export default function Home({ product, i18n, User }: any) {
             <div className={styles.moreSell}><label>Mais Vendido</label><a>1º em Celulares e Smartphones</a> </div>
             <div className={ styles.Price } > { (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) } </div>
             <div>{i18n.offPix}</div>
-            <h2>melhores fornecedores selecionados do brasil</h2>
+            <h6>Os melhores fornecedores selecionados do Brasil garantem a qualidade dos produtos e serviços oferecidos.</h6>
             <button onClick={() => setShowComponent(true)}>{i18n.payments}</button>
             <div className={ styles.buyBottom }>
               <a href={ `../precart/${ product.Code }` }>
