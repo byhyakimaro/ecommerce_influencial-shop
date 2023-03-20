@@ -64,7 +64,7 @@ export default function Home({ product, i18n, User }: any) {
                 <button name="buy" disabled={ product.productStock > 0 ? false: true }>{i18n.buttonBuy}</button>
               </a>
             </div>
-            <div style={{display: "flex", alignItems: "center"}}>{i18n.delivery}<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"green"}}>{i18n.inStock}</p> : <p style={{color:"red"}}>{i18n.outStock}</p>  } </div>
+            <div style={{display: "flex", alignItems: "center"}}>{i18n.delivery}<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"var(--themeColorGreen)"}}>{i18n.inStock}</p> : <p style={{color:"red"}}>{i18n.outStock}</p>  } </div>
             <br></br>
             <h3>{i18n.description}</h3>
             <br></br>
