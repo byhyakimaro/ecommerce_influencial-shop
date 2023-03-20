@@ -416,6 +416,10 @@
   cursor: pointer;
 }
 
+.containerDescription .moreSell {
+  margin: 10px 0;
+}
+
 .containerDescription .moreSell label {
   color: white;
   background: rgb(204, 12, 12);
