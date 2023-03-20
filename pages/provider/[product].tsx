@@ -53,7 +53,7 @@ export default function Home({ product, i18n, User }: any) {
                 return (
                   <i key={index} className={`bi ${condition}`} style={{fontSize:"14px",margin:"2px",padding:"0"}}></i>
                 )
-              })}({ product.CountEvaluation })
+              })} - ({ product.CountEvaluation })
             </div>
             <div>Mais Vendido - <a>1º em Celulares e Smartphones</a> </div>
             <div className={ styles.Price } > { (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) } </div>
