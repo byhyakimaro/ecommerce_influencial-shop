@@ -365,7 +365,7 @@
   /* font-size: 22px; */
 }
 
-.containerProduct .Title a, .containerDescription div a {
+.containerProduct .Title a, .containerDescription .moreSell a {
   cursor: pointer;
   color:rgb(78, 146, 248);
 }
@@ -414,6 +414,12 @@
   padding: 12px 40px;
   background: #d6922b;
   cursor: pointer;
+}
+
+.containerDescription .moreSell label {
+  background: rgba(127, 239, 14, 0.904);
+  padding: 2px 5px;
+  border-radius: 4px;
 }
 
 .precart {
