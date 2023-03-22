@@ -89,6 +89,15 @@ export default function Home({ product, i18n, User }: any) {
             </table>
           </div>
         </div>
+        <h4>Clientes que compraram este item também compraram</h4>
+        <h4>Principais Avaliações com imagens</h4>
+        <div>
+        <h4>Tags para filtrar</h4>
+            <ul>
+              <li>Custo bnefiocio</li>
+              <li>Preco</li>
+            </ul>
+        </div>
       </div>
       <Footer></Footer>
       <TypePayments showComponent={showComponent}></TypePayments>
