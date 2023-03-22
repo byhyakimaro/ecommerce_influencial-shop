@@ -68,7 +68,7 @@ export default function Home({ product, i18n, User }: any) {
             </div>
             <div style={{display: "flex", alignItems: "center"}}>{i18n.delivery}<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"var(--themeColorGreen)"}}>{i18n.inStock}</p> : <p style={{color:"red"}}>{i18n.outStock}</p>  } </div>
             <h5 style={{display: "flex"}}><i style={{padding: "5px",color:"var(--themeColorGreen)"}} className="bi bi-patch-check-fill"></i>Os melhores fornecedores selecionados do Brasil garantem a qualidade dos produtos e serviços oferecidos.</h5>
-            <h5 style={{display: "flex"}}><i style={{padding: "5px",color:"var(--themeColorGreen)"}} className="bi bi-arrow-return-left"></i>Devolução grátis. Você tem 7 dias a partir da data de recebimento.</h5>
+            <h5 style={{display: "flex"}}><i style={{padding: "5px",color:"var(--themeColorBlue)"}} className="bi bi-arrow-return-left"></i>Devolução grátis. Você tem 7 dias a partir da data de recebimento.</h5>
             <br></br>
             <h3>{i18n.description}</h3>
             <br></br>
