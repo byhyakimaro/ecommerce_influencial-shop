@@ -55,10 +55,9 @@ export default function Home({ product, i18n, User }: any) {
                 )
               })} - ({ product.CountEvaluation })
             </div>
-            <div className={styles.moreSell}><label>Mais Vendido</label><a>1º em Celulares e Smartphones</a> </div>
+            <div className={styles.moreSell}><label>Mais Vendidos</label><a>1º em Celulares e Smartphones</a> </div>
             <div className={ styles.Price } > { (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) } </div>
             <div>{i18n.offPix}</div>
-            <h6>Os melhores fornecedores selecionados do Brasil garantem a qualidade dos produtos e serviços oferecidos.</h6>
             <button onClick={() => setShowComponent(true)}>{i18n.payments}</button>
             <div className={ styles.buyBottom }>
               <a href={ `../precart/${ product.Code }` }>
@@ -66,6 +65,7 @@ export default function Home({ product, i18n, User }: any) {
               </a>
             </div>
             <div style={{display: "flex", alignItems: "center"}}>{i18n.delivery}<strong>{ "InfluencialShop" }</strong> | { product.productStock > 0 ? <p style={{color:"var(--themeColorGreen)"}}>{i18n.inStock}</p> : <p style={{color:"red"}}>{i18n.outStock}</p>  } </div>
+            <h5 style={{display: "flex"}}><i style={{padding: "5px",color:"var(--themeColorGreen)"}} className="bi bi-patch-check-fill"></i>Os melhores fornecedores selecionados do Brasil garantem a qualidade dos produtos e serviços oferecidos.</h5>
             <br></br>
             <h3>{i18n.description}</h3>
             <br></br>
