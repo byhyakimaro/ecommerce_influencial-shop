@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Header from '@/contexts/header'
 import Footer from '@/contexts/footer'
 import TypePayments from '@/contexts/typePayments'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Canvas } from '@/contexts/imgProducts'
 
 export default function Home({ product, i18n, User }: any) {
@@ -88,7 +88,7 @@ export default function Home({ product, i18n, User }: any) {
         </div>
       </div>
       <Footer></Footer>
-      {showComponent && <TypePayments ></TypePayments>}
+      <TypePayments showComponent={showComponent}></TypePayments>
     </>
   )
 }

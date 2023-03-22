@@ -5,14 +5,21 @@ import BarCodeSVG from '@/public/bar-code.svg'
 import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '@/contexts/AuthContexts'
 
-export default function TypePayments() {
+export default function TypePayments({showComponent}:any) {
   
   const { user, isAuthenticated } = useContext(AuthContext)
+  const [showComponents, setShowComponent] = useState(showComponent)
 
   const [i18n, setI18n] = useState<any>()
   const language = isAuthenticated ? user?.language : 'en-us'
   
-  console.log(i18n)
+  useEffect(() => {
+    setShowComponent(showComponent)
+  }, [showComponent])
+
+  useEffect(() => {
+    showComponents ? document.getElementById('containerTypePayments')?.setAttribute("style", "display: block;") : document.getElementById('containerTypePayments')?.setAttribute("style", "display: none;")
+  }, [showComponents])
 
   useEffect(() => {
 
@@ -23,10 +30,6 @@ export default function TypePayments() {
     })
     
   }, [user])
-
-  function switchCase(event:any) {
-    event.currentTarget.parentElement.parentElement?.setAttribute("style", "display: none;")
-  }
 
   function changeButton(event:any){
 
@@ -47,8 +50,8 @@ export default function TypePayments() {
   
   return (
     <>
-      <div className={ styles.containerTypePayments }>
-        <h2>{i18n?.typePayments}<button onClick={switchCase}>X</button></h2>
+      <div className={ styles.containerTypePayments } id='containerTypePayments'>
+        <h2>{i18n?.typePayments}<button onClick={() => setShowComponent(false)}>X</button></h2>
         <div className={ styles.typesPayments }>
           <div className={ styles.typesTab }>
             <button value="credit" onClick={changeButton}><CreditCardSVG width={24} height={24} value="show"></CreditCardSVG><div>{i18n?.creditTitle}</div></button>
