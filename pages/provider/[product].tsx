@@ -37,6 +37,8 @@ export default function Home({ product, i18n, User }: any) {
               <Canvas url={ product.Image } width={570} height={440}></Canvas>
               <Canvas url={ product.Image } width={570} height={440}></Canvas>
               <Canvas url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas url={ product.Image } width={570} height={440}></Canvas>
             </div>
           </div>
           <div className={ styles.containerDescription }>
