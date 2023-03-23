@@ -18,10 +18,10 @@ export default function Home({ searchResults }: any) {
       <h2>Search</h2>
       {searchResults.map((product:any, index:any)=>{
         return (
-          <div key={index}>
+          <a key={index} href={`../provider/${product["_id"]}`}>
             <div>{ product.Title }</div>
             <img src={ product.Image }></img>
-          </div>
+          </a>
         )
       })}
       <Footer></Footer>

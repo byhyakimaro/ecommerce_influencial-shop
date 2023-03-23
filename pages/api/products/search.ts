@@ -1,4 +1,5 @@
 import { getCollection } from '@/modules/connectDb'
+import { ObjectId } from 'mongodb'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function handler(
@@ -15,6 +16,13 @@ export default async function handler(
 
   const regex = new RegExp(`^${groupRegex}.*$`, 'gi')
   const products = await collection.find({ Title: {$regex: regex } }).toArray()
+
+  products.forEach((product:any) => {
+    collection.updateOne(
+      { _id: new ObjectId(product["_id"]) },
+      { $inc: { Impressions: 1 } }
+    )
+  })
 
   res.status(200).json(products)
 }
