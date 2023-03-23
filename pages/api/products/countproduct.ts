@@ -22,6 +22,11 @@ export default async function handler(
 
     collectionProducts.updateOne(
       { _id: new ObjectId(itemCode) },
+      { $inc: { Impressions: 1 } }
+    )
+
+    collectionProducts.updateOne(
+      { _id: new ObjectId(itemCode) },
       { $inc: { ClickTick: 1 } }
     )
 
