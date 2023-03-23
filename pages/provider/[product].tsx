@@ -9,7 +9,7 @@ import TypePayments from '@/contexts/typePayments'
 import { useEffect, useState } from 'react'
 import { Canvas } from '@/contexts/imgProducts'
 
-export default function Home({ product, i18n, User }: any) {
+export default function Home({ product, i18n, User, itemTopSell, category }: any) {
   const [showComponent, setShowComponent] = useState(false)
 
   const language = User?.user?.language ? User?.user?.language : 'en-us'
@@ -57,7 +57,7 @@ export default function Home({ product, i18n, User }: any) {
                 )
               })} - ({ product.CountEvaluation })
             </div>
-            <div className={styles.moreSell}><label>Mais Vendidos</label><a>1º em Celulares e Smartphones</a> </div>
+            {itemTopSell && <div className={styles.moreSell}><label>Mais Vendidos</label><a>{itemTopSell}º em {category}</a> </div>}
             <div className={ styles.Price } > { (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) } </div>
             <div>{i18n.offPix}</div>
             <button onClick={() => setShowComponent(true)}>{i18n.payments}</button>
@@ -123,7 +123,7 @@ Home.getInitialProps = async (ctx: any) => {
       })
   })
 
-  const product = await fetch(`http://localhost:3000/api/product/${productId}`)
+  const productFetch = await fetch(`http://localhost:3000/api/product/${productId}`)
 
   const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
   {
@@ -141,11 +141,21 @@ Home.getInitialProps = async (ctx: any) => {
   const localesFetch = await fetch(`http://localhost:3000/locales/${language}/provider.json`)
   const locales = await localesFetch.json()
 
-  if (product.status === 200) {
+  if (productFetch.status === 200) {
+
+    const product = await productFetch.json()
+
+    const categoriesFetch = await fetch(`http://localhost:3000/api/products/categories`)
+    const categoryProduct = (await categoriesFetch.json()).filter((category:any) => category.code === product.Category)
+
+    const itemTopSell = categoryProduct.find(({ bestSellers }:any) => bestSellers.find((item:any) => item === product.Code))
+
     return {
       i18n: locales,
       User: dataUser,
-      product: await product.json()
+      itemTopSell: itemTopSell ? itemTopSell.bestSellers.indexOf(product.Code)+1 : false,
+      category: itemTopSell.name,
+      product: product
     }
   }
 }
