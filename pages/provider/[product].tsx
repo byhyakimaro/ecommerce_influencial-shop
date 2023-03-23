@@ -33,12 +33,12 @@ export default function Home({ product, i18n, User }: any) {
         <div className={styles.containerItem}>
           <div className={ styles.containerImage }>
             <div>
-              <Canvas url={ product.Image } width={570} height={440}></Canvas>
-              <Canvas url={ product.Image } width={570} height={440}></Canvas>
-              <Canvas url={ product.Image } width={570} height={440}></Canvas>
-              <Canvas url={ product.Image } width={570} height={440}></Canvas>
-              <Canvas url={ product.Image } width={570} height={440}></Canvas>
-              <Canvas url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
             </div>
           </div>
           <div className={ styles.containerDescription }>

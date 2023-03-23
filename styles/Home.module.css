@@ -361,7 +361,7 @@
 
 .containerProduct .Title {
   width: 100%;
-  padding: 0 1rem 1em 7rem;
+  padding: 0 1rem 1em 3rem;
   /* font-size: 22px; */
 }
 
@@ -378,7 +378,6 @@
 .containerProduct .containerItem {
   width: 100%;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
