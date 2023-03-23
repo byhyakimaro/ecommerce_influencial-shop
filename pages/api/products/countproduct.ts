@@ -19,6 +19,12 @@ export default async function handler(
       { _id: new ObjectId(token) },
       { $addToSet: { itemsViewed: itemCode } }
     )
+
+    collectionProducts.updateOne(
+      { _id: new ObjectId(itemCode) },
+      { $inc: { ClickTick: 1 } }
+    )
+
     res.status(200).json("Item updated successfully")
   } else {
 
