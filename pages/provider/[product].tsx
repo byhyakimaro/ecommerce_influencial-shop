@@ -102,43 +102,43 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
           </div>
         </div>
       </div>
-      <div>
-          <h3>Clientes que compraram este item também compraram</h3>
-          {similarProducts.map((product:any, index:any)=>{
+      <div className={styles.similarProducts}>
+        <h3>Clientes que compraram este item também compraram</h3>
+        {similarProducts.map((product:any, index:any)=>{
+          return (
+            <div key={index}>
+              <Canvas scale={2.5} url={ product.Image } width={230} height={230}></Canvas>
+              <div>{ product.Title }</div>
+            </div>
+          )
+        })}
+      </div>
+      <div className={styles.productReview}>
+        <h3>Opiniões do produto</h3>
+        <div>
+          {product.Evaluations.map((Evaluation:any, index:any) => {
             return (
               <div key={index}>
-                <Canvas scale={2.5} url={ product.Image } width={230} height={230}></Canvas>
-                <div>{ product.Title }</div>
+                <div>
+                  {[...Array(5)].map((value, index) => {
+                    
+                    const full = "bi-star-fill"
+                    const half = "bi-star-half"
+                    const empty = "bi-star"
+
+                    const condition = Evaluation.Evaluation >= index+1 ? full : empty
+
+                    return (
+                      <i key={index} className={`bi ${condition}`} style={{fontSize:"14px",margin:"2px",padding:"0"}}></i>
+                    )
+                  })}
+                </div>
+                <p>{Evaluation.comment}</p>
               </div>
             )
           })}
         </div>
-        <div>
-          <h3>Opiniões do produto</h3>
-          <div>
-            {product.Evaluations.map((Evaluation:any, index:any) => {
-              return (
-                <div key={index}>
-                  <div>
-                    {[...Array(5)].map((value, index) => {
-                      
-                      const full = "bi-star-fill"
-                      const half = "bi-star-half"
-                      const empty = "bi-star"
-
-                      const condition = Evaluation.Evaluation >= index+1 ? full : empty
-
-                      return (
-                        <i key={index} className={`bi ${condition}`} style={{fontSize:"14px",margin:"2px",padding:"0"}}></i>
-                      )
-                    })}
-                  </div>
-                  <p>{Evaluation.comment}</p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
+      </div>
       <Footer></Footer>
       <TypePayments showComponent={showComponent}></TypePayments>
     </>
