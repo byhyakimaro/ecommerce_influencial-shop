@@ -15,7 +15,7 @@ export default async function handler(
   }).join('')
 
   const regex = new RegExp(`^${groupRegex}.*$`, 'gi')
-  const products = await collection.find({ Title: {$regex: regex } }).toArray()
+  const products = await collection.find({ tags: {$regex: regex } }).toArray()
 
   products.forEach((product:any) => {
     collection.updateOne(
