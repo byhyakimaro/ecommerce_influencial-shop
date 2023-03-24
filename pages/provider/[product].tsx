@@ -95,6 +95,7 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
             return (
               <div key={index}>
                 <Canvas scale={2.5} url={ product.Image } width={230} height={230}></Canvas>
+                <div>{ product.Title }</div>
               </div>
             )
           })}
