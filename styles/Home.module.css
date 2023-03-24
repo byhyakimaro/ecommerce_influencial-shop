@@ -704,3 +704,7 @@
 .tabPurchased .descriptionPurchased .listProducts .listDescription > img {
   width: 64px;
 }
+
+.productReview {
+  margin: 20px;
+}
