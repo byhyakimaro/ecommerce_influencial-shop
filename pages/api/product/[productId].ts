@@ -18,6 +18,7 @@ export default async function handler(
   if (product) {
     res.status(200).json({
       Title: product.Title,
+      Model: product.Model,
       Description: product.Description,
       Code: productId,
       Category: product.category,
