@@ -33,12 +33,12 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
         <div className={styles.containerItem}>
           <div className={ styles.containerImage }>
             <div>
-              <Canvas style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
-              <Canvas style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
-              <Canvas style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
-              <Canvas style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
-              <Canvas style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
-              <Canvas style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas scale={1.2} style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas scale={1.2} style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas scale={1.2} style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas scale={1.2} style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas scale={1.2} style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
+              <Canvas scale={1.2} style={{width:"50%",height:"max-content"}} url={ product.Image } width={570} height={440}></Canvas>
             </div>
           </div>
           <div className={ styles.containerDescription }>
@@ -93,7 +93,9 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
           <h3>Clientes que compraram este item também compraram</h3>
           {similarProducts.map((product:any, index:any)=>{
             return (
-              <div key={index}>{product.Title}</div>
+              <div key={index}>
+                <Canvas scale={2.5} url={ product.Image } width={230} height={290}></Canvas>
+              </div>
             )
           })}
         </div>

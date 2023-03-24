@@ -6,6 +6,8 @@ export const Canvas = (props: any) => {
   useEffect(() => {
       const image = new Image()
       image.src = props.url
+
+      const scale = props.scale
       
       const canvas: any = canvasRef.current
       const context = canvas.getContext('2d')
@@ -15,10 +17,10 @@ export const Canvas = (props: any) => {
       image.onload = () => {
         context.drawImage(
           image, 
-          canvas.width / 2 - image.width / 2.5,
-          canvas.height / 2 - image.height / 2.5,
-          image.width / 1.2,
-          image.height / 1.2
+          canvas.width / 2 - image.width / scale/2,
+          canvas.height / 2 - image.height / scale/2,
+          image.width / scale,
+          image.height / scale
         )
       }
   }, [])
