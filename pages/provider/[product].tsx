@@ -57,7 +57,7 @@ export default function Home({ product, i18n, User, itemTopSell, category }: any
                 )
               })} - ({ product.CountEvaluation })
             </div>
-            {itemTopSell <= 3 && <div className={styles.moreSell}><label>Mais Vendidos</label><a>{itemTopSell}º em {category}</a> </div>}
+            {itemTopSell <= 10 && <div className={styles.moreSell}><label>Mais Vendidos</label><a>{itemTopSell}º em {category}</a> </div>}
             <div className={ styles.Price } > { (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) } </div>
             <div>{i18n.offPix}</div>
             <button onClick={() => setShowComponent(true)}>{i18n.payments}</button>
