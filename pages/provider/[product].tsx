@@ -9,7 +9,7 @@ import TypePayments from '@/contexts/typePayments'
 import { useEffect, useState } from 'react'
 import { Canvas } from '@/contexts/imgProducts'
 
-export default function Home({ product, i18n, User, itemTopSell, category }: any) {
+export default function Home({ product, i18n, User, itemTopSell, category, similarProducts }: any) {
   const [showComponent, setShowComponent] = useState(false)
 
   const language = User?.user?.language ? User?.user?.language : 'en-us'
@@ -91,7 +91,11 @@ export default function Home({ product, i18n, User, itemTopSell, category }: any
         </div>
         <div>
           <h3>Clientes que compraram este item também compraram</h3>
-          
+          {similarProducts.map((product:any, index:any)=>{
+            return (
+              <div key={index}>{product.Title}</div>
+            )
+          })}
         </div>
         {/* <h4>Principais Avaliações com imagens</h4>
         <div>
@@ -153,11 +157,24 @@ Home.getInitialProps = async (ctx: any) => {
 
     const itemTopSell = categoryProduct.find(({ bestSellers }:any) => bestSellers.find((item:any) => item === product.Code))
 
+    const fetchA = await fetch('http://localhost:3000/api/products/search',
+    {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({ search: product.Model })
+    })
+  
+    const similarProducts = await fetchA.json()
+
     return {
       i18n: locales,
       User: dataUser,
       itemTopSell: itemTopSell ? itemTopSell.bestSellers.indexOf(product.Code)+1 : false,
       category: itemTopSell.name,
+      similarProducts: similarProducts,
       product: product
     }
   }
