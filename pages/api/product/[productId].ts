@@ -23,10 +23,8 @@ export default async function handler(
       Code: productId,
       Category: product.category,
       Image: product.Image,
-      Evaluation: product.Evaluation,
       Evaluations: product.Evaluations,
       Off: off && off,
-      CountEvaluation: product.CountEvaluation,
       productStock: product.productStock,
       Price: (product.Price+product.Price*(product.gainPercentage/100))-(product.Price*(product.offersPercentage/100))
     })

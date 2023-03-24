@@ -15,6 +15,18 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
   const language = User?.user?.language ? User?.user?.language : 'en-us'
   const currency = User?.user?.currency ? User?.user?.currency : 'USD'
 
+  function arrayAverage(valores:any) {
+    let soma = 0
+    for(let i in valores) {
+      soma += valores[i]
+    }
+    return soma
+  }
+
+  const Evaluation = arrayAverage(product.Evaluations.map((Evaluation:any) => {
+    return Evaluation.Evaluation
+  }))/product.Evaluations.length
+
   return (
     <>
       <Head>
@@ -50,12 +62,12 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
                 const half = "bi-star-half"
                 const empty = "bi-star"
 
-                const condition = product.Evaluation >= index+1 ? full : empty
+                const condition = Evaluation >= index+1 ? full : empty
 
                 return (
                   <i key={index} className={`bi ${condition}`} style={{fontSize:"14px",margin:"2px",padding:"0"}}></i>
                 )
-              })} - ({ product.CountEvaluation })
+              })} - ({ product.Evaluations.length })
             </div>
             {itemTopSell <= 10 && <div className={styles.moreSell}><label>Mais Vendidos</label><a>{itemTopSell}º em {category}</a> </div>}
             <div className={ styles.Price } > { (product.Price).toLocaleString(language, {style: 'currency', currency: currency}) } </div>
