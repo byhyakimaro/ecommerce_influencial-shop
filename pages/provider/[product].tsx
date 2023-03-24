@@ -114,7 +114,7 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
           })}
         </div>
         <div>
-          <h4>Opiniões do produto</h4>
+          <h3>Opiniões do produto</h3>
           <div>
             {product.Evaluations.map((Evaluation:any, index:any) => {
               return (
