@@ -101,12 +101,12 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
             )
           })}
         </div>
-        {/* <div>
-          <h4>Principais Avaliações com imagens</h4>
+        <div>
+          <h4>Opiniões do produto</h4>
           <div>
-
+            
           </div>
-        </div> */}
+        </div>
       <Footer></Footer>
       <TypePayments showComponent={showComponent}></TypePayments>
     </>

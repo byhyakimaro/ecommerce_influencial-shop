@@ -24,6 +24,7 @@ export default async function handler(
       Category: product.category,
       Image: product.Image,
       Evaluation: product.Evaluation,
+      Evaluations: product.Evaluations,
       Off: off && off,
       CountEvaluation: product.CountEvaluation,
       productStock: product.productStock,
