@@ -94,7 +94,7 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
           {similarProducts.map((product:any, index:any)=>{
             return (
               <div key={index}>
-                <Canvas scale={2.5} url={ product.Image } width={230} height={290}></Canvas>
+                <Canvas scale={2.5} url={ product.Image } width={230} height={230}></Canvas>
               </div>
             )
           })}
