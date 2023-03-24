@@ -89,7 +89,8 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
             </table>
           </div>
         </div>
-        <div>
+      </div>
+      <div>
           <h3>Clientes que compraram este item também compraram</h3>
           {similarProducts.map((product:any, index:any)=>{
             return (
@@ -100,15 +101,16 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
             )
           })}
         </div>
-        {/* <h4>Principais Avaliações com imagens</h4>
         <div>
-        <h4>Tags para filtrar</h4>
-            <ul>
-              <li>Custo bnefiocio</li>
-              <li>Preco</li>
-            </ul>
-        </div> */}
-      </div>
+          <h4>Principais Avaliações com imagens</h4>
+          <div>
+          <h4>Tags para filtrar</h4>
+              <ul>
+                <li>Custo bnefiocio</li>
+                <li>Preco</li>
+              </ul>
+          </div>
+        </div>
       <Footer></Footer>
       <TypePayments showComponent={showComponent}></TypePayments>
     </>
