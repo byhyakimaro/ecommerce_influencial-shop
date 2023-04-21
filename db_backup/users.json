@@ -1,0 +1,105 @@
+[{
+  "_id": {
+    "$oid": "60efd95841a74251393652e4"
+  },
+  "name": "Paulo Azevedo",
+  "email": "founder@influencialshop.com",
+  "password": "$2a$10$YBjW6brwgXEZJjPSKiBxtOtYjkzuX3Azkkj4TRvI8KG54E4BvAeh6",
+  "avatarUrl": "https://github.com/byhyakimaro.png",
+  "telephone": {
+    "$numberLong": "11989313542"
+  },
+  "login": "paulrisp",
+  "itemsPurchased": [
+    {
+      "id": {
+        "$numberLong": "55683657764"
+      },
+      "status": "pending",
+      "data": "2023-03-12T18:29:40.047-04:00",
+      "totalOrder": 6079.56,
+      "url": "https://www.mercadopago.com.br/payments/55683657764/ticket?caller_id=164246950&hash=0e9b2e17-2d45-4330-bde1-95d11eb5a1bd",
+      "methodPayment": "pix",
+      "products": [
+        "640dfcbc709304d3329f2e0b"
+      ]
+    },
+    {
+      "id": {
+        "$numberLong": "55665382031"
+      },
+      "status": "pending",
+      "data": "2023-03-12T18:39:44.737-04:00",
+      "totalOrder": 6608.22,
+      "url": "https://www.mercadopago.com.br/payments/55665382031/ticket?caller_id=164246950&payment_method_id=bolbradesco&payment_id=55665382031&payment_method_reference_id=10204685525&hash=b25628d8-c9c9-48ab-810e-56c63c9b35f3",
+      "methodPayment": "bolbradesco",
+      "products": [
+        "640dfcbc709304d3329f2e0b"
+      ]
+    },
+    {
+      "id": {
+        "$numberLong": "55688445782"
+      },
+      "status": "pending",
+      "data": "2023-03-12T20:54:28.590-04:00",
+      "totalOrder": 6079.56,
+      "url": "https://www.mercadopago.com.br/payments/55688445782/ticket?caller_id=164246950&hash=542572a7-0060-45bd-9d31-ac45a1d916fa",
+      "methodPayment": "pix",
+      "products": [
+        "640dfcbc709304d3329f2e0b"
+      ]
+    },
+    {
+      "id": {
+        "$numberLong": "55690959470"
+      },
+      "status": "pending",
+      "data": "2023-03-12T22:36:00.393-04:00",
+      "totalOrder": 6079.56,
+      "url": "https://www.mercadopago.com.br/payments/55690959470/ticket?caller_id=164246950&hash=07d5b342-e88a-4a92-a423-25b5e137840a",
+      "methodPayment": "pix",
+      "products": [
+        "640dfcbc709304d3329f2e0b"
+      ]
+    },
+    {
+      "id": {
+        "$numberLong": "55730313360"
+      },
+      "status": "pending",
+      "data": "2023-03-14T01:28:20.054-04:00",
+      "totalOrder": 6079.56,
+      "url": "https://www.mercadopago.com.br/payments/55730313360/ticket?caller_id=164246950&hash=7dcb91e5-08f2-4144-b7c8-10e3d2eb53ba",
+      "methodPayment": "pix",
+      "products": [
+        "640dfcbc709304d3329f2e0b"
+      ]
+    }
+  ],
+  "controlDevices": [],
+  "itemsViewed": [
+    "63e5e74bdc349f79959e0e90",
+    "63e26e61fb17c011e0682748",
+    "63e5e0ba200490d98365de96",
+    "640de07d0764228b1272ca16",
+    "640de0840764228b1272ca19",
+    "640dfcbc709304d3329f2e0b"
+  ],
+  "office": "owner",
+  "itemsRequest": [],
+  "productsInCart": {
+    "methodPayment": "pix",
+    "products": [
+      "640dfcbc709304d3329f2e0b"
+    ]
+  },
+  "savedAddresses": [
+    "{\"road\":\"Rua Rio Capiberibe\",\"number\":170,\"neighborhood\":\"Jardim Santo Antônio I\",\"city\":\"Campo Limpo Paulista\",\"state\":\"SP\",\"zipCode\":13232090,\"complement\":\"Casa Verde\"}"
+  ],
+  "offers": {
+    "percentPixOff": 10
+  },
+  "currency": "BRL",
+  "languages": "pt-br"
+}]

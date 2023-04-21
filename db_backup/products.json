@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "640dfcbc709304d3329f2e0b"
+  },
+  "Title": "iPhone 12 Apple 128GB Preto Tela 6,1” 12MP iOS",
+  "Image": "https://i.imgur.com/NLGFHG4.png",
+  "CountEvaluation": 0,
+  "quantitySold": 0,
+  "productStock": 11,
+  "Price": 6608.22,
+  "Evaluation": 0,
+  "dateProduct": {
+    "$date": {
+      "$numberLong": "1678638268458"
+    }
+  },
+  "loginCreateItem": "paulrisp",
+  "category": "electronics-devices",
+  "active": true,
+  "urlProvider": "https://www.magazineluiza.com.br/iphone-12-apple-128gb-preto-tela-61-12mp-ios/p/231147800/te/ip12/",
+  "offersPercentage": 0,
+  "tags": [
+    "cellphone"
+  ]
+}]
