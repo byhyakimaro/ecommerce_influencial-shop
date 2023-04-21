@@ -19,11 +19,15 @@
     "cellphone"
   ],
   "gainPercentage": 60,
-  "Impressions": 5,
-  "ClickTick": 5,
+  "Impressions": 7,
+  "ClickTick": 7,
   "Model": "Iphone 12",
   "Evaluations": [
     ""
   ],
-  "Description": ""
+  "Description": {
+    "technicalSpecifications": [
+      ""
+    ]
+  }
 }]
