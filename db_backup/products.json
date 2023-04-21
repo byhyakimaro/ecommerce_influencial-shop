@@ -4,11 +4,9 @@
   },
   "Title": "iPhone 12 Apple 128GB Preto Tela 6,1” 12MP iOS",
   "Image": "https://i.imgur.com/NLGFHG4.png",
-  "CountEvaluation": 0,
   "quantitySold": 0,
   "productStock": 11,
   "Price": 6608.22,
-  "Evaluation": 0,
   "dateProduct": {
     "$date": "2023-03-12T16:24:28.458Z"
   },
@@ -21,7 +19,10 @@
     "cellphone"
   ],
   "gainPercentage": 60,
-  "Impressions": 4,
-  "ClickTick": 4,
-  "Model": "Iphone 12"
+  "Impressions": 5,
+  "ClickTick": 5,
+  "Model": "Iphone 12",
+  "Evaluations": [
+    ""
+  ]
 }]
