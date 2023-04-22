@@ -96,19 +96,19 @@ export default function Home({ offers, productsInCart, token }: any) {
               <form className="form">
                 <div className="credit-card-info--form">
                   <div className="input_container">
-                    <label className="input_label">Card holder full name</label>
-                    <input id="password_field" className="input_field" type="text" name="input-name" title="Inpit title" placeholder="Enter your full name">
+                    <label className="input_label" htmlFor="card-holder-name">Card holder full name</label>
+                    <input id="card-holder-name" className="input_field" type="text" name="card-holder-name" title="Input title" placeholder="Enter your full name"/>
                   </div>
                   <div className="input_container">
-                    <label  className="input_label">Card Number</label>
-                    <input id="password_field" className="input_field" type="number" name="input-name" title="Inpit title" placeholder="0000 0000 0000 0000">
+                    <label  className="input_label" htmlFor="card-number">Card Number</label>
+                    <input id="card-number" className="input_field" type="number" name="card-number" title="Input title" placeholder="0000 0000 0000 0000"/>
                   </div>
                   <div className="input_container">
-                    <label for="password_field" className="input_label">Expiry Date / CVV</label>
+                    <label htmlFor="expiry-date-cvv" className="input_label">Expiry Date / CVV</label>
                     <div className="split">
-                    <input id="password_field" className="input_field" type="text" name="input-name" title="Expiry Date" placeholder="01/23">
-                    <input id="password_field" className="input_field" type="number" name="cvv" title="CVV" placeholder="CVV">
-                  </div>
+                      <input id="expiry-date-cvv" className="input_field" type="text" name="expiry-date" title="Expiry Date" placeholder="01/23"/>
+                      <input id="cvv" className="input_field" type="number" name="cvv" title="CVV" placeholder="CVV"/>
+                    </div>
                   </div>
                 </div>
                 <button className="purchase--btn">Checkout</button>
