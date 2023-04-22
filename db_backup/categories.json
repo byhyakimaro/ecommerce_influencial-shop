@@ -4,7 +4,10 @@
   },
   "name": "Dispositivos Eletronicos",
   "code": "electronics-devices",
-  "img": "https://cdn-icons-png.flaticon.com/512/2278/2278984.png"
+  "img": "https://cdn-icons-png.flaticon.com/512/2278/2278984.png",
+  "bestSellers": [
+    "640dfcbc709304d3329f2e0b"
+  ]
 },{
   "_id": {
     "$oid": "63e4bdcc8da4df51cc267ad2"
@@ -24,7 +27,7 @@
     "$oid": "63e50da3af313ae00f502d82"
   },
   "name": "Automotivo",
-  "code": "Automotive",
+  "code": "automotive",
   "img": "https://cdn-icons-png.flaticon.com/512/4072/4072246.png"
 },{
   "_id": {
