@@ -105,7 +105,11 @@
 }
 .banner .carrousel {
   display: flex;
+  justify-content: space-between;
   margin: 10rem 0;
+}
+.banner .carrousel > svg {
+  fill: white;
 }
 .bannerNews {
   height: 10em;
