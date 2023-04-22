@@ -213,12 +213,14 @@
 .itemsWidget > ul > li {
   margin: 0 10px;
   padding: 0 10px;
-  max-width: 140px;
+  max-width: 160px;
 }
 
 .itemsWidget > ul > li:hover {
+  scale: 1.01;
+  cursor: pointer;
   background: rgba(0, 0, 0, 0.05);
-  transition: 1s;
+  transition: 100ms;
 }
 
 .itemsWidget > ul > li > a > .divPrice {
@@ -226,7 +228,9 @@
   margin: 10px 0;
 }
 
-.itemsWidget > ul > li > a > .divPrice > h5:nth-child(1) {
+.itemsWidget > ul > li > a > .divPrice > label:nth-child(1) {
+  font-weight: bold;
+  font-size: 14px;
   color: rgba(171, 122, 0, 1);
 }
 
@@ -238,7 +242,8 @@
   padding: 0 2px;
 }
 
-.itemsWidget > ul > li > a > strong {
+.itemsWidget > ul > li > a > label {
+  font-size: 13px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
