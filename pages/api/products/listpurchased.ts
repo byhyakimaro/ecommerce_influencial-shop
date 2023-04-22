@@ -14,14 +14,6 @@ export default async function handler(
 
   const itemPurchasedClean = await Promise.all(dataCollection.itemsPurchased.map(async (itemPurchased:any) => {
 
-    const products = await Promise.all(itemPurchased.products.map(async (productId:any) =>{
-      const product = await fetch(`http://${req?.headers.host}/api/product/${productId}`)
-
-      if (product.status === 200) {
-        return await product.json()
-      }
-    }))
-
     const orderPurchased = await fetch(`https://api.mercadopago.com/v1/payments/${itemPurchased.id}`,{
       headers: {
         'Accept': 'application/json',
@@ -39,7 +31,7 @@ export default async function handler(
       totalOrder: itemPurchased.totalOrder,
       url: itemPurchased.url,
       methodPayment: itemPurchased.methodPayment,
-      products: products
+      products: itemPurchased.products
     }
   }))
 

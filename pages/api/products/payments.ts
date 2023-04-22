@@ -78,7 +78,7 @@ export default async function handler(
           totalOrder: parseFloat((amount-(amount*(dataCollection.offers.percentPixOff/100))).toFixed(2)),
           url: payment.point_of_interaction.transaction_data.ticket_url,
           methodPayment: dataCollection.productsInCart.methodPayment,
-          products: dataCollection.productsInCart.products
+          products: productsInCartFormat
         } } }
       )
 
