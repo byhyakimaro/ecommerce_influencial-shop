@@ -62,6 +62,12 @@ export default function Home({ data, User, i18n }:any) {
           :''
           }
           <div className={styles.bannerNews}></div>
+          <div className={styles.bannerHotKeys}>
+            <a>
+              <img src="https://cdn-icons-png.flaticon.com/512/726/726476.png"/>
+              <label>Ofertas e Descontos</label>
+            </a>
+          </div>
           <div className={[styles.recommended, styles.widget].join(" ")}>
             <div className={[styles.titleRecommended, styles.titleWidget].join(" ")}>{i18n.recommended}</div>
             <div className={[styles.itemsRecommended, styles.itemsWidget].join(" ")}>

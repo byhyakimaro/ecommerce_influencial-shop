@@ -113,6 +113,22 @@
   background-position: center;
 }
 
+.bannerHotKeys {
+  padding: 10px;
+  margin: 2em 4em;
+  background: white;
+}
+.bannerHotKeys > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;;
+}
+.bannerHotKeys > a:hover {
+  cursor: pointer;
+}
+.bannerHotKeys > a > img {
+  width: 72px;
+}
 .content {
   width: 100%;
   margin-top: 20rem;
