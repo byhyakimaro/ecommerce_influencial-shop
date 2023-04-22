@@ -41,7 +41,7 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
           <label style={{margin:"0 5px"}}>
             <svg xmlns="http://www.w3.org/2000/svg" width="6" height="8"><path fill="none" stroke="#666" d="M1 0l4 4-4 4"></path></svg>
           </label>
-         <a>{ product.Category }</a></p>
+         <a href={`../categories/${product.Category}`}>{ product.Category }</a></p>
         <div className={styles.containerItem}>
           <div className={ styles.containerImage }>
             <div>
