@@ -19,11 +19,14 @@
     "cellphone"
   ],
   "gainPercentage": 60,
-  "Impressions": 7,
-  "ClickTick": 7,
+  "Impressions": 11,
+  "ClickTick": 11,
   "Model": "Iphone 12",
   "Evaluations": [
-    ""
+    {
+      "comment": "mt bom",
+      "Evaluation": 5
+    }
   ],
   "Description": {
     "technicalSpecifications": [
