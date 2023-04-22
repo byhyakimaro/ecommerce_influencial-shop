@@ -45,7 +45,7 @@ export default function Home({ data, User, i18n }:any) {
             <div className={[styles.titleKeepShopping, styles.titleWidgetVertical].join(" ")}>{i18n.keepShopping}</div>
             <div className={[styles.itemsKeepShopping, styles.itemsWidgetVertical].join(" ")}>
               <ul>
-                {User?.user.itemsViewed.slice(0, 4).map((itemViewed : any, index: any) => {
+                {User?.user.itemsViewed.slice(0, 2).map((itemViewed : any, index: any) => {
                   return (
                     
                     <li key={index}>
