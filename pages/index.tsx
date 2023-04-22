@@ -62,7 +62,7 @@ export default function Home({ data, User, i18n }:any) {
           :''
           }
           <div className={styles.bannerNews}></div>
-          <div className={styles.bannerHotKeys}>
+          <div className={styles.bannerHotWords}>
             <a>
               <img src="https://cdn-icons-png.flaticon.com/512/726/726476.png"/>
               <label>Ofertas e Descontos</label>
