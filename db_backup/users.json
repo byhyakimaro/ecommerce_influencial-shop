@@ -13,67 +13,35 @@
   "itemsPurchased": [
     {
       "id": {
-        "$numberLong": "55683657764"
+        "$numberLong": "57215996498"
       },
       "status": "pending",
-      "data": "2023-03-12T18:29:40.047-04:00",
-      "totalOrder": 6079.56,
-      "url": "https://www.mercadopago.com.br/payments/55683657764/ticket?caller_id=164246950&hash=0e9b2e17-2d45-4330-bde1-95d11eb5a1bd",
+      "data": "2023-04-22T02:36:08.722-04:00",
+      "totalOrder": 7255.83,
+      "url": "https://www.mercadopago.com.br/payments/57215996498/ticket?caller_id=164246950&hash=46077a41-a0be-4b9e-831b-51bad156af53",
       "methodPayment": "pix",
       "products": [
-        "640dfcbc709304d3329f2e0b"
-      ]
-    },
-    {
-      "id": {
-        "$numberLong": "55665382031"
-      },
-      "status": "pending",
-      "data": "2023-03-12T18:39:44.737-04:00",
-      "totalOrder": 6608.22,
-      "url": "https://www.mercadopago.com.br/payments/55665382031/ticket?caller_id=164246950&payment_method_id=bolbradesco&payment_id=55665382031&payment_method_reference_id=10204685525&hash=b25628d8-c9c9-48ab-810e-56c63c9b35f3",
-      "methodPayment": "bolbradesco",
-      "products": [
-        "640dfcbc709304d3329f2e0b"
-      ]
-    },
-    {
-      "id": {
-        "$numberLong": "55688445782"
-      },
-      "status": "pending",
-      "data": "2023-03-12T20:54:28.590-04:00",
-      "totalOrder": 6079.56,
-      "url": "https://www.mercadopago.com.br/payments/55688445782/ticket?caller_id=164246950&hash=542572a7-0060-45bd-9d31-ac45a1d916fa",
-      "methodPayment": "pix",
-      "products": [
-        "640dfcbc709304d3329f2e0b"
-      ]
-    },
-    {
-      "id": {
-        "$numberLong": "55690959470"
-      },
-      "status": "pending",
-      "data": "2023-03-12T22:36:00.393-04:00",
-      "totalOrder": 6079.56,
-      "url": "https://www.mercadopago.com.br/payments/55690959470/ticket?caller_id=164246950&hash=07d5b342-e88a-4a92-a423-25b5e137840a",
-      "methodPayment": "pix",
-      "products": [
-        "640dfcbc709304d3329f2e0b"
-      ]
-    },
-    {
-      "id": {
-        "$numberLong": "55730313360"
-      },
-      "status": "pending",
-      "data": "2023-03-14T01:28:20.054-04:00",
-      "totalOrder": 6079.56,
-      "url": "https://www.mercadopago.com.br/payments/55730313360/ticket?caller_id=164246950&hash=7dcb91e5-08f2-4144-b7c8-10e3d2eb53ba",
-      "methodPayment": "pix",
-      "products": [
-        "640dfcbc709304d3329f2e0b"
+        {
+          "Title": "iPhone 12 Apple 128GB Preto Tela 6,1” 12MP iOS",
+          "Model": "Iphone 12",
+          "Description": {
+            "technicalSpecifications": [
+              ""
+            ]
+          },
+          "Code": "640dfcbc709304d3329f2e0b",
+          "Category": "electronics-devices",
+          "Image": "https://i.imgur.com/NLGFHG4.png",
+          "Evaluations": [
+            {
+              "comment": "mt bom",
+              "Evaluation": 5
+            }
+          ],
+          "Off": 8,
+          "productStock": 11,
+          "Price": 8062.028399999999
+        }
       ]
     }
   ],
@@ -89,10 +57,8 @@
   "office": "owner",
   "itemsRequest": [],
   "productsInCart": {
-    "methodPayment": "pix",
-    "products": [
-      "640dfcbc709304d3329f2e0b"
-    ]
+    "methodPayment": "pending",
+    "products": []
   },
   "savedAddresses": [
     "{\"road\":\"Rua Rio Capiberibe\",\"number\":170,\"neighborhood\":\"Jardim Santo Antônio I\",\"city\":\"Campo Limpo Paulista\",\"state\":\"SP\",\"zipCode\":13232090,\"complement\":\"Casa Verde\"}"
