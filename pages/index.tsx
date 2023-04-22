@@ -117,7 +117,7 @@ export default function Home({ data, User, i18n }:any) {
                         <img src={bestsell.Image} ></img>
                         <div> <strong>{bestsell.Title}</strong> </div>
                         <div> <strong>{(bestsell.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
-                        {bestsell.Off && <div>{bestsell.Off}% off</div>}
+                        {bestsell.Off && <div style={{color: "rgba(255, 71, 74, 1)"}}>{bestsell.Off}% off</div>}
                       </a>
                     </li>
                   )
@@ -144,7 +144,7 @@ export default function Home({ data, User, i18n }:any) {
                         <img src={recent.Image} ></img>
                         <div> <strong>{recent.Title}</strong> </div>
                         <div> <strong>{(recent.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
-                        {recent.Off && <div>{recent.Off}% off</div>}
+                        {recent.Off && <div style={{color: "rgba(255, 71, 74, 1)"}}>{recent.Off}% off</div>}
                       </a>
                     </li>
                   )
@@ -173,7 +173,7 @@ export default function Home({ data, User, i18n }:any) {
                         <img src={itemViewed.Image} ></img>
                         <div> <strong>{itemViewed.Title}</strong> </div>
                         <div> <strong>{(itemViewed.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
-                        {itemViewed.Off && <div>{itemViewed.Off}% off</div>}
+                        {itemViewed.Off && <div style={{color: "rgba(255, 71, 74, 1)"}}>{itemViewed.Off}% off</div>}
                       </a>
                     </li>
                   )
