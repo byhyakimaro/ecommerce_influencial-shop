@@ -33,7 +33,7 @@ export default function Home({ user, purchased }: any) {
                   <p>Pagamento<br></br><br></br></p>
                   {purchasedItem.status === "pending" ?
                     <a className={styles.methodPayment} href={ purchasedItem.url } target="_black">{ (purchasedItem.methodPayment).toUpperCase() }</a>
-                  : <a href="#">{ (purchasedItem.methodPayment).toUpperCase() }</a>
+                  : <a>{ (purchasedItem.methodPayment).toUpperCase() }</a>
                   }
                 </div>
                 <button onClick={((event:any)=>{
@@ -68,6 +68,7 @@ export default function Home({ user, purchased }: any) {
                       )
                     })}
                   </div>
+                  {purchasedItem.status !== "cancelled" && <a href="#">Acompanhar Pedido</a>}
                 </div>
                 <div className={styles.Titles}>
                   <h4 style={{color:"#1f9050;"}}>Desconto : -{((purchasedItem.products?.reduce((a: any,v: any) =>  a = a + v.Price , 0))-purchasedItem?.totalOrder).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
