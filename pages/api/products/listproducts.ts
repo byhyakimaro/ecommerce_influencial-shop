@@ -24,7 +24,6 @@ export default async function handler(
       Code: product["_id"].toString(),
       Image: product.Image,
       Price: (product.Price+product.Price*(product.gainPercentage/100))-(product.Price*(product.offersPercentage/100)),
-      Evaluation: product.Evaluation,
       Off: off && off,
       CountEvaluation: product.CountEvaluation
     }
@@ -44,7 +43,6 @@ export default async function handler(
       Code: product["_id"].toString(),
       Image: product.Image,
       Price: (product.Price+product.Price*(product.gainPercentage/100))-(product.Price*(product.offersPercentage/100)),
-      Evaluation: product.Evaluation,
       Off: off && off,
       CountEvaluation: product.CountEvaluation
     }
@@ -64,7 +62,6 @@ export default async function handler(
       Code: product["_id"].toString(),
       Image: product.Image,
       Price: (product.Price+product.Price*(product.gainPercentage/100))-(product.Price*(product.offersPercentage/100)),
-      Evaluation: product.Evaluation,
       Off: off && off,
       CountEvaluation: product.CountEvaluation
     }
