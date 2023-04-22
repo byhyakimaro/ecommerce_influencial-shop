@@ -115,7 +115,7 @@
 
 .bannerHotWords {
   padding: 10px;
-  margin: 2em 4em;
+  margin: 2em 0;
   background: white;
 }
 .bannerHotWords > a {
