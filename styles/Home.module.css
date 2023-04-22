@@ -773,3 +773,9 @@
 .productReview {
   margin: 20px;
 }
+
+.discoveryDay .seeMore {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

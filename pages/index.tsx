@@ -152,10 +152,6 @@ export default function Home({ data, User, i18n }:any) {
           <div className={[styles.discoveryDay, styles.widget].join(" ")}>
           <div className={[styles.titleDiscoveryDay, styles.titleWidget].join(" ")}>{i18n.discoveryDay}</div>
             <div className={[styles.itemsDiscoveryDay, styles.itemsWidget].join(" ")}>
-              <svg className={styles.esq} width="50" height="50" onClick={passarItensEsq}>
-                <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
-                <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
-              </svg>
               <ul data-transform={0}>
                 {data.recentProducts.map((recent : any, index: any) => {
                   return (
@@ -177,10 +173,9 @@ export default function Home({ data, User, i18n }:any) {
                   )
                 })}
               </ul>
-              <svg className={styles.dir} width="50" height="50" onClick={passarItensDir}>
-                <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
-                <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
-              </svg>
+            </div>
+            <div className={styles.seeMore}>
+              <button>Ver Mais..</button>
             </div>
           </div>
           {
