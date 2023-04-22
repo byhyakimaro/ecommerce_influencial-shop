@@ -223,12 +223,19 @@
   transition: 100ms;
 }
 
+.itemsWidget > ul > li > a {
+  text-decoration: none;
+}
+
 .itemsWidget > ul > li > a > .divPrice {
   display: flex;
   margin: 10px 0;
 }
-
-.itemsWidget > ul > li > a > .divPrice > label:nth-child(1) {
+.itemsWidget > ul > li > a > .divPrice > div > label:nth-child(1) {
+  text-decoration: line-through;
+  color: rgba(0,0,0,.54);
+}
+.itemsWidget > ul > li > a > .divPrice > div > label:nth-child(2) {
   font-weight: 600;
   font-size: 16px;
   color: rgba(171, 122, 0, 1);

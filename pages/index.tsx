@@ -77,7 +77,12 @@ export default function Home({ data, User, i18n }:any) {
                         <img src={recomended.Image} ></img>
                         <label>{recomended.Title}</label>
                         <div className={styles.divPrice}>
-                          <label> {(recomended.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>
+                          {recomended.Off ? 
+                          <div>
+                            <label>{recomended.Price.toLocaleString(language, {style: 'currency', currency: currency})} </label>
+                            <label>{(recomended.Price-recomended.Price*(recomended.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
+                          </div>:
+                          <label> {(recomended.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>}
                           {recomended.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {recomended.Off}% OFF</h5>}
                         </div>
                       </a>
