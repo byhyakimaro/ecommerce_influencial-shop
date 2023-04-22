@@ -774,6 +774,10 @@
   margin: 20px;
 }
 
+.discoveryDay > .itemsDiscoveryDay {
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 .discoveryDay .seeMore {
   width: 100%;
   display: flex;
