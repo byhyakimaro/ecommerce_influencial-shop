@@ -37,11 +37,11 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
       </Head>
       <Header></Header>
       <div className={ styles.containerProduct }>
-        <p className={ styles.Title }> Inicio | <a>Acessorios e Eletronicos</a>
+        <p className={ styles.Title }> Inicio
           <label style={{margin:"0 5px"}}>
             <svg xmlns="http://www.w3.org/2000/svg" width="6" height="8"><path fill="none" stroke="#666" d="M1 0l4 4-4 4"></path></svg>
           </label>
-         <a>Celulares e Smartphones</a></p>
+         <a>{ product.Category }</a></p>
         <div className={styles.containerItem}>
           <div className={ styles.containerImage }>
             <div>
