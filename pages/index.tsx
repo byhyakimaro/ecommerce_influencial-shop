@@ -115,7 +115,7 @@ export default function Home({ data, User, i18n }:any) {
                     <li key={index}>
                       <a href={`provider/${bestsell.Code}`}>
                         <img src={bestsell.Image} ></img>
-                        <div> <strong>{bestsell.Title}</strong> </div>
+                        <strong>{bestsell.Title}</strong>
                         <div> <strong>{(bestsell.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
                         {bestsell.Off && <div style={{color: "rgba(255, 71, 74, 1)"}}>{bestsell.Off}% off</div>}
                       </a>
@@ -142,7 +142,7 @@ export default function Home({ data, User, i18n }:any) {
                     <li key={index}>
                       <a href={`provider/${recent.Code}`}>
                         <img src={recent.Image} ></img>
-                        <div> <strong>{recent.Title}</strong> </div>
+                        <strong>{recent.Title}</strong>
                         <div> <strong>{(recent.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
                         {recent.Off && <div style={{color: "rgba(255, 71, 74, 1)"}}>{recent.Off}% off</div>}
                       </a>
@@ -171,7 +171,7 @@ export default function Home({ data, User, i18n }:any) {
                     <li key={index}>
                       <a href={`provider/${itemViewed.Code}`}>
                         <img src={itemViewed.Image} ></img>
-                        <div> <strong>{itemViewed.Title}</strong> </div>
+                        <strong>{itemViewed.Title}</strong>
                         <div> <strong>{(itemViewed.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
                         {itemViewed.Off && <div style={{color: "rgba(255, 71, 74, 1)"}}>{itemViewed.Off}% off</div>}
                       </a>
