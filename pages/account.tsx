@@ -68,7 +68,12 @@ export default function Home({ user, purchased }: any) {
                       )
                     })}
                   </div>
-                  {purchasedItem.status !== "cancelled" && <a href="#">Acompanhar Pedido</a>}
+                  {purchasedItem.status !== "cancelled" && 
+                  <label>
+                      <a href="#">Acompanhar Pedido</a>
+                      <br></br>
+                      { purchasedItem.code }
+                  </label>}
                 </div>
                 <div className={styles.Titles}>
                   <h4 style={{color:"#1f9050;"}}>Desconto : -{((purchasedItem.products?.reduce((a: any,v: any) =>  a = a + v.Price , 0))-purchasedItem?.totalOrder).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>

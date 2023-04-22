@@ -27,6 +27,7 @@ export default async function handler(
     return {
       id: itemPurchased.id,
       status: orderPurchasedAsync.status,
+      code: itemPurchased.code,
       data: itemPurchased.data,
       totalOrder: itemPurchased.totalOrder,
       url: itemPurchased.url,
