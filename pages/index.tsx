@@ -76,8 +76,10 @@ export default function Home({ data, User, i18n }:any) {
                       <a href={`provider/${recomended.Code}`}>
                         <img src={recomended.Image} ></img>
                         <strong>{recomended.Title}</strong>
-                        <div> <strong>{(recomended.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
-                        {recomended.Off && <div style={{color: "rgba(255, 71, 74, 1)"}}>{recomended.Off}% off</div>}
+                        <div className={styles.divPrice}>
+                          <h5> {(recomended.Price).toLocaleString(language, {style: 'currency', currency: currency})} </h5>
+                          {recomended.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {recomended.Off}% OFF</h5>}
+                        </div>
                       </a>
                     </li>
                   )

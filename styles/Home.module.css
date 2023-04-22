@@ -202,6 +202,7 @@
 }
 
 .itemsWidget > ul {
+  position: relative;
   padding: 0 20px;
   transition: .1s;
   z-index: 0;
@@ -211,7 +212,29 @@
 
 .itemsWidget > ul > li {
   margin: 0 10px;
-  max-width: 130px;
+  max-width: 140px;
+}
+
+.itemsWidget > ul > li:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transition: 1s;
+}
+
+.itemsWidget > ul > li > a > .divPrice {
+  display: flex;
+  margin: 10px 0;
+}
+
+.itemsWidget > ul > li > a > .divPrice > h5:nth-child(1) {
+  color: rgba(171, 122, 0, 1);
+}
+
+.itemsWidget > ul > li > a > .divPrice > h5:nth-child(2) {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgb(20, 20, 20);
+  padding: 0 2px;
 }
 
 .itemsWidget > ul > li > a > strong {
