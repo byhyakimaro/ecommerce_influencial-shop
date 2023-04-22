@@ -122,9 +122,16 @@ export default function Home({ data, User, i18n }:any) {
                     <li key={index}>
                       <a href={`provider/${bestsell.Code}`}>
                         <img src={bestsell.Image} ></img>
-                        <strong>{bestsell.Title}</strong>
-                        <div> <strong>{(bestsell.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
-                        {bestsell.Off && <div style={{color: "rgba(255, 71, 74, 1)"}}>{bestsell.Off}% off</div>}
+                        <label>{bestsell.Title}</label>
+                        <div className={styles.divPrice}>
+                          {bestsell.Off ? 
+                          <div>
+                            <label>{bestsell.Price.toLocaleString(language, {style: 'currency', currency: currency})} </label>
+                            <label>{(bestsell.Price-bestsell.Price*(bestsell.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
+                          </div>:
+                          <label> {(bestsell.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>}
+                          {bestsell.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {bestsell.Off}% OFF</h5>}
+                        </div>
                       </a>
                     </li>
                   )
@@ -149,9 +156,16 @@ export default function Home({ data, User, i18n }:any) {
                     <li key={index}>
                       <a href={`provider/${recent.Code}`}>
                         <img src={recent.Image} ></img>
-                        <strong>{recent.Title}</strong>
-                        <div> <strong>{(recent.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
-                        {recent.Off && <div style={{color: "rgba(255, 71, 74, 1)"}}>{recent.Off}% off</div>}
+                        <label>{recent.Title}</label>
+                        <div className={styles.divPrice}>
+                          {recent.Off ? 
+                          <div>
+                            <label>{recent.Price.toLocaleString(language, {style: 'currency', currency: currency})} </label>
+                            <label>{(recent.Price-recent.Price*(recent.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
+                          </div>:
+                          <label> {(recent.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>}
+                          {recent.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {recent.Off}% OFF</h5>}
+                        </div>
                       </a>
                     </li>
                   )
@@ -178,9 +192,16 @@ export default function Home({ data, User, i18n }:any) {
                     <li key={index}>
                       <a href={`provider/${itemViewed.Code}`}>
                         <img src={itemViewed.Image} ></img>
-                        <strong>{itemViewed.Title}</strong>
-                        <div> <strong>{(itemViewed.Price).toLocaleString(language, {style: 'currency', currency: currency})}</strong> </div>
-                        {itemViewed.Off && <div style={{color: "rgba(255, 71, 74, 1)"}}>{itemViewed.Off}% off</div>}
+                        <label>{itemViewed.Title}</label>
+                        <div className={styles.divPrice}>
+                          {itemViewed.Off ? 
+                          <div>
+                            <label>{itemViewed.Price.toLocaleString(language, {style: 'currency', currency: currency})} </label>
+                            <label>{(itemViewed.Price-itemViewed.Price*(itemViewed.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
+                          </div>:
+                          <label> {(itemViewed.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>}
+                          {itemViewed.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {itemViewed.Off}% OFF</h5>}
+                        </div>
                       </a>
                     </li>
                   )
