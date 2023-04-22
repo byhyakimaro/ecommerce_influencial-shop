@@ -104,7 +104,8 @@
   background-size: cover;
 }
 .banner .carrousel {
-  margin: 20rem;
+  display: flex;
+  margin: 10rem 0;
 }
 .bannerNews {
   height: 10em;

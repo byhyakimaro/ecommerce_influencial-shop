@@ -39,7 +39,9 @@ export default function Home({ data, User, i18n }:any) {
       </Head>
       <Header></Header>
       <div className={styles.banner}>
-        <div className={styles.carrousel}></div>
+        <div className={styles.carrousel}>
+          
+        </div>
         <div className={styles.content}>
           { User?.user?.itemsViewed.length > 0 ?
             <div className={[styles.keepShopping, styles.widgetVertical].join(" ")}>
