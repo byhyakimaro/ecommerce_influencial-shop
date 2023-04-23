@@ -65,7 +65,6 @@ export default function Home({ data, User, i18n }:any) {
           </div>
           :''
           }
-          <div className={styles.bannerNews}></div>
           <div className={styles.bannerHotWords}>
             <a>
               <img src="https://cdn-icons-png.flaticon.com/512/726/726476.png"/>
@@ -153,6 +152,7 @@ export default function Home({ data, User, i18n }:any) {
               </svg>
             </div>
           </div>
+          <div className={styles.bannerNews}></div>
           <div className={[styles.discoveryDay, styles.widget].join(" ")}>
           <div className={[styles.titleDiscoveryDay, styles.titleWidget].join(" ")}>{i18n.discoveryDay}</div>
             <div className={[styles.itemsDiscoveryDay, styles.itemsWidget].join(" ")}>
