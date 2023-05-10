@@ -19,6 +19,20 @@ export default function Home({ user, purchased }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
+      <h3>Seus endereços</h3>
+      <ul>
+        { user.savedAddresses.map((Address:any, index:any)=>{
+          Address = JSON.parse(Address)
+          return (
+            <li key={index}>{`${Address.road} ${Address.number}`}<br></br>
+            {` ${Address.complement} ${Address.neighborhood}`}<br></br>
+            {`${Address.city} ${Address.state} ${Address.zipCode}` }
+            <button>Alterar</button>
+            <button>Excluir</button>
+            </li>
+          )
+        }) }
+      </ul>
       <ul>
       <h3>Meus Pedidos</h3>
       { purchased.map((purchasedItem:any, index: any)=>{
