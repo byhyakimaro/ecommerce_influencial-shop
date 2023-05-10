@@ -42,7 +42,8 @@
           "productStock": 11,
           "Price": 8062.028399999999
         }
-      ]
+      ],
+      "code": "Order being processed"
     }
   ],
   "controlDevices": [],
