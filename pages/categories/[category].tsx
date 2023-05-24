@@ -26,7 +26,13 @@ export default function Home({ category, User }: any) {
                 <img src={  categoryItem.Image }></img>
                 <label>{ categoryItem.Title }</label>
                 <div className={styles.categoryPrice}>
-                  <label>{(categoryItem.Price).toLocaleString(language, {style: 'currency', currency: currency})}</label>
+                  {categoryItem.Off ? 
+                  <div>
+                    <label>{categoryItem.Price.toLocaleString(language, {style: 'currency', currency: currency})} </label>
+                    <label>{(categoryItem.Price-categoryItem.Price*(categoryItem.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
+                  </div>:
+                  <label> {(categoryItem.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>}
+                  {categoryItem.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {categoryItem.Off}% OFF</h5>}
                 </div>
               </div>
             </>
