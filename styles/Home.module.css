@@ -791,8 +791,10 @@
 .containerCategory {
   margin: 2rem;
 }
-.categoryList {
+.categoryList  {
   display: flex;
+}
+.categoryList > li {
   margin: 2rem;
 }
 .categoryList .categoryItem {
