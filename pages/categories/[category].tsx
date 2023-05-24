@@ -17,10 +17,9 @@ export default function Home({ category, User }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
-      <div>
+      <div className={styles.containerCategory}>
         <h4>AS MELHORES OFERTAS</h4>
-      </div>
-      <div className={styles.categoryList}> 
+        <div className={styles.categoryList}> 
         {category.map((categoryItem : any, index: any) => {
           return (
             <>
@@ -44,6 +43,7 @@ export default function Home({ category, User }: any) {
             </>
           )
         })}
+        </div>
       </div>
     </>
   )
