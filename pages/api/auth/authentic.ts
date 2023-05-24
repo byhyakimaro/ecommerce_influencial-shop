@@ -20,6 +20,7 @@ export default async function handler(
       user: {
         name: dataCollection.name,
         login: dataCollection.login,
+        office: dataCollection.office,
         email: email,
         telephone: dataCollection.telephone,
         avatarUrl: dataCollection.avatarUrl,

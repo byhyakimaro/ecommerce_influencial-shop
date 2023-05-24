@@ -17,6 +17,8 @@ export default function Header() {
       response ? setI18n(response) : null
     })
     
+    console.log(user)
+
   }, [user])
 
   return (
@@ -52,6 +54,7 @@ export default function Header() {
       <div className={styles.subHeader}>
         <a>{i18n?.subHeader_0}</a>
         <a>{i18n?.subHeader_1}</a>
+        {user?.office === 'owner' && <a href='../admin/dashboard'>ADMIN</a>}
       </div>
     </>
   )
