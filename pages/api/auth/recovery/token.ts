@@ -47,6 +47,7 @@ export default async function handler(
       user: {
         name: dataCollection.name,
         login: dataCollection.login,
+        office: dataCollection.office,
         currency: dataCollection.currency,
         language: dataCollection.languages,
         email: dataCollection.email,
