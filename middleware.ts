@@ -20,6 +20,9 @@ export async function middleware(req: any, res: any, next: any) {
     if (req.nextUrl.pathname.startsWith('/login')) {
       return NextResponse.redirect(new URL('/account', req.url))
     }
+    else if(req.nextUrl.pathname.startsWith('/admin') && user.office !== 'owner') {
+      return NextResponse.redirect(new URL('/account', req.url))
+    }
   } else {
     if (req.nextUrl.pathname.startsWith('/cart')) {
       return NextResponse.rewrite(new URL('/login', req.url))
