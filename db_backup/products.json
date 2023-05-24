@@ -18,9 +18,9 @@
   "tags": [
     "cellphone"
   ],
-  "gainPercentage": 60,
-  "Impressions": 11,
-  "ClickTick": 11,
+  "gainPercentage": 30,
+  "Impressions": 50,
+  "ClickTick": 49,
   "Model": "Iphone 12",
   "Evaluations": [
     {
@@ -30,7 +30,10 @@
   ],
   "Description": {
     "technicalSpecifications": [
-      ""
+      {
+        "Title": "Title Tecnical Description",
+        "Text": "Description Tecnical"
+      }
     ]
   }
 }]
