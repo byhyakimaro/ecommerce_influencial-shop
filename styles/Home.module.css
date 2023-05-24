@@ -796,7 +796,7 @@
   flex-wrap: wrap;
 }
 .categoryList > li {
-  margin: 2em 1em;
+  margin: 1em;
 }
 .categoryList .categoryItem {
   padding: 20px;
