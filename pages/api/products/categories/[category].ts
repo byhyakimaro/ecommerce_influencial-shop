@@ -11,7 +11,13 @@ export default async function handler(
 
   const products = await collection.find().toArray()
 
-  const categoryFiltered = products.filter(({ category }: any) => category === categoryItem)
+  const categoryFiltered = products.filter(({ category }: any) => category === categoryItem).map((item: any)=> {
+    
+    const Off = item.offersPercentage > 0 && item.offersPercentage
+    item.Off = Off && Off
+
+    return item
+  })
 
   res.status(200).json(categoryFiltered)
 }
