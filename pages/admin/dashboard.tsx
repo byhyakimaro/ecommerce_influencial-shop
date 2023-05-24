@@ -1,3 +1,4 @@
+import Header from '@/contexts/header'
 import Head from 'next/head'
 import { useForm } from 'react-hook-form'
 
@@ -17,6 +18,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header></Header>
       <form onSubmit={handleSubmit(handleRegister)}>
         <div>Title do Item</div>
         <input
