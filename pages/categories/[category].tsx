@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { parseCookies } from 'nookies'
 import styles from '@/styles/Home.module.css'
+import Header from '@/contexts/header'
 
 export default function Home({ category, User }: any) {
   
@@ -15,6 +16,7 @@ export default function Home({ category, User }: any) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header></Header>
       <div>
         <h4>AS MELHORES OFERTAS</h4>
       </div>
@@ -22,19 +24,23 @@ export default function Home({ category, User }: any) {
         {category.map((categoryItem : any, index: any) => {
           return (
             <>
-              <div className={styles.categoryItem}>
-                <img src={  categoryItem.Image }></img>
-                <label>{ categoryItem.Title }</label>
-                <div className={styles.categoryPrice}>
-                  {categoryItem.Off ? 
-                  <div>
-                    <label>{categoryItem.Price.toLocaleString(language, {style: 'currency', currency: currency})} </label>
-                    <label>{(categoryItem.Price-categoryItem.Price*(categoryItem.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
-                  </div>:
-                  <label> {(categoryItem.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>}
-                  {categoryItem.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {categoryItem.Off}% OFF</h5>}
-                </div>
-              </div>
+              <li>
+                <a href={`../provider/${categoryItem['_id']}`}>
+                  <div className={styles.categoryItem}>
+                    <img src={  categoryItem.Image }></img>
+                    <label>{ categoryItem.Title }</label>
+                    <div className={styles.categoryPrice}>
+                      {categoryItem.Off ? 
+                      <div>
+                        <label>{categoryItem.Price.toLocaleString(language, {style: 'currency', currency: currency})} </label>
+                        <label>{(categoryItem.Price-categoryItem.Price*(categoryItem.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
+                      </div>:
+                      <label> {(categoryItem.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>}
+                      {categoryItem.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {categoryItem.Off}% OFF</h5>}
+                    </div>
+                  </div>
+                </a>
+              </li>
             </>
           )
         })}

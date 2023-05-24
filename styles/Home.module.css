@@ -789,9 +789,11 @@
   justify-content: center;
 }
 .categoryList {
+  display: flex;
   margin: 2rem;
 }
 .categoryList .categoryItem {
+  margin: 10px;
   padding: 20px;
   width: 300px;
   background: white;
