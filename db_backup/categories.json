@@ -17,13 +17,6 @@
   "img": "https://cdn-icons-png.flaticon.com/512/9306/9306143.png"
 },{
   "_id": {
-    "$oid": "63e50d8daf313ae00f502d81"
-  },
-  "name": "Ofertas e Descontos",
-  "code": "offers-discounts",
-  "img": "https://cdn-icons-png.flaticon.com/512/726/726476.png"
-},{
-  "_id": {
     "$oid": "63e50da3af313ae00f502d82"
   },
   "name": "Automotivo",
