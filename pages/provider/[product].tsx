@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 import { Canvas } from '@/contexts/imgProducts'
 
 export default function Home({ product, i18n, User, itemTopSell, category, similarProducts }: any) {
+
   const [showComponent, setShowComponent] = useState(false)
 
   const language = User?.user?.language ? User?.user?.language : 'en-us'
@@ -102,7 +103,8 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
           </div>
         </div>
       </div>
-      <div className={styles.similarProducts}>
+      { similarProducts.length > 0 && 
+        <div className={styles.similarProducts}>
         <h3>Clientes que compraram este item também compraram</h3>
         {similarProducts.map((product:any, index:any)=>{
           return (
@@ -113,6 +115,8 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
           )
         })}
       </div>
+      }
+      
       <div className={styles.productReview}>
         <h3>Opiniões do produto</h3>
         <div>
