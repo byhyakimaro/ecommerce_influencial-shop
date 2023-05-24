@@ -795,7 +795,7 @@
   display: flex;
 }
 .categoryList > li {
-  margin: 2rem;
+  margin: 2em 1em;
 }
 .categoryList .categoryItem {
   padding: 20px;
