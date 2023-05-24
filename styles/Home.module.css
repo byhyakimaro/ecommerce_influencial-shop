@@ -793,6 +793,7 @@
 }
 .categoryList  {
   display: flex;
+  flex-wrap: wrap;
 }
 .categoryList > li {
   margin: 2em 1em;
