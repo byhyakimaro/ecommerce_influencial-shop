@@ -53,13 +53,17 @@
     "63e5e0ba200490d98365de96",
     "640de07d0764228b1272ca16",
     "640de0840764228b1272ca19",
-    "640dfcbc709304d3329f2e0b"
+    "640dfcbc709304d3329f2e0b",
+    "646ee28e40de011a59b770f8"
   ],
   "office": "owner",
   "itemsRequest": [],
   "productsInCart": {
     "methodPayment": "pending",
-    "products": []
+    "products": [
+      "640dfcbc709304d3329f2e0b"
+    ],
+    "saveAddress": 0
   },
   "savedAddresses": [
     "{\"road\":\"Rua Rio Capiberibe\",\"number\":170,\"neighborhood\":\"Jardim Santo Antônio I\",\"city\":\"Campo Limpo Paulista\",\"state\":\"SP\",\"zipCode\":13232090,\"complement\":\"Casa Verde\"}"

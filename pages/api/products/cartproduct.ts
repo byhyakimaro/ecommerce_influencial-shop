@@ -26,6 +26,7 @@ export default async function handler(
       { _id: new ObjectId(token) },
       { $set: { productsInCart: {
         methodPayment: user.productsInCart.methodPayment,
+        saveAddress: 0,
         products: productsFormatted
       } }
       }
