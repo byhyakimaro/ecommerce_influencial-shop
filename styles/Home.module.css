@@ -779,6 +779,19 @@
   margin: 20px;
 }
 
+.productReview .reviewComment {
+  margin: 2em;
+}
+
+.productReview .reviewComment > p {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+
+.productReview .reviewComment > span {
+  font-size: 11px;
+}
+
 .discoveryDay > .itemsDiscoveryDay {
   justify-content: space-around;
   flex-wrap: wrap;

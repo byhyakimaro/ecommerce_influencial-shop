@@ -122,7 +122,8 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
         <div>
           {product.Evaluations.map((Evaluation:any, index:any) => {
             return (
-              <div key={index}>
+              <div key={index} className={styles.reviewComment}>
+                <p>{Evaluation.name}</p>
                 <div>
                   {[...Array(5)].map((value, index) => {
                     
@@ -137,7 +138,8 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
                     )
                   })}
                 </div>
-                <p>{Evaluation.comment}</p>
+                <span>5/24/2023, 11:28:08 PM</span><br></br><br></br>
+                <label>{Evaluation.comment}</label>
               </div>
             )
           })}
