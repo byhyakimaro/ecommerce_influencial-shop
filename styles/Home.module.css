@@ -310,11 +310,10 @@
 .itemsWidgetVertical > ul {
   padding: 10px;
   display: flex;
-  flex-wrap: wrap;
 }
 
 .itemsWidgetVertical > ul > li {
-  margin: 2px 0;
+  margin: 2px 10px;
   width: 100%;
 }
 
