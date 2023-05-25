@@ -97,6 +97,7 @@ export default async function handler(
           totalOrder: amount,
           url: payment.transaction_details.external_resource_url,
           methodPayment: dataCollection.productsInCart.methodPayment,
+          saveAddress: dataCollection.productsInCart.saveAddress,
           products: dataCollection.productsInCart.products
         } } }
       )
