@@ -20,8 +20,8 @@
     "Iphone 12"
   ],
   "gainPercentage": 30,
-  "Impressions": 171,
-  "ClickTick": 114,
+  "Impressions": 217,
+  "ClickTick": 125,
   "Model": "Iphone 12",
   "Evaluations": [
     {
@@ -60,7 +60,7 @@
   "Image": "https://i.imgur.com/NLGFHG4.png",
   "quantitySold": 0,
   "productStock": 12,
-  "Price": 6612.22,
+  "Price": 6212.22,
   "dateProduct": {
     "$date": "2023-03-12T16:24:28.458Z"
   },
@@ -74,8 +74,8 @@
     "Iphone 12"
   ],
   "gainPercentage": 30,
-  "Impressions": 155,
-  "ClickTick": 103,
+  "Impressions": 219,
+  "ClickTick": 132,
   "Model": "Iphone 12",
   "Evaluations": [
     {
