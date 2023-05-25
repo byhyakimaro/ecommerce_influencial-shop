@@ -9,7 +9,7 @@ export default async function handler(
   const collection = await (await getCollection('users')).find().toArray()
 
   const itemsPurchased = collection.map((item: any)=>{
-    return item.itemsPurchased
+    return {userItems: item.login, listItems: item.itemsPurchased}
   })
 
   res.status(200).json(itemsPurchased)
