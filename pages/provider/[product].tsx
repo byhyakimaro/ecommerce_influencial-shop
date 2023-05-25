@@ -104,7 +104,7 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
         </div>
       </div>
       { similarProducts.length > 0 && 
-        <div className={styles.similarProducts}>
+      <div className={styles.similarProducts}>
         <h3>Clientes que compraram este item também compraram</h3>
         {similarProducts.map((product:any, index:any)=>{
           return (
