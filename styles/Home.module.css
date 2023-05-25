@@ -780,7 +780,8 @@
 }
 
 .productReview .reviewComment {
-  margin: 2em;
+  padding: 1em;
+  border-bottom: 1px solid rgba(0,0,0,.09);
 }
 
 .productReview .reviewComment > p {
