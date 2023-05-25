@@ -66,7 +66,7 @@ export default function Home({ data, User, i18n }:any) {
           <div className={[styles.keepShopping, styles.widgetVertical].join(" ")}>
             <div className={[styles.titleKeepShopping, styles.titleWidgetVertical].join(" ")}>{i18n.topDeal}</div>
             <div className={[styles.itemsKeepShopping, styles.itemsWidgetVertical].join(" ")}>
-
+              <a href='#'>See all deals</a>
             </div>
           </div>
           }
