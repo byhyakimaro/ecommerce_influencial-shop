@@ -877,3 +877,11 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.addressInfo {
+  margin: .5em 2em;
+}
+
+.addressInfo > button { 
+  margin-right: 10px;
+}

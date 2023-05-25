@@ -24,11 +24,16 @@ export default function Home({ user, purchased }: any) {
         { user.savedAddresses.map((Address:any, index:any)=>{
           Address = JSON.parse(Address)
           return (
-            <li key={index}>{`${Address.road} ${Address.number}`}<br></br>
-            {` ${Address.complement} ${Address.neighborhood}`}<br></br>
-            {`${Address.city} ${Address.state} ${Address.zipCode}` }
-            <button>Alterar</button>
-            <button>Excluir</button>
+            <li key={index}>
+              <div className={styles.addressInfo}>
+                <div>
+                  {`${Address.road} ${Address.number}`}<br></br>
+                  {` ${Address.complement} ${Address.neighborhood}`}<br></br>
+                  {`${Address.city} ${Address.state} ${Address.zipCode}` }
+                </div>
+                <button>Alterar</button>
+                <button>Excluir</button>
+              </div>
             </li>
           )
         }) }
