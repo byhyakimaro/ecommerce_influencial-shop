@@ -20,7 +20,61 @@
     "Iphone 12"
   ],
   "gainPercentage": 30,
-  "Impressions": 148,
+  "Impressions": 171,
+  "ClickTick": 114,
+  "Model": "Iphone 12",
+  "Evaluations": [
+    {
+      "comment": "mt bom",
+      "Evaluation": 5,
+      "name": "Paulo",
+      "date": "5/24/2023, 11:28:08 PM",
+      "avatar": "https://github.com/byhyakimaro.png"
+    },
+    {
+      "comment": "adorei o produto",
+      "Evaluation": 4,
+      "name": "Pedro",
+      "date": "5/24/2023, 11:28:08 PM",
+      "pictures": [
+        "https://i.imgur.com/SyCNJXf.jpg",
+        "https://i.imgur.com/SyCNJXf.jpg"
+      ],
+      "avatar": "https://github.com/byhyakimaro.png"
+    }
+  ],
+  "Description": {
+    "technicalSpecifications": [
+      {
+        "Title": "Title Tecnical Description",
+        "Text": "Description Tecnical"
+      }
+    ],
+    "InformationText": "Text more Information"
+  }
+},{
+  "_id": {
+    "$oid": "646ee28e40de011a59b770f8"
+  },
+  "Title": "iPhone 12 Apple 64GB Preto Tela 6,1” 12MP iOS",
+  "Image": "https://i.imgur.com/NLGFHG4.png",
+  "quantitySold": 0,
+  "productStock": 12,
+  "Price": 6612.22,
+  "dateProduct": {
+    "$date": "2023-03-12T16:24:28.458Z"
+  },
+  "loginCreateItem": "paulrisp",
+  "category": "electronics-devices",
+  "active": true,
+  "urlProvider": "https://www.magazineluiza.com.br/iphone-12-apple-128gb-preto-tela-61-12mp-ios/p/231147800/te/ip12/",
+  "offersPercentage": 8,
+  "tags": [
+    "cellphone",
+    "Iphone 12"
+  ],
+  "gainPercentage": 30,
+  "Impressions": 155,
   "ClickTick": 103,
   "Model": "Iphone 12",
   "Evaluations": [
