@@ -16,16 +16,21 @@
   "urlProvider": "https://www.magazineluiza.com.br/iphone-12-apple-128gb-preto-tela-61-12mp-ios/p/231147800/te/ip12/",
   "offersPercentage": 8,
   "tags": [
-    "cellphone"
+    "cellphone",
+    "Iphone 12"
   ],
   "gainPercentage": 30,
-  "Impressions": 50,
-  "ClickTick": 49,
+  "Impressions": 86,
+  "ClickTick": 72,
   "Model": "Iphone 12",
   "Evaluations": [
     {
       "comment": "mt bom",
       "Evaluation": 5
+    },
+    {
+      "comment": "adorei o produto",
+      "Evaluation": 4
     }
   ],
   "Description": {
