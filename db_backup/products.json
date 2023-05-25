@@ -20,19 +20,21 @@
     "Iphone 12"
   ],
   "gainPercentage": 30,
-  "Impressions": 88,
-  "ClickTick": 73,
+  "Impressions": 92,
+  "ClickTick": 75,
   "Model": "Iphone 12",
   "Evaluations": [
     {
       "comment": "mt bom",
       "Evaluation": 5,
-      "name": "Paulo"
+      "name": "Paulo",
+      "date": "5/24/2023, 11:28:08 PM"
     },
     {
       "comment": "adorei o produto",
       "Evaluation": 4,
-      "name": "Paulo"
+      "name": "Paulo",
+      "date": "5/24/2023, 11:28:08 PM"
     }
   ],
   "Description": {

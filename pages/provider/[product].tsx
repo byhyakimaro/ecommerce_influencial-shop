@@ -138,7 +138,7 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
                     )
                   })}
                 </div>
-                <span>5/24/2023, 11:28:08 PM</span><br></br><br></br>
+                <span>{Evaluation.date}</span><br></br><br></br>
                 <label>{Evaluation.comment}</label>
               </div>
             )
