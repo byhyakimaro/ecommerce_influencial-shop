@@ -204,6 +204,9 @@ Home.getInitialProps = async (ctx: any) => {
   const localesFetch = await fetch(`http://localhost:3000/locales/${language}/provider.json`)
   const locales = await localesFetch.json()
 
+  const localesIndexFetch = await fetch(`http://localhost:3000/locales/${language}/index.json`)
+  const localesIndex = await localesIndexFetch.json()
+
   if (productFetch.status === 200) {
 
     const product = await productFetch.json()
@@ -229,7 +232,7 @@ Home.getInitialProps = async (ctx: any) => {
       i18n: locales,
       User: dataUser,
       itemTopSell: itemTopSell ? itemTopSell.bestSellers.indexOf(product.Code)+1 : false,
-      category: itemTopSell?.name,
+      category: localesIndex[product.Category],
       similarProducts: similarProducts,
       product: product
     }
