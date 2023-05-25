@@ -229,15 +229,17 @@ export default function Home({ data, User, i18n }:any) {
 
 Home.getInitialProps = async (ctx: any) => {
   
-  const listProducts = await fetch(`http://localhost:3000/api/products/listproducts`)
+  const { host } = ctx.req.headers
+
+  const listProducts = await fetch(`http://${host}/api/products/listproducts`)
   const data: any = await listProducts.json()
 
-  const categories = await fetch(`http://localhost:3000/api/products/categories`)
+  const categories = await fetch(`http://${host}/api/products/categories`)
   data["categories"] = await categories.json()
 
   const { 'infshop.token': token } = parseCookies(ctx)
     
-    const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
+    const User = await fetch(`http://${host}/api/auth/recovery/token`,
     {
       headers: {
         'Accept': 'application/json',
@@ -250,7 +252,7 @@ Home.getInitialProps = async (ctx: any) => {
 
     const language = dataUser?.user?.language ? dataUser?.user?.language : 'en-us'
 
-    const localesFetch = await fetch(`http://localhost:3000/locales/${language}/index.json`)
+    const localesFetch = await fetch(`http://${host}/locales/${language}/index.json`)
     const locales = await localesFetch.json()
 
   return {
