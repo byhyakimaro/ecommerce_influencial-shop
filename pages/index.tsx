@@ -51,7 +51,6 @@ export default function Home({ data, User, i18n }:any) {
               <ul>
                 {User?.user.itemsViewed.slice(0, 2).map((itemViewed : any, index: any) => {
                   return (
-                    
                     <li key={index}>
                       <a href={`categories/${itemViewed.Category}`}>
                         <img src={itemViewed.Image} ></img>
