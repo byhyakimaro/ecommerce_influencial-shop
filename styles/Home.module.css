@@ -885,3 +885,7 @@
 .addressInfo > button { 
   margin-right: 10px;
 }
+
+.containerTab > h3 {
+  margin: 10px;
+}

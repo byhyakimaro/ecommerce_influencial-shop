@@ -19,92 +19,96 @@ export default function Home({ user, purchased }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
-      <h3>Seus endereços</h3>
-      <ul>
-        { user.savedAddresses.map((Address:any, index:any)=>{
-          Address = JSON.parse(Address)
+      <div className={styles.containerTab}>
+        <h3>Seus endereços</h3>
+        <ul>
+          { user.savedAddresses.map((Address:any, index:any)=>{
+            Address = JSON.parse(Address)
+            return (
+              <li key={index}>
+                <div className={styles.addressInfo}>
+                  <div>
+                    {`${Address.road} ${Address.number}`}<br></br>
+                    {` ${Address.complement} ${Address.neighborhood}`}<br></br>
+                    {`${Address.city} ${Address.state} ${Address.zipCode}` }
+                  </div>
+                  <button>Alterar</button>
+                  <button>Excluir</button>
+                </div>
+              </li>
+            )
+          }) }
+        </ul>
+      </div>
+      <div className={styles.containerTab}>
+        <h3>Meus Pedidos</h3>
+        <ul>
+        { purchased.map((purchasedItem:any, index: any)=>{
           return (
             <li key={index}>
-              <div className={styles.addressInfo}>
-                <div>
-                  {`${Address.road} ${Address.number}`}<br></br>
-                  {` ${Address.complement} ${Address.neighborhood}`}<br></br>
-                  {`${Address.city} ${Address.state} ${Address.zipCode}` }
+              <div className={styles.tabPurchased}>
+                <div className={styles.paymentsPurchased}>
+                  <div>Numero do pedido: <br></br><br></br>#{ purchasedItem.id }</div>
+                  <div>Status: <br></br><br></br>{ purchasedItem.status }</div>
+                  <div>{ new Date(purchasedItem.data).toLocaleDateString() }</div>
+                  <div>
+                    <p>Pagamento<br></br><br></br></p>
+                    {purchasedItem.status === "pending" ?
+                      <a className={styles.methodPayment} href={ purchasedItem.url } target="_black">{ (purchasedItem.methodPayment).toUpperCase() }</a>
+                    : <a>{ (purchasedItem.methodPayment).toUpperCase() }</a>
+                    }
+                  </div>
+                  <button onClick={((event:any)=>{
+                    const description = event.currentTarget.parentElement.parentElement.querySelector('#descriptionPurchased')
+                    
+                    if(description.style.display === 'none') {
+                      description?.setAttribute('style','display: block;')
+                    } else {
+                      description?.setAttribute('style','display: none;')
+                    }
+                    })}>Detalhes do pedido</button>
                 </div>
-                <button>Alterar</button>
-                <button>Excluir</button>
+                <div style={{display:"none;"}} id="descriptionPurchased" className={styles.descriptionPurchased}>
+                  <div>
+                    <h4>ENDERECO<br></br></h4>
+                    <div>{addressFormatted}</div>
+                  </div>
+                  <div>
+                    <h4>STATUS DO PEDIDO</h4>
+                    <div>{ "Aguardando Pagamento" }</div>
+                  </div>
+                  <div className={styles.listProducts}>
+                    <h4>PRODUTO(S)</h4>
+                    <div className={styles.listDescription}>
+                      {purchasedItem.products.map((product:any, index: any)=>{
+                        return (
+                          <>
+                            <img src={ product.Image }></img>
+                            <div>{product?.Title}</div>
+                            <div>Preco: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
+                          </>
+                        )
+                      })}
+                    </div>
+                    {purchasedItem.status !== "cancelled" && 
+                    <label>
+                        <a href="#">Acompanhar Pedido</a>
+                        <br></br>
+                        { purchasedItem.code }
+                    </label>}
+                  </div>
+                  <div className={styles.Titles}>
+                    <h4 style={{color:"#1f9050;"}}>Desconto : -{((purchasedItem.products?.reduce((a: any,v: any) =>  a = a + v.Price , 0))-purchasedItem?.totalOrder).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
+                    <div className="break"></div>
+                    <h4>Total do Pedido: {(purchasedItem.totalOrder).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
+                  </div>
+                </div>
               </div>
             </li>
           )
-        }) }
-      </ul>
-      <h3>Meus Pedidos</h3>
-      <ul>
-      { purchased.map((purchasedItem:any, index: any)=>{
-        return (
-          <li key={index}>
-            <div className={styles.tabPurchased}>
-              <div className={styles.paymentsPurchased}>
-                <div>Numero do pedido: <br></br><br></br>#{ purchasedItem.id }</div>
-                <div>Status: <br></br><br></br>{ purchasedItem.status }</div>
-                <div>{ new Date(purchasedItem.data).toLocaleDateString() }</div>
-                <div>
-                  <p>Pagamento<br></br><br></br></p>
-                  {purchasedItem.status === "pending" ?
-                    <a className={styles.methodPayment} href={ purchasedItem.url } target="_black">{ (purchasedItem.methodPayment).toUpperCase() }</a>
-                  : <a>{ (purchasedItem.methodPayment).toUpperCase() }</a>
-                  }
-                </div>
-                <button onClick={((event:any)=>{
-                  const description = event.currentTarget.parentElement.parentElement.querySelector('#descriptionPurchased')
-                  
-                  if(description.style.display === 'none') {
-                    description?.setAttribute('style','display: block;')
-                  } else {
-                    description?.setAttribute('style','display: none;')
-                  }
-                  })}>Detalhes do pedido</button>
-              </div>
-              <div style={{display:"none;"}} id="descriptionPurchased" className={styles.descriptionPurchased}>
-                <div>
-                  <h4>ENDERECO<br></br></h4>
-                  <div>{addressFormatted}</div>
-                </div>
-                <div>
-                  <h4>STATUS DO PEDIDO</h4>
-                  <div>{ "Aguardando Pagamento" }</div>
-                </div>
-                <div className={styles.listProducts}>
-                  <h4>PRODUTO(S)</h4>
-                  <div className={styles.listDescription}>
-                    {purchasedItem.products.map((product:any, index: any)=>{
-                      return (
-                        <>
-                          <img src={ product.Image }></img>
-                          <div>{product?.Title}</div>
-                          <div>Preco: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
-                        </>
-                      )
-                    })}
-                  </div>
-                  {purchasedItem.status !== "cancelled" && 
-                  <label>
-                      <a href="#">Acompanhar Pedido</a>
-                      <br></br>
-                      { purchasedItem.code }
-                  </label>}
-                </div>
-                <div className={styles.Titles}>
-                  <h4 style={{color:"#1f9050;"}}>Desconto : -{((purchasedItem.products?.reduce((a: any,v: any) =>  a = a + v.Price , 0))-purchasedItem?.totalOrder).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
-                  <div className="break"></div>
-                  <h4>Total do Pedido: {(purchasedItem.totalOrder).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h4>
-                </div>
-              </div>
-            </div>
-          </li>
-        )
-      })}
-      </ul>
+        })}
+        </ul>
+      </div>
       <Footer></Footer>
     </>
   )
