@@ -20,25 +20,27 @@
     "Iphone 12"
   ],
   "gainPercentage": 30,
-  "Impressions": 120,
-  "ClickTick": 89,
+  "Impressions": 146,
+  "ClickTick": 102,
   "Model": "Iphone 12",
   "Evaluations": [
     {
       "comment": "mt bom",
       "Evaluation": 5,
       "name": "Paulo",
-      "date": "5/24/2023, 11:28:08 PM"
+      "date": "5/24/2023, 11:28:08 PM",
+      "avatar": "https://github.com/byhyakimaro.png"
     },
     {
       "comment": "adorei o produto",
       "Evaluation": 4,
-      "name": "Paulo",
+      "name": "Pedro",
       "date": "5/24/2023, 11:28:08 PM",
       "pictures": [
         "https://i.imgur.com/SyCNJXf.jpg",
         "https://i.imgur.com/SyCNJXf.jpg"
-      ]
+      ],
+      "avatar": "https://github.com/byhyakimaro.png"
     }
   ],
   "Description": {
