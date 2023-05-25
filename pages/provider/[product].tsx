@@ -227,7 +227,7 @@ Home.getInitialProps = async (ctx: any) => {
       i18n: locales,
       User: dataUser,
       itemTopSell: itemTopSell ? itemTopSell.bestSellers.indexOf(product.Code)+1 : false,
-      category: itemTopSell.name,
+      category: itemTopSell?.name,
       similarProducts: similarProducts,
       product: product
     }
