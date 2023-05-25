@@ -20,8 +20,8 @@
     "Iphone 12"
   ],
   "gainPercentage": 30,
-  "Impressions": 146,
-  "ClickTick": 102,
+  "Impressions": 148,
+  "ClickTick": 103,
   "Model": "Iphone 12",
   "Evaluations": [
     {
@@ -49,6 +49,7 @@
         "Title": "Title Tecnical Description",
         "Text": "Description Tecnical"
       }
-    ]
+    ],
+    "InformationText": "Text more Information"
   }
 }]
