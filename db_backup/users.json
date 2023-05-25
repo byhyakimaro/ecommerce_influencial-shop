@@ -43,7 +43,8 @@
           "Price": 8062.028399999999
         }
       ],
-      "code": "Order being processed"
+      "code": "Order being processed",
+      "saveAddress": 0
     }
   ],
   "controlDevices": [],
@@ -60,10 +61,10 @@
   "itemsRequest": [],
   "productsInCart": {
     "methodPayment": "pending",
+    "saveAddress": 0,
     "products": [
-      "640dfcbc709304d3329f2e0b"
-    ],
-    "saveAddress": 0
+      "646ee28e40de011a59b770f8"
+    ]
   },
   "savedAddresses": [
     "{\"road\":\"Rua Rio Capiberibe\",\"number\":170,\"neighborhood\":\"Jardim Santo Antônio I\",\"city\":\"Campo Limpo Paulista\",\"state\":\"SP\",\"zipCode\":13232090,\"complement\":\"Casa Verde\"}"

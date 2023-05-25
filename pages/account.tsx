@@ -7,9 +7,6 @@ import { parseCookies } from 'nookies'
 
 export default function Home({ user, purchased }: any) {
 
-  const address = JSON.parse(user?.savedAddresses[0])
-  const addressFormatted = `${address.road} ${address.number} ${address.complement} ${address.neighborhood} ${address.city} ${address.state} ${address.zipCode}`
-
   return (
     <>
       <Head>
@@ -71,7 +68,7 @@ export default function Home({ user, purchased }: any) {
                 <div style={{display:"none;"}} id="descriptionPurchased" className={styles.descriptionPurchased}>
                   <div>
                     <h4>ENDERECO<br></br></h4>
-                    <div>{addressFormatted}</div>
+                    <div>{`${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).road} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).number} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).complement} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).neighborhood} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).city} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).state} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).zipCode}`}</div>
                   </div>
                   <div>
                     <h4>STATUS DO PEDIDO</h4>

@@ -30,6 +30,7 @@ export default async function handler(
       code: itemPurchased.code,
       data: itemPurchased.data,
       totalOrder: itemPurchased.totalOrder,
+      saveAddress: itemPurchased.saveAddress,
       url: itemPurchased.url,
       methodPayment: itemPurchased.methodPayment,
       products: itemPurchased.products
