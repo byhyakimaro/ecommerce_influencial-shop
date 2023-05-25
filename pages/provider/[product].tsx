@@ -108,10 +108,12 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
         <h3>Clientes que compraram este item também compraram</h3>
         {similarProducts.map((product:any, index:any)=>{
           return (
-            <div key={index} className={styles.similarProduct}>
-              <Canvas scale={2.5} url={ product.Image } width={210} height={210}></Canvas>
-              <div>{ product.Title }</div>
-            </div>
+            <a key={index} href={`../provider/${product['_id']}`}>
+              <div className={styles.similarProduct}>
+                <Canvas scale={2.5} url={ product.Image } width={210} height={210}></Canvas>
+                <div>{ product.Title }</div>
+              </div>
+            </a>
           )
         })}
       </div>
