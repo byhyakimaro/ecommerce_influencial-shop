@@ -16,8 +16,6 @@ export default function Header() {
     .then(response => {
       response ? setI18n(response) : null
     })
-    
-    console.log(user)
 
   }, [user])
 
