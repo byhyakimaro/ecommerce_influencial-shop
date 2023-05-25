@@ -140,6 +140,16 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
                 </div>
                 <span>{Evaluation.date}</span><br></br><br></br>
                 <label>{Evaluation.comment}</label>
+                {Evaluation.pictures &&
+                <div>
+                   {Evaluation.pictures.map((picture: any, index: any) => {
+                    return (
+                      <div key={index}>
+                        <Canvas scale={8.5} url={ picture } width={110} height={128}></Canvas>
+                      </div>
+                    )
+                  })}
+                </div>}
               </div>
             )
           })}
