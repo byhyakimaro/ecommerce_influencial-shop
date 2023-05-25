@@ -23,7 +23,7 @@ export default function TypePayments({showComponent}:any) {
 
   useEffect(() => {
 
-    fetch(`http://localhost:3000/locales/${language}/typePayments.json`)
+    fetch(`locales/${language}/typePayments.json`)
     .then(response => response.json())
     .then(response => {
       response ? setI18n(response) : null
