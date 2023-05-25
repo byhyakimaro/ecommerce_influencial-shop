@@ -123,33 +123,38 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
           {product.Evaluations.map((Evaluation:any, index:any) => {
             return (
               <div key={index} className={styles.reviewComment}>
-                <p>{Evaluation.name}</p>
                 <div>
-                  {[...Array(5)].map((value, index) => {
-                    
-                    const full = "bi-star-fill"
-                    const half = "bi-star-half"
-                    const empty = "bi-star"
-
-                    const condition = Evaluation.Evaluation >= index+1 ? full : empty
-
-                    return (
-                      <i key={index} className={`bi ${condition}`} style={{fontSize:"14px",margin:"2px",padding:"0"}}></i>
-                    )
-                  })}
+                  <Canvas scale={8} url={ Evaluation.avatar } width={48} height={48}></Canvas>
                 </div>
-                <span>{Evaluation.date}</span><br></br><br></br>
-                <label>{Evaluation.comment}</label>
-                {Evaluation.pictures &&
-                <div className={styles.reviewPictures}>
-                   {Evaluation.pictures.map((picture: any, index: any) => {
-                    return (
-                      <div key={index} className={styles.reviewPicture}>
-                        <Canvas scale={8.5} url={ picture } width={110} height={128}></Canvas>
-                      </div>
-                    )
-                  })}
-                </div>}
+                <div>
+                  <p>{Evaluation.name}</p>
+                  <div>
+                    {[...Array(5)].map((value, index) => {
+                      
+                      const full = "bi-star-fill"
+                      const half = "bi-star-half"
+                      const empty = "bi-star"
+
+                      const condition = Evaluation.Evaluation >= index+1 ? full : empty
+
+                      return (
+                        <i key={index} className={`bi ${condition}`} style={{fontSize:"14px",margin:"2px",padding:"0"}}></i>
+                      )
+                    })}
+                  </div>
+                  <span>{Evaluation.date}</span><br></br><br></br>
+                  <label>{Evaluation.comment}</label>
+                  {Evaluation.pictures &&
+                  <div className={styles.reviewPictures}>
+                    {Evaluation.pictures.map((picture: any, index: any) => {
+                      return (
+                        <div key={index} className={styles.reviewPicture}>
+                          <Canvas scale={8.5} url={ picture } width={110} height={128}></Canvas>
+                        </div>
+                      )
+                    })}
+                  </div>}
+                </div>
               </div>
             )
           })}
