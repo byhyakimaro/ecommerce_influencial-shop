@@ -38,8 +38,8 @@ export default function Home({ user, purchased }: any) {
           )
         }) }
       </ul>
-      <ul>
       <h3>Meus Pedidos</h3>
+      <ul>
       { purchased.map((purchasedItem:any, index: any)=>{
         return (
           <li key={index}>
