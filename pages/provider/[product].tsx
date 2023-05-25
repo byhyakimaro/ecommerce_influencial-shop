@@ -221,7 +221,7 @@ Home.getInitialProps = async (ctx: any) => {
       body: JSON.stringify({ search: product.Model })
     })
   
-    const similarProducts = (await fetchA.json()).filter((item:any) => item.Code === product.Code)
+    const similarProducts = (await fetchA.json()).filter((item:any) => item['_id'] !== product.Code)
 
     return {
       i18n: locales,
