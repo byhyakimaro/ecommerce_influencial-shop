@@ -20,6 +20,7 @@ export default async function handler(
       { _id: new ObjectId(token) },
       { $set: { productsInCart: {
         methodPayment: dataCollection.productsInCart.methodPayment,
+        saveAddress: 0,
         products: dataCollection.productsInCart.products.filter((product:any) => product !== itemCode)
       } } }
     )
