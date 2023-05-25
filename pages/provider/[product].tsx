@@ -141,10 +141,10 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
                 <span>{Evaluation.date}</span><br></br><br></br>
                 <label>{Evaluation.comment}</label>
                 {Evaluation.pictures &&
-                <div>
+                <div className={styles.reviewPictures}>
                    {Evaluation.pictures.map((picture: any, index: any) => {
                     return (
-                      <div key={index}>
+                      <div key={index} className={styles.reviewPicture}>
                         <Canvas scale={8.5} url={ picture } width={110} height={128}></Canvas>
                       </div>
                     )
