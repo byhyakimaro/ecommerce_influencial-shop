@@ -54,7 +54,7 @@ export default function Home({ data, User, i18n }:any) {
                     <li key={index}>
                       <a href={`categories/${itemViewed.Category}`}>
                         <img src={itemViewed.Image}></img>
-                        <h5>{ i18n[itemViewed.Category] }</h5>
+                        <h6>{ i18n[itemViewed.Category] }</h6>
                       </a>
                     </li>
                   )
@@ -72,8 +72,9 @@ export default function Home({ data, User, i18n }:any) {
                     <li key={index}>
                       <a href={`provider/${itemOffer.Code}`}>
                         <img src={itemOffer.Image}></img>
-                        <h6>{itemOffer.Off && <h5>- {itemOffer.Off}% OFF</h5>}</h6>
+                        <h6>{itemOffer.Off && <h5>- Offer {itemOffer.Off}% OFF</h5>}</h6>
                         <h5>{itemOffer.Title}</h5>
+                        <h5>{i18n[itemOffer.Category]}</h5>
                       </a>
                     </li>
                   )

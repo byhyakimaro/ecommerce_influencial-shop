@@ -75,6 +75,7 @@ export default async function handler(
     return {
       Title: product.Title,
       Code: product["_id"].toString(),
+      Category: product.category,
       Image: product.Image,
       Price: (product.Price+product.Price*(product.gainPercentage/100))-(product.Price*(product.offersPercentage/100)),
       Off: off && off,

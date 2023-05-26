@@ -326,6 +326,18 @@
   max-height: 200px;
 }
 
+.itemsWidgetVertical > ul > li > a > h6 {
+  background: black;
+  font-size: 14px;
+  font-family: monospace;
+  padding: 4px;
+  margin: 5px;
+  border-radius: 4px;
+  width: 110px;
+  text-align: center;
+  color: rgba(255, 71, 74, 1);
+}
+
 .loginContainer {
   display: flex;
   flex-direction: column;
