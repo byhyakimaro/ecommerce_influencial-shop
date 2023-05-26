@@ -40,8 +40,8 @@ export default function Home({ data, config, User, i18n }:any) {
       nodeSlide.dataset.slide = parseInt(nodeSlide.dataset.slide)-1
     }
 
-    parseInt(nodeSlide.dataset.slide) < 0 ? nodeSlide.dataset.slide = 0 : ''
-    parseInt(nodeSlide.dataset.slide) > config.bannersHome.length ? nodeSlide.dataset.slide = 0 : ''
+    parseInt(nodeSlide.dataset.slide) < 0 || parseInt(nodeSlide.dataset.slide) > config.bannersHome.length 
+    ? nodeSlide.dataset.slide = 0 : null
 
     console.log(currentSlide)
   }
