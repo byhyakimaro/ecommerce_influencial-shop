@@ -29,6 +29,13 @@ export default function Home({ data, User, i18n }:any) {
     ul.setAttribute('data-transform', value)
   }
 
+  function changeSlide(event: any) {
+    const nodeSlide = event.currentTarget.parentNode.parentNode
+    const currentSlide = nodeSlide.dataset.slide
+
+    console.log(currentSlide)
+  }
+
   return (
     <>
       <Head>
@@ -38,9 +45,9 @@ export default function Home({ data, User, i18n }:any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
-      <div className={styles.banner}>
+      <div data-slide="0" className={styles.banner}>
         <div className={styles.carrousel}>
-          <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M400 976 0 576l400-400 56 57-343 343 343 343-56 57Z"/></svg>
+          <svg onClick={changeSlide} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M400 976 0 576l400-400 56 57-343 343 343 343-56 57Z"/></svg>
           <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="m304 974-56-57 343-343-343-343 56-57 400 400-400 400Z"/></svg>
         </div>
         <div className={styles.content}>
