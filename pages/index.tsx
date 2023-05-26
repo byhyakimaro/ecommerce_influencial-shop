@@ -110,7 +110,7 @@ export default function Home({ data, User, i18n }:any) {
                             <label>{(recomended.Price-recomended.Price*(recomended.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
                           </div>:
                           <label> {(recomended.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>}
-                          {recomended.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {recomended.Off}% OFF</h5>}
+                          {recomended.Off && <h5>- {recomended.Off}% OFF</h5>}
                         </div>
                       </a>
                     </li>
@@ -157,7 +157,7 @@ export default function Home({ data, User, i18n }:any) {
                             <label>{(bestsell.Price-bestsell.Price*(bestsell.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
                           </div>:
                           <label> {(bestsell.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>}
-                          {bestsell.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {bestsell.Off}% OFF</h5>}
+                          {bestsell.Off && <h5>- {bestsell.Off}% OFF</h5>}
                         </div>
                       </a>
                     </li>
@@ -188,7 +188,7 @@ export default function Home({ data, User, i18n }:any) {
                             <label>{(recent.Price-recent.Price*(recent.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
                           </div>:
                           <label> {(recent.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>}
-                          {recent.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {recent.Off}% OFF</h5>}
+                          {recent.Off && <h5>- {recent.Off}% OFF</h5>}
                         </div>
                       </a>
                     </li>
@@ -223,7 +223,7 @@ export default function Home({ data, User, i18n }:any) {
                             <label>{(itemViewed.Price-itemViewed.Price*(itemViewed.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
                           </div>:
                           <label> {(itemViewed.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>}
-                          {itemViewed.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {itemViewed.Off}% OFF</h5>}
+                          {itemViewed.Off && <h5>- {itemViewed.Off}% OFF</h5>}
                         </div>
                       </a>
                     </li>

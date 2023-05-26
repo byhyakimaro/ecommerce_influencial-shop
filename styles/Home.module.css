@@ -233,6 +233,7 @@
 }
 
 .itemsWidget > ul > li {
+  position: relative;
   padding: 0 10px;
   max-width: 160px;
 }
@@ -266,6 +267,7 @@
 
 .itemsWidget > ul > li > a > .divPrice > h5:nth-child(2) {
   position: absolute;
+  color: rgba(255, 71, 74, 1);
   right: 0;
   top: 0;
   background-color: rgb(20, 20, 20);
