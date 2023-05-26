@@ -80,7 +80,7 @@ export default function Home({ data, User, i18n }:any) {
                   )
                 })}
               </ul>
-              <a href='#'>See all deals</a>
+              <a href='#'>{i18n.allDeals}</a>
             </div>
           </div>
           }
