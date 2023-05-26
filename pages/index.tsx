@@ -63,14 +63,15 @@ export default function Home({ data, User, i18n }:any) {
             </div>
           </div>
           : 
-          <div className={[styles.keepShopping, styles.widgetVertical].join(" ")}>
-            <div className={[styles.titleKeepShopping, styles.titleWidgetVertical].join(" ")}>{i18n.topDeal}</div>
-            <div className={[styles.itemsKeepShopping, styles.itemsWidgetVertical].join(" ")}>
+          <div className={[styles.offerShopping, styles.widgetVertical].join(" ")}>
+            <div className={[styles.titleOfferShopping, styles.titleWidgetVertical].join(" ")}>{i18n.topDeal}</div>
+            <div className={[styles.itemsOfferShopping, styles.itemsWidgetVertical].join(" ")}>
               <ul>
                 {data.topDeal.map((itemOffer : any, index: any) => {
                   return (
                     <li key={index}>
                       <a href={`provider/${itemOffer.Code}`}>
+                        <h6>{itemOffer.Off && <h5>- {itemOffer.Off}% OFF</h5>}</h6>
                         <img src={itemOffer.Image}></img>
                         <h5>{itemOffer.Title}</h5>
                       </a>
