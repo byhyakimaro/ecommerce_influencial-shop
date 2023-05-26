@@ -4,7 +4,7 @@ import Header from '@/contexts/header'
 import { parseCookies } from 'nookies'
 import Footer from '@/contexts/footer'
 
-export default function Home({ data, User, i18n }:any) {
+export default function Home({ data, config, User, i18n }:any) {
 
   const language = User?.user?.language ? User?.user?.language : 'en-us'
   const currency = User?.user?.currency ? User?.user?.currency : 'USD'
@@ -269,6 +269,9 @@ Home.getInitialProps = async (ctx: any) => {
   const listProducts = await fetch(`http://${host}/api/products/listproducts`)
   const data: any = await listProducts.json()
 
+  const listConfig = await fetch(`http://${host}/api/listconfig`)
+  const config: any = await listConfig.json()
+
   const categories = await fetch(`http://${host}/api/products/categories`)
   data["categories"] = await categories.json()
 
@@ -292,6 +295,7 @@ Home.getInitialProps = async (ctx: any) => {
 
   return {
     data,
+    config,
     i18n: locales,
     User: dataUser
   }
