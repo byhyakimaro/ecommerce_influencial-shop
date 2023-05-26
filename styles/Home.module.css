@@ -98,8 +98,6 @@
   width: 100%;
   position: absolute;
   height: calc(100vh - 6rem);
-  background: url('../public/bannerexemplo.png') ;
-  background-size: cover;
 }
 .banner .carrousel {
   display: flex;
