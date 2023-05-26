@@ -32,6 +32,15 @@ export default function Home({ data, User, i18n }:any) {
   function changeSlide(event: any) {
     const nodeSlide = event.currentTarget.parentNode.parentNode
     const currentSlide = nodeSlide.dataset.slide
+    
+    const buttonAction = event.target.id
+    if (buttonAction === "right") {
+      nodeSlide.dataset.slide = parseInt(nodeSlide.dataset.slide)+1 
+    } else {
+      nodeSlide.dataset.slide = parseInt(nodeSlide.dataset.slide)-1
+    }
+
+    parseInt(nodeSlide.dataset.slide) < 0 ? nodeSlide.dataset.slide = 0 : ''
 
     console.log(currentSlide)
   }
@@ -47,8 +56,8 @@ export default function Home({ data, User, i18n }:any) {
       <Header></Header>
       <div data-slide="0" className={styles.banner}>
         <div className={styles.carrousel}>
-          <svg onClick={changeSlide} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M400 976 0 576l400-400 56 57-343 343 343 343-56 57Z"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="m304 974-56-57 343-343-343-343 56-57 400 400-400 400Z"/></svg>
+          <svg id="left" onClick={changeSlide} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M400 976 0 576l400-400 56 57-343 343 343 343-56 57Z"/></svg>
+          <svg id="right" onClick={changeSlide} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="m304 974-56-57 343-343-343-343 56-57 400 400-400 400Z"/></svg>
         </div>
         <div className={styles.content}>
           { User?.user?.itemsViewed.length > 0 ?
