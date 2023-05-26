@@ -9,6 +9,7 @@ export default async function handler(
   const products = await collection.find().toArray()
 
   const MaxItemsReturned = 20
+  const MaxItemsOffersReturned = 1
 
   products.sort((a: any, b: any) => b.dateProduct.getTime() - a.dateProduct.getTime())
   const productRecentFormat = products.filter((product :any) =>{
@@ -66,10 +67,25 @@ export default async function handler(
       CountEvaluation: product.CountEvaluation
     }
   })
+  
+  products.sort((a: any,b :any) => b.offersPercentage - a.offersPercentage)
+  const productOffersFormat = products.slice(0, MaxItemsOffersReturned).map((product: any) => {
+    const off = product.offersPercentage > 0 && product.offersPercentage
+
+    return {
+      Title: product.Title,
+      Code: product["_id"].toString(),
+      Image: product.Image,
+      Price: (product.Price+product.Price*(product.gainPercentage/100))-(product.Price*(product.offersPercentage/100)),
+      Off: off && off,
+      CountEvaluation: product.CountEvaluation
+    }
+  })
 
   res.status(200).json({
     recentProducts: productRecentFormat,
     bestSell: productSoldFormat,
-    recommended: productRecommendedFormat
+    recommended: productRecommendedFormat,
+    topDeal: productOffersFormat
   })
 }

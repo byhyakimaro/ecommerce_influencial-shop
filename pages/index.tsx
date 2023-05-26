@@ -66,6 +66,15 @@ export default function Home({ data, User, i18n }:any) {
           <div className={[styles.keepShopping, styles.widgetVertical].join(" ")}>
             <div className={[styles.titleKeepShopping, styles.titleWidgetVertical].join(" ")}>{i18n.topDeal}</div>
             <div className={[styles.itemsKeepShopping, styles.itemsWidgetVertical].join(" ")}>
+              <ul>
+                {data.topDeal.map((itemOffer : any, index: any) => {
+                  return (
+                    <li key={index}>
+                      <a href={`provider/${itemOffer.Code}`}></a>
+                    </li>
+                  )
+                })}
+              </ul>
               <a href='#'>See all deals</a>
             </div>
           </div>
