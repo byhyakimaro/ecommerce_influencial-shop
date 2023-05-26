@@ -41,7 +41,7 @@ export default function Home({ data, config, User, i18n }:any) {
       nodeSlide.dataset.slide = parseInt(nodeSlide.dataset.slide)+1
     }
 
-    nodeSlide.setAttribute('style', `background: url('${config.bannersHome[nodeSlide.dataset.slide]}), background-size: cover'`)
+    nodeSlide.setAttribute('style', `background: url('${config.bannersHome[nodeSlide.dataset.slide]}') center center no-repeat`)
   }
 
   return (
@@ -53,7 +53,7 @@ export default function Home({ data, config, User, i18n }:any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
-      <div data-slide="0" className={styles.banner} style={{background: `url('${config.bannersHome[0]}')`, backgroundSize: 'cover'}}>
+      <div data-slide="0" className={styles.banner} style={{background: `url('${config.bannersHome[0]}') center center no-repeat`, backgroundSize: 'cover'}}>
         <div className={styles.carrousel}>
           <svg id="left" onClick={changeSlide} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M400 976 0 576l400-400 56 57-343 343 343 343-56 57Z"/></svg>
           <svg id="right" onClick={changeSlide} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="m304 974-56-57 343-343-343-343 56-57 400 400-400 400Z"/></svg>
