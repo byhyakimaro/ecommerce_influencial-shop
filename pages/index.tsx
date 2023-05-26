@@ -71,8 +71,8 @@ export default function Home({ data, User, i18n }:any) {
                   return (
                     <li key={index}>
                       <a href={`provider/${itemOffer.Code}`}>
-                        <h6>{itemOffer.Off && <h5>- {itemOffer.Off}% OFF</h5>}</h6>
                         <img src={itemOffer.Image}></img>
+                        <h6>{itemOffer.Off && <h5>- {itemOffer.Off}% OFF</h5>}</h6>
                         <h5>{itemOffer.Title}</h5>
                       </a>
                     </li>
