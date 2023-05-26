@@ -53,7 +53,7 @@ export default function Home({ data, User, i18n }:any) {
                   return (
                     <li key={index}>
                       <a href={`categories/${itemViewed.Category}`}>
-                        <img src={itemViewed.Image} ></img>
+                        <img src={itemViewed.Image}></img>
                         <h5>{ i18n[itemViewed.Category] }</h5>
                       </a>
                     </li>
@@ -70,7 +70,10 @@ export default function Home({ data, User, i18n }:any) {
                 {data.topDeal.map((itemOffer : any, index: any) => {
                   return (
                     <li key={index}>
-                      <a href={`provider/${itemOffer.Code}`}></a>
+                      <a href={`provider/${itemOffer.Code}`}>
+                        <img src={itemOffer.Image}></img>
+                        <h5>{itemOffer.Title}</h5>
+                      </a>
                     </li>
                   )
                 })}
