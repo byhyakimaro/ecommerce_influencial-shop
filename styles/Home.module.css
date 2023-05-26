@@ -110,6 +110,7 @@
 }
 .banner .carrousel > svg {
   fill: white;
+  cursor: pointer;
 }
 .bannerNews {
   height: 10em;
