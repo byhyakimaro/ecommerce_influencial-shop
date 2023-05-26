@@ -41,7 +41,7 @@ export default function Home({ data, config, User, i18n }:any) {
       nodeSlide.dataset.slide = parseInt(nodeSlide.dataset.slide)+1
     }
 
-    nodeSlide.setAttribute('background', `../public/${config.bannersHome[nodeSlide.dataset.slide]}`)
+    nodeSlide.setAttribute('style', `background: url('${config.bannersHome[nodeSlide.dataset.slide]})'`)
   }
 
   return (
