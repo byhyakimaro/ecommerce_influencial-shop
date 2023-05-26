@@ -42,6 +42,7 @@ export default function Home({ data, config, User, i18n }:any) {
     }
 
     nodeSlide.setAttribute('style', `background: url('${config.bannersHome[nodeSlide.dataset.slide]})'`)
+    nodeSlide.setAttribute('style', `background-size: cover`)
   }
 
   return (
