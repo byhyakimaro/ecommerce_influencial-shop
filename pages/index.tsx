@@ -31,19 +31,17 @@ export default function Home({ data, config, User, i18n }:any) {
 
   function changeSlide(event: any) {
     const nodeSlide = event.currentTarget.parentNode.parentNode
-    const currentSlide = nodeSlide.dataset.slide
-    
     const buttonAction = event.target.id
-    if (buttonAction === "right") {
-      nodeSlide.dataset.slide = parseInt(nodeSlide.dataset.slide)+1 
-    } else {
-      nodeSlide.dataset.slide = parseInt(nodeSlide.dataset.slide)-1
+
+    if (buttonAction === "left" && parseInt(nodeSlide.dataset.slide) > 0 ) {
+      nodeSlide.dataset.slide = parseInt(nodeSlide.dataset.slide)-1 
+    } 
+    
+    if (buttonAction === "right" && parseInt(nodeSlide.dataset.slide) < config.bannersHome.length-1) {
+      nodeSlide.dataset.slide = parseInt(nodeSlide.dataset.slide)+1
     }
 
-    parseInt(nodeSlide.dataset.slide) < 0 || parseInt(nodeSlide.dataset.slide) > config.bannersHome.length 
-    ? nodeSlide.dataset.slide = 0 : null
-
-    console.log(currentSlide)
+    console.log(nodeSlide.dataset.slide)
   }
 
   return (
