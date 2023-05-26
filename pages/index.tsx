@@ -198,7 +198,7 @@ export default function Home({ data, User, i18n }:any) {
               </ul>
             </div>
             <div className={styles.seeMore}>
-              <button>Ver Mais..</button>
+              <button>{i18n.seeMore}..</button>
             </div>
           </div>
           {
