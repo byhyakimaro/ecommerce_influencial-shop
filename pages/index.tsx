@@ -41,7 +41,7 @@ export default function Home({ data, config, User, i18n }:any) {
       nodeSlide.dataset.slide = parseInt(nodeSlide.dataset.slide)+1
     }
 
-    console.log(nodeSlide.dataset.slide)
+    console.log(config.bannersHome[nodeSlide.dataset.slide])
   }
 
   return (
