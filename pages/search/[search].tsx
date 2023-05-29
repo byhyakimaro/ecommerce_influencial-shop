@@ -27,6 +27,16 @@ export default function Home({ User, searchResults }: any) {
               <div className={styles.productItem}>
                 <img src={ product.Image }></img>
                 <label>{ product.Title }</label>
+                <div className={styles.productPrice}>
+                  {product.Off ? 
+                    <div>
+                      <label>{product.Price.toLocaleString(language, {style: 'currency', currency: currency})} </label>
+                      <label>{(product.Price-product.Price*(product.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
+                    </div>:
+                    <label> {(product.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>
+                  }
+                  {product.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {product.Off}% OFF</h5>}
+                </div>
               </div>
             </a>
           )

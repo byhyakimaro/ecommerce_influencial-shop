@@ -17,11 +17,19 @@ export default async function handler(
   const regex = new RegExp(`^${groupRegex}.*$`, 'gi')
   const products = await collection.find({ tags: {$regex: regex } }).toArray()
 
-  products.forEach((product:any) => {
+  await products.forEach((product:any) => {
     collection.updateOne(
       { _id: new ObjectId(product["_id"]) },
       { $inc: { Impressions: 1 } }
     )
+  })
+  
+  await products.map((item: any)=> {
+    
+    const Off = item.offersPercentage > 0 && item.offersPercentage
+    item.Off = Off && Off
+
+    return item
   })
 
   res.status(200).json(products)
