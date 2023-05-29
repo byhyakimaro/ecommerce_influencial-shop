@@ -21,7 +21,10 @@ export default function Home({ data, config, User, i18n }:any) {
 
   function passarItensEsq(event: any) {
     const ul = event.currentTarget.parentElement.querySelector('ul')
+    const lis = ul.querySelectorAll('li')
     let value = parseInt(ul.dataset.transform) + (-130)
+
+    if (lis.length <= 8) return
 
     if (value <= -1180) value = -1180
 
