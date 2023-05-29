@@ -900,7 +900,19 @@
   margin: 10px;
 }
 
-.productItem > img {
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.productList .productItem {
+  width: 290px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.productList .productItem > img {
   max-height: 240px;
   max-width: 240px;
 }

@@ -16,16 +16,18 @@ export default function Home({ searchResults }: any) {
       </Head>
       <Header></Header>
       <h2>Search</h2>
-      {searchResults.map((product:any, index:any)=>{
-        return (
-          <a key={index} href={`../provider/${product["_id"]}`}>
-            <div className={styles.productItem}>
-              <img src={ product.Image }></img>
-              <label>{ product.Title }</label>
-            </div>
-          </a>
-        )
-      })}
+      <div className={styles.productList}>
+        {searchResults.map((product:any, index:any)=>{
+          return (
+            <a key={index} href={`../provider/${product["_id"]}`}>
+              <div className={styles.productItem}>
+                <img src={ product.Image }></img>
+                <label>{ product.Title }</label>
+              </div>
+            </a>
+          )
+        })}
+      </div>
       <Footer></Footer>
     </>
   )
