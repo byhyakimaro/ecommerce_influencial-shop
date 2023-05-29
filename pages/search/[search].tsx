@@ -5,7 +5,11 @@ import Head from 'next/head'
 import { GetStaticPaths } from 'next/types'
 import { parseCookies } from 'nookies'
 
-export default function Home({ searchResults }: any) {
+export default function Home({ User, searchResults }: any) {
+  
+  const language = User?.user?.language ? User?.user?.language : 'en-us'
+  const currency = User?.user?.currency ? User?.user?.currency : 'USD'
+
   return (
     <>
       <Head>
@@ -49,9 +53,21 @@ Home.getInitialProps = async (ctx: any) => {
   })
 
   const searchResults = await fetchA.json()
+    
+  const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
+  {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: "POST",
+    body: JSON.stringify({ token: token })
+  })
+  const dataUser = await User.json()
 
   return {
-    searchResults
+    searchResults,
+    User: dataUser
   }
 }
 
