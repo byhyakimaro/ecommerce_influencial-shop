@@ -21,26 +21,29 @@ export default function Home({ User, searchResults }: any) {
       <Header></Header>
       <h2>Search</h2>
       <div className={styles.productList}>
-        {searchResults.map((product:any, index:any)=>{
-          return (
-            <a key={index} href={`../provider/${product["_id"]}`}>
-              <div className={styles.productItem}>
-                <img src={ product.Image }></img>
-                <label>{ product.Title }</label>
-                <div className={styles.productPrice}>
-                  {product.Off ? 
-                    <div>
-                      <label>{product.Price.toLocaleString(language, {style: 'currency', currency: currency})} </label>
-                      <label>{(product.Price-product.Price*(product.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
-                    </div>:
-                    <label> {(product.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>
-                  }
-                  {product.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {product.Off}% OFF</h5>}
+        {searchResults.length > 0 ?
+          searchResults.map((product:any, index:any)=>{
+            return (
+              <a key={index} href={`../provider/${product["_id"]}`}>
+                <div className={styles.productItem}>
+                  <img src={ product.Image }></img>
+                  <label>{ product.Title }</label>
+                  <div className={styles.productPrice}>
+                    {product.Off ? 
+                      <div>
+                        <label>{product.Price.toLocaleString(language, {style: 'currency', currency: currency})} </label>
+                        <label>{(product.Price-product.Price*(product.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
+                      </div>:
+                      <label> {(product.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>
+                    }
+                    {product.Off && <h5 style={{color: "rgba(255, 71, 74, 1)"}}>- {product.Off}% OFF</h5>}
+                  </div>
                 </div>
-              </div>
-            </a>
-          )
-        })}
+              </a>
+            )
+          })
+        : <div>Nenhum Resultado Encontrado</div>
+        }
       </div>
       <Footer></Footer>
     </>
