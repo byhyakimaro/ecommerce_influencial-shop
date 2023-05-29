@@ -899,3 +899,8 @@
 .containerTab > h3 {
   margin: 10px;
 }
+
+.productItem > img {
+  max-height: 240px;
+  max-width: 240px;
+}
