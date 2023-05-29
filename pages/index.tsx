@@ -266,7 +266,7 @@ export default function Home({ data, config, User, i18n }:any) {
 
 Home.getInitialProps = async (ctx: any) => {
   
-  const { host } = ctx.req.headers
+  const { host } = await ctx.req.headers
 
   const listProducts = await fetch(`http://${host}/api/products/listproducts`)
   const data: any = await listProducts.json()
