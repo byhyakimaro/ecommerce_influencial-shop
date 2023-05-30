@@ -51,6 +51,7 @@ export default async function handler(
         currency: dataCollection.currency,
         language: dataCollection.languages,
         email: dataCollection.email,
+        defaultAddress: dataCollection.defaultAddress,
         savedAddresses: dataCollection.savedAddresses,
         telephone: dataCollection.telephone,
         avatarUrl: dataCollection.avatarUrl,

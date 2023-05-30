@@ -21,10 +21,12 @@ export default function Home({ user, purchased }: any) {
         <ul>
           { user.savedAddresses.map((Address:any, index:any)=>{
             Address = JSON.parse(Address)
+
             return (
               <li key={index}>
                 <div className={styles.addressInfo}>
                   <div>
+                    {user.defaultAddress === index && <h5>Endereco Padrao</h5>}
                     <div>{`${Address.road} ${Address.number}`}</div>
                     <div>{` ${Address.complement} ${Address.neighborhood}`}</div>
                     <div>{`${Address.city} ${Address.state} ${Address.zipCode}` }</div>
