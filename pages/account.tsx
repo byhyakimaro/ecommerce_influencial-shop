@@ -16,7 +16,7 @@ export default function Home({ user, purchased }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
-      <div className={styles.containerTab}>
+      <div className={styles.containerAddress}>
         <h3>Seus endereços</h3>
         <ul>
           { user.savedAddresses.map((Address:any, index:any)=>{
@@ -25,9 +25,9 @@ export default function Home({ user, purchased }: any) {
               <li key={index}>
                 <div className={styles.addressInfo}>
                   <div>
-                    {`${Address.road} ${Address.number}`}<br></br>
-                    {` ${Address.complement} ${Address.neighborhood}`}<br></br>
-                    {`${Address.city} ${Address.state} ${Address.zipCode}` }
+                    <div>{`${Address.road} ${Address.number}`}</div>
+                    <div>{` ${Address.complement} ${Address.neighborhood}`}</div>
+                    <div>{`${Address.city} ${Address.state} ${Address.zipCode}` }</div>
                   </div>
                   <button>Alterar</button>
                   <button>Excluir</button>

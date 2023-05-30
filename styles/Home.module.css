@@ -896,8 +896,14 @@
   margin-right: 10px;
 }
 
-.containerTab > h3 {
+.containerTab > h3,
+.containerAddress > h3 {
   margin: 10px;
+}
+
+.containerAddress > ul {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .productList {
