@@ -22,7 +22,7 @@ export default function Home({token, purchased}: any) {
                 <li key={index}>
                   <h5>{user.userItems}</h5>
                   <label>Pedidos</label>
-                  <div>
+                  <ul>
                   {user.listItems.map((purchased: any, index: any) => {
                     return (
                       <li key={index}>
@@ -35,7 +35,7 @@ export default function Home({token, purchased}: any) {
                       </li>
                     )
                   })}
-                  </div>
+                  </ul>
                 </li>
               )
             })}
