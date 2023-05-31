@@ -11,7 +11,7 @@ export default function Header() {
 
   useEffect(() => {
 
-    fetch(`../locales/${language}/header.json`)
+    fetch(`http://localhost:3000//locales/${language}/header.json`)
     .then(response => response.json())
     .then(response => {
       response ? setI18n(response) : null
