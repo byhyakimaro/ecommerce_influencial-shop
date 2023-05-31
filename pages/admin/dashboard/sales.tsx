@@ -42,6 +42,23 @@ export default function Home({token, purchased}: any) {
                         <div>
                           Endereco: {`${purchased.saveAddress.road} ${purchased.saveAddress.number} ${purchased.saveAddress.complement} ${purchased.saveAddress.neighborhood} ${purchased.saveAddress.city} ${purchased.saveAddress.state} ${purchased.saveAddress.zipCode}`}
                         </div>
+                        <div>
+                          Codigo do Produto: {purchased.code}
+                        </div>
+                        <div>
+                          Produtos:
+                          <ul>
+                            {purchased.products.map((product: any,index: any) =>{
+                              return (
+                                <li key={index}>
+                                  <img src={ product.Image }></img>
+                                  <div>{product?.Title}</div>
+                                  <div>Preco: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: token.currency})}</div>
+                                </li>
+                              )
+                            })} 
+                          </ul>
+                        </div>
                         <button>Editar</button>
                         <button>Excluir</button>
                       </li>

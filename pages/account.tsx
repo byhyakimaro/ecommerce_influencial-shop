@@ -88,7 +88,7 @@ export default function Home({ user, purchased }: any) {
                           <>
                             <img src={ product.Image }></img>
                             <div>{product?.Title}</div>
-                            <div>Preco: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
+                            <div>Preco: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: user.currency})}</div>
                           </>
                         )
                       })}
