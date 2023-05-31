@@ -28,13 +28,19 @@ export default function Home({token, purchased}: any) {
                     return (
                       <li key={index}>
                         <div>
-                          Numero do Pedido: {purchased.id}
+                          Numero do Pedido: #{purchased.id}
                         </div>
                         <div>
                           Status: {purchased.status}
                         </div>
                         <div>
                           Data: { new Date(purchased.data).toLocaleString() }
+                        </div>
+                        <div>
+                          Pagamento: {(purchased.methodPayment).toUpperCase()}
+                        </div>
+                        <div>
+                          Endereco: {`${user?.savedAddresses[purchased.saveAddress].road} ${user?.savedAddresses[purchased.saveAddress].number} ${user?.savedAddresses[purchased.saveAddress].complement} ${user?.savedAddresses[purchased.saveAddress].neighborhood} ${user?.savedAddresses[purchased.saveAddress].city} ${user?.savedAddresses[purchased.saveAddress].state} ${user?.savedAddresses[purchased.saveAddress].zipCode}`}
                         </div>
                         <button>Editar</button>
                         <button>Excluir</button>

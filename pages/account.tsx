@@ -24,7 +24,7 @@ export default function Home({ user, purchased }: any) {
             <h5>Adicionar Endereco</h5>
           </li>
           { user.savedAddresses.map((Address:any, index:any)=>{
-            Address = JSON.parse(Address)
+            Address = Address
 
             return (
               <li key={index}>
@@ -74,7 +74,7 @@ export default function Home({ user, purchased }: any) {
                 <div style={{display:"none;"}} id="descriptionPurchased" className={styles.descriptionPurchased}>
                   <div>
                     <h4>ENDERECO<br></br></h4>
-                    <div>{`${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).road} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).number} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).complement} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).neighborhood} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).city} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).state} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).zipCode}`}</div>
+                    <div>{`${user?.savedAddresses[purchasedItem.saveAddress].road} ${user?.savedAddresses[purchasedItem.saveAddress].number} ${user?.savedAddresses[purchasedItem.saveAddress].complement} ${user?.savedAddresses[purchasedItem.saveAddress].neighborhood} ${user?.savedAddresses[purchasedItem.saveAddress].city} ${user?.savedAddresses[purchasedItem.saveAddress].state} ${user?.savedAddresses[purchasedItem.saveAddress].zipCode}`}</div>
                   </div>
                   <div>
                     <h4>CODIGO DO PEDIDO</h4>
