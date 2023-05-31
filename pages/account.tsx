@@ -78,7 +78,7 @@ export default function Home({ user, purchased }: any) {
                   </div>
                   <div>
                     <h4>STATUS DO PEDIDO</h4>
-                    <div>{ "Aguardando Pagamento" }</div>
+                    <div>{ purchasedItem.status }</div>
                   </div>
                   <div className={styles.listProducts}>
                     <h4>PRODUTO(S)</h4>
