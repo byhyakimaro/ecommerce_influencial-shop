@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <>
      <header className={styles.header}>
-        <a href=".."><div className={styles.logotype}></div></a>
+        <a href="../.."><div className={styles.logotype}></div></a>
         <div className={styles.navbar}>
           <input type="text" className={styles.bartext} placeholder={i18n?.bartext}></input>
           <div className={styles.searchbar} onClick={((event:any)=>{
