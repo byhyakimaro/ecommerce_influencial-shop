@@ -14,6 +14,11 @@ export default function Home({token}: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
+      <ul>
+        <li><a href="dashboard/sales">sales</a></li>
+        <li><a href="dashboard/config">config</a></li>
+        <li><a href="dashboard/register">register</a></li>
+      </ul>
     </>
   )
 }
