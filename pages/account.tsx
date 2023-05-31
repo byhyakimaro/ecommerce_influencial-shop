@@ -53,7 +53,7 @@ export default function Home({ user, purchased }: any) {
                 <div className={styles.paymentsPurchased}>
                   <div>Numero do pedido: <br></br><br></br>#{ purchasedItem.id }</div>
                   <div>Status: <br></br><br></br>{ purchasedItem.status }</div>
-                  <div>{ new Date(purchasedItem.data).toLocaleDateString() }</div>
+                  <div>{ new Date(purchasedItem.data).toLocaleString() }</div>
                   <div>
                     <p>Pagamento<br></br><br></br></p>
                     {purchasedItem.status === "pending" ?
