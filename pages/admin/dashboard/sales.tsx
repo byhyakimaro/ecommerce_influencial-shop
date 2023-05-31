@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { parseCookies } from 'nookies'
 
-export default function Home({token}: any) {
+export default function Home({token, purchased}: any) {
 
   return (
     <>
@@ -14,6 +14,21 @@ export default function Home({token}: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
+      <div className={styles.containerQueue}>
+        <div className={styles.purchased}>
+          <ul>
+            {purchased.map((user: any, index: any)=>{
+              return (
+                <li key={index}>
+                  <h5>{user.userItems}</h5>
+                  <label>Numero de Pedidos</label>
+                  <p>{user.listItems.length}</p>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      </div>
     </>
   )
 }
@@ -35,8 +50,12 @@ Home.getInitialProps = async (ctx: any) => {
     })
     const { user } = await User.json()
 
+    const purchasedFetch = await fetch(`http://localhost:3000/api/admin/queuePurchased`)
+    const purchased = await purchasedFetch.json()
+
     return {
-      token: user
+      token: user,
+      purchased: purchased
     }
   }
 }
