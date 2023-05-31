@@ -21,8 +21,9 @@ export default function Home({token, purchased}: any) {
               return (
                 <li key={index}>
                   <h5>{user.userItems}</h5>
-                  <label>Pedidos</label>
+                  <button>Visualisar Pedidos</button>
                   <ul>
+                  <label>Pedidos</label>
                   {user.listItems.map((purchased: any, index: any) => {
                     return (
                       <li key={index}>
@@ -35,6 +36,8 @@ export default function Home({token, purchased}: any) {
                         <div>
                           Data: { new Date(purchased.data).toLocaleString() }
                         </div>
+                        <button>Editar</button>
+                        <button>Excluir</button>
                       </li>
                     )
                   })}
