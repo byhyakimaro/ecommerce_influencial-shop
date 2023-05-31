@@ -73,7 +73,6 @@ export default async function handler(
         { _id: new ObjectId(token) },
         { $addToSet: { itemsPurchased: {
           id: payment.id,
-          status: payment.status,
           code: "Order being processed",
           data: payment.date_created,
           totalOrder: parseFloat((amount-(amount*(dataCollection.offers.percentPixOff/100))).toFixed(2)),
@@ -93,7 +92,6 @@ export default async function handler(
         { _id: new ObjectId(token) },
         { $addToSet: { itemsPurchased: {
           id: payment.id,
-          status: payment.status,
           data: payment.date_created,
           totalOrder: amount,
           url: payment.transaction_details.external_resource_url,
