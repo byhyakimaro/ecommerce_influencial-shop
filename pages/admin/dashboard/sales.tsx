@@ -21,8 +21,21 @@ export default function Home({token, purchased}: any) {
               return (
                 <li key={index}>
                   <h5>{user.userItems}</h5>
-                  <label>Numero de Pedidos</label>
-                  <p>{user.listItems.length}</p>
+                  <label>Pedidos</label>
+                  <div>
+                  {user.listItems.map((purchased: any, index: any) => {
+                    return (
+                      <li key={index}>
+                        <div>
+                          Numero do Pedido: {purchased.id}
+                        </div>
+                        <div>
+                          Status: {purchased.status}
+                        </div>
+                      </li>
+                    )
+                  })}
+                  </div>
                 </li>
               )
             })}
