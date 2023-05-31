@@ -77,7 +77,7 @@ export default function Home({ user, purchased }: any) {
                     <div>{`${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).road} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).number} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).complement} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).neighborhood} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).city} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).state} ${JSON.parse(user?.savedAddresses[purchasedItem.saveAddress]).zipCode}`}</div>
                   </div>
                   <div>
-                    <h4>STATUS DO PEDIDO</h4>
+                    <h4>CODIGO DO PEDIDO</h4>
                     <div>{ purchasedItem.code }</div>
                   </div>
                   <div className={styles.listProducts}>
