@@ -74,7 +74,7 @@ export default function Home({ user, purchased }: any) {
                 <div style={{display:"none;"}} id="descriptionPurchased" className={styles.descriptionPurchased}>
                   <div>
                     <h4>ENDERECO<br></br></h4>
-                    <div>{`${user?.savedAddresses[purchasedItem.saveAddress].road} ${user?.savedAddresses[purchasedItem.saveAddress].number} ${user?.savedAddresses[purchasedItem.saveAddress].complement} ${user?.savedAddresses[purchasedItem.saveAddress].neighborhood} ${user?.savedAddresses[purchasedItem.saveAddress].city} ${user?.savedAddresses[purchasedItem.saveAddress].state} ${user?.savedAddresses[purchasedItem.saveAddress].zipCode}`}</div>
+                    <div>{`${purchasedItem.saveAddress.road} ${purchasedItem.saveAddress.number} ${purchasedItem.saveAddress.complement} ${purchasedItem.saveAddress.neighborhood} ${purchasedItem.saveAddress.city} ${purchasedItem.saveAddress.state} ${purchasedItem.saveAddress.zipCode}`}</div>
                   </div>
                   <div>
                     <h4>CODIGO DO PEDIDO</h4>
