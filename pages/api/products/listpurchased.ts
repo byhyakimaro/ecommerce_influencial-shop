@@ -24,6 +24,9 @@ export default async function handler(
     })
     const orderPurchasedAsync = await orderPurchased.json()
 
+    await collectionUsers.updateOne({itemsPurchased: { $elemMatch: {id: {$gte: itemPurchased.id}} }},
+    { $set: { "itemsPurchased.$.status": orderPurchasedAsync.status }})
+
     return {
       id: itemPurchased.id,
       status: orderPurchasedAsync.status,
