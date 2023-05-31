@@ -14,6 +14,7 @@ export default function Home({token}: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
+      <h5>Editar Configuracoes do site</h5>
     </>
   )
 }
