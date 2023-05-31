@@ -59,6 +59,9 @@ export default function Home({token, purchased}: any) {
                             })} 
                           </ul>
                         </div>
+                        <div>
+                          Total Pedido: {(purchased.totalOrder).toLocaleString(token.languages,{style: 'currency', currency: token.currency})}
+                        </div>
                         <button>Editar</button>
                         <button>Excluir</button>
                       </li>
