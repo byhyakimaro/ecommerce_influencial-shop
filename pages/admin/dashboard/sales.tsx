@@ -60,6 +60,9 @@ export default function Home({token, purchased}: any) {
                           </ul>
                         </div>
                         <div>
+                          Desconto: -{((purchased.products?.reduce((a: any,v: any) =>  a = a + v.Price , 0))-purchased?.totalOrder).toLocaleString(token.languages,{style: 'currency', currency: token.currency})}
+                        </div>
+                        <div>
                           Total Pedido: {(purchased.totalOrder).toLocaleString(token.languages,{style: 'currency', currency: token.currency})}
                         </div>
                         <button>Editar</button>
