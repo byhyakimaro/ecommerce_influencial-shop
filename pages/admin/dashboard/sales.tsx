@@ -84,10 +84,11 @@ export default function Home({token, purchased}: any) {
 Home.getInitialProps = async (ctx: any) => {
 
   const { 'infshop.token': token } = parseCookies(ctx)
+  const host: any = process.env.HOST_API_URL
   
   if (token) {
     
-    const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
+    const User = await fetch(`${host}/api/auth/recovery/token`,
     {
       headers: {
         'Accept': 'application/json',
@@ -98,7 +99,7 @@ Home.getInitialProps = async (ctx: any) => {
     })
     const { user } = await User.json()
 
-    const purchasedFetch = await fetch(`http://localhost:3000/api/admin/queuePurchased`)
+    const purchasedFetch = await fetch(`${host}/api/admin/queuePurchased`)
     const purchased = await purchasedFetch.json()
 
     return {

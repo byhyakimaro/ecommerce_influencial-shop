@@ -171,9 +171,10 @@ export default function Home({ product, i18n, User, itemTopSell, category, simil
 Home.getInitialProps = async (ctx: any) => {
 
   const { 'infshop.token': token } = parseCookies(ctx)
+  const host: any = process.env.HOST_API_URL
   const { product: productId } = ctx.query
 
-  fetch(`http://localhost:3000/api/products/countproduct`,
+  fetch(`${host}/api/products/countproduct`,
   {
       headers: {
         'Accept': 'application/json',
@@ -186,9 +187,9 @@ Home.getInitialProps = async (ctx: any) => {
       })
   })
 
-  const productFetch = await fetch(`http://localhost:3000/api/product/${productId}`)
+  const productFetch = await fetch(`${host}/api/product/${productId}`)
 
-  const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
+  const User = await fetch(`${host}/api/auth/recovery/token`,
   {
     headers: {
       'Accept': 'application/json',
@@ -201,22 +202,22 @@ Home.getInitialProps = async (ctx: any) => {
 
   const language = dataUser?.user?.language ? dataUser?.user?.language : 'en-us'
 
-  const localesFetch = await fetch(`http://localhost:3000/locales/${language}/provider.json`)
+  const localesFetch = await fetch(`${host}/locales/${language}/provider.json`)
   const locales = await localesFetch.json()
 
-  const localesIndexFetch = await fetch(`http://localhost:3000/locales/${language}/index.json`)
+  const localesIndexFetch = await fetch(`${host}/locales/${language}/index.json`)
   const localesIndex = await localesIndexFetch.json()
 
   if (productFetch.status === 200) {
 
     const product = await productFetch.json()
 
-    const categoriesFetch = await fetch(`http://localhost:3000/api/products/categories`)
+    const categoriesFetch = await fetch(`${host}/api/products/categories`)
     const categoryProduct = (await categoriesFetch.json()).filter((category:any) => category.code === product.Category)
 
     const itemTopSell = categoryProduct.find(({ bestSellers }:any) => bestSellers.find((item:any) => item === product.Code))
 
-    const fetchA = await fetch('http://localhost:3000/api/products/search',
+    const fetchA = await fetch(`${host}/api/products/search`,
     {
       headers: {
         'Accept': 'application/json',

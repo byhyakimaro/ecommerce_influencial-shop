@@ -52,8 +52,9 @@ export default function Home({ category, User }: any) {
 Home.getInitialProps = async (ctx: any) => {
 
   const { 'infshop.token': token } = parseCookies(ctx)
+  const host: any = process.env.HOST_API_URL
     
-  const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
+  const User = await fetch(`${host}/api/auth/recovery/token`,
   {
     headers: {
       'Accept': 'application/json',
@@ -66,7 +67,7 @@ Home.getInitialProps = async (ctx: any) => {
 
   const { category } = ctx.query
 
-  const categoryProducts = await fetch(`http://localhost:3000/api/products/categories/${category}`)
+  const categoryProducts = await fetch(`${host}/api/products/categories/${category}`)
 
   if (categoryProducts.status === 200) {
     return {

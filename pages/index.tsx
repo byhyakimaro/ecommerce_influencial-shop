@@ -265,21 +265,20 @@ export default function Home({ data, config, User, i18n }:any) {
 }
 
 Home.getInitialProps = async (ctx: any) => {
-  
-  const { host } = await ctx.req?.headers
+  const host: any = process.env.HOST_API_URL
 
-  const listProducts = await fetch(`http://${host}/api/products/listproducts`)
+  const listProducts = await fetch(`${host}/api/products/listproducts`)
   const data: any = await listProducts.json()
 
-  const listConfig = await fetch(`http://${host}/api/listconfig`)
+  const listConfig = await fetch(`${host}/api/listconfig`)
   const config: any = await listConfig.json()
 
-  const categories = await fetch(`http://${host}/api/products/categories`)
+  const categories = await fetch(`${host}/api/products/categories`)
   data["categories"] = await categories.json()
 
   const { 'infshop.token': token } = parseCookies(ctx)
     
-    const User = await fetch(`http://${host}/api/auth/recovery/token`,
+    const User = await fetch(`${host}/api/auth/recovery/token`,
     {
       headers: {
         'Accept': 'application/json',
@@ -292,7 +291,7 @@ Home.getInitialProps = async (ctx: any) => {
 
     const language = dataUser?.user?.language ? dataUser?.user?.language : 'en-us'
 
-    const localesFetch = await fetch(`http://${host}/locales/${language}/index.json`)
+    const localesFetch = await fetch(`${host}/locales/${language}/index.json`)
     const locales = await localesFetch.json()
 
   return {

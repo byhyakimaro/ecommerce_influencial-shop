@@ -131,10 +131,11 @@ export default function Home({ offers, productsInCart, token }: any) {
 Home.getInitialProps = async (ctx: any) => {
 
   const { 'infshop.token': token } = parseCookies(ctx)
+  const host: any = process.env.HOST_API_URL
   
   if (token) {
     
-    const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
+    const User = await fetch(`${host}/api/auth/recovery/token`,
     {
       headers: {
         'Accept': 'application/json',

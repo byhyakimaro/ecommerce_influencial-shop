@@ -53,9 +53,10 @@ export default function Home({ User, searchResults }: any) {
 Home.getInitialProps = async (ctx: any) => {
 
   const { 'infshop.token': token } = parseCookies(ctx)
+  const host: any = process.env.HOST_API_URL
   const { search } = ctx.query
 
-  const fetchA = await fetch('http://localhost:3000/api/products/search',
+  const fetchA = await fetch(`${host}/api/products/search`,
   {
     headers: {
       'Accept': 'application/json',
@@ -67,7 +68,7 @@ Home.getInitialProps = async (ctx: any) => {
 
   const searchResults = await fetchA.json()
     
-  const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
+  const User = await fetch(`${host}/api/auth/recovery/token`,
   {
     headers: {
       'Accept': 'application/json',

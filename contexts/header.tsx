@@ -2,6 +2,8 @@ import styles from '@/styles/Home.module.css'
 import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '@/contexts/AuthContexts'
 
+const host: any = process.env.HOST_API_URL
+
 export default function Header() {
 
   const { user, isAuthenticated } = useContext(AuthContext)
@@ -11,7 +13,7 @@ export default function Header() {
 
   useEffect(() => {
 
-    fetch(`http://localhost:3000//locales/${language}/header.json`)
+    fetch(`../../../../locales/${language}/header.json`)
     .then(response => response.json())
     .then(response => {
       response ? setI18n(response) : null
@@ -52,7 +54,7 @@ export default function Header() {
       <div className={styles.subHeader}>
         <a>{i18n?.subHeader_0}</a>
         <a>{i18n?.subHeader_1}</a>
-        {user?.office === 'owner' && <a href='http://localhost:3000/admin/dashboard'>ADMIN</a>}
+        {user?.office === 'owner' && <a href='../../../../admin/dashboard'>ADMIN</a>}
       </div>
     </>
   )

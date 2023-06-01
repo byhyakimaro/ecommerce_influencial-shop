@@ -2,6 +2,7 @@ import { ObjectId } from 'mongodb';
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { getCollection } from '@/modules/connectDb'
+const host: any = process.env.HOST_API_URL
 
 export default async function handler(
   req: NextApiRequest,
@@ -23,7 +24,7 @@ export default async function handler(
     index: any) => dataCollection.itemsViewed.indexOf(item) === index)
     
     const productsViewed = await Promise.all(itemsViewedFormatted.map(async (productId:any) =>{
-      const product = await fetch(`http://${req?.headers.host}/api/product/${productId}`)
+      const product = await fetch(`${host}/api/product/${productId}`)
       
       if (product.status === 200) {
         return await product.json()
@@ -34,7 +35,7 @@ export default async function handler(
       index: any) => dataCollection.productsInCart.products.indexOf(item) === index)
     
     const productsInCart = await Promise.all(productsInCartFormatted.map(async (productId:any) =>{
-      const product = await fetch(`http://${req?.headers.host}/api/product/${productId}`)
+      const product = await fetch(`${host}/api/product/${productId}`)
 
       if (product.status === 200) {
         return await product.json()

@@ -43,9 +43,10 @@ export default function Home({ product, i18n, User }: any) {
 Home.getInitialProps = async (ctx: any) => {
 
   const { 'infshop.token': token } = parseCookies(ctx)
+  const host: any = process.env.HOST_API_URL
   const { product: productId } = ctx.query
 
-  fetch(`http://localhost:3000/api/products/cartproduct`,
+  fetch(`${host}/api/products/cartproduct`,
   {
       headers: {
         'Accept': 'application/json',
@@ -58,9 +59,9 @@ Home.getInitialProps = async (ctx: any) => {
       })
   })
 
-  const product = await fetch(`http://localhost:3000/api/product/${productId}`)
+  const product = await fetch(`${host}/api/product/${productId}`)
 
-  const User = await fetch(`http://localhost:3000/api/auth/recovery/token`,
+  const User = await fetch(`${host}/api/auth/recovery/token`,
   {
     headers: {
       'Accept': 'application/json',
@@ -73,7 +74,7 @@ Home.getInitialProps = async (ctx: any) => {
 
   const language = dataUser?.user?.language ? dataUser?.user?.language : 'en-us'
 
-  const localesFetch = await fetch(`http://localhost:3000/locales/${language}/precart.json`)
+  const localesFetch = await fetch(`${host}/locales/${language}/precart.json`)
   const locales = await localesFetch.json()
 
   if (product.status === 200) {

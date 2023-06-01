@@ -4,6 +4,7 @@ import * as dotenv from "dotenv"
 import { ObjectId } from 'mongodb'
 
 dotenv.config({ path: __dirname+'/.env' })
+const host: any = process.env.HOST_API_URL
 
 function getPayment(amount:any, description:any, method:any) {
   return fetch('https://api.mercadopago.com/v1/payments',{
@@ -55,7 +56,7 @@ export default async function handler(
       index: any) => dataCollection.productsInCart.products.indexOf(item) === index)
     
     const productsInCart = await Promise.all(productsInCartFormatted.map(async (productId:any) =>{
-      const product = await fetch(`http://${req?.headers.host}/api/product/${productId}`)
+      const product = await fetch(`${host}/api/product/${productId}`)
 
       if (product.status === 200) {
         return await product.json()

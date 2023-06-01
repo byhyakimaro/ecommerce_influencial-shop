@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import * as dotenv from "dotenv"
 import { AuthProvider } from '@/contexts/AuthContexts'
 import type { AppProps } from 'next/app'
 

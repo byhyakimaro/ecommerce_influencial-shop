@@ -3,6 +3,8 @@ import * as dotenv from "dotenv"
 import { getCollection } from '@/modules/connectDb'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+const host: any = process.env.HOST_API_URL
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -11,7 +13,7 @@ export default async function handler(
 
   const itemsPurchased = await Promise.all(collection.map(async (item: any)=>{
 
-    const purchased = await fetch(`http://localhost:3000/api/products/listpurchased`,
+    const purchased = await fetch(`${host}/api/products/listpurchased`,
     {
         headers: {
           'Accept': 'application/json',
