@@ -21,55 +21,64 @@ export default function Home({token, purchased}: any) {
               return (
                 <li key={index}>
                   <h5>{user.userItems}</h5>
-                  <button>Visualisar Pedidos</button>
-                  <ul>
-                  <label>Pedidos</label>
-                  {user.listItems.map((purchased: any, index: any) => {
-                    return (
-                      <li key={index}>
-                        <div>
-                          Numero do Pedido: #{purchased.id}
-                        </div>
-                        <div>
-                          Status: {purchased.status}
-                        </div>
-                        <div>
-                          Data: { new Date(purchased.data).toLocaleString() }
-                        </div>
-                        <div>
-                          Pagamento: {(purchased.methodPayment).toUpperCase()}
-                        </div>
-                        <div>
-                          Endereco: {`${purchased.saveAddress.road} ${purchased.saveAddress.number} ${purchased.saveAddress.complement} ${purchased.saveAddress.neighborhood} ${purchased.saveAddress.city} ${purchased.saveAddress.state} ${purchased.saveAddress.zipCode}`}
-                        </div>
-                        <div>
-                          Codigo do Produto: {purchased.code}
-                        </div>
-                        <div>
-                          Produtos:
-                          <ul>
-                            {purchased.products.map((product: any,index: any) =>{
-                              return (
-                                <li key={index}>
-                                  <img src={ product.Image }></img>
-                                  <div>{product?.Title}</div>
-                                  <div>Preco: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: token.currency})}</div>
-                                </li>
-                              )
-                            })} 
-                          </ul>
-                        </div>
-                        <div>
-                          Desconto: -{((purchased.products?.reduce((a: any,v: any) =>  a = a + v.Price , 0))-purchased?.totalOrder).toLocaleString(token.languages,{style: 'currency', currency: token.currency})}
-                        </div>
-                        <div>
-                          Total Pedido: {(purchased.totalOrder).toLocaleString(token.languages,{style: 'currency', currency: token.currency})}
-                        </div>
-                        <button>Editar</button>
-                        <button>Excluir</button>
-                      </li>
-                    )
-                  })}
+                  <button onClick={((event:any)=>{
+                    const description = event.currentTarget.parentElement.parentElement.querySelector('#descriptionQueue')
+                    
+                    if(description.style.display === 'none') {
+                      description?.setAttribute('style','display: block;')
+                    } else {
+                      description?.setAttribute('style','display: none;')
+                    }
+                    })}>Visualisar Pedidos</button>
+                  <ul id="descriptionQueue" style={{display: "none"}}>
+                    <label>Pedidos</label>
+                    {user.listItems.map((purchased: any, index: any) => {
+                      return (
+                        <li key={index}>
+                          <div>
+                            Numero do Pedido: #{purchased.id}
+                          </div>
+                          <div>
+                            Status: {purchased.status}
+                          </div>
+                          <div>
+                            Data: { new Date(purchased.data).toLocaleString() }
+                          </div>
+                          <div>
+                            Pagamento: {(purchased.methodPayment).toUpperCase()}
+                          </div>
+                          <div>
+                            Endereco: {`${purchased.saveAddress.road} ${purchased.saveAddress.number} ${purchased.saveAddress.complement} ${purchased.saveAddress.neighborhood} ${purchased.saveAddress.city} ${purchased.saveAddress.state} ${purchased.saveAddress.zipCode}`}
+                          </div>
+                          <div>
+                            Codigo do Produto: {purchased.code}
+                          </div>
+                          <div>
+                            Produtos:
+                            <ul>
+                              {purchased.products.map((product: any,index: any) =>{
+                                return (
+                                  <li key={index}>
+                                    <img src={ product.Image }></img>
+                                    <div>{product?.Title}</div>
+                                    <div>Preco: {(product.Price).toLocaleString('pt-br',{style: 'currency', currency: token.currency})}</div>
+                                    <div>Url Provedor: {}</div>
+                                  </li>
+                                )
+                              })} 
+                            </ul>
+                          </div>
+                          <div>
+                            Desconto: -{((purchased.products?.reduce((a: any,v: any) =>  a = a + v.Price , 0))-purchased?.totalOrder).toLocaleString(token.languages,{style: 'currency', currency: token.currency})}
+                          </div>
+                          <div>
+                            Total Pedido: {(purchased.totalOrder).toLocaleString(token.languages,{style: 'currency', currency: token.currency})}
+                          </div>
+                          <button>Editar</button>
+                          <button>Excluir</button>
+                        </li>
+                      )
+                    })}
                   </ul>
                 </li>
               )
