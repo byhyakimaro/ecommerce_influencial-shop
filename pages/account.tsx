@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import EditAddress from '@/contexts/editAddress'
 import Header from '@/contexts/header'
 import Footer from '@/contexts/footer'
 
@@ -36,7 +35,7 @@ export default function Home({ user, purchased }: any) {
                     <div>{` ${Address.complement} ${Address.neighborhood}`}</div>
                     <div>{`${Address.city} ${Address.state} ${Address.zipCode}` }</div>
                   </div>
-                  <button>Alterar</button>
+                  <a href='/editAddress'>Alterar</a>
                   <button>Excluir</button>
                 </div>
               </li>
@@ -114,7 +113,6 @@ export default function Home({ user, purchased }: any) {
         </ul>
       </div>
       <Footer></Footer>
-      <EditAddress></EditAddress>
     </>
   )
 }

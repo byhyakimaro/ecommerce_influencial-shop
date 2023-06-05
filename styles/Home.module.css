@@ -944,13 +944,6 @@
   color: rgba(171, 122, 0, 1);
 }
 
-.containerEditAddress {
-  position: absolute;
-  top: 20%;
-  transform: translateX(-50%);
-  left: 50%;
-}
-
 .containerEditAddress .editAddress {
   background: black;
   padding: 20px;

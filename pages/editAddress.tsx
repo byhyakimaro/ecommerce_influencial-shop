@@ -33,7 +33,6 @@ export default function editAddress() {
             <input type="checkbox" name="" id="" />
             <span>Tornar este o meu endereço padrão</span>
           </div>
-
         </div>
       </div>
     </>
