@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import EditAddress from '@/contexts/editAddress'
 import Header from '@/contexts/header'
 import Footer from '@/contexts/footer'
 
@@ -113,6 +114,7 @@ export default function Home({ user, purchased }: any) {
         </ul>
       </div>
       <Footer></Footer>
+      <EditAddress></EditAddress>
     </>
   )
 }
