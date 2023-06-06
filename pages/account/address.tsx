@@ -1,10 +1,14 @@
 import Head from 'next/head'
 import Header from '@/contexts/header'
+import { useRouter } from 'next/router';
 import Footer from '@/contexts/footer'
 
 import styles from '@/styles/Home.module.css'
 
 export default function Home() {
+  const router = useRouter()
+
+  console.log(router.query)
 
   return (
     <>
@@ -28,19 +32,19 @@ export default function Home() {
           <div>CEP</div>
           <input type="text" name="cep" id="" />
           <div>Endereço</div>
-          <input type="text" name="name" id="" />
+          <input type="text" name="address" id="" />
           <div>Número da residência</div>
-          <input type="text" name="name" id="" />
+          <input type="text" name="number" id="" />
           <div>Complemento (opcional)</div>
-          <input type="text" name="name" id="" />
+          <input type="text" name="complement" id="" />
           <div>Bairro</div>
-          <input type="text" name="name" id="" />
+          <input type="text" name="neighborhood" id="" />
           <div>Cidade</div>
-          <input type="text" name="name" id="" />
+          <input type="text" name="city" id="" />
           <div>Estado</div>
-          <input type="text" name="name" id="" />
+          <input type="text" name="state" id="" />
           <div>Instruções de entrega (opcional)</div>
-          <input type="text" name="name" id="" />
+          <input type="text" name="Instructions" id="" />
           <div>
             <input type="checkbox" name="" id="" />
             <span>Tornar este o meu endereço padrão</span>

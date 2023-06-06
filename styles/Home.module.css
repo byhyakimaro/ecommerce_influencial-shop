@@ -944,6 +944,16 @@
   color: rgba(171, 122, 0, 1);
 }
 
-.containerEditAddress .editAddress {
+.containerEditAddress {
+  margin: auto;
+  width: 500px;
   padding: 20px;
+}
+
+.containerEditAddress .editAddress {
+  width: 100%;
+}
+.containerEditAddress .editAddress input {
+  padding: 3px 7px;
+  width: 100%;
 }
