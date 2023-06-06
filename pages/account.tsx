@@ -35,7 +35,7 @@ export default function Home({ user, purchased }: any) {
                     <div>{` ${Address.complement} ${Address.neighborhood}`}</div>
                     <div>{`${Address.city} ${Address.state} ${Address.zipCode}` }</div>
                   </div>
-                  <a href='account/editAddress'>Alterar</a>
+                  <a href='account/address'>Alterar</a>
                   <button>Excluir</button>
                 </div>
               </li>
