@@ -15,8 +15,6 @@ export default async function handler(
 
   const collectionUsers = await getCollection('users')
 
-  const dataCollection = await collectionUsers.findOne({ _id: new ObjectId(token)})
-
   collectionUsers.updateOne(
     { _id: new ObjectId(token) },
       { $set: { savedAddresses: { [address.Index]: address.Edited} }
