@@ -8,7 +8,7 @@ export default async function handler(
 ) {
   const { address, token } = req.body
 
-  if (address) {
+  if (!address) {
     res.status(404).json("Address not found")
     return
   }
