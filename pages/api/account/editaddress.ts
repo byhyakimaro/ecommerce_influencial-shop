@@ -19,7 +19,7 @@ export default async function handler(
 
   collectionUsers.updateOne(
     { _id: new ObjectId(token) },
-    { $set: { savedAddresses: { [address.Index]: address.Edited} }
+      { $set: { savedAddresses: { [address.Index]: address.Edited} }
     }
   )
 

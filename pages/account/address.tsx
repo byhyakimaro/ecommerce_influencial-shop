@@ -10,8 +10,20 @@ export default function Home() {
   const { register, handleSubmit } = useForm()
   const router = useRouter()
 
-  function handleEdit(data: any) {
-    console.log({ Edited: data, Index: router.query })
+  async function handleEdit(data: any) {
+
+    const Address = await fetch(`/api/account/editaddress`,
+    {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({ address: { Edited: data, Index: router.query.edit } })
+    })
+    const info = await Address.json()
+
+    console.log(info)
   }
 
   return (
