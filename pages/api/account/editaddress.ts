@@ -8,6 +8,11 @@ export default async function handler(
 ) {
   const { address, token } = req.body
 
+  if (address) {
+    res.status(404).json("Address not found")
+    return
+  }
+
   const collectionUsers = await getCollection('users')
 
   const dataCollection = await collectionUsers.findOne({ _id: new ObjectId(token)})

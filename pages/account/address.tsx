@@ -11,7 +11,7 @@ export default function Home() {
   const router = useRouter()
 
   function handleEdit(data: any) {
-    console.log(data,router.query)
+    console.log({ Edited: data, Index: router.query })
   }
 
   return (
