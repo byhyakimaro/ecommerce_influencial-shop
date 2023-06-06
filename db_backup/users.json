@@ -15,7 +15,7 @@
       "id": {
         "$numberLong": "57215996498"
       },
-      "status": "pending",
+      "status": "cancelled",
       "data": "2023-04-22T02:36:08.722-04:00",
       "totalOrder": 7255.83,
       "url": "https://www.mercadopago.com.br/payments/57215996498/ticket?caller_id=164246950&hash=46077a41-a0be-4b9e-831b-51bad156af53",
@@ -44,7 +44,15 @@
         }
       ],
       "code": "Order being processed",
-      "saveAddress": 0
+      "saveAddress": {
+        "road": "Rua Rio Capiberibe",
+        "number": 170,
+        "neighborhood": "Jardim Santo Antônio I",
+        "city": "Campo Limpo Paulista",
+        "state": "SP",
+        "zipCode": 13232090,
+        "complement": "Casa Verde"
+      }
     }
   ],
   "controlDevices": [],
@@ -61,13 +69,22 @@
   "itemsRequest": [],
   "productsInCart": {
     "methodPayment": "pending",
-    "saveAddress": 0,
+    "saveAddress": null,
     "products": [
-      "646ee28e40de011a59b770f8"
+      "646ee28e40de011a59b770f8",
+      "640dfcbc709304d3329f2e0b"
     ]
   },
   "savedAddresses": [
-    "{\"road\":\"Rua Rio Capiberibe\",\"number\":170,\"neighborhood\":\"Jardim Santo Antônio I\",\"city\":\"Campo Limpo Paulista\",\"state\":\"SP\",\"zipCode\":13232090,\"complement\":\"Casa Verde\"}"
+    {
+      "road": "Rua Rio Capiberibe",
+      "number": 170,
+      "neighborhood": "Jardim Santo Antônio I",
+      "city": "Campo Limpo Paulista",
+      "state": "SP",
+      "zipCode": 13232090,
+      "complement": "Casa Verde"
+    }
   ],
   "offers": {
     "percentPixOff": 10
