@@ -892,7 +892,7 @@
   margin: .5em 2em;
 }
 
-.addressInfo > button { 
+.addressInfo > button,.addressInfo > a { 
   margin-right: 10px;
 }
 
@@ -945,6 +945,5 @@
 }
 
 .containerEditAddress .editAddress {
-  background: black;
   padding: 20px;
 }
