@@ -46,7 +46,7 @@ export default function Home({ token }: any) {
             <div>Telefone</div>
             <input {...register('telephone')} type="text" name="telephone" id="" />
             <div>CEP</div>
-            <input {...register('cep')} type="text" name="cep" id="" />
+            <input {...register('zipCode')} type="text" name="zipCode" id="" />
             <div>Endereço</div>
             <input {...register('address')} type="text" name="address" id="" />
             <div>Número da residência</div>

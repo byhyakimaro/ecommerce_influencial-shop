@@ -31,9 +31,9 @@ export default function Home({ user, purchased }: any) {
                 <div className={styles.addressInfo}>
                   <div>
                     {user.defaultAddress === index && <h5>Endereco Padrao</h5>}
-                    <div>{`${Address.road} ${Address.number}`}</div>
-                    <div>{` ${Address.complement} ${Address.neighborhood}`}</div>
-                    <div>{`${Address.city} ${Address.state} ${Address.zipCode}` }</div>
+                    <div>{`${Address.address} ${Address.number}`}</div>
+                    <div>{` ${Address.instructions} ${Address.neighborhood}`}</div>
+                    <div>{`${Address.city}, ${Address.state} ${Address.zipCode}` }</div>
                   </div>
                   <a href={`account/address?edit=${index}`}>Alterar</a>
                   <button>Excluir</button>
