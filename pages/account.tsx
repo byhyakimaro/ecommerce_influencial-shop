@@ -37,7 +37,7 @@ export default function Home({ user, purchased }: any) {
                     <div>{`Telefone: ${Address.telephone}`}</div>
                   </div>
                   <a href={`account/address?edit=${index}`}>Alterar</a>
-                  <button>Excluir</button>
+                  <a href={`account/deleteaddress?delete=${index}`}>Excluir</a>
                 </div>
               </li>
             )
