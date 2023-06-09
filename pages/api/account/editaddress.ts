@@ -14,10 +14,13 @@ export default async function handler(
   }
 
   const collectionUsers = await getCollection('users')
+  const { savedAddresses } = await collectionUsers.findOne({ _id: new ObjectId(token) })
+
+  savedAddresses[address.Index] = address.Edited
 
   collectionUsers.updateOne(
     { _id: new ObjectId(token) },
-      { $set: { savedAddresses: { [address.Index]: address.Edited} }
+      { $set: { savedAddresses: savedAddresses }
     }
   )
 

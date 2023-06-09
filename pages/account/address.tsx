@@ -24,7 +24,7 @@ export default function Home({ token }: any) {
     })
     await Address.json()
 
-    window.location.href = '/account'
+    // window.location.href = '/account'
   }
 
   return (
