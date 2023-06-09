@@ -19,10 +19,10 @@ export default function Home({ user, purchased }: any) {
       <div className={styles.containerAddress}>
         <h3>Seus endereços</h3>
         <ul>
-          <li className={styles.addAddress}>
+          <a href={'account/address?new=true'}><li className={styles.addAddress}>
             <svg height="48" viewBox="0 -960 960 960" width="48"><path d="M450-200v-250H200v-60h250v-250h60v250h250v60H510v250h-60Z"/></svg>
             <h5>Adicionar Endereco</h5>
-          </li>
+          </li></a>
           { user.savedAddresses.map((Address:any, index:any)=>{
             Address = Address
 

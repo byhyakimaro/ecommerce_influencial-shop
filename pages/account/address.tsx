@@ -13,16 +13,31 @@ export default function Home({ token }: any) {
 
   async function handleEdit(data: any) {
 
-    const Address = await fetch(`/api/account/editaddress`,
-    {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: "POST",
-      body: JSON.stringify({ token: token, address: { Edited: data, Index: router.query.edit } })
-    })
-    await Address.json()
+    if (router.query.edit) {
+      const Address = await fetch(`/api/account/editaddress`,
+      {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({ token: token, address: { Edited: data, Index: router.query.edit } })
+      })
+      await Address.json()
+    }
+    
+    if (router.query.new) {
+      const Address = await fetch(`/api/account/newaddress`,
+      {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({ token: token, address: data })
+      })
+      await Address.json()
+    }
 
     window.location.href = '/account'
   }
