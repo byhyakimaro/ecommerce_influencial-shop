@@ -14,7 +14,7 @@ export default function Home({ offers, user, productsInCart }: any) {
   const TotalPrice = ((productsCart.reduce((a: any,v: any) =>  a = a + v.Price , 0))).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
   const address = user.savedAddresses[0]
-  const addressFormatted = `${address.road} ${address.number} ${address.complement} ${address.neighborhood} ${address.city} ${address.state} ${address.zipCode}`
+  const addressFormatted = `${address.address} ${address.number} ${address.instructions} ${address.neighborhood} ${address.city} ${address.state} ${address.zipCode}`
 
   const { 'infshop.token': token } = parseCookies()
   
