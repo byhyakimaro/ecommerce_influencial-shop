@@ -48,7 +48,7 @@ export default function Home({token, purchased}: any) {
                             Pagamento: {(purchased.methodPayment).toUpperCase()}
                           </div>
                           <div>
-                            Endereco: {`${purchased.saveAddress.road} ${purchased.saveAddress.number} ${purchased.saveAddress.complement} ${purchased.saveAddress.neighborhood} ${purchased.saveAddress.city} ${purchased.saveAddress.state} ${purchased.saveAddress.zipCode}`}
+                            Endereco: {`${purchased.saveAddress.address} ${purchased.saveAddress.number} ${purchased.saveAddress.instructions} ${purchased.saveAddress.neighborhood} ${purchased.saveAddress.city} ${purchased.saveAddress.state} ${purchased.saveAddress.zipCode}`}
                           </div>
                           <div>
                             Codigo do Produto: {purchased.code}
