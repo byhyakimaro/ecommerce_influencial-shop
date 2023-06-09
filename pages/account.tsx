@@ -34,7 +34,7 @@ export default function Home({ user, purchased }: any) {
                     <div>{`${Address.address} ${Address.number}`}</div>
                     <div>{` ${Address.instructions} ${Address.neighborhood}`}</div>
                     <div>{`${Address.city}, ${Address.state} ${Address.zipCode}` }</div>
-                    <div>{`${Address.telephone}`}</div>
+                    <div>{`Telefone: ${Address.telephone}`}</div>
                   </div>
                   <a href={`account/address?edit=${index}`}>Alterar</a>
                   <button>Excluir</button>
