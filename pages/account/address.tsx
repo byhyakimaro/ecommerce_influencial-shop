@@ -22,9 +22,9 @@ export default function Home({ token }: any) {
       method: "POST",
       body: JSON.stringify({ token: token, address: { Edited: data, Index: router.query.edit } })
     })
-    const info = await Address.json()
+    await Address.json()
 
-    console.log(info)
+    window.location.href = '/account'
   }
 
   return (
