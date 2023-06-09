@@ -5,8 +5,9 @@ import Footer from '@/contexts/footer'
 
 import styles from '@/styles/Home.module.css'
 import { useForm } from 'react-hook-form';
+import { parseCookies } from 'nookies';
 
-export default function Home() {
+export default function Home({ token }: any) {
   const { register, handleSubmit } = useForm()
   const router = useRouter()
 
@@ -19,7 +20,7 @@ export default function Home() {
         'Content-Type': 'application/json'
       },
       method: "POST",
-      body: JSON.stringify({ address: { Edited: data, Index: router.query.edit } })
+      body: JSON.stringify({ token: token, address: { Edited: data, Index: router.query.edit } })
     })
     const info = await Address.json()
 
@@ -72,4 +73,11 @@ export default function Home() {
       <Footer></Footer>
     </>
   )
+}
+
+
+Home.getInitialProps = async (ctx: any) => {
+  const { 'infshop.token': token } = parseCookies(ctx)
+   
+  return { token }
 }
