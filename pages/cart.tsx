@@ -59,9 +59,8 @@ export default function Home({ offers, user, productsInCart }: any) {
               <div className={ styles.adressText }>{ addressFormatted }</div>
             </div>
             <div className={ styles.buttonsEdit }>
-            <a href={`account/address?edit=${0}`}>Alterar</a>
-              <button>Selecionar Outro</button>
-              <button>Novo Endereco</button>
+            <a href={`account`}>Alterar</a>
+            <button>Selecionar Outro</button>
             </div>
           </div>
         </div>
