@@ -55,27 +55,27 @@ export default function Home({ token }: any) {
         <form onSubmit={handleSubmit(handleEdit)}>
           <div className={styles.editAddress}>
             <div>País/Região</div>
-            <input {...register('country')} type="text" name="country" id="" />
+            <input required {...register('country')} type="text" name="country" id="" />
             <div>Nome completo (nome e sobrenome)</div>
-            <input {...register('name')} type="text" name="name" id="" />
+            <input required {...register('name')} type="text" name="name" id="" />
             <div>Telefone</div>
-            <input {...register('telephone')} type="text" name="telephone" id="" />
+            <input required {...register('telephone')} type="text" name="telephone" id="" />
             <div>CEP</div>
-            <input {...register('zipCode')} type="text" name="zipCode" id="" />
+            <input required {...register('zipCode')} type="text" name="zipCode" id="" />
             <div>Endereço</div>
-            <input {...register('address')} type="text" name="address" id="" />
+            <input required {...register('address')} type="text" name="address" id="" />
             <div>Número da residência</div>
-            <input {...register('number')} type="text" name="number" id="" />
+            <input required {...register('number')} type="text" name="number" id="" />
             <div>Complemento (opcional)</div>
-            <input {...register('complement')} type="text" name="complement" id="" />
+            <input required {...register('complement')} type="text" name="complement" id="" />
             <div>Bairro</div>
-            <input {...register('neighborhood')} type="text" name="neighborhood" id="" />
+            <input required {...register('neighborhood')} type="text" name="neighborhood" id="" />
             <div>Cidade</div>
-            <input {...register('city')} type="text" name="city" id="" />
+            <input required {...register('city')} type="text" name="city" id="" />
             <div>Estado</div>
-            <input {...register('state')} type="text" name="state" id="" />
+            <input required {...register('state')} type="text" name="state" id="" />
             <div>Instruções de entrega (opcional)</div>
-            <input {...register('instructions')} type="text" name="instructions" id="" />
+            <input required {...register('instructions')} type="text" name="instructions" id="" />
             <div>
               <input type="checkbox" name="" id="" />
               <span>Tornar este o meu endereço padrão</span>
