@@ -45,13 +45,17 @@
       ],
       "code": "Order being processed",
       "saveAddress": {
-        "road": "Rua Rio Capiberibe",
-        "number": 170,
-        "neighborhood": "Jardim Santo Antônio I",
+        "country": "Brasil",
+        "name": "Paulo Azevedo Rispoli",
+        "telephone": "+5511989313542",
+        "address": "Rua Rio Capiberibe",
+        "number": "170",
+        "complement": "Casa",
+        "neighborhood": "Santo Antônio 1",
         "city": "Campo Limpo Paulista",
         "state": "SP",
-        "zipCode": 13232090,
-        "complement": "Casa Verde"
+        "instructions": "Casa Verde",
+        "zipCode": "13232-090"
       }
     }
   ],
@@ -77,13 +81,17 @@
   },
   "savedAddresses": [
     {
-      "road": "Rua Rio Capiberibe",
-      "number": 170,
-      "neighborhood": "Jardim Santo Antônio I",
+      "country": "Brasil",
+      "name": "Paulo Azevedo Rispoli",
+      "telephone": "+5511989313542",
+      "address": "Rua Rio Capiberibe",
+      "number": "170",
+      "complement": "Casa",
+      "neighborhood": "Santo Antônio 1",
       "city": "Campo Limpo Paulista",
       "state": "SP",
-      "zipCode": 13232090,
-      "complement": "Casa Verde"
+      "instructions": "Casa Verde",
+      "zipCode": "13232-090"
     }
   ],
   "offers": {
