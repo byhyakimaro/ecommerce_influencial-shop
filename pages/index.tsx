@@ -102,12 +102,6 @@ export default function Home({ data, config, User, i18n }:any) {
             </div>
           </div>
           }
-          <div className={styles.bannerHotWords}>
-            <a>
-              <img src="https://cdn-icons-png.flaticon.com/512/726/726476.png"/>
-              <label>{i18n['offers-discounts']}</label>
-            </a>
-          </div>
           <div className={[styles.recommended, styles.widget].join(" ")}>
             <div className={[styles.titleRecommended, styles.titleWidget].join(" ")}>{i18n.recommended}</div>
             <div className={[styles.itemsRecommended, styles.itemsWidget].join(" ")}>
@@ -136,9 +130,8 @@ export default function Home({ data, config, User, i18n }:any) {
                   )
                 })}
               </ul>
-              <svg className={styles.dir} width="50" height="50" onClick={passarItensDir}>
-                <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
-                <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
+              <svg onClick={passarItensDir} xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
               </svg>
             </div>
           </div>
