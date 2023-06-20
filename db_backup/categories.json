@@ -7,82 +7,116 @@
   "img": "https://cdn-icons-png.flaticon.com/512/2278/2278984.png",
   "bestSellers": [
     "640dfcbc709304d3329f2e0b"
-  ]
-},{
+  ],
+  "showhome": false
+},
+{
   "_id": {
     "$oid": "63e4bdcc8da4df51cc267ad2"
   },
   "name": "Alimentos e Bebidas",
   "code": "food-drinks",
-  "img": "https://cdn-icons-png.flaticon.com/512/9306/9306143.png"
-},{
+  "img": "https://cdn-icons-png.flaticon.com/512/9306/9306143.png",
+  "bestSellers": [],
+  "showhome": false
+},
+{
   "_id": {
     "$oid": "63e50da3af313ae00f502d82"
   },
   "name": "Automotivo",
   "code": "automotive",
-  "img": "https://cdn-icons-png.flaticon.com/512/4072/4072246.png"
-},{
+  "img": "https://cdn-icons-png.flaticon.com/512/4072/4072246.png",
+  "bestSellers": [],
+  "showhome": false
+},
+{
   "_id": {
     "$oid": "63e50dbaaf313ae00f502d83"
   },
   "name": "Moda e Beleza",
   "code": "fashion-beauty",
-  "img": "https://cdn-icons-png.flaticon.com/512/9077/9077000.png"
-},{
+  "img": "https://cdn-icons-png.flaticon.com/512/9077/9077000.png",
+  "bestSellers": [],
+  "showhome": false
+},
+{
   "_id": {
     "$oid": "63e50dd5af313ae00f502d84"
   },
   "name": "Casa e Construcao",
   "code": "house-building",
-  "img": "https://cdn-icons-png.flaticon.com/512/4363/4363396.png"
-},{
+  "img": "https://cdn-icons-png.flaticon.com/512/4363/4363396.png",
+  "bestSellers": [],
+  "showhome": false
+},
+{
   "_id": {
     "$oid": "63e50df5af313ae00f502d85"
   },
   "name": "Saude e Cuidados Pessoais",
   "code": "health-personal-care",
-  "img": "https://cdn-icons-png.flaticon.com/512/3600/3600652.png"
-},{
+  "img": "https://cdn-icons-png.flaticon.com/512/3600/3600652.png",
+  "bestSellers": [],
+  "showhome": false
+},
+{
   "_id": {
     "$oid": "63e50e16af313ae00f502d86"
   },
   "name": "Escritorio e Home Office",
   "code": "home-office",
-  "img": "https://cdn-icons-png.flaticon.com/512/6283/6283628.png"
-},{
+  "img": "https://cdn-icons-png.flaticon.com/512/6283/6283628.png",
+  "bestSellers": [],
+  "showhome": false
+},
+{
   "_id": {
     "$oid": "63e50e25af313ae00f502d87"
   },
   "name": "Livros e Ebook",
   "code": "books-ebook",
-  "img": "https://cdn-icons-png.flaticon.com/512/9722/9722692.png"
-},{
+  "img": "https://cdn-icons-png.flaticon.com/512/9722/9722692.png",
+  "bestSellers": [],
+  "showhome": false
+},
+{
   "_id": {
     "$oid": "63e50e36af313ae00f502d88"
   },
   "name": "Brinquedos e itens para criancas e bebes",
   "code": "toys-children-babies",
-  "img": "https://cdn-icons-png.flaticon.com/512/4287/4287470.png"
-},{
+  "img": "https://cdn-icons-png.flaticon.com/512/4287/4287470.png",
+  "bestSellers": [],
+  "showhome": false
+},
+{
   "_id": {
     "$oid": "63e50e54af313ae00f502d89"
   },
   "name": "Video, Musica e Games",
   "code": "video-music-games",
-  "img": "https://cdn-icons-png.flaticon.com/512/1469/1469832.png"
-},{
+  "img": "https://cdn-icons-png.flaticon.com/512/1469/1469832.png",
+  "bestSellers": [],
+  "showhome": false
+},
+{
   "_id": {
     "$oid": "63e50e71af313ae00f502d8a"
   },
   "name": "Esportes, Aventura e Lazer",
   "code": "sports-adventure-leisure",
-  "img": "https://cdn-icons-png.flaticon.com/512/4357/4357666.png"
-},{
+  "img": "https://cdn-icons-png.flaticon.com/512/4357/4357666.png",
+  "bestSellers": [],
+  "showhome": false
+},
+{
   "_id": {
     "$oid": "63e50e9daf313ae00f502d8b"
   },
   "name": "Presentes",
   "code": "miscellaneous-gifts",
-  "img": "https://cdn-icons-png.flaticon.com/512/3620/3620659.png"
+  "img": "https://cdn-icons-png.flaticon.com/512/3620/3620659.png",
+  "bestSellers": [],
+  "showhome": false
 }]
