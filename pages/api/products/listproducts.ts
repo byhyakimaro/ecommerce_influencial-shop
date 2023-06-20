@@ -23,7 +23,7 @@ export default async function handler(
     return {
       Title: product.Title,
       Code: product["_id"].toString(),
-      Image: product.Image,
+      Image: product.Images[0],
       Price: (product.Price+product.Price*(product.gainPercentage/100))-(product.Price*(product.offersPercentage/100)),
       Off: off && off,
       CountEvaluation: product.CountEvaluation
@@ -42,7 +42,7 @@ export default async function handler(
     return {
       Title: product.Title,
       Code: product["_id"].toString(),
-      Image: product.Image,
+      Image: product.Images[0],
       Price: (product.Price+product.Price*(product.gainPercentage/100))-(product.Price*(product.offersPercentage/100)),
       Off: off && off,
       CountEvaluation: product.CountEvaluation
@@ -61,7 +61,7 @@ export default async function handler(
     return {
       Title: product.Title,
       Code: product["_id"].toString(),
-      Image: product.Image,
+      Image: product.Images[0],
       Price: (product.Price+product.Price*(product.gainPercentage/100))-(product.Price*(product.offersPercentage/100)),
       Off: off && off,
       CountEvaluation: product.CountEvaluation
@@ -76,7 +76,7 @@ export default async function handler(
       Title: product.Title,
       Code: product["_id"].toString(),
       Category: product.category,
-      Image: product.Image,
+      Image: product.Images[0],
       Price: (product.Price+product.Price*(product.gainPercentage/100))-(product.Price*(product.offersPercentage/100)),
       Off: off && off,
       CountEvaluation: product.CountEvaluation

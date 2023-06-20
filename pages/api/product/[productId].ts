@@ -22,7 +22,7 @@ export default async function handler(
       Description: product.Description,
       Code: productId,
       Category: product.category,
-      Image: product.Image,
+      Image: product.Images[0],
       Evaluations: product.Evaluations,
       Off: off && off,
       productStock: product.productStock,
