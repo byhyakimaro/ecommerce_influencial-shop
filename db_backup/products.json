@@ -11,6 +11,7 @@
   "quantitySold": 0,
   "productStock": 11,
   "Price": 6608.22,
+  "SalePrice": 6608.22,
   "Dimensions": {
     "Weight": 0,
     "Width": 0,
@@ -76,6 +77,7 @@
   "quantitySold": 0,
   "productStock": 12,
   "Price": 6212.22,
+  "SalePrice": 6608.22,
   "Dimensions": {
     "Weight": 0,
     "Width": 0,
