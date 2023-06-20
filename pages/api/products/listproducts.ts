@@ -78,11 +78,23 @@ export default async function handler(
   })
 
   const categorySelected = categories[Math.floor(Math.random() * (categories.length - 1) + 1)]
+  const productsRandomCategory = products.filter((product :any) =>{ 
+    return product.category === categorySelected.code 
+  }).slice(0, MaxItemsReturned).map((product: any) => {
+    const off = product.offersPercentage > 0 && product.offersPercentage
 
-  console.log(categorySelected)
+    return {
+      Title: product.Title,
+      Code: product["_id"].toString(),
+      Image: product.Images[0],
+      Price: (product.Price+product.Price*(product.gainPercentage/100))-(product.Price*(product.offersPercentage/100)),
+      Off: off && off,
+      CountEvaluation: product.CountEvaluation
+    }
+  })
 
   res.status(200).json({
-    randomCategory: "a",
+    randomCategory: productsRandomCategory,
     recentProducts: productRecentFormat,
     bestSell: productSoldFormat,
     recommended: productRecommendedFormat,
