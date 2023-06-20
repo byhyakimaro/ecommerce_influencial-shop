@@ -124,9 +124,8 @@
 }
 .bannerNews {
   height: 10em;
-  margin: 2em;
+  margin: 2em 0;
   background: url('../public/capa.png');
-  border-radius: 10px;
   background-repeat: no-repeat;
   background-position: center;
 }
