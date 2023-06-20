@@ -135,6 +135,7 @@ export default function Home({ data, config, User, i18n }:any) {
               </svg>
             </div>
           </div>
+          <div className={styles.bannerNews}></div>
           <div className={[styles.recommended, styles.widget].join(" ")}>
             <div className={[styles.titleRecommended, styles.titleWidget].join(" ")}>{i18n.recommended}</div>
             <div className={[styles.itemsRecommended, styles.itemsWidget].join(" ")}>
