@@ -61,7 +61,8 @@
         "Text": "Description Tecnical"
       }
     ],
-    "InformationText": "Text more Information"
+    "InformationText": "Text more Information",
+    "ImagesDescription": []
   }
 },
 {
@@ -127,6 +128,7 @@
         "Text": "Description Tecnical"
       }
     ],
-    "InformationText": "Text more Information"
+    "InformationText": "Text more Information",
+    "ImagesDescription": []
   }
 }]
