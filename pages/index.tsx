@@ -103,7 +103,7 @@ export default function Home({ data, config, User, i18n }:any) {
           </div>
           }
           <div className={[styles.randomCategory, styles.widget].join(" ")}>
-            <div className={[styles.titleRandomCategory, styles.titleWidget].join(" ")}>{"MELHORES VENDIDOS NA CATEGORIA "+(i18n[data.randomCategoryName]).toUpperCase()}</div>
+            <div className={[styles.titleRandomCategory, styles.titleWidget].join(" ")}>{"PRODUTOS POPULARES EM "+(i18n[data.randomCategoryName]).toUpperCase()}</div>
             <div className={[styles.itemsRandomCategory, styles.itemsWidget].join(" ")}>
               <svg className={styles.esq} width="50" height="50" onClick={passarItensEsq}>
                 <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
