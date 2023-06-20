@@ -102,6 +102,39 @@ export default function Home({ data, config, User, i18n }:any) {
             </div>
           </div>
           }
+          <div className={[styles.randomCategory, styles.widget].join(" ")}>
+            <div className={[styles.titleRandomCategory, styles.titleWidget].join(" ")}>{"MELHORES VENDIDOS NA CATEGORIA "+(i18n[data.randomCategoryName]).toUpperCase()}</div>
+            <div className={[styles.itemsRandomCategory, styles.itemsWidget].join(" ")}>
+              <svg className={styles.esq} width="50" height="50" onClick={passarItensEsq}>
+                <rect x="10" y="10" width="30" height="30" rx="5" fill="#333" />
+                <path d="M20 25 L30 20 L30 30 Z" fill="#fff" />
+              </svg>
+              <ul data-transform={0}>
+                {data.randomCategory.map((randomCategory: any, index: any) => {
+                  return (
+                    <li key={index}>
+                      <a href={`provider/${randomCategory.Code}`}>
+                        <img src={randomCategory.Image} ></img>
+                        <label>{randomCategory.Title}</label>
+                        <div className={styles.divPrice}>
+                          {randomCategory.Off ? 
+                          <div>
+                            <label>{randomCategory.Price.toLocaleString(language, {style: 'currency', currency: currency})} </label>
+                            <label>{(randomCategory.Price-randomCategory.Price*(randomCategory.Off/100)).toLocaleString(language, {style: 'currency', currency: currency})}</label>
+                          </div>:
+                          <label> {(randomCategory.Price).toLocaleString(language, {style: 'currency', currency: currency})} </label>}
+                          {randomCategory.Off && <h5>- {randomCategory.Off}% OFF</h5>}
+                        </div>
+                      </a>
+                    </li>
+                  )
+                })}
+              </ul>
+              <svg onClick={passarItensDir} xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
+              </svg>
+            </div>
+          </div>
           <div className={[styles.recommended, styles.widget].join(" ")}>
             <div className={[styles.titleRecommended, styles.titleWidget].join(" ")}>{i18n.recommended}</div>
             <div className={[styles.itemsRecommended, styles.itemsWidget].join(" ")}>

@@ -94,6 +94,7 @@ export default async function handler(
   })
 
   res.status(200).json({
+    randomCategoryName: categorySelected.code,
     randomCategory: productsRandomCategory,
     recentProducts: productRecentFormat,
     bestSell: productSoldFormat,
