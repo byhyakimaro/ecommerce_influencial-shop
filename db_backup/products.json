@@ -7,6 +7,12 @@
   "quantitySold": 0,
   "productStock": 11,
   "Price": 6608.22,
+  "Dimensions": {
+    "Weight": 0,
+    "Width": 0,
+    "Height": 0,
+    "Length": 0
+  },
   "dateProduct": {
     "$date": "2023-03-12T16:24:28.458Z"
   },
@@ -19,9 +25,9 @@
     "cellphone",
     "Iphone 12"
   ],
-  "gainPercentage": 30,
-  "Impressions": 217,
-  "ClickTick": 125,
+  "gainPercentage": 100,
+  "Impressions": 335,
+  "ClickTick": 157,
   "Model": "Iphone 12",
   "Evaluations": [
     {
@@ -52,7 +58,8 @@
     ],
     "InformationText": "Text more Information"
   }
-},{
+},
+{
   "_id": {
     "$oid": "646ee28e40de011a59b770f8"
   },
@@ -61,6 +68,12 @@
   "quantitySold": 0,
   "productStock": 12,
   "Price": 6212.22,
+  "Dimensions": {
+    "Weight": 0,
+    "Width": 0,
+    "Height": 0,
+    "Length": 0
+  },
   "dateProduct": {
     "$date": "2023-03-12T16:24:28.458Z"
   },
@@ -68,14 +81,14 @@
   "category": "electronics-devices",
   "active": true,
   "urlProvider": "https://www.magazineluiza.com.br/iphone-12-apple-128gb-preto-tela-61-12mp-ios/p/231147800/te/ip12/",
-  "offersPercentage": 8,
+  "offersPercentage": 10,
   "tags": [
     "cellphone",
     "Iphone 12"
   ],
-  "gainPercentage": 30,
-  "Impressions": 219,
-  "ClickTick": 132,
+  "gainPercentage": 50,
+  "Impressions": 339,
+  "ClickTick": 166,
   "Model": "Iphone 12",
   "Evaluations": [
     {
