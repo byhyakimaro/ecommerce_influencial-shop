@@ -4,7 +4,7 @@
   background: white;
   align-items: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .subHeader:after {
@@ -12,7 +12,7 @@
   top: 0;
   display: block;
   background: linear-gradient(to right, rgb(255, 255, 74), rgb(252, 208, 0), rgb(255, 193, 18), rgb(255, 193, 18), rgb(255, 138, 0), rgb(255, 95, 95), rgb(255, 37, 58), rgb(255, 55, 168), rgb(199, 57, 255), rgb(164, 0, 225), rgb(46, 206, 255), rgb(0, 134, 255), rgb(114, 247, 114), rgb(0, 214, 4)) !important;
-  height: 1px;
+  height: .5px;
   width: 100%;
   position: absolute;
 }
@@ -43,17 +43,22 @@
   border-radius: 2px;
 }
 
+.containerBar {
+  display: flex;
+  align-items: center;
+}
+
 .navbar {
+  border: 1px solid rgba(0, 0, 0, 0.25);
   margin: 0rem 2rem;
-  background: rgb(170, 170, 170);
   height: 2.9rem;
+  width: 20em;
   border-radius: 4px;
   display: flex;
 }
 
 .bartext {
   border-radius: inherit;
-  background: rgb(170, 170, 170);
   padding: .9rem;
   color: black;
   outline: none;
@@ -63,7 +68,6 @@
 
 .searchbar {
   border-radius: inherit;
-  background: rgba(255, 225, 150, 1);
 }
 
 .searchbar:hover {
@@ -76,7 +80,7 @@
   display: flex;
   min-width: 120px;
   align-items: center;
-  margin: 1rem 0rem;
+  margin: 1rem 2rem;
   padding: 5px;
 }
 
@@ -93,7 +97,7 @@
 
 .cart {
   display: flex;
-  margin: 1rem 6rem;
+  margin: 1rem 2rem;
   padding: 5px;
 }
 
