@@ -2,8 +2,12 @@
   "_id": {
     "$oid": "640dfcbc709304d3329f2e0b"
   },
+  "sku": "H8VRFM223",
+  "ean": "",
   "Title": "iPhone 12 Apple 128GB Preto Tela 6,1” 12MP iOS",
-  "Image": "https://i.imgur.com/NLGFHG4.png",
+  "Images": [
+    "https://i.imgur.com/NLGFHG4.png"
+  ],
   "quantitySold": 0,
   "productStock": 11,
   "Price": 6608.22,
@@ -63,8 +67,12 @@
   "_id": {
     "$oid": "646ee28e40de011a59b770f8"
   },
+  "sku": "E4CA3B8DC",
+  "ean": "",
   "Title": "iPhone 12 Apple 64GB Preto Tela 6,1” 12MP iOS",
-  "Image": "https://i.imgur.com/NLGFHG4.png",
+  "Images": [
+    "https://i.imgur.com/NLGFHG4.png"
+  ],
   "quantitySold": 0,
   "productStock": 12,
   "Price": 6212.22,
