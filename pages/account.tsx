@@ -38,6 +38,7 @@ export default function Home({ user, purchased }: any) {
                   </div>
                   <a href={`account/address?edit=${index}`}>Alterar</a>
                   <a href={`account/deleteaddress?delete=${index}`}>Excluir</a>
+                  {user.defaultAddress !== index && <a>Selecionar Como Padrao</a>}
                 </div>
               </li>
             )
