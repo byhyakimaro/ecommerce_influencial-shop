@@ -53,6 +53,7 @@ export default function Home({ offers, user, productsInCart }: any) {
         <div className={ styles.containerAdress }>
           <h2>Selecione o Endereco</h2>
           <div className="break"></div>
+          <p>O Pedido sera enviado para o endereco padrao, caso deseje altera-lo, selecione o endereco desejado como padrao ou altere o mesmo</p>
           <div className={ styles.adress }> 
             <div className={ styles.infos }>
               <div className={ styles.NameAccount }> {user.name} </div>
@@ -60,7 +61,6 @@ export default function Home({ offers, user, productsInCart }: any) {
             </div>
             <div className={ styles.buttonsEdit }>
             <a href={`account`}>Alterar</a>
-            <button>Selecionar Outro</button>
             </div>
           </div>
         </div>
