@@ -67,7 +67,7 @@ export default function Home({ token }: any) {
             <div>Número da residência</div>
             <input required {...register('number')} type="text" name="number" id="" />
             <div>Complemento (opcional)</div>
-            <input required {...register('complement')} type="text" name="complement" id="" />
+            <input {...register('complement')} type="text" name="complement" id="" />
             <div>Bairro</div>
             <input required {...register('neighborhood')} type="text" name="neighborhood" id="" />
             <div>Cidade</div>
@@ -75,7 +75,7 @@ export default function Home({ token }: any) {
             <div>Estado</div>
             <input required {...register('state')} type="text" name="state" id="" />
             <div>Instruções de entrega (opcional)</div>
-            <input required {...register('instructions')} type="text" name="instructions" id="" />
+            <input {...register('instructions')} type="text" name="instructions" id="" />
             <div>
               <input type="checkbox" name="" id="" />
               <span>Tornar este o meu endereço padrão</span>
