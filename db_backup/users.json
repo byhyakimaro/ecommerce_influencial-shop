@@ -94,6 +94,7 @@
       "zipCode": "13232-090"
     }
   ],
+  "defaultAddress": 0,
   "offers": {
     "percentPixOff": 10
   },
