@@ -38,7 +38,7 @@ export default function Home({ user, purchased }: any) {
                   </div>
                   <a href={`account/address?edit=${index}`}>Alterar</a>
                   <a href={`account/deleteaddress?delete=${index}`}>Excluir</a>
-                  {user.defaultAddress !== index && <button>Selecionar Como Padrao</button>}
+                  {user.defaultAddress !== index && <button data-index={index}>Selecionar Como Padrao</button>}
                 </div>
               </li>
             )
