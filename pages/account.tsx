@@ -38,8 +38,20 @@ export default function Home({ user, purchased }: any) {
                   </div>
                   <a href={`account/address?edit=${index}`}>Alterar</a>
                   <a href={`account/deleteaddress?delete=${index}`}>Excluir</a>
-                  {user.defaultAddress !== index && <button data-index={index} onClick={((data: any)=>{
-                    const selectAddress = parseInt(data.currentTarget.dataset.index)
+                  {user.defaultAddress !== index && <button data-index={index} onClick={(async (data: any)=>{
+                    const { 'infshop.token': token } = parseCookies()
+                    const selectAddress = data.currentTarget.dataset.index
+
+                    const Address = await fetch(`/api/account/selectaddress`,
+                    {
+                      headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                      },
+                      method: "POST",
+                      body: JSON.stringify({ token: token, addressIndex: selectAddress })
+                    })
+                    await Address.json()
                   })}>Selecionar Como Padrao</button>}
                 </div>
               </li>
