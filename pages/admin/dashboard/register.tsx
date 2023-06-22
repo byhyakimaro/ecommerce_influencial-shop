@@ -67,6 +67,10 @@ export default function Home() {
             {...register('InformationText')} 
             ></input>
           </div>
+          <div>
+            <h6>Imagens</h6>
+            <div></div>
+          </div>
         </div>
 
         <div>Sku</div>
