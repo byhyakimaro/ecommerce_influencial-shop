@@ -39,7 +39,7 @@ export default function Home({ user, purchased }: any) {
                   <a href={`account/address?edit=${index}`}>Alterar</a>
                   <a href={`account/deleteaddress?delete=${index}`}>Excluir</a>
                   {user.defaultAddress !== index && <button data-index={index} onClick={((data: any)=>{
-                    
+                    console.log(data.currentTarget.dataset.index)
                   })}>Selecionar Como Padrao</button>}
                 </div>
               </li>
