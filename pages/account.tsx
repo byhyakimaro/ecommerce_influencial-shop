@@ -4,8 +4,13 @@ import Footer from '@/contexts/footer'
 
 import styles from '@/styles/Home.module.css'
 import { parseCookies } from 'nookies'
+import { useEffect, useState } from 'react'
 
 export default function Home({ user, purchased }: any) {
+  const [addressSelect, setAddressSelect] = useState(0)
+
+  useEffect(() => {
+  }, [addressSelect])
 
   return (
     <>
@@ -30,7 +35,7 @@ export default function Home({ user, purchased }: any) {
               <li key={index}>
                 <div className={styles.addressInfo}>
                   <div>
-                    {user.defaultAddress === index && <h5>Endereco Padrao</h5>}
+                    {addressSelect === index && <h5>Endereco Padrao</h5>}
                     <div>{`${Address.address} ${Address.number}`}</div>
                     <div>{` ${Address.instructions} ${Address.neighborhood}`}</div>
                     <div>{`${Address.city}, ${Address.state} ${Address.zipCode}` }</div>
@@ -38,9 +43,10 @@ export default function Home({ user, purchased }: any) {
                   </div>
                   <a href={`account/address?edit=${index}`}>Alterar</a>
                   <a href={`account/deleteaddress?delete=${index}`}>Excluir</a>
-                  {user.defaultAddress !== index && <button data-index={index} onClick={(async (data: any)=>{
+                  {addressSelect !== index && <button data-index={index} onClick={(async (data: any)=>{
                     const { 'infshop.token': token } = parseCookies()
                     const selectAddress = data.currentTarget.dataset.index
+                    setAddressSelect(parseInt(selectAddress))
 
                     const Address = await fetch(`/api/account/selectaddress`,
                     {
