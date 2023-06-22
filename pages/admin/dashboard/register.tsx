@@ -106,6 +106,26 @@ export default function Home() {
             {...register('activeSell')} 
             ></input>
           </div>
+          <div>
+            <div>
+              <h6>Preço de custo</h6>
+              <input
+              {...register('activeSell')} 
+              ></input>
+            </div>
+            <div>
+              <h6>Preço de venda *</h6>
+              <input
+              {...register('activeSell')} 
+              ></input>
+            </div>
+            <div>
+              <h6>Porcentagem de Desconto</h6>
+              <input
+              {...register('activeSell')} 
+              ></input>
+            </div>
+          </div>
         </div>
         
         <div>Url do Anuncio</div>
