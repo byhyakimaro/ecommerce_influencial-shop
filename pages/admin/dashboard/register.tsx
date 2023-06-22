@@ -20,13 +20,13 @@ export default function Home() {
       </Head>
       <Header></Header>
       <form onSubmit={handleSubmit(handleRegister)}>
-        <div>
+        {/* <div>
           <div>Produto Com Variante</div>
           <input
           type='checkbox'
           {...register('active')} 
           ></input>
-        </div>
+        </div> */}
 
         <div>Estara Ativo</div>
         <input
