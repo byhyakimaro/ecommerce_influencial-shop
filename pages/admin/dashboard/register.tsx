@@ -54,7 +54,20 @@ export default function Home() {
         <div></div>
 
         <div>Detalhes do Produto</div>
-        <div></div>
+        <div>
+          <div>
+            <h6>Especificacoes Tecnicas</h6>
+            <input
+            {...register('technicalSpecifications')} 
+            ></input>
+          </div>
+          <div>
+            <h6>Texto Descricao</h6>
+            <input
+            {...register('InformationText')} 
+            ></input>
+          </div>
+        </div>
 
         <div>Sku</div>
         <div></div>
