@@ -105,7 +105,25 @@ export default function Home() {
           <div>
             <div>Peso e Dimensoes</div>
             <div>
-              <h6>Porcentagem de Desconto</h6>
+              <h6>Peso</h6>
+              <input
+              {...register('activeSell')} 
+              ></input>
+            </div>
+            <div>
+              <h6>Largura</h6>
+              <input
+              {...register('activeSell')} 
+              ></input>
+            </div>
+            <div>
+              <h6>Altura</h6>
+              <input
+              {...register('activeSell')} 
+              ></input>
+            </div>
+            <div>
+              <h6>Comprimento</h6>
               <input
               {...register('activeSell')} 
               ></input>
