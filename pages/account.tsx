@@ -7,7 +7,7 @@ import { parseCookies } from 'nookies'
 import { useEffect, useState } from 'react'
 
 export default function Home({ user, purchased }: any) {
-  const [addressSelect, setAddressSelect] = useState(0)
+  const [addressSelect, setAddressSelect] = useState(user.defaultAddress)
 
   useEffect(() => {
   }, [addressSelect])
