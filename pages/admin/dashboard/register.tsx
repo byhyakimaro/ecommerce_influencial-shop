@@ -20,25 +20,26 @@ export default function Home() {
       </Head>
       <Header></Header>
       <form onSubmit={handleSubmit(handleRegister)}>
-        <div>Title do Item</div>
+        <div>Estara Ativo</div>
+        <input
+        type='checkbox'
+        {...register('active')} 
+        ></input>
+
+        <div>Nome do Produto</div>
         <input
         {...register('Title')}
         ></input>
 
-        <div>Url Imagem</div>
-        <p>Width Image 330px sem fundo</p>
+        <div>Marca do Produto</div>
         <input
+        {...register('Model')}
+        ></input>
+
+        <div>Frete Gratis</div>
+        <input
+        type='checkbox'
         {...register('Image')}
-        ></input>
-
-        <div>quantidade em estoque</div>
-        <input
-        {...register('productStock')} 
-        ></input>
-
-        <div>Preco no anuncio base</div>
-        <input 
-        {...register('Price')}
         ></input>
 
         <div>Categoria do Item</div>
@@ -46,10 +47,19 @@ export default function Home() {
         {...register('category')} 
         ></input>
 
-        <div>Estara Ativo</div>
+        <div>Variantes</div>
+        <div></div>
+
+        <div>Imagens</div>
+        <div></div>
+
+        <div>Detalhes do Produto</div>
         <input
-        {...register('active')} 
+        {...register('Description')} 
         ></input>
+
+        <div>Sku</div>
+        <div></div>
         
         <div>Url do Anuncio</div>
         <input
