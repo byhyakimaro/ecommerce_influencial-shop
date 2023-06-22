@@ -54,9 +54,7 @@ export default function Home() {
         <div></div>
 
         <div>Detalhes do Produto</div>
-        <input
-        {...register('Description')} 
-        ></input>
+        <div></div>
 
         <div>Sku</div>
         <div></div>
