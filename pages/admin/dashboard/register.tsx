@@ -102,6 +102,15 @@ export default function Home() {
               ></input>
             </div>
           </div>
+          <div>
+            <div>Peso e Dimensoes</div>
+            <div>
+              <h6>Porcentagem de Desconto</h6>
+              <input
+              {...register('activeSell')} 
+              ></input>
+            </div>
+          </div>
         </div>
         
         <div>Detalhes do Produto</div>
