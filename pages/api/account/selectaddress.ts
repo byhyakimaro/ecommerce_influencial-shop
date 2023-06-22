@@ -20,7 +20,6 @@ export default async function handler(
       { $set: { defaultAddress: parseInt(addressIndex) }
     }
   )
-  console.log(addressIndex, token)
 
   res.status(200).json("Item updated successfully")
 }
