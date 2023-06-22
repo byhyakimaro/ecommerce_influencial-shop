@@ -27,7 +27,7 @@ export default function Home() {
           {...register('active')} 
           ></input>
         </div>
-        
+
         <div>Estara Ativo</div>
         <input
         type='checkbox'
@@ -66,8 +66,8 @@ export default function Home() {
         {...register('category')} 
         ></input>
 
-        <div>Variantes</div>
-        <div></div>
+        {/* <div>Variantes</div>
+        <div></div> */}
 
         <div>Sku</div>
         <div>
