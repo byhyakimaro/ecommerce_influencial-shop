@@ -57,7 +57,10 @@ export default function Home() {
         <div></div>
 
         <div>Imagens</div>
-        <div></div>
+        <input
+        type='file'
+        {...register('searchable')} 
+        ></input>
 
         <div>Detalhes do Produto</div>
         <div>
@@ -75,7 +78,10 @@ export default function Home() {
           </div>
           <div>
             <h6>Imagens</h6>
-            <div></div>
+            <input
+            type='file'
+            {...register('searchable')} 
+            ></input>
           </div>
         </div>
 
