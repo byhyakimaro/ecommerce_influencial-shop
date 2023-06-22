@@ -26,6 +26,12 @@ export default function Home() {
         {...register('active')} 
         ></input>
 
+        <div>Buscavel</div>
+        <input
+        type='checkbox'
+        {...register('searchable')} 
+        ></input>
+
         <div>Nome do Produto</div>
         <input
         {...register('Title')}
@@ -74,7 +80,15 @@ export default function Home() {
         </div>
 
         <div>Sku</div>
-        <div></div>
+        <div>
+          <div>
+            <h6>Disponivel Para Venda</h6>
+            <input
+            type='checkbox'
+            {...register('activeSell')} 
+            ></input>
+          </div>
+        </div>
         
         <div>Url do Anuncio</div>
         <input
