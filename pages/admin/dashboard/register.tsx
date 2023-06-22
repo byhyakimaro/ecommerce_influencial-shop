@@ -32,6 +32,11 @@ export default function Home() {
         {...register('searchable')} 
         ></input>
 
+        <div>Anuncio do Fornecedor</div>
+        <input
+        {...register('urlProvider')} 
+        ></input>
+
         <div>Nome do Produto</div>
         <input
         {...register('Title')}
@@ -61,29 +66,6 @@ export default function Home() {
         type='file'
         {...register('searchable')} 
         ></input>
-
-        <div>Detalhes do Produto</div>
-        <div>
-          <div>
-            <h6>Especificacoes Tecnicas</h6>
-            <input
-            {...register('technicalSpecifications')} 
-            ></input>
-          </div>
-          <div>
-            <h6>Texto Descricao</h6>
-            <input
-            {...register('InformationText')} 
-            ></input>
-          </div>
-          <div>
-            <h6>Imagens</h6>
-            <input
-            type='file'
-            {...register('searchable')} 
-            ></input>
-          </div>
-        </div>
 
         <div>Sku</div>
         <div>
@@ -128,10 +110,28 @@ export default function Home() {
           </div>
         </div>
         
-        <div>Url do Anuncio</div>
-        <input
-        {...register('urlProvider')} 
-        ></input>
+        <div>Detalhes do Produto</div>
+        <div>
+          <div>
+            <h6>Imagens</h6>
+            <input
+            type='file'
+            {...register('searchable')} 
+            ></input>
+          </div>
+          <div>
+            <h6>Especificacoes Tecnicas</h6>
+            <input
+            {...register('technicalSpecifications')} 
+            ></input>
+          </div>
+          <div>
+            <h6>Texto Descricao</h6>
+            <input
+            {...register('InformationText')} 
+            ></input>
+          </div>
+        </div>
 
         <button type="submit">Register Item</button>
       </form>
