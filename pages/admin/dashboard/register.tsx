@@ -61,12 +61,6 @@ export default function Home() {
         <div>Variantes</div>
         <div></div>
 
-        <div>Imagens</div>
-        <input
-        type='file'
-        {...register('searchable')} 
-        ></input>
-
         <div>Sku</div>
         <div>
           <div>
