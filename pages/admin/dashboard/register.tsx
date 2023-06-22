@@ -94,6 +94,18 @@ export default function Home() {
             {...register('activeSell')} 
             ></input>
           </div>
+          <div>
+            <h6>Codigo Sku</h6>
+            <input
+            {...register('activeSell')} 
+            ></input>
+          </div>
+          <div>
+            <h6>Código de Barras (EAN-13)</h6>
+            <input
+            {...register('activeSell')} 
+            ></input>
+          </div>
         </div>
         
         <div>Url do Anuncio</div>
